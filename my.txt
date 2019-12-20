@@ -1,0 +1,617 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+
+public class Example : MonoBehaviour
+{
+
+    public GameObject player;//сама платформа
+
+    private GameObject body,
+                        cameras,
+                        arm0,
+                        arm1,
+                        arm2,
+                        arm3,
+                        arm4,
+                        arm5,
+                        arm6,
+                        link1,
+                        link2,
+                        link3,
+                        link4,
+                        link5,
+                        link6,
+                        link7,
+                        cylinder1,
+                        cylinder2,
+                        cylinder3,
+                        cylinder5,
+                        cylinder7,
+                        piston1,
+                        piston2,
+                        piston3,
+                        piston5,
+                        piston7,
+                        fixed3,
+                        fixed5,
+                        fixed6,
+                        clutch5,
+                        clutch6,
+                        footFR,
+                        cylinderFR,
+                        pistonFR,
+                        footFL,
+                        cylinderFL,
+                        pistonFL,
+                        footBR,
+                        cylinderBR,
+                        pistonBR,
+                        footBL,
+                        cylinderBL,
+                        pistonBL;
+
+
+    public float speed;
+    public float speedRotation;
+    public float PI = Mathf.PI;
+
+    public bool allowRotation;
+    public bool allowMove;
+
+    public Quaternion rotationX;
+
+    public float hitFootMin, //для лап
+                 hitFootMax,
+                 hit1Min,
+                 hit1Max,
+                 hit2Min,
+                 hit2Max,
+                 hit4Min,
+                 hit4Max;
+
+    public float alpha_new, beta_new, gamma_new, phi_new, psi_new1, psi_new2;
+
+    // Длины сторон и углы для вычисления треугольников
+    public float alpha0,
+                    alpha1, beta1, gamma1, d1, l1,
+                    alpha2, beta2, gamma2, d2, l2,
+                    alpha3, beta3, gamma3, d3, l3,
+                    alpha5, beta5, gamma5, phi5, psi51, psi52, theta5,
+                    OA5, OB5, CD5, BD5, OC5,
+                    alphaFR, betaFR, gammaFR, dFR, lFR,
+                    alphaFL, betaFL, gammaFL, dFL, lFL,
+                    alphaBR, betaBR, gammaBR, dBR, lBR,
+                    alphaBL, betaBL, gammaBL, dBL, lBL;
+
+
+    // Use this for initialization
+    void Start()
+    {
+        // связывание с деталями
+        TieObjiects();
+
+        speedRotation = 0.5f * Time.deltaTime;
+        speed = 2.5f * Time.deltaTime;
+        // расчет сторон и углов треугольников
+        SetSize();
+
+        hitFootMin = (alphaBL + alphaBR + alphaFR + alphaFL) / 4;
+        hitFootMax = 93 * Mathf.Deg2Rad;
+        hit1Max = 135 * Mathf.Deg2Rad;
+        hit1Min = 31 * Mathf.Deg2Rad;
+        hit2Max = 121 * Mathf.Deg2Rad;
+        hit2Min = 41 * Mathf.Deg2Rad;
+        hit4Max = 103 * Mathf.Deg2Rad;
+
+        allowRotation = false;
+        allowMove = true;
+    }
+
+    // Поворот основания
+    void RotateBase(float one)
+    {
+        float delta = speedRotation * one;
+        arm0.transform.RotateAround(arm0.transform.position, arm0.transform.right, delta * Mathf.Rad2Deg);
+        alpha0 += delta;
+    }
+
+    // Поворот первой стрелы с фиксированной базой
+    void RotateArm01(float one)
+    {
+        float delta = speedRotation * one;
+        alpha_new = alpha1 + delta;
+        arm1.transform.RotateAround(arm1.transform.position, arm1.transform.right, delta * Mathf.Rad2Deg);
+
+        float h = DistanceThCosine(l1, d1, alpha_new);
+        beta_new = CalcBeta(l1, d1, h, alpha_new);
+        delta = beta_new - beta1;
+        cylinder1.transform.RotateAround(cylinder1.transform.position, cylinder1.transform.right, -delta * Mathf.Rad2Deg);
+
+        gamma_new = PI - alpha_new - beta_new;
+        delta = gamma_new - gamma1;
+        piston1.transform.RotateAround(piston1.transform.position, piston1.transform.right, delta * Mathf.Rad2Deg);
+
+        alpha1 = alpha_new;
+        beta1 = beta_new;
+        gamma1 = gamma_new;
+    }
+
+    // Поворот второй стрелы с фиксированной первой стрелой
+    void RotateArm12(float one)
+    {
+        float delta = speedRotation * one;
+        alpha_new = alpha2 + delta;
+        arm2.transform.RotateAround(arm2.transform.position, arm2.transform.right, delta * Mathf.Rad2Deg);
+
+        float h = DistanceThCosine(l2, d2, alpha_new);
+        beta_new = CalcBeta(l2, d2, h, alpha_new);
+        delta = beta_new - beta2;
+        cylinder2.transform.RotateAround(cylinder2.transform.position, cylinder2.transform.right, -delta * Mathf.Rad2Deg);
+
+        gamma_new = PI - alpha_new - beta_new;
+        delta = gamma_new - gamma2;
+        piston2.transform.RotateAround(piston2.transform.position, piston2.transform.right, delta * Mathf.Rad2Deg);
+
+        alpha2 = alpha_new;
+        beta2 = beta_new;
+        gamma2 = gamma_new;
+    }
+
+    // Излом
+    void Fracture(float one)
+    {
+        /* float delta = speedRotation * one;
+         alpha_new = alpha3 + delta;
+
+         arm3.transform.RotateAround(arm3.transform.position, arm3.transform.right, delta * Mathf.Rad2Deg);
+         arm4.transform.RotateAround(arm4.transform.position, arm4.transform.right, -delta * Mathf.Rad2Deg);
+         fixed3.transform.RotateAround(fixed3.transform.position, fixed3.transform.right, delta * Mathf.Rad2Deg);
+
+         float h = DistanceThCosine(l3, d3, alpha_new);
+         beta_new = CalcBeta(l3, d3, h, alpha_new);
+         delta = beta_new - beta3;
+         cylinder3.transform.RotateAround(cylinder3.transform.position, cylinder3.transform.right, -delta * Mathf.Rad2Deg);
+
+         gamma_new = PI - alpha_new - beta_new;
+         delta = gamma_new - gamma3;
+         piston3.transform.RotateAround(piston3.transform.position, piston3.transform.right, delta * Mathf.Rad2Deg);
+
+         alpha3 = alpha_new;
+         beta3 = beta_new;
+         gamma3 = gamma_new;*/
+    }
+
+    void RotateArm34(float one)
+    {
+        float delta = speedRotation * one;
+        alpha_new = alpha5 + delta;
+        fixed5.transform.RotateAround(fixed5.transform.position, fixed5.transform.right, delta * Mathf.Rad2Deg);
+
+        float h = DistanceThCosine(OA5, OB5, alpha_new);
+        beta_new = CalcBeta(OA5, OB5, h, alpha_new);
+        delta = beta_new - beta5;
+        cylinder5.transform.RotateAround(cylinder5.transform.position, cylinder5.transform.right, -delta * Mathf.Rad2Deg);
+
+        gamma_new = PI - alpha_new - beta_new;
+        delta = gamma_new - gamma5;
+        piston5.transform.RotateAround(piston5.transform.position, piston5.transform.right, delta * Mathf.Rad2Deg);
+
+        h = DistanceThCosine(OC5, OB5, phi_new);
+        psi_new1 = Mathf.Acos((OC5 * OC5 - OB5 * OB5 + h * h) / (2 * h * OC5));
+        psi_new2 = Mathf.Acos((CD5 * CD5 - BD5 * BD5 + h * h) / (2 * h * CD5));
+        delta = psi_new1 + psi_new2 - psi51 - psi52;
+        arm5.transform.RotateAround(arm5.transform.position, arm5.transform.right, delta * Mathf.Rad2Deg);
+
+        phi_new = Mathf.Acos((BD5 * BD5 + CD5 * CD5 - h * h) / (2 * BD5 * CD5));
+        delta = phi_new - phi5;
+        clutch5.transform.RotateAround(clutch5.transform.position, clutch5.transform.right, delta * Mathf.Rad2Deg);
+
+        alpha5 = alpha_new;
+        beta5 = beta_new;
+        gamma5 = gamma_new;
+        psi51 = psi_new1;
+        psi52 = psi_new2;
+        phi5 = phi_new;
+    }
+
+    // Движение лап
+    void RaiseFoot(float one)
+    {
+        float delta = speedRotation * one;
+        alpha_new = alphaFR + delta;
+        footFR.transform.RotateAround(footFR.transform.position, footFR.transform.right, delta * Mathf.Rad2Deg);
+        float h = DistanceThCosine(lFR, dFR, alpha_new);
+        beta_new = CalcBeta(lFR, dFR, h, alpha_new);
+        delta = beta_new - betaFR;
+        cylinderFR.transform.RotateAround(cylinderFR.transform.position, cylinderFR.transform.right, -delta * Mathf.Rad2Deg);
+        gamma_new = PI - alpha_new - beta_new;
+        delta = gamma_new - gammaFR;
+        pistonFR.transform.RotateAround(pistonFR.transform.position, pistonFR.transform.right, delta * Mathf.Rad2Deg);
+        alphaFR = alpha_new;
+        betaFR = beta_new;
+        gammaFR = gamma_new;
+
+        delta = speedRotation * one;
+        alpha_new = alphaFL + delta;
+        footFL.transform.RotateAround(footFL.transform.position, footFL.transform.right, delta * Mathf.Rad2Deg);
+        h = DistanceThCosine(lFL, dFL, alpha_new);
+        beta_new = CalcBeta(lFL, dFL, h, alpha_new);
+        delta = beta_new - betaFL;
+        cylinderFL.transform.RotateAround(cylinderFL.transform.position, cylinderFL.transform.right, -delta * Mathf.Rad2Deg);
+        gamma_new = PI - alpha_new - beta_new;
+        delta = gamma_new - gammaFL;
+        pistonFL.transform.RotateAround(pistonFL.transform.position, pistonFL.transform.right, delta * Mathf.Rad2Deg);
+        alphaFL = alpha_new;
+        betaFL = beta_new;
+        gammaFL = gamma_new;
+
+        delta = speedRotation * one;
+        alpha_new = alphaBL + delta;
+        footBL.transform.RotateAround(footBL.transform.position, footBL.transform.right, delta * Mathf.Rad2Deg);
+        h = DistanceThCosine(lBL, dBL, alpha_new);
+        beta_new = CalcBeta(lBL, dBL, h, alpha_new);
+        delta = beta_new - betaBL;
+        cylinderBL.transform.RotateAround(cylinderBL.transform.position, cylinderBL.transform.right, -delta * Mathf.Rad2Deg);
+        gamma_new = PI - alpha_new - beta_new;
+        delta = gamma_new - gammaBL;
+        pistonBL.transform.RotateAround(pistonBL.transform.position, pistonBL.transform.right, delta * Mathf.Rad2Deg);
+        alphaBL = alpha_new;
+        betaBL = beta_new;
+        gammaBL = gamma_new;
+
+        delta = speedRotation * one;
+        alpha_new = alphaBR + delta;
+        footBR.transform.RotateAround(footBR.transform.position, footBR.transform.right, delta * Mathf.Rad2Deg);
+        h = DistanceThCosine(lBR, dBR, alpha_new);
+        beta_new = CalcBeta(lBR, dBR, h, alpha_new);
+        delta = beta_new - betaBR;
+        cylinderBR.transform.RotateAround(cylinderBR.transform.position, cylinderBR.transform.right, -delta * Mathf.Rad2Deg);
+        gamma_new = PI - alpha_new - beta_new;
+        delta = gamma_new - gammaBR;
+        pistonBR.transform.RotateAround(pistonBR.transform.position, pistonBR.transform.right, delta * Mathf.Rad2Deg);
+        alphaBR = alpha_new;
+        betaBR = beta_new;
+        gammaBR = gamma_new;
+    }
+
+    // Обработка нажтия клавиш
+    void FixedUpdate()
+    {
+        //Движение
+        if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
+        {
+            if (allowMove)
+                body.transform.position += body.transform.forward * speed;
+        }
+
+        //Движение
+        if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
+        {
+            if (allowMove)
+                body.transform.position -= body.transform.forward * speed;
+        }
+
+        //Поворот
+        if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+        {
+            if (allowMove)
+            {
+                body.transform.RotateAround(body.transform.position, body.transform.up, -speedRotation * Mathf.Rad2Deg);
+            }
+        }
+
+        //Поворот
+        if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+        {
+            if (allowMove)
+            {
+                body.transform.RotateAround(body.transform.position, body.transform.up, speedRotation * Mathf.Rad2Deg);
+            }
+        }
+
+        //Поворот первой стрелы с неподвижной базой
+        if (Input.GetKey(KeyCode.U))
+        {
+            if (allowRotation)
+            {
+                if (alpha1 <= hit1Max - speedRotation)
+                    RotateArm01(1);
+                else if (alpha1 < hit1Max)
+                    RotateArm01((hit1Max - alpha1) / speedRotation);
+            }
+        }
+
+        //Поворот первой стрелы с неподвижной базой
+        if (Input.GetKey(KeyCode.Y))
+        {
+            if (allowRotation)
+            {
+                if (alpha1 >= hit1Min + speedRotation)
+                    RotateArm01(-1);
+                else if (alpha1 > hit1Min)
+                    RotateArm01((hit1Min - alpha1) / speedRotation);
+            }
+        }
+
+        //Поворот второй стрелы с неподвижной первой
+        if (Input.GetKey(KeyCode.O))
+        {
+            if (allowRotation)
+            {
+                if (alpha2 <= hit2Max - speedRotation)
+                    RotateArm12(1);
+                else if (alpha2 < hit2Max)
+                    RotateArm12((hit2Max - alpha2) / speedRotation);
+            }
+        }
+
+        //Поворот второй стрелы с неподвижной первой
+        if (Input.GetKey(KeyCode.I))
+        {
+            if (allowRotation)
+            {
+                if (alpha2 >= hit2Min + speedRotation)
+                    RotateArm12(-1);
+                else if (alpha2 > hit2Min)
+                    RotateArm12((hit2Min - alpha2) / speedRotation);
+            }
+        }
+
+        //Излом
+        if (Input.GetKey(KeyCode.F))
+        {
+            if (allowRotation)
+                Fracture(1);
+        }
+
+        //Излом
+        if (Input.GetKey(KeyCode.G))
+        {
+            if (allowRotation)
+                Fracture(-1);
+        }
+
+        //Поворот четвертой стрелы с неподвижным изломом
+        if (Input.GetKey(KeyCode.J))
+        {
+            Debug.Log(string.Format("{0}", alpha5 * Mathf.Rad2Deg));
+            RotateArm34(1);
+        }
+
+        //Поворот четвертой стрелы с неподвижным изломом
+        if (Input.GetKey(KeyCode.H))
+        {
+            Debug.Log(string.Format("{0}", alpha5 * Mathf.Rad2Deg));
+            RotateArm34(-1);
+        }
+
+        //Поворот основания
+        if (Input.GetKey(KeyCode.R))
+        {
+            if (allowRotation)
+                RotateBase(1);
+        }
+
+        //Поворот основания
+        if (Input.GetKey(KeyCode.T))
+        {
+            if (allowRotation)
+                RotateBase(-1);
+        }
+
+        //Поднятие лап
+        if (Input.GetKey(KeyCode.E))
+        {
+            if (Mathf.Abs(alphaFR) >= hitFootMin + speedRotation)
+            {
+                RaiseFoot(1);
+            }
+            else if (Mathf.Abs(alphaFR) > hitFootMin)
+            {
+                RaiseFoot((Mathf.Abs(alphaFR) - hitFootMin) / speedRotation);
+            }
+            allowRotation = false;
+            allowMove = true;
+        }
+
+        //Опускание лап
+        if (Input.GetKey(KeyCode.Q))
+        {
+            if (Mathf.Abs(alphaFR) <= hitFootMax - speedRotation)
+            {
+                RaiseFoot(-1);
+            }
+            else if (Mathf.Abs(alphaFR) < hitFootMax)
+            {
+                RaiseFoot((Mathf.Abs(alphaFR) - hitFootMax) / speedRotation);
+            }
+            if (Mathf.Abs(alphaFR) < hitFootMax && Mathf.Abs(alphaFR) > hitFootMax - speedRotation)
+            {
+                allowRotation = true;
+                allowMove = false;
+            }
+        }
+    }
+
+    void TieObjiects()
+    {
+        player = GameObject.Find("MainGameObject");
+        body = GameObject.Find("body");
+        cameras = GameObject.Find("camers");
+
+        arm0 = GameObject.Find("arm0");
+        arm1 = GameObject.Find("arm1");
+        arm2 = GameObject.Find("arm2");
+        arm3 = GameObject.Find("arm3");
+        arm4 = GameObject.Find("arm4");
+        arm5 = GameObject.Find("arm5");
+        arm6 = GameObject.Find("arm6");
+
+        link1 = GameObject.Find("link1");
+        link2 = GameObject.Find("link2");
+        link3 = GameObject.Find("link3");
+        link4 = GameObject.Find("link4");
+        link5 = GameObject.Find("link5");
+        link6 = GameObject.Find("link6");
+
+        cylinder1 = GameObject.Find("cylinder1");
+        cylinder2 = GameObject.Find("cylinder2");
+        cylinder3 = GameObject.Find("cylinder3");
+        cylinder5 = GameObject.Find("cylinder5");
+        cylinder7 = GameObject.Find("cylinder7");
+
+        piston1 = GameObject.Find("piston1");
+        piston2 = GameObject.Find("piston2");
+        piston3 = GameObject.Find("piston3");
+        piston5 = GameObject.Find("piston5");
+        piston7 = GameObject.Find("piston7");
+
+
+        fixed3 = GameObject.Find("fixed3");
+        fixed5 = GameObject.Find("fixed5");
+        fixed6 = GameObject.Find("fixed6");
+        clutch5 = GameObject.Find("clutch5");
+        clutch6 = GameObject.Find("clutch6");
+
+        //Связывание лап
+        {
+            footFR = GameObject.Find("footFR");
+            cylinderFR = GameObject.Find("cylinderFR");
+            pistonFR = GameObject.Find("pistonFR");
+
+            footBL = GameObject.Find("footBL");
+            cylinderBL = GameObject.Find("cylinderBL");
+            pistonBL = GameObject.Find("pistonBL");
+
+            footBR = GameObject.Find("footBR");
+            cylinderBR = GameObject.Find("cylinderBR");
+            pistonBR = GameObject.Find("pistonBR");
+
+            footFL = GameObject.Find("footFL");
+            cylinderFL = GameObject.Find("cylinderFL");
+            pistonFL = GameObject.Find("pistonFL");
+        }
+    }
+
+    void SetSize()
+    {
+        float h;
+        alpha0 = 0;
+
+        //Размеры для первой стрелы
+        {
+            h = DistanceYZ(cylinder1, piston1);
+            l1 = DistanceYZ(cylinder1, link1);
+            d1 = DistanceYZ(piston1, link1);
+            alpha1 = Mathf.Acos((l1 * l1 + d1 * d1 - h * h) / (2 * l1 * d1));
+            beta1 = CalcBeta(l1, d1, h, alpha1);
+            gamma1 = PI - alpha1 - beta1;
+        }
+        //Размеры для второй стрелы
+        {
+            h = DistanceYZ(cylinder2, piston2);
+            l2 = DistanceYZ(cylinder2, link2);
+            d2 = DistanceYZ(piston2, link2);
+            alpha2 = Mathf.Acos((l2 * l2 + d2 * d2 - h * h) / (2 * l2 * d2));
+            beta2 = CalcBeta(l2, d2, h, alpha2);
+            gamma2 = PI - alpha2 - beta2;
+        }
+
+
+        //Размеры для излома
+        {/*
+            h = DistanceYZ(cylinder3, piston3);
+            l3 = DistanceYZ(cylinder3, link3);
+            d3 = DistanceYZ(piston3, link3);
+            alpha3 = Mathf.Acos((l3 * l3 + d3 * d3 - h * h) / (2 * l3 * d3));
+            beta3 = CalcBeta(l3, d3, h, alpha3);
+            gamma3 = PI - alpha3 - beta3;*/
+        }
+
+        //Размеры для четвертой стрелы
+        {
+            OA5 = DistanceYZ(fixed5, cylinder5);
+            OB5 = DistanceYZ(fixed5, piston5);
+            h = DistanceYZ(piston5, cylinder5);
+            alpha5 = Mathf.Acos((OA5 * OA5 + OB5 * OB5 - h * h) / (2 * OB5 * OA5));
+            beta5 = CalcBeta(OA5, OB5, h, alpha5);
+            gamma5 = PI - alpha5 - beta5;
+            OC5 = DistanceYZ(fixed5, link5);
+            BD5 = DistanceYZ(piston5, clutch5);
+            CD5 = DistanceYZ(link5, clutch5);
+            h = DistanceYZ(piston5, link5);
+            psi51 = Mathf.Acos((OC5 * OC5 - OB5 * OB5 + h * h) / (2 * h * OC5));
+            psi52 = Mathf.Acos((CD5 * CD5 - BD5 * BD5 + h * h) / (2 * h * CD5));
+            phi5 = Mathf.Acos((BD5 * BD5 + CD5 * CD5 - h * h) / (2 * BD5 * CD5));
+        }
+
+        //Размеры лап
+        {
+            h = DistanceXYZ(cylinderFR, pistonFR);
+            lFR = DistanceXYZ(cylinderFR, footFR);
+            dFR = DistanceXYZ(pistonFR, footFR);
+            alphaFR = Mathf.Acos((lFR * lFR + dFR * dFR - h * h) / (2 * lFR * dFR));
+            betaFR = CalcBeta(lFR, dFR, h, alphaFR);
+            gammaFR = PI - alphaFR - betaFR;
+
+            h = DistanceXYZ(cylinderFL, pistonFL);
+            lFL = DistanceXYZ(cylinderFL, footFL);
+            dFL = DistanceXYZ(pistonFL, footFL);
+            alphaFL = Mathf.Acos((lFL * lFL + dFL * dFL - h * h) / (2 * lFL * dFL));
+            betaFL = CalcBeta(lFL, dFL, h, alphaFL);
+            gammaFL = PI - alphaFL - betaFL;
+
+            h = DistanceXYZ(cylinderBR, pistonBR);
+            lBR = DistanceXYZ(cylinderBR, footBR);
+            dBR = DistanceXYZ(pistonBR, footBR);
+            alphaBR = Mathf.Acos((lBR * lBR + dBR * dBR - h * h) / (2 * lBR * dBR));
+            betaBR = CalcBeta(lBR, dBR, h, alphaBR);
+            gammaBR = PI - alphaBR - betaBR;
+
+            h = DistanceXYZ(cylinderBL, pistonBL);
+            lBL = DistanceXYZ(cylinderBL, footBL);
+            dBL = DistanceXYZ(pistonBL, footBL);
+            alphaBL = Mathf.Acos((lBL * lBL + dBL * dBL - h * h) / (2 * lBL * dBL));
+            betaBL = CalcBeta(lBL, dBL, h, alphaBL);
+            gammaBL = PI - alphaBL - betaBL;
+        }
+    }
+
+    // Расстояние между точками в параллельных плоскостях
+    float DistanceYZ(GameObject A, GameObject B)
+    {
+        float Y = A.transform.position.y - B.transform.position.y;
+        float Z = A.transform.position.z - B.transform.position.z;
+        float dist = Mathf.Sqrt(Y * Y + Z * Z);
+        return dist;
+    }
+
+    // Расстояние между точками в пространстве
+    float DistanceXYZ(GameObject A, GameObject B)
+    {
+        float X = A.transform.position.x - B.transform.position.x;
+        float Y = A.transform.position.y - B.transform.position.y;
+        float Z = A.transform.position.z - B.transform.position.z;
+        float dist = Mathf.Sqrt(X * X + Y * Y + Z * Z);
+        return dist;
+    }
+
+    // Вычисление угла Бета по теореме косинусов
+    float CalcBeta(float l, float d, float h, float alpha)
+    {
+        float cos = (l * l + h * h - d * d) / (2 * h * l);
+        float sin = Mathf.Sin(alpha) / h * d;
+        float result = Mathf.Atan2(sin, cos);
+        return result;
+    }
+
+    // Вычисление расстояния между осями соосных цилиндра и поршня по теореме косинусов
+    float DistanceThCosine(float l, float d, float alpha)
+    {
+        float result = Mathf.Sqrt(l * l + d * d - 2 * d * l * Mathf.Cos(alpha));
+        return result;
+    }
+}
+
