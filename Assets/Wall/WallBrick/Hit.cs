@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class Hit : MonoBehaviour
 {
-    public float Radius;
-    public float Force;
+    public float radius;
+    public float force;
 
     void Update()   
     {
-        Collider[] hitColliders = Physics.OverlapSphere(transform.position, Radius);
+        Collider[] hitColliders = Physics.OverlapSphere(transform.position, radius);
         for (int i = 0; i < hitColliders.Length; i++)
         {
             if (hitColliders[i].GetComponent<Destr>())
@@ -19,14 +19,15 @@ public class Hit : MonoBehaviour
             if (hitColliders[i].CompareTag("CanBer"))
             {
                 hitColliders[i].gameObject.AddComponent<Rigidbody>();
+                 Rigidbody rb = hitColliders[i].GetComponent<Rigidbody>();
+                rb.AddExplosionForce(force, transform.position, radius, 3.0F);
             }
         }
-
     }
     void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, Radius);
+        Gizmos.DrawWireSphere(transform.position, radius);
     }
 
 }
