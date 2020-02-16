@@ -23,7 +23,7 @@ public class ChangeCamera : MonoBehaviour {
 
     void Update()
     {
-        if (Input.GetMouseButtonUp(0))//Input.GetKey(KeyCode.C))
+        if (Input.GetKeyDown(KeyCode.RightBracket))
         {
             currentCamera++;
             if (currentCamera < cameraList.Length)
@@ -35,6 +35,21 @@ public class ChangeCamera : MonoBehaviour {
             {
                 cameraList[currentCamera - 1].gameObject.SetActive(false);
                 currentCamera = 0;
+                cameraList[currentCamera].gameObject.SetActive(true);
+            }
+        }
+        if (Input.GetKeyDown(KeyCode.LeftBracket))
+        {
+            currentCamera--;
+            if (currentCamera >= 0)
+            {
+                cameraList[currentCamera + 1].gameObject.SetActive(false);
+                cameraList[currentCamera].gameObject.SetActive(true);
+            }
+            else
+            {
+                cameraList[currentCamera + 1].gameObject.SetActive(false);
+                currentCamera = cameraList.Length - 1;
                 cameraList[currentCamera].gameObject.SetActive(true);
             }
         }

@@ -41,7 +41,11 @@ public class GeneralCenterOfMass : MonoBehaviour
     {
         foreach (Transform child in localTransform)
         {
-            if (child.GetComponent<CenterOfMass>()) list.Add(child.GetComponent<CenterOfMass>());
+            if (child.GetComponent<CenterOfMass>())
+            {
+                foreach (CenterOfMass center in child.GetComponents<CenterOfMass>())
+                list.Add(center);
+            }
             if (child.childCount > 0) FindAllChildrenWithCenterOfMass(child);
         }
     }

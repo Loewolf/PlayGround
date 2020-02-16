@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Example : MonoBehaviour
 {
@@ -68,7 +69,6 @@ public class Example : MonoBehaviour
     public bool allowRotation;
     public bool allowMove;
 
-
     public float hitFootMin, //для лап
                  hitFootMax,
                  hit1Min,
@@ -103,10 +103,32 @@ public class Example : MonoBehaviour
                     alphaRoll, betaRoll, gammaRoll, lRoll, dRoll,
                     alphaYaw;
 
-    // Use this for initialization
+
+    [Header("Самопересечения")]
+    public BoxMainObject test;
+    [Header("Навесное оборудование")]
+    public Transform join;
+    public Camera joinCamera;
+    public float cameraTurnOnDistance; // Дистанция, при которой включается камера для отслеживания соединения
+    public float distanceToConnect; // Дистанция, при которой соединение возможно
+    public MaskableGraphic joinCameraUI; // должна иметь дочерний объект Text
+    public Text joinCameraText;
+
+    public Color colorNotConnect;
+    public Color colorConnect;
+
+    private GeneralCenterOfMass generalCenterOfMass;
+    private List<Accessory> accessories;
+    private Accessory accessory;
+    private bool selected = false;
+    private bool equipped = false;
+    private float distance;
+
     void Start()
     {
         TieObjiects();
+
+        generalCenterOfMass = GetComponent<GeneralCenterOfMass>();
 
         speedRotation = 0.5f * Time.deltaTime;
         speed = 2.5f * Time.deltaTime;
@@ -118,9 +140,121 @@ public class Example : MonoBehaviour
 
         allowRotation = false;
         allowMove = true;
+
+        accessory = null;
+        accessories = new List<Accessory>();
     }
 
-    // Обработка нажтия клавиш
+    // Для событий, не связанных с физикой напрямую
+    private void Update()
+    {
+        if (!equipped)
+            if (!selected)
+            {
+                if (accessories.Count > 0)
+                {
+                    foreach (Accessory ac in accessories)
+                    {
+                        float dist = Vector3.Magnitude(join.position - ac.transform.position);
+                        if (dist < cameraTurnOnDistance)
+                        {
+                            accessory = ac;
+                            joinCamera.enabled = true;
+                            joinCameraUI.gameObject.SetActive(true);
+                            joinCameraText.text = dist.ToString("F8");
+                            selected = true;
+                            break;
+                        }
+                    }
+                }
+                else
+                {
+                    if (joinCamera.enabled == true)
+                    {
+                        TurnOffJoinCameraAndUI();
+                    }
+                }
+            }
+            else
+            {
+                distance = Vector3.Magnitude(join.position - accessory.transform.position);
+                if (distance >= cameraTurnOnDistance)
+                {
+                    accessory = null;
+                    TurnOffJoinCameraAndUI();
+                    selected = false;
+                }
+                else
+                {
+                    joinCameraText.text = distance.ToString("F8");
+                    if (distance < distanceToConnect)
+                    {
+                        joinCameraUI.color = colorConnect;
+                    }
+                    else
+                    {
+                        joinCameraUI.color = colorNotConnect;
+                    }
+                }
+            }
+        else
+        {
+            if (joinCamera.enabled == true)
+            {
+                TurnOffJoinCameraAndUI();
+            }
+        }
+
+        
+
+        //Присоединение/отсоединение навесного оборудования
+        if (Input.GetKeyDown(KeyCode.Slash))
+        {
+            if (!equipped)
+            {
+                if (selected)
+                {
+                    if (distance < distanceToConnect)
+                    {
+                        accessory.Equip(join, generalCenterOfMass.list);
+                        equipped = true;
+                        Debug.Log("Оборудование надето : " + accessory.name);
+                    }
+                    else
+                    {
+                        Debug.Log("Сократите дистанцию для присоединения");
+                    }
+                }
+            }
+            else
+            {
+                accessory.Unequip(generalCenterOfMass.list);
+                equipped = false;
+                Debug.Log("Снято оборудование");
+            }
+        }
+
+        if (equipped)
+        {
+            if (Input.GetKey(KeyCode.Mouse0))
+            {
+                accessory.FirstAction();
+            }
+
+            if (Input.GetKey(KeyCode.Mouse1))
+            {
+                accessory.SecondAction();
+            }
+        }
+    }
+
+    private void TurnOffJoinCameraAndUI()
+    {
+        joinCamera.enabled = false;
+        joinCameraUI.gameObject.SetActive(false);
+    }
+
+    // Обработка нажатия клавиш
     void FixedUpdate()
     {
         //Движение
@@ -159,14 +293,45 @@ public class Example : MonoBehaviour
         if (Input.GetKey(KeyCode.R))
         {
             if (allowRotation)
+            {
+                //перед вращением элементов робота сохраняем
+                //значение этих элементов
+                Vector3 tmpv_1 = arm0.transform.position;
+                Quaternion tmpq_1 = arm0.transform.rotation;
+                float tmpf_1 = alpha0;
+
+                //вращаем
                 RAM.RotateBase_Yaw(1, ref arm0, ref alpha0, speedRotation);
+
+                //если после вращения произошло самопересечение, то вовращаем все назад
+                if (test.DetectAllCollission())
+                {
+                    arm0.transform.position = tmpv_1;
+                    arm0.transform.rotation = tmpq_1;
+                    alpha0 = tmpf_1;
+                }
+            }
         }
 
         //Поворот основания
         if (Input.GetKey(KeyCode.T))
         {
             if (allowRotation)
+            {
+
+                Vector3 tmpv_1 = arm0.transform.position;
+                Quaternion tmpq_1 = arm0.transform.rotation;
+                float tmpf_1 = alpha0;
+
                 RAM.RotateBase_Yaw(-1, ref arm0, ref alpha0, speedRotation);
+                if (test.DetectAllCollission())
+                {
+                    arm0.transform.position = tmpv_1;
+                    arm0.transform.rotation = tmpq_1;
+                    alpha0 = tmpf_1;
+
+                }
+            }
         }
 
         //Поворот первой стрелы с неподвижной базой
@@ -174,6 +339,17 @@ public class Example : MonoBehaviour
         {
             if (allowRotation)
             {
+
+                Vector3 tmpV_arm1 = arm1.transform.position;
+                Quaternion tmpQ_arm1 = arm1.transform.rotation;
+                Vector3 tmpV_cylinder1 = cylinder1.transform.position;
+                Quaternion tmpQ_cylinder1 = cylinder1.transform.rotation;
+                Vector3 tmpV_piston1 = piston1.transform.position;
+                Quaternion tmpQ_piston1 = piston1.transform.rotation;
+                float tmp_a = alpha1;
+                float tmp_b = beta1;
+                float tmp_g = gamma1;
+
                 if (alpha1 <= hit1Max - speedRotation)
                     RAM.RotateArmEasy(1, ref arm1, ref cylinder1, ref piston1,
                         ref alpha1, ref beta1, ref gamma1,
@@ -182,6 +358,20 @@ public class Example : MonoBehaviour
                     RAM.RotateArmEasy((hit1Max - alpha1) / speedRotation, ref arm1, ref cylinder1, ref piston1,
                         ref alpha1, ref beta1, ref gamma1,
                         l1, d1, speedRotation);
+
+                if (test.DetectAllCollission())
+                {
+                    arm1.transform.position = tmpV_arm1;
+                    arm1.transform.rotation = tmpQ_arm1;
+                    cylinder1.transform.position = tmpV_cylinder1;
+                    cylinder1.transform.rotation = tmpQ_cylinder1;
+                    piston1.transform.position = tmpV_piston1;
+                    piston1.transform.rotation = tmpQ_piston1;
+                    alpha1 = tmp_a;
+                    beta1 = tmp_b;
+                    gamma1 = tmp_g;
+
+                }
             }
         }
 
@@ -190,6 +380,16 @@ public class Example : MonoBehaviour
         {
             if (allowRotation)
             {
+                Vector3 tmpV_arm1 = arm1.transform.position;
+                Quaternion tmpQ_arm1 = arm1.transform.rotation;
+                Vector3 tmpV_cylinder1 = cylinder1.transform.position;
+                Quaternion tmpQ_cylinder1 = cylinder1.transform.rotation;
+                Vector3 tmpV_piston1 = piston1.transform.position;
+                Quaternion tmpQ_piston1 = piston1.transform.rotation;
+                float tmp_a = alpha1;
+                float tmp_b = beta1;
+                float tmp_g = gamma1;
+
                 if (alpha1 >= hit1Min + speedRotation)
                     RAM.RotateArmEasy(-1, ref arm1, ref cylinder1, ref piston1,
                         ref alpha1, ref beta1, ref gamma1,
@@ -198,15 +398,38 @@ public class Example : MonoBehaviour
                     RAM.RotateArmEasy((hit1Min - alpha1) / speedRotation, ref arm1, ref cylinder1, ref piston1,
                         ref alpha1, ref beta1, ref gamma1,
                         l1, d1, speedRotation);
+
+                if (test.DetectAllCollission())
+                {
+                    arm1.transform.position = tmpV_arm1;
+                    arm1.transform.rotation = tmpQ_arm1;
+                    cylinder1.transform.position = tmpV_cylinder1;
+                    cylinder1.transform.rotation = tmpQ_cylinder1;
+                    piston1.transform.position = tmpV_piston1;
+                    piston1.transform.rotation = tmpQ_piston1;
+                    alpha1 = tmp_a;
+                    beta1 = tmp_b;
+                    gamma1 = tmp_g;
+
+                }
             }
         }
 
         //Поворот второй стрелы с неподвижной первой
         if (Input.GetKey(KeyCode.O))
         {
-
             if (allowRotation)
             {
+                Vector3 tmpV_arm = arm2.transform.position;
+                Quaternion tmpQ_arm = arm2.transform.rotation;
+                Vector3 tmpV_cylinder = cylinder2.transform.position;
+                Quaternion tmpQ_cylinder = cylinder2.transform.rotation;
+                Vector3 tmpV_piston = piston2.transform.position;
+                Quaternion tmpQ_piston = piston2.transform.rotation;
+                float tmp_a = alpha2;
+                float tmp_b = beta2;
+                float tmp_g = gamma2;
+
                 if (alpha2 <= hit2Max - speedRotation)
                     RAM.RotateArmEasy(1, ref arm2, ref cylinder2, ref piston2,
                         ref alpha2, ref beta2, ref gamma2,
@@ -215,6 +438,20 @@ public class Example : MonoBehaviour
                     RAM.RotateArmEasy((hit2Max - alpha2) / speedRotation, ref arm2, ref cylinder2, ref piston2,
                         ref alpha2, ref beta2, ref gamma2,
                         l2, d2, speedRotation);
+
+                if (test.DetectAllCollission())
+                {
+                    arm2.transform.position = tmpV_arm;
+                    arm2.transform.rotation = tmpQ_arm;
+                    cylinder2.transform.position = tmpV_cylinder;
+                    cylinder2.transform.rotation = tmpQ_cylinder;
+                    piston2.transform.position = tmpV_piston;
+                    piston2.transform.rotation = tmpQ_piston;
+                    alpha2 = tmp_a;
+                    beta2 = tmp_b;
+                    gamma2 = tmp_g;
+
+                }
             }
         }
 
@@ -223,6 +460,16 @@ public class Example : MonoBehaviour
         {
             if (allowRotation)
             {
+                Vector3 tmpV_arm = arm2.transform.position;
+                Quaternion tmpQ_arm = arm2.transform.rotation;
+                Vector3 tmpV_cylinder = cylinder2.transform.position;
+                Quaternion tmpQ_cylinder = cylinder2.transform.rotation;
+                Vector3 tmpV_piston = piston2.transform.position;
+                Quaternion tmpQ_piston = piston2.transform.rotation;
+                float tmp_a = alpha2;
+                float tmp_b = beta2;
+                float tmp_g = gamma2;
+
                 if (alpha2 >= hit2Min + speedRotation)
                     RAM.RotateArmEasy(-1, ref arm2, ref cylinder2, ref piston2,
                        ref alpha2, ref beta2, ref gamma2,
@@ -231,6 +478,20 @@ public class Example : MonoBehaviour
                     RAM.RotateArmEasy((hit2Min - alpha2) / speedRotation, ref arm2, ref cylinder2, ref piston2,
                        ref alpha2, ref beta2, ref gamma2,
                        l2, d2, speedRotation);
+
+                if (test.DetectAllCollission())
+                {
+                    arm2.transform.position = tmpV_arm;
+                    arm2.transform.rotation = tmpQ_arm;
+                    cylinder2.transform.position = tmpV_cylinder;
+                    cylinder2.transform.rotation = tmpQ_cylinder;
+                    piston2.transform.position = tmpV_piston;
+                    piston2.transform.rotation = tmpQ_piston;
+                    alpha2 = tmp_a;
+                    beta2 = tmp_b;
+                    gamma2 = tmp_g;
+
+                }
             }
         }
 
@@ -239,6 +500,18 @@ public class Example : MonoBehaviour
         {
             if (allowRotation)
             {
+                Vector3 tmpV_arm = arm3.transform.position;
+                Quaternion tmpQ_arm = arm3.transform.rotation;
+                Vector3 tmpV_cylinder = cylinder3.transform.position;
+                Quaternion tmpQ_cylinder = cylinder3.transform.rotation;
+                Vector3 tmpV_piston = piston3.transform.position;
+                Quaternion tmpQ_piston = piston3.transform.rotation;
+                Vector3 tmpV_fixed = fixed3.transform.position;
+                Quaternion tmpQ_fixed = fixed3.transform.rotation;
+                float tmp_a = alpha3;
+                float tmp_b = beta3;
+                float tmp_g = gamma3;
+
                 if (alpha3 >= hitFractureMin + speedRotation)
                     RAM.Fracture(1, ref arm3, ref arm4, ref cylinder3, ref piston3, ref fixed3,
                         ref alpha3, ref beta3, ref gamma3,
@@ -247,6 +520,22 @@ public class Example : MonoBehaviour
                     RAM.Fracture((alpha3 - hitFractureMin) / speedRotation, ref arm3, ref arm4, ref cylinder3, ref piston3, ref fixed3,
                        ref alpha3, ref beta3, ref gamma3,
                        l3, d3, speedRotation);
+
+                if (test.DetectAllCollission())
+                {
+                    arm3.transform.position = tmpV_arm;
+                    arm3.transform.rotation = tmpQ_arm;
+                    cylinder3.transform.position = tmpV_cylinder;
+                    cylinder3.transform.rotation = tmpQ_cylinder;
+                    piston3.transform.position = tmpV_piston;
+                    piston3.transform.rotation = tmpQ_piston;
+                    fixed3.transform.position = tmpV_fixed;
+                    fixed3.transform.rotation = tmpQ_fixed;
+                    alpha3 = tmp_a;
+                    beta3 = tmp_b;
+                    gamma3 = tmp_g;
+
+                }
             }
         }
 
@@ -255,6 +544,18 @@ public class Example : MonoBehaviour
         {
             if (allowRotation)
             {
+                Vector3 tmpV_arm = arm3.transform.position;
+                Quaternion tmpQ_arm = arm3.transform.rotation;
+                Vector3 tmpV_cylinder = cylinder3.transform.position;
+                Quaternion tmpQ_cylinder = cylinder3.transform.rotation;
+                Vector3 tmpV_piston = piston3.transform.position;
+                Quaternion tmpQ_piston = piston3.transform.rotation;
+                Vector3 tmpV_fixed = fixed3.transform.position;
+                Quaternion tmpQ_fixed = fixed3.transform.rotation;
+                float tmp_a = alpha3;
+                float tmp_b = beta3;
+                float tmp_g = gamma3;
+
                 if (alpha3 <= hitFractureMax - speedRotation)
                     RAM.Fracture(-1, ref arm3, ref arm4, ref cylinder3, ref piston3, ref fixed3,
                        ref alpha3, ref beta3, ref gamma3,
@@ -263,8 +564,23 @@ public class Example : MonoBehaviour
                     RAM.Fracture((alpha3 - hitFractureMax) / speedRotation, ref arm3, ref arm4, ref cylinder3, ref piston3, ref fixed3,
                        ref alpha3, ref beta3, ref gamma3,
                        l3, d3, speedRotation);
-            }
 
+                if (test.DetectAllCollission())
+                {
+                    arm3.transform.position = tmpV_arm;
+                    arm3.transform.rotation = tmpQ_arm;
+                    cylinder3.transform.position = tmpV_cylinder;
+                    cylinder3.transform.rotation = tmpQ_cylinder;
+                    piston3.transform.position = tmpV_piston;
+                    piston3.transform.rotation = tmpQ_piston;
+                    fixed3.transform.position = tmpV_fixed;
+                    fixed3.transform.rotation = tmpQ_fixed;
+                    alpha3 = tmp_a;
+                    beta3 = tmp_b;
+                    gamma3 = tmp_g;
+
+                }
+            }
         }
 
         //Поворот четвертой стрелы с неподвижным изломом
@@ -272,6 +588,21 @@ public class Example : MonoBehaviour
         {
             if (allowRotation)
             {
+                Vector3 tmpV_arm = arm5.transform.position;
+                Quaternion tmpQ_arm = arm5.transform.rotation;
+                Vector3 tmpV_cylinder = cylinder5.transform.position;
+                Quaternion tmpQ_cylinder = cylinder5.transform.rotation;
+                Vector3 tmpV_fixed = fixed5.transform.position;
+                Quaternion tmpQ_fixed = fixed5.transform.rotation;
+                Vector3 tmpV_clutch = clutch5.transform.position;
+                Quaternion tmpQ_clutch = clutch5.transform.rotation;
+                float tmp_a = alpha5;
+                float tmp_b = beta5;
+                float tmp_t = theta5;
+                float tmp_phi = phi5;
+                float tmp_psi51 = psi51;
+                float tmp_psi52 = psi52;
+
                 if (alpha5 >= hit5Min + speedRotation)
                     RAM.RotateArmHard_Pitch(1, ref arm5, ref cylinder5, ref piston5, ref clutch5, ref fixed5,
                         ref alpha5, ref beta5, ref gamma5, ref theta5, ref phi5, ref psi51, ref psi52,
@@ -280,6 +611,25 @@ public class Example : MonoBehaviour
                     RAM.RotateArmHard_Pitch((alpha5 - hit5Min) / speedRotation, ref arm5, ref cylinder5, ref piston5, ref clutch5, ref fixed5,
                         ref alpha5, ref beta5, ref gamma5, ref theta5, ref phi5, ref psi51, ref psi52,
                         OA5, OB5, OC5, BD5, CD5, speedRotation);
+
+                if (test.DetectAllCollission())
+                {
+                    arm5.transform.position = tmpV_arm;
+                    arm5.transform.rotation = tmpQ_arm;
+                    cylinder5.transform.position = tmpV_cylinder;
+                    cylinder5.transform.rotation = tmpQ_cylinder;
+                    fixed5.transform.position = tmpV_fixed;
+                    fixed5.transform.rotation = tmpQ_fixed;
+                    clutch5.transform.position = tmpV_clutch;
+                    clutch5.transform.rotation = tmpQ_clutch;
+                    alpha5 = tmp_a;
+                    beta5 = tmp_b;
+                    theta5 = tmp_t;
+                    phi5 = tmp_phi;
+                    psi51 = tmp_psi51;
+                    psi52 = tmp_psi52;
+
+                }
             }
         }
 
@@ -288,6 +638,21 @@ public class Example : MonoBehaviour
         {
             if (allowRotation)
             {
+                Vector3 tmpV_arm = arm5.transform.position;
+                Quaternion tmpQ_arm = arm5.transform.rotation;
+                Vector3 tmpV_cylinder = cylinder5.transform.position;
+                Quaternion tmpQ_cylinder = cylinder5.transform.rotation;
+                Vector3 tmpV_fixed = fixed5.transform.position;
+                Quaternion tmpQ_fixed = fixed5.transform.rotation;
+                Vector3 tmpV_clutch = clutch5.transform.position;
+                Quaternion tmpQ_clutch = clutch5.transform.rotation;
+                float tmp_a = alpha5;
+                float tmp_b = beta5;
+                float tmp_t = theta5;
+                float tmp_phi = phi5;
+                float tmp_psi51 = psi51;
+                float tmp_psi52 = psi52;
+
                 if (alpha5 <= hit5Max - speedRotation)
                     RAM.RotateArmHard_Pitch(-1, ref arm5, ref cylinder5, ref piston5, ref clutch5, ref fixed5,
                        ref alpha5, ref beta5, ref gamma5, ref theta5, ref phi5, ref psi51, ref psi52,
@@ -296,6 +661,26 @@ public class Example : MonoBehaviour
                     RAM.RotateArmHard_Pitch((alpha5 - hit5Max) / speedRotation, ref arm5, ref cylinder5, ref piston5, ref clutch5, ref fixed5,
                        ref alpha5, ref beta5, ref gamma5, ref theta5, ref phi5, ref psi51, ref psi52,
                        OA5, OB5, OC5, BD5, CD5, speedRotation);
+
+                if (test.DetectAllCollission())
+                {
+                    arm5.transform.position = tmpV_arm;
+                    arm5.transform.rotation = tmpQ_arm;
+                    cylinder5.transform.position = tmpV_cylinder;
+                    cylinder5.transform.rotation = tmpQ_cylinder;
+                    fixed5.transform.position = tmpV_fixed;
+                    fixed5.transform.rotation = tmpQ_fixed;
+                    clutch5.transform.position = tmpV_clutch;
+                    clutch5.transform.rotation = tmpQ_clutch;
+
+                    alpha5 = tmp_a;
+                    beta5 = tmp_b;
+                    theta5 = tmp_t;
+                    phi5 = tmp_phi;
+                    psi51 = tmp_psi51;
+                    psi52 = tmp_psi52;
+
+                }
             }
         }
 
@@ -304,10 +689,21 @@ public class Example : MonoBehaviour
         {
             if (allowRotation)
             {
+                Vector3 tmpV_arm = arm6.transform.position;
+                Quaternion tmpQ_arm = arm6.transform.rotation;
+                float tmp_l = l6;
+
                 if (l6 <= hit6Max - speedElongation)
                     RAM.Elongation(1, ref arm6, ref l6, speedElongation);
                 else if (l6 < hit6Max)
                     RAM.Elongation((hit6Max - l6) / speedElongation, ref arm6, ref l6, speedElongation);
+
+                if (test.DetectAllCollission())
+                {
+                    arm6.transform.position = tmpV_arm;
+                    arm6.transform.rotation = tmpQ_arm;
+                    l6 = tmp_l;
+                }
             }
         }
 
@@ -316,10 +712,21 @@ public class Example : MonoBehaviour
         {
             if (allowRotation)
             {
+                Vector3 tmpV_arm = arm6.transform.position;
+                Quaternion tmpQ_arm = arm6.transform.rotation;
+                float tmp_l = l6;
+
                 if (l6 >= hit6Min + speedElongation)
                     RAM.Elongation(-1, ref arm6, ref l6, speedElongation);
                 else if (l6 > hit6Min)
                     RAM.Elongation((hit6Min - l6) / speedElongation, ref arm6, ref l6, speedElongation);
+
+                if (test.DetectAllCollission())
+                {
+                    arm6.transform.position = tmpV_arm;
+                    arm6.transform.rotation = tmpQ_arm;
+                    l6 = tmp_l;
+                }
             }
         }
 
@@ -328,6 +735,24 @@ public class Example : MonoBehaviour
         {
             if (allowRotation)
             {
+                Vector3 tmpV_cylinder = cylinder7.transform.position;
+                Quaternion tmpQ_cylinder = cylinder7.transform.rotation;
+                Vector3 tmpV_piston = piston7.transform.position;
+                Quaternion tmpQ_piston = piston7.transform.rotation;
+                Vector3 tmpV_fixed = fixed7.transform.position;
+                Quaternion tmpQ_fixed = fixed7.transform.rotation;
+                Vector3 tmpV_clutch = clutch7.transform.position;
+                Quaternion tmpQ_clutch = clutch7.transform.rotation;
+                Vector3 tmpV_pitcher = pitcher.transform.position;
+                Quaternion tmpQ_pitcher = pitcher.transform.rotation;
+                float tmp_b = beta7;
+                float tmp_g = gamma7;
+                float tmp_t = theta7;
+                float tmp_phi = phi7;
+                float tmp_psi51 = psi71;
+                float tmp_psi52 = psi72;
+                float tmp_p = alphaPitch;
+
                 if (alphaPitch >= hitPitchMin + speedRotation)
                     RAM.RotateArmHard_Pitch(1, ref pitcher, ref cylinder7, ref piston7, ref clutch7, ref fixed7,
                         ref alphaPitch, ref beta7, ref gamma7, ref theta7, ref phi7, ref psi71, ref psi72,
@@ -336,6 +761,29 @@ public class Example : MonoBehaviour
                     RAM.RotateArmHard_Pitch((alphaPitch - hitPitchMin) / speedRotation, ref pitcher, ref cylinder7, ref piston7, ref clutch7, ref fixed7,
                         ref alphaPitch, ref beta7, ref gamma7, ref theta7, ref phi7, ref psi71, ref psi72,
                         OA7, OB7, OC7, BD7, CD7, speedRotation);
+
+                if (test.DetectAllCollission())
+                {
+
+                    cylinder7.transform.position = tmpV_cylinder;
+                    cylinder7.transform.rotation = tmpQ_cylinder;
+                    piston7.transform.position = tmpV_piston;
+                    piston7.transform.rotation = tmpQ_piston;
+                    fixed7.transform.position = tmpV_fixed;
+                    fixed7.transform.rotation = tmpQ_fixed;
+                    clutch7.transform.position = tmpV_clutch;
+                    clutch7.transform.rotation = tmpQ_clutch;
+                    pitcher.transform.position = tmpV_pitcher;
+                    pitcher.transform.rotation = tmpQ_pitcher;
+
+                    beta5 = tmp_b;
+                    gamma5 = tmp_g;
+                    theta5 = tmp_t;
+                    phi5 = tmp_phi;
+                    psi51 = tmp_psi51;
+                    psi52 = tmp_psi52;
+                    alphaPitch = tmp_p;
+                }
             }
         }
 
@@ -344,6 +792,24 @@ public class Example : MonoBehaviour
         {
             if (allowRotation)
             {
+                Vector3 tmpV_cylinder = cylinder7.transform.position;
+                Quaternion tmpQ_cylinder = cylinder7.transform.rotation;
+                Vector3 tmpV_piston = piston7.transform.position;
+                Quaternion tmpQ_piston = piston7.transform.rotation;
+                Vector3 tmpV_fixed = fixed7.transform.position;
+                Quaternion tmpQ_fixed = fixed7.transform.rotation;
+                Vector3 tmpV_clutch = clutch7.transform.position;
+                Quaternion tmpQ_clutch = clutch7.transform.rotation;
+                Vector3 tmpV_pitcher = pitcher.transform.position;
+                Quaternion tmpQ_pitcher = pitcher.transform.rotation;
+                float tmp_b = beta7;
+                float tmp_g = gamma7;
+                float tmp_t = theta7;
+                float tmp_phi = phi7;
+                float tmp_psi51 = psi71;
+                float tmp_psi52 = psi72;
+                float tmp_p = alphaPitch;
+
                 if (alphaPitch <= hitPitchMax - speedRotation)
                     RAM.RotateArmHard_Pitch(-1, ref pitcher, ref cylinder7, ref piston7, ref clutch7, ref fixed7,
                         ref alphaPitch, ref beta7, ref gamma7, ref theta7, ref phi7, ref psi71, ref psi72,
@@ -352,6 +818,28 @@ public class Example : MonoBehaviour
                     RAM.RotateArmHard_Pitch((alphaPitch - hitPitchMax) / speedRotation, ref pitcher, ref cylinder7, ref piston7, ref clutch7, ref fixed7,
                         ref alphaPitch, ref beta7, ref gamma7, ref theta7, ref phi7, ref psi71, ref psi72,
                         OA7, OB7, OC7, BD7, CD7, speedRotation);
+
+                if (test.DetectAllCollission())
+                {
+                    cylinder7.transform.position = tmpV_cylinder;
+                    cylinder7.transform.rotation = tmpQ_cylinder;
+                    piston7.transform.position = tmpV_piston;
+                    piston7.transform.rotation = tmpQ_piston;
+                    fixed7.transform.position = tmpV_fixed;
+                    fixed7.transform.rotation = tmpQ_fixed;
+                    clutch7.transform.position = tmpV_clutch;
+                    clutch7.transform.rotation = tmpQ_clutch;
+                    pitcher.transform.position = tmpV_pitcher;
+                    pitcher.transform.rotation = tmpQ_pitcher;
+
+                    beta5 = tmp_b;
+                    gamma5 = tmp_g;
+                    theta5 = tmp_t;
+                    phi5 = tmp_phi;
+                    psi51 = tmp_psi51;
+                    psi52 = tmp_psi52;
+                    alphaPitch = tmp_p;
+                }
             }
         }
 
@@ -360,6 +848,16 @@ public class Example : MonoBehaviour
         {
             if (allowRotation)
             {
+                Vector3 tmpV_roller = roller.transform.position;
+                Quaternion tmpQ_roller = roller.transform.rotation;
+                Vector3 tmpV_cylinderRoller = cylinderRoller.transform.position;
+                Quaternion tmpQ_cylinderRoller = cylinderRoller.transform.rotation;
+                Vector3 tmpV_pistonRoller = pistonRoller.transform.position;
+                Quaternion tmpQ_pistonRoller = pistonRoller.transform.rotation;
+                float tmp_alphaRoll = alphaRoll;
+                float tmp_betaRoll = betaRoll;
+                float tmp_gammaRoll = gammaRoll;
+
                 if (alphaRoll >= hitRollMin + speedRotation)
                     RAM.RotateRoll(1, ref roller, ref cylinderRoller, ref pistonRoller,
                        ref alphaRoll, ref betaRoll, ref gammaRoll,
@@ -368,6 +866,20 @@ public class Example : MonoBehaviour
                     RAM.RotateRoll((alphaRoll - hitRollMin) / speedRotation, ref roller, ref cylinderRoller, ref pistonRoller,
                        ref alphaRoll, ref betaRoll, ref gammaRoll,
                        lRoll, dRoll, speedRotation);
+
+                if (test.DetectAllCollission())
+                {
+                    pitcher.transform.position = tmpV_roller;
+                    pitcher.transform.rotation = tmpQ_roller;
+                    cylinderRoller.transform.position = tmpV_cylinderRoller;
+                    cylinderRoller.transform.rotation = tmpQ_cylinderRoller;
+                    pistonRoller.transform.position = tmpV_pistonRoller;
+                    pistonRoller.transform.rotation = tmpQ_pistonRoller;
+
+                    alphaRoll = tmp_alphaRoll;
+                    betaRoll = tmp_betaRoll;
+                    gammaRoll = tmp_gammaRoll;
+                }
             }
         }
 
@@ -376,6 +888,16 @@ public class Example : MonoBehaviour
         {
             if (allowRotation)
             {
+                Vector3 tmpV_roller = roller.transform.position;
+                Quaternion tmpQ_roller = roller.transform.rotation;
+                Vector3 tmpV_cylinderRoller = cylinderRoller.transform.position;
+                Quaternion tmpQ_cylinderRoller = cylinderRoller.transform.rotation;
+                Vector3 tmpV_pistonRoller = pistonRoller.transform.position;
+                Quaternion tmpQ_pistonRoller = pistonRoller.transform.rotation;
+                float tmp_alphaRoll = alphaRoll;
+                float tmp_betaRoll = betaRoll;
+                float tmp_gammaRoll = gammaRoll;
+
                 if (alphaRoll <= hitRollMax - speedRotation)
                     RAM.RotateRoll(-1, ref roller, ref cylinderRoller, ref pistonRoller,
                       ref alphaRoll, ref betaRoll, ref gammaRoll,
@@ -384,32 +906,109 @@ public class Example : MonoBehaviour
                     RAM.RotateRoll((alphaRoll - hitRollMax) / speedRotation, ref roller, ref cylinderRoller, ref pistonRoller,
                       ref alphaRoll, ref betaRoll, ref gammaRoll,
                       lRoll, dRoll, speedRotation);
+
+                if (test.DetectAllCollission())
+                {
+                    pitcher.transform.position = tmpV_roller;
+                    pitcher.transform.rotation = tmpQ_roller;
+                    cylinderRoller.transform.position = tmpV_cylinderRoller;
+                    cylinderRoller.transform.rotation = tmpQ_cylinderRoller;
+                    pistonRoller.transform.position = tmpV_pistonRoller;
+                    pistonRoller.transform.rotation = tmpQ_pistonRoller;
+
+                    alphaRoll = tmp_alphaRoll;
+                    betaRoll = tmp_betaRoll;
+                    gammaRoll = tmp_gammaRoll;
+                }
             }
         }
 
         //Рыскание НПУ
         if (Input.GetKey(KeyCode.N))
         {
+            Vector3 tmpV_yawer = yawer.transform.position;
+            Quaternion tmpQ_yawer = yawer.transform.rotation;
+            float tmp_alphaYaw = alphaYaw;
+
             if (allowRotation)
                 //RAM.RotateYaw(1, ref yawer, ref alphaYaw, speedRotation);
                 RAM.RotateBase_Yaw(1, ref yawer, ref alphaYaw, speedRotation);
+            if (test.DetectAllCollission())
+            {
+                yawer.transform.position = tmpV_yawer;
+                yawer.transform.rotation = tmpQ_yawer;
+
+                alphaYaw = tmp_alphaYaw;
+            }
         }
 
         //Рыскание НПУ
         if (Input.GetKey(KeyCode.B))
         {
+            Vector3 tmpV_yawer = yawer.transform.position;
+            Quaternion tmpQ_yawer = yawer.transform.rotation;
+            float tmp_alphaYaw = alphaYaw;
             if (allowRotation)
                 // RAM.RotateYaw(-1, ref yawer, ref alphaYaw, speedRotation);
                 RAM.RotateBase_Yaw(-1, ref yawer, ref alphaYaw, speedRotation);
+            if (test.DetectAllCollission())
+            {
+                yawer.transform.position = tmpV_yawer;
+                yawer.transform.rotation = tmpQ_yawer;
+
+                alphaYaw = tmp_alphaYaw;
+            }
         }
         
         //Поднятие лап
         if (Input.GetKey(KeyCode.E))
         {
+            Vector3 tmpV_footFR = footFR.transform.position;
+            Quaternion tmpQ_footFR = footFR.transform.rotation;
+            Vector3 tmpV_cylinderFR = cylinderFR.transform.position;
+            Quaternion tmpQ_cylinderFR = cylinderFR.transform.rotation;
+            Vector3 tmpV_pistonFR = pistonFR.transform.position;
+            Quaternion tmpQ_pistonFR = pistonFR.transform.rotation;
+            float tmp_alphaFR = alphaFR;
+            float tmp_betaFR = betaFR;
+            float tmp_gammaFR = gammaFR;
+
+            Vector3 tmpV_footFL = footFL.transform.position;
+            Quaternion tmpQ_footFL = footFL.transform.rotation;
+            Vector3 tmpV_cylinderFL = cylinderFL.transform.position;
+            Quaternion tmpQ_cylinderFL = cylinderFL.transform.rotation;
+            Vector3 tmpV_pistonFL = pistonFL.transform.position;
+            Quaternion tmpQ_pistonFL = pistonFL.transform.rotation;
+            float tmp_alphaFL = alphaFL;
+            float tmp_betaFL = betaFL;
+            float tmp_gammaFL = gammaFL;
+
+            Vector3 tmpV_footBR = footBR.transform.position;
+            Quaternion tmpQ_footBR = footBR.transform.rotation;
+            Vector3 tmpV_cylinderBR = cylinderBR.transform.position;
+            Quaternion tmpQ_cylinderBR = cylinderBR.transform.rotation;
+            Vector3 tmpV_pistonBR = pistonBR.transform.position;
+            Quaternion tmpQ_pistonBR = pistonBR.transform.rotation;
+            float tmp_alphaBR = alphaBR;
+            float tmp_betaBR = betaBR;
+            float tmp_gammaBR = gammaBR;
+
+            Vector3 tmpV_footBL = footBL.transform.position;
+            Quaternion tmpQ_footBL = footBL.transform.rotation;
+            Vector3 tmpV_cylinderBL = cylinderBL.transform.position;
+            Quaternion tmpQ_cylinderBL = cylinderBL.transform.rotation;
+            Vector3 tmpV_pistonBL = pistonBL.transform.position;
+            Quaternion tmpQ_pistonBL = pistonBL.transform.rotation;
+            float tmp_alphaBL = alphaBL;
+            float tmp_betaBL = betaBL;
+            float tmp_gammaBL = gammaBL;
+
+
             if (Mathf.Abs(alphaFR) >= hitFootMin + speedRotation)
             {
-                RAM.RaiseFoot(1,ref footFR, ref cylinderFR, ref pistonFR,
-                    ref alphaFR, ref betaFR, ref gammaFR, lFR,dFR,speedRotation);
+
+                RAM.RaiseFoot(1, ref footFR, ref cylinderFR, ref pistonFR,
+                    ref alphaFR, ref betaFR, ref gammaFR, lFR, dFR, speedRotation);
                 RAM.RaiseFoot(1, ref footFL, ref cylinderFL, ref pistonFL,
                     ref alphaFL, ref betaFL, ref gammaFL, lFL, dFL, speedRotation);
                 RAM.RaiseFoot(1, ref footBR, ref cylinderBR, ref pistonBR,
@@ -428,6 +1027,50 @@ public class Example : MonoBehaviour
                 RAM.RaiseFoot((Mathf.Abs(alphaFR) - hitFootMin) / speedRotation, ref footBL, ref cylinderBL, ref pistonBL,
                     ref alphaBL, ref betaBL, ref gammaBL, lBL, dBL, speedRotation);
             }
+            if (test.DetectAllCollission())
+            {
+                footFR.transform.position = tmpV_footFR;
+                footFR.transform.rotation = tmpQ_footFR;
+                cylinderFR.transform.position = tmpV_cylinderFR;
+                cylinderFR.transform.rotation = tmpQ_cylinderFR;
+                pistonFR.transform.position = tmpV_pistonFR;
+                pistonFR.transform.rotation = tmpQ_pistonFR;
+                alphaFR = tmp_alphaFR;
+                betaFR = tmp_betaFR;
+                gammaFR = tmp_gammaFR;
+
+                footFL.transform.position = tmpV_footFL;
+                footFL.transform.rotation = tmpQ_footFL;
+                cylinderFL.transform.position = tmpV_cylinderFL;
+                cylinderFL.transform.rotation = tmpQ_cylinderFL;
+                pistonFL.transform.position = tmpV_pistonFL;
+                pistonFL.transform.rotation = tmpQ_pistonFL;
+                alphaFL = tmp_alphaFL;
+                betaFL = tmp_betaFL;
+                gammaFL = tmp_gammaFL;
+
+                footBL.transform.position = tmpV_footBL;
+                footBL.transform.rotation = tmpQ_footBL;
+                cylinderBL.transform.position = tmpV_cylinderBL;
+                cylinderBL.transform.rotation = tmpQ_cylinderBL;
+                pistonBL.transform.position = tmpV_pistonBL;
+                pistonBL.transform.rotation = tmpQ_pistonBL;
+                alphaBL = tmp_alphaBL;
+                betaBL = tmp_betaBL;
+                gammaBL = tmp_gammaBL;
+
+                footBR.transform.position = tmpV_footBR;
+                footBR.transform.rotation = tmpQ_footBR;
+                cylinderBR.transform.position = tmpV_cylinderBR;
+                cylinderBR.transform.rotation = tmpQ_cylinderBR;
+                pistonBR.transform.position = tmpV_pistonBR;
+                pistonBR.transform.rotation = tmpQ_pistonBR;
+                alphaBR = tmp_alphaBR;
+                betaBR = tmp_betaBR;
+                gammaBR = tmp_gammaBR;
+
+
+            }
             allowRotation = false;
             allowMove = true;
         }
@@ -435,6 +1078,47 @@ public class Example : MonoBehaviour
         //Опускание лап
         if (Input.GetKey(KeyCode.Q))
         {
+            Vector3 tmpV_footFR = footFR.transform.position;
+            Quaternion tmpQ_footFR = footFR.transform.rotation;
+            Vector3 tmpV_cylinderFR = cylinderFR.transform.position;
+            Quaternion tmpQ_cylinderFR = cylinderFR.transform.rotation;
+            Vector3 tmpV_pistonFR = pistonFR.transform.position;
+            Quaternion tmpQ_pistonFR = pistonFR.transform.rotation;
+            float tmp_alphaFR = alphaFR;
+            float tmp_betaFR = betaFR;
+            float tmp_gammaFR = gammaFR;
+
+            Vector3 tmpV_footFL = footFL.transform.position;
+            Quaternion tmpQ_footFL = footFL.transform.rotation;
+            Vector3 tmpV_cylinderFL = cylinderFL.transform.position;
+            Quaternion tmpQ_cylinderFL = cylinderFL.transform.rotation;
+            Vector3 tmpV_pistonFL = pistonFL.transform.position;
+            Quaternion tmpQ_pistonFL = pistonFL.transform.rotation;
+            float tmp_alphaFL = alphaFL;
+            float tmp_betaFL = betaFL;
+            float tmp_gammaFL = gammaFL;
+
+            Vector3 tmpV_footBR = footBR.transform.position;
+            Quaternion tmpQ_footBR = footBR.transform.rotation;
+            Vector3 tmpV_cylinderBR = cylinderBR.transform.position;
+            Quaternion tmpQ_cylinderBR = cylinderBR.transform.rotation;
+            Vector3 tmpV_pistonBR = pistonBR.transform.position;
+            Quaternion tmpQ_pistonBR = pistonBR.transform.rotation;
+            float tmp_alphaBR = alphaBR;
+            float tmp_betaBR = betaBR;
+            float tmp_gammaBR = gammaBR;
+
+            Vector3 tmpV_footBL = footBL.transform.position;
+            Quaternion tmpQ_footBL = footBL.transform.rotation;
+            Vector3 tmpV_cylinderBL = cylinderBL.transform.position;
+            Quaternion tmpQ_cylinderBL = cylinderBL.transform.rotation;
+            Vector3 tmpV_pistonBL = pistonBL.transform.position;
+            Quaternion tmpQ_pistonBL = pistonBL.transform.rotation;
+            float tmp_alphaBL = alphaBL;
+            float tmp_betaBL = betaBL;
+            float tmp_gammaBL = gammaBL;
+
+
             if (Mathf.Abs(alphaFR) <= hitFootMax - speedRotation)
             {
                 RAM.RaiseFoot(-1, ref footFR, ref cylinderFR, ref pistonFR,
@@ -457,6 +1141,50 @@ public class Example : MonoBehaviour
                 RAM.RaiseFoot((Mathf.Abs(alphaFR) - hitFootMax) / speedRotation, ref footBL, ref cylinderBL, ref pistonBL,
                     ref alphaBL, ref betaBL, ref gammaBL, lBL, dBL, speedRotation);
             }
+            if (test.DetectAllCollission())
+            {
+                footFR.transform.position = tmpV_footFR;
+                footFR.transform.rotation = tmpQ_footFR;
+                cylinderFR.transform.position = tmpV_cylinderFR;
+                cylinderFR.transform.rotation = tmpQ_cylinderFR;
+                pistonFR.transform.position = tmpV_pistonFR;
+                pistonFR.transform.rotation = tmpQ_pistonFR;
+                alphaFR = tmp_alphaFR;
+                betaFR = tmp_betaFR;
+                gammaFR = tmp_gammaFR;
+
+                footFL.transform.position = tmpV_footFL;
+                footFL.transform.rotation = tmpQ_footFL;
+                cylinderFL.transform.position = tmpV_cylinderFL;
+                cylinderFL.transform.rotation = tmpQ_cylinderFL;
+                pistonFL.transform.position = tmpV_pistonFL;
+                pistonFL.transform.rotation = tmpQ_pistonFL;
+                alphaFL = tmp_alphaFL;
+                betaFL = tmp_betaFL;
+                gammaFL = tmp_gammaFL;
+
+                footBL.transform.position = tmpV_footBL;
+                footBL.transform.rotation = tmpQ_footBL;
+                cylinderBL.transform.position = tmpV_cylinderBL;
+                cylinderBL.transform.rotation = tmpQ_cylinderBL;
+                pistonBL.transform.position = tmpV_pistonBL;
+                pistonBL.transform.rotation = tmpQ_pistonBL;
+                alphaBL = tmp_alphaBL;
+                betaBL = tmp_betaBL;
+                gammaBL = tmp_gammaBL;
+
+                footBR.transform.position = tmpV_footBR;
+                footBR.transform.rotation = tmpQ_footBR;
+                cylinderBR.transform.position = tmpV_cylinderBR;
+                cylinderBR.transform.rotation = tmpQ_cylinderBR;
+                pistonBR.transform.position = tmpV_pistonBR;
+                pistonBR.transform.rotation = tmpQ_pistonBR;
+                alphaBR = tmp_alphaBR;
+                betaBR = tmp_betaBR;
+                gammaBR = tmp_gammaBR;
+
+
+            }
             if (Mathf.Abs(alphaFR) < hitFootMax && Mathf.Abs(alphaFR) > hitFootMax - speedRotation)
             {
                 allowRotation = true;
@@ -464,6 +1192,24 @@ public class Example : MonoBehaviour
             }
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Accessory")
+        {
+            accessories.Add(other.GetComponent<Accessory>());
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.tag == "Accessory")
+        {
+            accessories.Remove(other.GetComponent<Accessory>());
+        }
+    }
+
+
 
     // Привязка деталей
     void TieObjiects()
@@ -692,5 +1438,17 @@ public class Example : MonoBehaviour
         hitPitchMax = 153 * Mathf.Deg2Rad;
         hitRollMin = 25 * Mathf.Deg2Rad;
         hitRollMax = 118 * Mathf.Deg2Rad;
+    }
+
+    private void OnDrawGizmos()
+    {
+        if (join)
+        {
+            Vector3 joinPos = join.position;
+            Gizmos.color = colorNotConnect;
+            Gizmos.DrawLine(joinPos, joinPos - cameraTurnOnDistance * Vector3.up);
+            Gizmos.color = colorConnect;
+            Gizmos.DrawLine(joinPos, joinPos - distanceToConnect * Vector3.up);
+        }
     }
 }
