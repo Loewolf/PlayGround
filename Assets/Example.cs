@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+[RequireComponent(typeof(Rigidbody))]
 public class Example : MonoBehaviour
 {
     public GameObject player;//сама платформа
@@ -63,9 +63,13 @@ public class Example : MonoBehaviour
     public float speed,
                  speedRotation,
                  speedElongation;
+    private float startSpeed,
+                  startSpeedRotation,
+                  startSpeedElongation;
 
     public float PI = Mathf.PI;
 
+    [HideInInspector] public bool touchSurface;
     public bool allowRotation;
     public bool allowMove;
 
@@ -107,6 +111,8 @@ public class Example : MonoBehaviour
     [Header("Самопересечения")]
     public BoxMainObject test;
     [Header("Навесное оборудование")]
+    [HideInInspector] public Rigidbody rb;
+
     public Transform join;
     public Camera joinCamera;
     public float cameraTurnOnDistance; // Дистанция, при которой включается камера для отслеживания соединения
@@ -117,15 +123,25 @@ public class Example : MonoBehaviour
     public Color colorNotConnect;
     public Color colorConnect;
 
-    private GeneralCenterOfMass generalCenterOfMass;
+    [HideInInspector] public GeneralCenterOfMass generalCenterOfMass;
     private List<Accessory> accessories;
     private Accessory accessory;
     private bool selected = false;
     private bool equipped = false;
     private float distance;
 
+    [Header("Перегруз")]
+    public float defaultMass;
+    public float maxOverload;
+    private float maxOverloadInverse;
+
+    [Header("Система уведомлений")]
+    public NotificationSystem notificationSystem;
+
     void Start()
     {
+        rb = GetComponent<Rigidbody>();
+
         TieObjiects();
 
         generalCenterOfMass = GetComponent<GeneralCenterOfMass>();
@@ -138,6 +154,12 @@ public class Example : MonoBehaviour
         SetSize();
         SetHits();
 
+        startSpeed = speed;
+        startSpeedRotation = speedRotation;
+        startSpeedElongation = speedElongation;
+        maxOverloadInverse = 1f / maxOverload;
+
+        //touchSurface = true;
         allowRotation = false;
         allowMove = true;
 
@@ -145,9 +167,24 @@ public class Example : MonoBehaviour
         accessories = new List<Accessory>();
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        foreach (ContactPoint contact in collision.contacts)
+        {
+            if (!contact.thisCollider.CompareTag("Caterpillar") &&
+                !contact.thisCollider.CompareTag("Leg") &&
+                !contact.thisCollider.CompareTag("Accessory"))
+            {
+                notificationSystem.Notify(NotificationSystem.notifyTypes.alert, "Удар");
+                break;
+            }
+        }   
+    }
+
     // Для событий, не связанных с физикой напрямую
     private void Update()
     {
+        RecalculateSpeed();
         if (!equipped)
             if (!selected)
             {
@@ -205,8 +242,6 @@ public class Example : MonoBehaviour
             }
         }
 
-        
-
         //Присоединение/отсоединение навесного оборудования
         if (Input.GetKeyDown(KeyCode.Slash))
         {
@@ -216,21 +251,21 @@ public class Example : MonoBehaviour
                 {
                     if (distance < distanceToConnect)
                     {
-                        accessory.Equip(join, generalCenterOfMass.list);
+                        accessory.Equip(join, this);
                         equipped = true;
-                        Debug.Log("Оборудование надето : " + accessory.name);
+                        notificationSystem.Notify(NotificationSystem.notifyTypes.message, "Оборудование сменено на " + accessory.name);
                     }
                     else
                     {
-                        Debug.Log("Сократите дистанцию для присоединения");
+                        notificationSystem.Notify(NotificationSystem.notifyTypes.warning, "Для присоединения сократите дистанцию");
                     }
                 }
             }
             else
             {
-                accessory.Unequip(generalCenterOfMass.list);
+                accessory.Unequip();
                 equipped = false;
-                Debug.Log("Снято оборудование");
+                notificationSystem.Notify(NotificationSystem.notifyTypes.message, "Оборудование снято");
             }
         }
 
@@ -254,27 +289,40 @@ public class Example : MonoBehaviour
         joinCameraUI.gameObject.SetActive(false);
     }
 
+    private void RecalculateSpeed()
+    {
+        float f = (maxOverload + defaultMass - rb.mass) * maxOverloadInverse;
+        if (f < 0)
+        {
+            f = 0;
+        }
+        else if (f > 1) f = 1;
+        f = f * f * (3 - 2 * f);
+        speed = startSpeed * f;
+        speedRotation = startSpeedRotation * f;
+    }
+
     // Обработка нажатия клавиш
     void FixedUpdate()
     {
         //Движение
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
         {
-            if (allowMove)
+            if (allowMove && touchSurface)
                 player.transform.position += body.transform.forward * speed;
         }
 
         //Движение
         if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
         {
-            if (allowMove)
+            if (allowMove && touchSurface)
                 player.transform.position -= body.transform.forward * speed;
         }
 
         //Поворот
         if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
         {
-            if (allowMove)
+            if (allowMove && touchSurface)
             {
                 player.transform.RotateAround(body.transform.position, body.transform.up, -speedRotation * Mathf.Rad2Deg);
             }
@@ -283,7 +331,7 @@ public class Example : MonoBehaviour
         //Поворот
         if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
         {
-            if (allowMove)
+            if (allowMove && touchSurface)
             {
                 player.transform.RotateAround(body.transform.position, body.transform.up, speedRotation * Mathf.Rad2Deg);
             }
@@ -959,7 +1007,7 @@ public class Example : MonoBehaviour
                 alphaYaw = tmp_alphaYaw;
             }
         }
-        
+
         //Поднятие лап
         if (Input.GetKey(KeyCode.E))
         {
@@ -1185,7 +1233,7 @@ public class Example : MonoBehaviour
 
 
             }
-            if (Mathf.Abs(alphaFR) < hitFootMax && Mathf.Abs(alphaFR) > hitFootMax - speedRotation)
+            if (Mathf.Abs(alphaFR) < hitFootMax && Mathf.Abs(alphaFR) > hitFootMax - startSpeedRotation)
             {
                 allowRotation = true;
                 allowMove = false;

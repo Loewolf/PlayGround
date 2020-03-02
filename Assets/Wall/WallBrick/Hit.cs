@@ -18,8 +18,8 @@ public class Hit : MonoBehaviour
             }
             if (hitColliders[i].CompareTag("CanBer"))
             {
-                Rigidbody rb = hitColliders[i].gameObject.AddComponent<Rigidbody>();
-                  //hitColliders[i].GetComponent<Rigidbody>();
+                hitColliders[i].gameObject.AddComponent<Rigidbody>();
+                 Rigidbody rb = hitColliders[i].GetComponent<Rigidbody>();
                 rb.AddExplosionForce(force, transform.position, radius, 3.0F);
             }
         }
