@@ -1,15 +1,10 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 [AddComponentMenu("_Accessory/Default")]
-[RequireComponent(typeof(Rigidbody), typeof(CenterOfMass))]
-public class Accessory : MonoBehaviour
+public class Accessory : AttachableObject
 {
     protected Example example;
-    protected Rigidbody rb;
-    protected CenterOfMass centerOfMass;
     protected bool equipped;
-    protected List<CenterOfMass> collidedObjects;
 
     protected Vector3 fixedDistance;
     protected Quaternion fixedRotation;
@@ -17,12 +12,8 @@ public class Accessory : MonoBehaviour
 
     protected virtual void Start()
     {
-        rb = GetComponent<Rigidbody>();
-        centerOfMass = GetComponent<CenterOfMass>();
-        rb.centerOfMass = centerOfMass.centerOfMass;
-        rb.mass = centerOfMass.mass;
-
-        collidedObjects = new List<CenterOfMass>();
+        rigidbodyTaker.centerOfMass = centerOfMass;
+        rigidbodyTaker.mass = mass;
 
         fixedDistance = new Vector3(0.0005f, 0, 0);
         fixedRotation = Quaternion.Euler(0, -90, 0);
@@ -31,7 +22,6 @@ public class Accessory : MonoBehaviour
 
     protected virtual void Update()
     {
-        if (equipped) HoldFixedDistance();
     }
 
     public virtual void FirstAction()
@@ -44,38 +34,18 @@ public class Accessory : MonoBehaviour
 
     protected virtual void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Player")) return;
-        CenterOfMass cm = collision.gameObject.GetComponent<CenterOfMass>();
-        if (cm)
-        {
-            collidedObjects.Add(cm);
-            if (equipped) example.generalCenterOfMass.list.Add(cm);
-        }
     }
 
     protected virtual void OnCollisionExit(Collision collision)
     {
-        if (collision.gameObject.CompareTag("Player")) return;
-        CenterOfMass cm = collision.gameObject.GetComponent<CenterOfMass>();
-        if (cm)
-        {
-            collidedObjects.Remove(cm);
-            if (equipped) example.generalCenterOfMass.list.Remove(cm);
-        }
     }
 
     public virtual void Equip(Transform parent, Example ex)
     {
         transform.parent = parent;
         example = ex;
-        example.generalCenterOfMass.list.Add(centerOfMass);
-        foreach (CenterOfMass cm in collidedObjects)
-        {
-            example.generalCenterOfMass.list.Add(cm);
-        }
-        rb.useGravity = false;
-
-        rb.velocity = Vector3.zero;
+        example.generalCenterOfMass.list.Add(this);
+        LeaveTaker();
 
         StopCoroutine(setFixedDistance);
         setFixedDistance = SetFixedDistance();
@@ -84,23 +54,11 @@ public class Accessory : MonoBehaviour
 
     public virtual void Unequip()
     {
-        example.generalCenterOfMass.list.Remove(centerOfMass);
-        foreach (CenterOfMass cm in collidedObjects)
-        {
-            example.generalCenterOfMass.list.Remove(cm);
-        }
-        transform.parent = null;
-        rb.useGravity = true;
+        example.generalCenterOfMass.list.Remove(this);
+        ReturnToTaker();
 
         example = null;
         equipped = false;
-    }
-
-    protected void HoldFixedDistance()
-    {
-        transform.localPosition = fixedDistance;
-        transform.localRotation = fixedRotation;
-        rb.velocity = Vector3.zero;
     }
 
     protected IEnumerator SetFixedDistance()

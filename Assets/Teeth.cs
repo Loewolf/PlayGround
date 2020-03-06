@@ -7,24 +7,23 @@ public class Teeth : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player")) return;
-        RigidbodyCustomCenterOfMass cm = other.GetComponent<RigidbodyCustomCenterOfMass>();
-        if (cm)
+        if (other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("Caterpillar")) return;
+        AttachableObject ao = other.GetComponent<AttachableObject>();
+        if (ao)
         {
-            if (isLeft) grab.Left.Add(cm);
-            else grab.Right.Add(cm);
+            if (isLeft) grab.Left.Add(ao);
+            else grab.Right.Add(ao);
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.CompareTag("Player")) return;
-        RigidbodyCustomCenterOfMass cm = other.GetComponent<RigidbodyCustomCenterOfMass>();
-        if (cm)
+        if (other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("Caterpillar")) return;
+        AttachableObject ao = other.GetComponent<AttachableObject>();
+        if (ao)
         {
-            if (isLeft) grab.Left.Remove(cm);
-            else grab.Right.Remove(cm);
-            grab.SetFree(cm);
+            if (isLeft) grab.Left.Remove(ao);
+            else grab.Right.Remove(ao);
         }
     }
 
