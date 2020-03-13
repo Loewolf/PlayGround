@@ -110,9 +110,11 @@ public class Example : MonoBehaviour
 
     [Header("Самопересечения")]
     public BoxMainObject test;
-    [Header("Навесное оборудование")]
+    public GameObject defaultBox;
+
     [HideInInspector] public Rigidbody rb;
 
+    [Header("Навесное оборудование")]
     public Transform join;
     public Camera joinCamera;
     public float cameraTurnOnDistance; // Дистанция, при которой включается камера для отслеживания соединения
@@ -134,9 +136,23 @@ public class Example : MonoBehaviour
     public float defaultMass;
     public float maxOverload;
     private float maxOverloadInverse;
+    private float overloadTimer = 0f;
 
     [Header("Система уведомлений")]
     public NotificationSystem notificationSystem;
+
+    public enum EnumAccessory { empty, hydrohammer, grab };
+    public static EnumAccessory IsEquip = EnumAccessory.empty;
+
+    public void ChangeAntiIntersectionBox(GameObject box)
+    {
+        test.SetLast(box);
+    }
+
+    public void SetDefaultAntiIntersectionBox()
+    {
+        test.SetLast(defaultBox);
+    }
 
     void Start()
     {
@@ -252,6 +268,12 @@ public class Example : MonoBehaviour
                     if (distance < distanceToConnect)
                     {
                         accessory.Equip(join, this);
+
+                        if (accessory.gameObject.name == "Гидромолот")
+                            IsEquip = EnumAccessory.hydrohammer;
+                        else
+                            IsEquip = EnumAccessory.grab;
+
                         equipped = true;
                         notificationSystem.Notify(NotificationSystem.notifyTypes.message, "Оборудование сменено на " + accessory.name);
                     }
@@ -264,6 +286,7 @@ public class Example : MonoBehaviour
             else
             {
                 accessory.Unequip();
+                IsEquip = EnumAccessory.empty;
                 equipped = false;
                 notificationSystem.Notify(NotificationSystem.notifyTypes.message, "Оборудование снято");
             }
@@ -292,9 +315,18 @@ public class Example : MonoBehaviour
     private void RecalculateSpeed()
     {
         float f = (maxOverload + defaultMass - rb.mass) * maxOverloadInverse;
-        if (f < 0)
+        if (f <= 0)
         {
             f = 0;
+            if (overloadTimer <= 0)
+            {
+                notificationSystem.Notify(NotificationSystem.notifyTypes.alert, "Перегруз");
+                overloadTimer = 5f;
+            }
+            else
+            {
+                overloadTimer -= Time.deltaTime;
+            }
         }
         else if (f > 1) f = 1;
         f = f * f * (3 - 2 * f);
@@ -354,6 +386,7 @@ public class Example : MonoBehaviour
                 //если после вращения произошло самопересечение, то вовращаем все назад
                 if (test.DetectAllCollission())
                 {
+                    notificationSystem.Notify(NotificationSystem.notifyTypes.alert, "Удар");
                     arm0.transform.position = tmpv_1;
                     arm0.transform.rotation = tmpq_1;
                     alpha0 = tmpf_1;
@@ -374,6 +407,7 @@ public class Example : MonoBehaviour
                 RAM.RotateBase_Yaw(-1, ref arm0, ref alpha0, speedRotation);
                 if (test.DetectAllCollission())
                 {
+                    notificationSystem.Notify(NotificationSystem.notifyTypes.alert, "Удар");
                     arm0.transform.position = tmpv_1;
                     arm0.transform.rotation = tmpq_1;
                     alpha0 = tmpf_1;
@@ -409,6 +443,7 @@ public class Example : MonoBehaviour
 
                 if (test.DetectAllCollission())
                 {
+                    notificationSystem.Notify(NotificationSystem.notifyTypes.alert, "Удар");
                     arm1.transform.position = tmpV_arm1;
                     arm1.transform.rotation = tmpQ_arm1;
                     cylinder1.transform.position = tmpV_cylinder1;
@@ -449,6 +484,7 @@ public class Example : MonoBehaviour
 
                 if (test.DetectAllCollission())
                 {
+                    notificationSystem.Notify(NotificationSystem.notifyTypes.alert, "Удар");
                     arm1.transform.position = tmpV_arm1;
                     arm1.transform.rotation = tmpQ_arm1;
                     cylinder1.transform.position = tmpV_cylinder1;
@@ -489,6 +525,7 @@ public class Example : MonoBehaviour
 
                 if (test.DetectAllCollission())
                 {
+                    notificationSystem.Notify(NotificationSystem.notifyTypes.alert, "Удар");
                     arm2.transform.position = tmpV_arm;
                     arm2.transform.rotation = tmpQ_arm;
                     cylinder2.transform.position = tmpV_cylinder;
@@ -529,6 +566,7 @@ public class Example : MonoBehaviour
 
                 if (test.DetectAllCollission())
                 {
+                    notificationSystem.Notify(NotificationSystem.notifyTypes.alert, "Удар");
                     arm2.transform.position = tmpV_arm;
                     arm2.transform.rotation = tmpQ_arm;
                     cylinder2.transform.position = tmpV_cylinder;
@@ -571,6 +609,7 @@ public class Example : MonoBehaviour
 
                 if (test.DetectAllCollission())
                 {
+                    notificationSystem.Notify(NotificationSystem.notifyTypes.alert, "Удар");
                     arm3.transform.position = tmpV_arm;
                     arm3.transform.rotation = tmpQ_arm;
                     cylinder3.transform.position = tmpV_cylinder;
@@ -615,6 +654,7 @@ public class Example : MonoBehaviour
 
                 if (test.DetectAllCollission())
                 {
+                    notificationSystem.Notify(NotificationSystem.notifyTypes.alert, "Удар");
                     arm3.transform.position = tmpV_arm;
                     arm3.transform.rotation = tmpQ_arm;
                     cylinder3.transform.position = tmpV_cylinder;
@@ -662,6 +702,7 @@ public class Example : MonoBehaviour
 
                 if (test.DetectAllCollission())
                 {
+                    notificationSystem.Notify(NotificationSystem.notifyTypes.alert, "Удар");
                     arm5.transform.position = tmpV_arm;
                     arm5.transform.rotation = tmpQ_arm;
                     cylinder5.transform.position = tmpV_cylinder;
@@ -712,6 +753,7 @@ public class Example : MonoBehaviour
 
                 if (test.DetectAllCollission())
                 {
+                    notificationSystem.Notify(NotificationSystem.notifyTypes.alert, "Удар");
                     arm5.transform.position = tmpV_arm;
                     arm5.transform.rotation = tmpQ_arm;
                     cylinder5.transform.position = tmpV_cylinder;
@@ -748,6 +790,7 @@ public class Example : MonoBehaviour
 
                 if (test.DetectAllCollission())
                 {
+                    notificationSystem.Notify(NotificationSystem.notifyTypes.alert, "Удар");
                     arm6.transform.position = tmpV_arm;
                     arm6.transform.rotation = tmpQ_arm;
                     l6 = tmp_l;
@@ -771,6 +814,7 @@ public class Example : MonoBehaviour
 
                 if (test.DetectAllCollission())
                 {
+                    notificationSystem.Notify(NotificationSystem.notifyTypes.alert, "Удар");
                     arm6.transform.position = tmpV_arm;
                     arm6.transform.rotation = tmpQ_arm;
                     l6 = tmp_l;
@@ -812,7 +856,7 @@ public class Example : MonoBehaviour
 
                 if (test.DetectAllCollission())
                 {
-
+                    notificationSystem.Notify(NotificationSystem.notifyTypes.alert, "Удар");
                     cylinder7.transform.position = tmpV_cylinder;
                     cylinder7.transform.rotation = tmpQ_cylinder;
                     piston7.transform.position = tmpV_piston;
@@ -869,6 +913,7 @@ public class Example : MonoBehaviour
 
                 if (test.DetectAllCollission())
                 {
+                    notificationSystem.Notify(NotificationSystem.notifyTypes.alert, "Удар");
                     cylinder7.transform.position = tmpV_cylinder;
                     cylinder7.transform.rotation = tmpQ_cylinder;
                     piston7.transform.position = tmpV_piston;
@@ -917,6 +962,7 @@ public class Example : MonoBehaviour
 
                 if (test.DetectAllCollission())
                 {
+                    notificationSystem.Notify(NotificationSystem.notifyTypes.alert, "Удар");
                     pitcher.transform.position = tmpV_roller;
                     pitcher.transform.rotation = tmpQ_roller;
                     cylinderRoller.transform.position = tmpV_cylinderRoller;
@@ -957,6 +1003,7 @@ public class Example : MonoBehaviour
 
                 if (test.DetectAllCollission())
                 {
+                    notificationSystem.Notify(NotificationSystem.notifyTypes.alert, "Удар");
                     pitcher.transform.position = tmpV_roller;
                     pitcher.transform.rotation = tmpQ_roller;
                     cylinderRoller.transform.position = tmpV_cylinderRoller;
@@ -983,6 +1030,7 @@ public class Example : MonoBehaviour
                 RAM.RotateBase_Yaw(1, ref yawer, ref alphaYaw, speedRotation);
             if (test.DetectAllCollission())
             {
+                notificationSystem.Notify(NotificationSystem.notifyTypes.alert, "Удар");
                 yawer.transform.position = tmpV_yawer;
                 yawer.transform.rotation = tmpQ_yawer;
 
@@ -1001,6 +1049,7 @@ public class Example : MonoBehaviour
                 RAM.RotateBase_Yaw(-1, ref yawer, ref alphaYaw, speedRotation);
             if (test.DetectAllCollission())
             {
+                notificationSystem.Notify(NotificationSystem.notifyTypes.alert, "Удар");
                 yawer.transform.position = tmpV_yawer;
                 yawer.transform.rotation = tmpQ_yawer;
 
@@ -1077,6 +1126,7 @@ public class Example : MonoBehaviour
             }
             if (test.DetectAllCollission())
             {
+                notificationSystem.Notify(NotificationSystem.notifyTypes.alert, "Удар");
                 footFR.transform.position = tmpV_footFR;
                 footFR.transform.rotation = tmpQ_footFR;
                 cylinderFR.transform.position = tmpV_cylinderFR;
@@ -1191,6 +1241,7 @@ public class Example : MonoBehaviour
             }
             if (test.DetectAllCollission())
             {
+                notificationSystem.Notify(NotificationSystem.notifyTypes.alert, "Удар");
                 footFR.transform.position = tmpV_footFR;
                 footFR.transform.rotation = tmpQ_footFR;
                 cylinderFR.transform.position = tmpV_cylinderFR;

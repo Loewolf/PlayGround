@@ -85,7 +85,7 @@ public class Grab : Accessory
     public void SetAttached(AttachableObject ao)
     {
         ao.transform.parent = transform;
-        ao.LeaveTaker();
+        ao.LeaveTaker(example);
         attachedObject = ao;
         if (equipped) example.generalCenterOfMass.list.Add(ao);
         attached = true;
@@ -94,7 +94,7 @@ public class Grab : Accessory
 
     public void SetFree()
     {
-        attachedObject.ReturnToTaker();
+        attachedObject.ReturnToTaker(example);
         if (equipped) example.generalCenterOfMass.list.Remove(attachedObject);
         attachedObject = null;
         attached = false;
@@ -109,7 +109,7 @@ public class Grab : Accessory
         {
             example.generalCenterOfMass.list.Add(attachedObject);
         }
-        LeaveTaker();
+        LeaveTaker(example);
 
         StopCoroutine(setFixedDistance);
         setFixedDistance = SetFixedDistance();
@@ -124,7 +124,7 @@ public class Grab : Accessory
             example.generalCenterOfMass.list.Remove(attachedObject);
             SetFree();
         }
-        ReturnToTaker();
+        ReturnToTaker(example);
 
         example = null;
         equipped = false;

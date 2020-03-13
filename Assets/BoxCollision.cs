@@ -11,19 +11,19 @@ using Vector3 = UnityEngine.Vector3;
 public class BoxCollision : MonoBehaviour
 {
     //ориентация находится по отношению первого куба ко второму т.е.
-    
+
     //кубы
     //public GameObject kub;
     //public GameObject kub2;
 
-/*
-    //центр и вершины
-    //public Vector3 center;
-    public Vector3[] point = new Vector3[8];
-    
-    //public Vector3 center2;
-    public Vector3[] point2 = new Vector3[8];
-*/
+    /*
+        //центр и вершины
+        //public Vector3 center;
+        public Vector3[] point = new Vector3[8];
+
+        //public Vector3 center2;
+        public Vector3[] point2 = new Vector3[8];
+    */
     public static Vector3 GetNormal(Vector3 a, Vector3 b)
     {
         Vector3 result;
@@ -33,7 +33,7 @@ public class BoxCollision : MonoBehaviour
         return result;
     }
     //поворот вектор на кватернион
-    public static Vector3 QuanRotation(Vector3 tmp,Quaternion q)
+    public static Vector3 QuanRotation(Vector3 tmp, Quaternion q)
     {
         //формула поворота
         // a = q*v*q^(-1)
@@ -41,20 +41,20 @@ public class BoxCollision : MonoBehaviour
         //q - кватернион
         //q^(-1) - обратный кватернион
         //v - начальный вектор
-        
+
         float u0 = tmp.x * q.x + tmp.y * q.y + tmp.z * q.z;
         float u1 = tmp.x * q.w - tmp.y * q.z + tmp.z * q.y;
         float u2 = tmp.x * q.z + tmp.y * q.w - tmp.z * q.x;
         float u3 = -tmp.x * q.y + tmp.y * q.x + tmp.z * q.w;
         //M = v*q^(-1)
-        Quaternion M = new Quaternion(u1,u2,u3,u0);
+        Quaternion M = new Quaternion(u1, u2, u3, u0);
 
         //a = v*M
         Vector3 a;
-        a.x = q.w * M.x + q.x * M.w + q.y * M.z - q.z * M.y;  
+        a.x = q.w * M.x + q.x * M.w + q.y * M.z - q.z * M.y;
         a.y = q.w * M.y - q.x * M.z + q.y * M.w + q.z * M.x;
         a.z = q.w * M.z + q.x * M.y - q.y * M.x + q.z * M.w;
-        
+
         return a;
     }
     //проекция точки v на ветор a
@@ -67,19 +67,19 @@ public class BoxCollision : MonoBehaviour
         float alpha = Vector3.Dot(v, a) / a.magnitude;
         //float alpha = (v.x * a.x + v.y * a.y + v.z * a.z) / a.magnitude;
         return alpha;
-        
+
     }
     public static Vector3[] GetPoint(GameObject p)
     {
         Vector3 center = p.transform.position;
         Quaternion q = p.transform.rotation;
         Vector3 size = p.transform.lossyScale;
-        
+
         Vector3[] point = new Vector3[8];
-        
+
         //получаем координаты вершин
-        point[0] = center - size/2;
-        point[1] = point[0] + new Vector3(size.x , 0, 0);
+        point[0] = center - size / 2;
+        point[1] = point[0] + new Vector3(size.x, 0, 0);
         point[2] = point[0] + new Vector3(0, size.y, 0);
         point[3] = point[0] + new Vector3(0, 0, size.z);
 
@@ -97,11 +97,11 @@ public class BoxCollision : MonoBehaviour
 
             point[i] += center;
         }
-        
+
         return point;
     }
-    
-    
+
+
     //получение возможных разделяющих осей 
     public static List<Vector3> GetAxis(Vector3[] a, Vector3[] b)
     {
@@ -112,8 +112,8 @@ public class BoxCollision : MonoBehaviour
         for (int i = 1; i < 4; i++)
         {
             A = a[i] - a[0];
-            B = a[(i+1)%3+1] - a[0];
-            Axis.Add(GetNormal(A,B).normalized);
+            B = a[(i + 1) % 3 + 1] - a[0];
+            Axis.Add(GetNormal(A, B).normalized);
         }
         /*
         A = a[1] - a[0];
@@ -131,8 +131,8 @@ public class BoxCollision : MonoBehaviour
         for (int i = 1; i < 4; i++)
         {
             A = b[i] - b[0];
-            B = b[(i+1)%3+1] - b[0];
-            Axis.Add(GetNormal(A,B).normalized);
+            B = b[(i + 1) % 3 + 1] - b[0];
+            Axis.Add(GetNormal(A, B).normalized);
         }
         /*
         A = b[1] - b[0];
@@ -154,13 +154,13 @@ public class BoxCollision : MonoBehaviour
             for (int j = 1; j < 4; j++)
             {
                 B = b[j] - b[0];
-                if (GetNormal(A,B).magnitude != 0)
+                if (GetNormal(A, B).magnitude != 0)
                 {
-                    Axis.Add(GetNormal(A,B).normalized);
+                    Axis.Add(GetNormal(A, B).normalized);
                 }
             }
         }
-        
+
         /*
         Теперь добавляем все векторные произведения
         for (int i = 1; i < 4; i++)
@@ -175,11 +175,11 @@ public class BoxCollision : MonoBehaviour
 
         return Axis;
     }
-    
+
     //проекция на оси
     public static Vector3 ProjAxis(Vector3[] a, Vector3[] b, List<Vector3> Axis)
     {
-        Vector3 norm = new Vector3(1000,1000,1000);
+        Vector3 norm = new Vector3(1000, 1000, 1000);
         //простым нахождение мин. и макс. точек куба по заданной оси
         for (int j = 0; j < Axis.Count; j++)
         {
@@ -205,7 +205,7 @@ public class BoxCollision : MonoBehaviour
                     min_a[1] = tmp;
                 }
             }
-            
+
             //проекции куба b
             float[] max_b = new float[2];
             max_b[0] = 0;
@@ -229,16 +229,16 @@ public class BoxCollision : MonoBehaviour
                 }
             }
 
-            float[] p = {min_a[1], max_a[1], min_b[1], max_b[1]};
+            float[] p = { min_a[1], max_a[1], min_b[1], max_b[1] };
             Array.Sort(p);
 
             float sum = (max_b[1] - min_b[1]) + (max_a[1] - min_a[1]);
             float len = Math.Abs(p[3] - p[0]);
-            
+
             if (sum <= len)
             {
                 // Debug.Log("Результат: Непересек");
-                return new Vector3(0,0,0);
+                return new Vector3(0, 0, 0);
             }
             else
             {
@@ -247,9 +247,9 @@ public class BoxCollision : MonoBehaviour
                 {
                     norm = Axis[j] * dl;
                     //найти ариентацию нормы
-                    if(p[0] != min_a[1])
+                    if (p[0] != min_a[1])
                         norm = -norm;
-                    
+
                 }
                 //Debug.Log(norm);
             }
@@ -262,36 +262,36 @@ public class BoxCollision : MonoBehaviour
     public static Vector3 Collision(GameObject kub, GameObject kub2)
     {
 
-            //Проверяем НЕ пересечение описаных шаров
-            float t1 = (kub.transform.lossyScale / 2).magnitude;
-            float t2 = (kub2.transform.lossyScale / 2).magnitude;
-            if (Math.Abs((kub.transform.position - kub2.transform.position).magnitude) > t1 + t2)
-                return Vector3.zero;
-            else
-            {
-                Vector3[] point = new Vector3[8];
-                Vector3[] point2 = new Vector3[8];
+        //Проверяем НЕ пересечение описаных шаров
+        float t1 = (kub.transform.lossyScale / 2).magnitude;
+        float t2 = (kub2.transform.lossyScale / 2).magnitude;
+        if (Math.Abs((kub.transform.position - kub2.transform.position).magnitude) > t1 + t2)
+            return Vector3.zero;
+        else
+        {
+            Vector3[] point = new Vector3[8];
+            Vector3[] point2 = new Vector3[8];
 
-                //получаем позицию центра кубов
-                point = GetPoint(kub);
-                point2 = GetPoint(kub2);
+            //получаем позицию центра кубов
+            point = GetPoint(kub);
+            point2 = GetPoint(kub2);
 
-                List<Vector3> axis = GetAxis(point, point2);
+            List<Vector3> axis = GetAxis(point, point2);
 
-                return ProjAxis(point, point2, axis);
-            }
-            
-        
-        
+            return ProjAxis(point, point2, axis);
+        }
+
+
+
     }
 
     // Start is called before the first frame update
     void Start()
     {
-/*
-        //получаем вершины кубов
-        point = GetPoint(kub);
-        point2 = GetPoint(kub2);*/
+        /*
+                //получаем вершины кубов
+                point = GetPoint(kub);
+                point2 = GetPoint(kub2);*/
     }
 
 
@@ -308,55 +308,52 @@ public class BoxCollision : MonoBehaviour
             Debug.Log("пересеклись");
             Debug.Log(result);
             kub2.transform.position += result;
-
         }*/
 
-/*
-        //проверяем пересечение вписаных шаров
-            float min = kub.transform.localScale.x;
-            float tmp = kub.transform.localScale.y;
-            if (tmp < min)
-                min = tmp;
-            tmp = kub.transform.localScale.z;
-            if (tmp < min)
-                min = tmp;
-            
-            float min2 = kub2.transform.localScale.x;
-            tmp = kub2.transform.localScale.y;
-            if (tmp < min2)
-                min2 = tmp;
-            tmp = kub2.transform.localScale.z;
-            if (tmp < min2)
-                min2 = tmp;
-            if((min+min2)/2 > Math.Abs((kub.transform.position - kub2.transform.position).magnitude))
-            {
-                Debug.Log("пересеклись");
-            //пересеклись 100%
-            }
-            else
-            {
-                //Проверяем НЕ пересечение описаных шаров
-                float t1 = (kub.transform.localScale / 2).magnitude;
-                float t2 = (kub2.transform.localScale / 2).magnitude;
-                if (Math.Abs((kub.transform.position - kub2.transform.position).magnitude) > t1 + t2) 
-                    Debug.Log("Не пересеклись"); 
-                else
-                {
-                    //ищем проекции двух кубов
-                    if (result.magnitude == 0)
+        /*
+                //проверяем пересечение вписаных шаров
+                    float min = kub.transform.localScale.x;
+                    float tmp = kub.transform.localScale.y;
+                    if (tmp < min)
+                        min = tmp;
+                    tmp = kub.transform.localScale.z;
+                    if (tmp < min)
+                        min = tmp;
+
+                    float min2 = kub2.transform.localScale.x;
+                    tmp = kub2.transform.localScale.y;
+                    if (tmp < min2)
+                        min2 = tmp;
+                    tmp = kub2.transform.localScale.z;
+                    if (tmp < min2)
+                        min2 = tmp;
+                    if((min+min2)/2 > Math.Abs((kub.transform.position - kub2.transform.position).magnitude))
                     {
+                        Debug.Log("пересеклись");
+                    //пересеклись 100%
                     }
                     else
                     {
-                    Debug.Log("пересеклись");
-                    Debug.Log(result);
-                    kub2.transform.position += result*2;
-
+                        //Проверяем НЕ пересечение описаных шаров
+                        float t1 = (kub.transform.localScale / 2).magnitude;
+                        float t2 = (kub2.transform.localScale / 2).magnitude;
+                        if (Math.Abs((kub.transform.position - kub2.transform.position).magnitude) > t1 + t2) 
+                            Debug.Log("Не пересеклись"); 
+                        else
+                        {
+                            //ищем проекции двух кубов
+                            if (result.magnitude == 0)
+                            {
+                            }
+                            else
+                            {
+                            Debug.Log("пересеклись");
+                            Debug.Log(result);
+                            kub2.transform.position += result*2;
+                            }
+                        }
                     }
-                }
-
-            }
-*/
+        */
 
     }
 }

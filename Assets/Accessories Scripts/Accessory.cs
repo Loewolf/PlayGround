@@ -45,7 +45,7 @@ public class Accessory : AttachableObject
         transform.parent = parent;
         example = ex;
         example.generalCenterOfMass.list.Add(this);
-        LeaveTaker();
+        LeaveTaker(example);
 
         StopCoroutine(setFixedDistance);
         setFixedDistance = SetFixedDistance();
@@ -55,7 +55,7 @@ public class Accessory : AttachableObject
     public virtual void Unequip()
     {
         example.generalCenterOfMass.list.Remove(this);
-        ReturnToTaker();
+        ReturnToTaker(example);
 
         example = null;
         equipped = false;
