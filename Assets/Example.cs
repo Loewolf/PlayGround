@@ -1296,7 +1296,7 @@ public class Example : MonoBehaviour
     {
         if (other.tag == "Accessory")
         {
-            accessories.Add(other.GetComponent<Accessory>());
+            if (!accessories.Contains(other.GetComponent<Accessory>())) accessories.Add(other.GetComponent<Accessory>());
         }
     }
 
@@ -1304,7 +1304,7 @@ public class Example : MonoBehaviour
     {
         if (other.tag == "Accessory")
         {
-            accessories.Remove(other.GetComponent<Accessory>());
+            if (accessories.Contains(other.GetComponent<Accessory>())) accessories.Remove(other.GetComponent<Accessory>());
         }
     }
 
