@@ -2,23 +2,23 @@
 
 public class AttachableObject : CenterOfMass
 {
-    public Rigidbody rigidbodyTaker;
+    public Rigidbody rigidbodyHandler;
     public GameObject antiSelfIntersectionBox;
 
-    public void LeaveTaker(Example ex)
+    public void LeaveHandler(Example ex)
     {
-        rigidbodyTaker.useGravity = false;
-        rigidbodyTaker.constraints = RigidbodyConstraints.FreezeAll;
+        rigidbodyHandler.useGravity = false;
+        rigidbodyHandler.constraints = RigidbodyConstraints.FreezeAll;
         if (antiSelfIntersectionBox) ex.ChangeAntiIntersectionBox(antiSelfIntersectionBox);
     }
 
-    public void ReturnToTaker(Example ex)
+    public void ReturnToHandler(Example ex)
     {
-        rigidbodyTaker.transform.position = transform.position;
-        rigidbodyTaker.transform.rotation = transform.rotation;
-        transform.parent = rigidbodyTaker.gameObject.transform;
-        rigidbodyTaker.useGravity = true;
-        rigidbodyTaker.constraints = RigidbodyConstraints.None;
-        ex.SetDefaultAntiIntersectionBox();
+        rigidbodyHandler.transform.position = transform.position;
+        rigidbodyHandler.transform.rotation = transform.rotation;
+        transform.parent = rigidbodyHandler.gameObject.transform;
+        rigidbodyHandler.useGravity = true;
+        rigidbodyHandler.constraints = RigidbodyConstraints.None;
+        if (antiSelfIntersectionBox) ex.SetDefaultAntiIntersectionBox();
     }
 }

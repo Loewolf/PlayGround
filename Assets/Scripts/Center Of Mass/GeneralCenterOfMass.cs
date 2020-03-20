@@ -20,9 +20,9 @@ public class GeneralCenterOfMass : MonoBehaviour
         if (!_fixed)
         {
             RecalculateGeneralCenterOfMass();
+            r.centerOfMass = centerOfMass;
+            r.mass = totalMass;
         }
-        r.centerOfMass = centerOfMass;
-        r.mass = totalMass;
     }
 
     private void RecalculateGeneralCenterOfMass()
@@ -59,13 +59,6 @@ public class GeneralCenterOfMass : MonoBehaviour
         r = GetComponent<Rigidbody>();
         r.centerOfMass = centerOfMass;
         r.mass = totalMass;
-    }
-
-    public static void ChangeCenterOfMass(ref Vector3 cm, ref float mass,
-        Vector3 point, float pointMass) // При вычитании должны быть отрицательными
-        // Лучше вызывать внутри InverseTransformPoint
-    {
-
     }
 
     private void OnDrawGizmosSelected()

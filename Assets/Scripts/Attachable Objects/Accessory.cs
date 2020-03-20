@@ -12,8 +12,8 @@ public class Accessory : AttachableObject
 
     protected virtual void Start()
     {
-        rigidbodyTaker.centerOfMass = centerOfMass;
-        rigidbodyTaker.mass = mass;
+        rigidbodyHandler.centerOfMass = centerOfMass;
+        rigidbodyHandler.mass = mass;
 
         fixedDistance = new Vector3(0.0005f, 0, 0);
         fixedRotation = Quaternion.Euler(0, -90, 0);
@@ -32,20 +32,12 @@ public class Accessory : AttachableObject
     {
     }
 
-    protected virtual void OnCollisionEnter(Collision collision)
-    {
-    }
-
-    protected virtual void OnCollisionExit(Collision collision)
-    {
-    }
-
     public virtual void Equip(Transform parent, Example ex)
     {
         transform.parent = parent;
         example = ex;
         example.generalCenterOfMass.list.Add(this);
-        LeaveTaker(example);
+        LeaveHandler(example);
 
         StopCoroutine(setFixedDistance);
         setFixedDistance = SetFixedDistance();
@@ -55,7 +47,7 @@ public class Accessory : AttachableObject
     public virtual void Unequip()
     {
         example.generalCenterOfMass.list.Remove(this);
-        ReturnToTaker(example);
+        ReturnToHandler(example);
 
         example = null;
         equipped = false;

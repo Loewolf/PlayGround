@@ -18,8 +18,8 @@ public class Grab : Accessory
 
     protected override void Start()
     {
-        rigidbodyTaker.centerOfMass = centerOfMass;
-        rigidbodyTaker.mass = mass;
+        rigidbodyHandler.centerOfMass = centerOfMass;
+        rigidbodyHandler.mass = mass;
 
         Left = new List<AttachableObject>();
         Right = new List<AttachableObject>();
@@ -85,7 +85,7 @@ public class Grab : Accessory
     public void SetAttached(AttachableObject ao)
     {
         ao.transform.parent = transform;
-        ao.LeaveTaker(example);
+        ao.LeaveHandler(example);
         attachedObject = ao;
         if (equipped) example.generalCenterOfMass.list.Add(ao);
         attached = true;
@@ -94,7 +94,7 @@ public class Grab : Accessory
 
     public void SetFree()
     {
-        attachedObject.ReturnToTaker(example);
+        attachedObject.ReturnToHandler(example);
         if (equipped) example.generalCenterOfMass.list.Remove(attachedObject);
         attachedObject = null;
         attached = false;
@@ -109,7 +109,7 @@ public class Grab : Accessory
         {
             example.generalCenterOfMass.list.Add(attachedObject);
         }
-        LeaveTaker(example);
+        LeaveHandler(example);
 
         StopCoroutine(setFixedDistance);
         setFixedDistance = SetFixedDistance();
@@ -124,7 +124,7 @@ public class Grab : Accessory
             example.generalCenterOfMass.list.Remove(attachedObject);
             SetFree();
         }
-        ReturnToTaker(example);
+        ReturnToHandler(example);
 
         example = null;
         equipped = false;

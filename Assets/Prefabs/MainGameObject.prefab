@@ -1225,8 +1225,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1008201078570345596}
-  - component: {fileID: 1008201078570345594}
-  - component: {fileID: 1008201078570345597}
   m_Layer: 0
   m_Name: body
   m_TagString: Player
@@ -1256,22 +1254,6 @@ Transform:
   m_Father: {fileID: 1008201080088543448}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &1008201078570345594
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1008201078570345599}
-  m_Mesh: {fileID: 0}
---- !u!222 &1008201078570345597
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1008201078570345599}
-  m_CullTransparentMesh: 0
 --- !u!1 &1008201078597266672
 GameObject:
   m_ObjectHideFlags: 0
