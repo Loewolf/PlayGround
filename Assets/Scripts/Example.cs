@@ -144,6 +144,11 @@ public class Example : MonoBehaviour
     public enum EnumAccessory { empty, hydrohammer, grab };
     public static EnumAccessory IsEquip = EnumAccessory.empty;
 
+    public bool GetSelected()
+    {
+        return selected;
+    }
+
     public void ChangeAntiIntersectionBox(GameObject box)
     {
         test.SetLast(box);
