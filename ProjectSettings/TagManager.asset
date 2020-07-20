@@ -9,6 +9,7 @@ TagManager:
   - Accessory
   - Caterpillar
   - Leg
+  - Box
   layers:
   - Default
   - TransparentFX

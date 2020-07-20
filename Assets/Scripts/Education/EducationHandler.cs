@@ -5,12 +5,27 @@ public class EducationHandler : MonoBehaviour
 {
     public Text taskDescription;
     public Text instruction;
+    public GameObject descriptionObject;
     public RectTransform instructionObject;
 
     public Camera joinCamera; // Если камера присоединения включена, то окно с подсказками (instructionObject) следует уменьшить
 
     private Task task;
     private bool cameraEnabled = false;
+
+    private void Start()
+    {
+        ChangeInstructionWindowScale();
+    }
+
+    private void CheckCameraEnabled()
+    {
+        if (cameraEnabled != joinCamera.enabled)
+        {
+            cameraEnabled = joinCamera.enabled;
+            ChangeInstructionWindowScale();
+        }
+    }
 
     public void SetTextValues(string newTaskDescription, bool instructionsEnabled, string newInstruction)
     {
@@ -30,10 +45,21 @@ public class EducationHandler : MonoBehaviour
     {
         task = newTask;
         task.Take();
+        ChangeWindowsActivity(true);
         SetTextValues(task.GetCurrentDescription(), task.instructionsEnabled, task.GetCurrentInstruction());
     }
 
-    private void ChangeInstructionWindow()
+    public void EndTask(bool result)
+    {
+        if (task)
+        {
+            task.TurnIn(result);
+            task = null;
+        }
+        ChangeWindowsActivity(false);
+    }
+
+    private void ChangeInstructionWindowScale()
     {
         if (cameraEnabled)
         {
@@ -45,6 +71,12 @@ public class EducationHandler : MonoBehaviour
         }
     }
 
+    private void ChangeWindowsActivity(bool value)
+    {
+        descriptionObject.SetActive(value);
+        instructionObject.gameObject.SetActive(value);
+    }
+
     private void Update()
     {
         if (task)
@@ -52,7 +84,6 @@ public class EducationHandler : MonoBehaviour
             int result = task.CheckStageTask();
             switch (result)
             {
-
                 case 1: // если 1, то промежуточный этап задачи успешно выполнен
                     {
                         SetTextValues(task.GetCurrentDescription(), task.instructionsEnabled, task.GetCurrentInstruction());
@@ -61,24 +92,19 @@ public class EducationHandler : MonoBehaviour
                 case 2: // если 2, то задача успешно выполнена
                     {
                         // установить число очков за задание, равное value в task
-                        task.TurnIn(true);
-                        task = null;
+
+                        EndTask(true);
                         break;
                     }
                 case -1: // если -1, то достигнут этап, при котором завершить задачу невозможно, требуется перезапуск задания
                     {
                         // предложить пользователю перезапустить задание или вернуться в меню
-                        task.TurnIn(false);
-                        task = null;
+                        EndTask(false);
                         break;
                     }
                 default: break; // если 0, то выполняется промежуточный этап задачи
             }
-        }
-        if (cameraEnabled != joinCamera.enabled)
-        {
-            cameraEnabled = joinCamera.enabled;
-            ChangeInstructionWindow();
+            CheckCameraEnabled();
         }
     }
 }

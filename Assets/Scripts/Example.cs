@@ -60,6 +60,110 @@ public class Example : MonoBehaviour
                         grip,
                         pistonRoller;
 
+    private Vector3 body_startPosition,
+                        cameras_startPosition,
+                        arm0_startPosition,
+                        arm1_startPosition,
+                        arm2_startPosition,
+                        arm3_startPosition,
+                        arm4_startPosition,
+                        arm5_startPosition,
+                        arm6_startPosition,
+                        link1_startPosition,
+                        link2_startPosition,
+                        link3_startPosition,
+                        link4_startPosition,
+                        link5_startPosition,
+                        link6_startPosition,
+                        cylinder1_startPosition,
+                        cylinder2_startPosition,
+                        cylinder3_startPosition,
+                        cylinder5_startPosition,
+                        cylinder7_startPosition,
+                        piston1_startPosition,
+                        piston2_startPosition,
+                        piston3_startPosition,
+                        piston5_startPosition,
+                        piston7_startPosition,
+                        fixed3_startPosition,
+                        fixed5_startPosition,
+                        fixed7_startPosition,
+                        clutch5_startPosition,
+                        clutch7_startPosition,
+                        tong_startPosition,
+
+                        footFR_startPosition,
+                        cylinderFR_startPosition,
+                        pistonFR_startPosition,
+                        footFL_startPosition,
+                        cylinderFL_startPosition,
+                        pistonFL_startPosition,
+                        footBR_startPosition,
+                        cylinderBR_startPosition,
+                        pistonBR_startPosition,
+                        footBL_startPosition,
+                        cylinderBL_startPosition,
+                        pistonBL_startPositionv,
+
+                        pitcher_startPosition,
+                        cylinderRoller_startPosition,
+                        roller_startPosition,
+                        yawer_startPosition,
+                        grip_startPosition,
+                        pistonRoller_startPosition;
+
+    private Quaternion body_startRotation,
+                        cameras_startRotation,
+                        arm0_startRotation,
+                        arm1_startRotation,
+                        arm2_startRotation,
+                        arm3_startRotation,
+                        arm4_startRotation,
+                        arm5_startRotation,
+                        arm6_startRotation,
+                        link1_startRotation,
+                        link2_startRotation,
+                        link3_startRotation,
+                        link4_startRotation,
+                        link5_startRotation,
+                        link6_startRotation,
+                        cylinder1_startRotation,
+                        cylinder2_startRotation,
+                        cylinder3_startRotation,
+                        cylinder5_startRotation,
+                        cylinder7_startRotation,
+                        piston1_startRotation,
+                        piston2_startRotation,
+                        piston3_startRotation,
+                        piston5_startRotation,
+                        piston7_startRotation,
+                        fixed3_startRotation,
+                        fixed5_startRotation,
+                        fixed7_startRotation,
+                        clutch5_startRotation,
+                        clutch7_startRotation,
+                        tong_startRotation,
+
+                        footFR_startRotation,
+                        cylinderFR_startRotation,
+                        pistonFR_startRotation,
+                        footFL_startRotation,
+                        cylinderFL_startRotation,
+                        pistonFL_startRotation,
+                        footBR_startRotation,
+                        cylinderBR_startRotation,
+                        pistonBR_startRotation,
+                        footBL_startRotation,
+                        cylinderBL_startRotation,
+                        pistonBL_startRotation,
+
+                        pitcher_startRotation,
+                        cylinderRoller_startRotation,
+                        roller_startRotation,
+                        yawer_startRotation,
+                        grip_startRotation,
+                        pistonRoller_startRotation;
+
     public float speed,
                  speedRotation,
                  speedElongation;
@@ -89,7 +193,6 @@ public class Example : MonoBehaviour
                  hitPitchMax,
                  hitRollMin,
                  hitRollMax;
-
     // Длины сторон и углы для вычисления треугольников
     public float alpha0,
                     alpha1, beta1, gamma1, d1, l1,
@@ -106,7 +209,6 @@ public class Example : MonoBehaviour
                     alphaBL, betaBL, gammaBL, dBL, lBL,
                     alphaRoll, betaRoll, gammaRoll, lRoll, dRoll,
                     alphaYaw;
-
 
     [Header("Самопересечения")]
     public BoxMainObject test;
@@ -149,6 +251,11 @@ public class Example : MonoBehaviour
         return selected;
     }
 
+    public bool GetEquipped()
+    {
+        return equipped;
+    }
+
     public void ChangeAntiIntersectionBox(GameObject box)
     {
         test.SetLast(box);
@@ -157,6 +264,236 @@ public class Example : MonoBehaviour
     public void SetDefaultAntiIntersectionBox()
     {
         test.SetLast(defaultBox);
+    }
+
+    private void WriteStartValues()
+    {
+        startSpeed = speed;
+        startSpeedRotation = speedRotation;
+        startSpeedElongation = speedElongation;
+
+        body_startPosition = body.transform.localPosition;
+        cameras_startPosition = cameras.transform.localPosition;
+        arm0_startPosition = arm0.transform.localPosition;
+        arm1_startPosition = arm1.transform.localPosition;
+        arm2_startPosition = arm2.transform.localPosition;
+        arm3_startPosition = arm3.transform.localPosition;
+        arm4_startPosition = arm4.transform.localPosition;
+        arm5_startPosition = arm5.transform.localPosition;
+        arm6_startPosition = arm6.transform.localPosition;
+        link1_startPosition = link1.transform.localPosition;
+        link2_startPosition = link2.transform.localPosition;
+        link3_startPosition = link3.transform.localPosition;
+        link4_startPosition = link4.transform.localPosition;
+        link5_startPosition = link5.transform.localPosition;
+        link6_startPosition = link6.transform.localPosition;
+        cylinder1_startPosition = cylinder1.transform.localPosition;
+        cylinder2_startPosition = cylinder2.transform.localPosition;
+        cylinder3_startPosition = cylinder3.transform.localPosition;
+        cylinder5_startPosition = cylinder5.transform.localPosition;
+        cylinder7_startPosition = cylinder7.transform.localPosition;
+        piston1_startPosition = piston1.transform.localPosition;
+        piston2_startPosition = piston2.transform.localPosition;
+        piston3_startPosition = piston3.transform.localPosition;
+        piston5_startPosition = piston5.transform.localPosition;
+        piston7_startPosition = piston7.transform.localPosition;
+        fixed3_startPosition = fixed3.transform.localPosition;
+        fixed5_startPosition = fixed5.transform.localPosition;
+        fixed7_startPosition = fixed7.transform.localPosition;
+        clutch5_startPosition = clutch5.transform.localPosition;
+        clutch7_startPosition = clutch7.transform.localPosition;
+        tong_startPosition = tong.transform.localPosition;
+
+        footFR_startPosition = footFR.transform.localPosition;
+        cylinderFR_startPosition = cylinderFR.transform.localPosition;
+        pistonFR_startPosition = pistonFR.transform.localPosition;
+        footFL_startPosition = footFL.transform.localPosition;
+        cylinderFL_startPosition = cylinderFL.transform.localPosition;
+        pistonFL_startPosition = pistonFL.transform.localPosition;
+        footBR_startPosition = footBR.transform.localPosition;
+        cylinderBR_startPosition = cylinderBR.transform.localPosition;
+        pistonBR_startPosition = pistonBR.transform.localPosition;
+        footBL_startPosition = footBL.transform.localPosition;
+        cylinderBL_startPosition = cylinderBL.transform.localPosition;
+        pistonBL_startPositionv = pistonBL.transform.localPosition;
+
+        pitcher_startPosition = pitcher.transform.localPosition;
+        cylinderRoller_startPosition = cylinderRoller.transform.localPosition;
+        roller_startPosition = roller.transform.localPosition;
+        yawer_startPosition = yawer.transform.localPosition;
+        grip_startPosition = grip.transform.localPosition;
+        pistonRoller_startPosition = pistonRoller.transform.localPosition;
+
+        // Rotation
+        body_startRotation = body.transform.localRotation;
+        cameras_startRotation = cameras.transform.localRotation;
+        arm0_startRotation = arm0.transform.localRotation;
+        arm1_startRotation = arm1.transform.localRotation;
+        arm2_startRotation = arm2.transform.localRotation;
+        arm3_startRotation = arm3.transform.localRotation;
+        arm4_startRotation = arm4.transform.localRotation;
+        arm5_startRotation = arm5.transform.localRotation;
+        arm6_startRotation = arm6.transform.localRotation;
+        link1_startRotation = link1.transform.localRotation;
+        link2_startRotation = link2.transform.localRotation;
+        link3_startRotation = link3.transform.localRotation;
+        link4_startRotation = link4.transform.localRotation;
+        link5_startRotation = link5.transform.localRotation;
+        link6_startRotation = link6.transform.localRotation;
+        cylinder1_startRotation = cylinder1.transform.localRotation;
+        cylinder2_startRotation = cylinder2.transform.localRotation;
+        cylinder3_startRotation = cylinder3.transform.localRotation;
+        cylinder5_startRotation = cylinder5.transform.localRotation;
+        cylinder7_startRotation = cylinder7.transform.localRotation;
+        piston1_startRotation = piston1.transform.localRotation;
+        piston2_startRotation = piston2.transform.localRotation;
+        piston3_startRotation = piston3.transform.localRotation;
+        piston5_startRotation = piston5.transform.localRotation;
+        piston7_startRotation = piston7.transform.localRotation;
+        fixed3_startRotation = fixed3.transform.localRotation;
+        fixed5_startRotation = fixed5.transform.localRotation;
+        fixed7_startRotation = fixed7.transform.localRotation;
+        clutch5_startRotation = clutch5.transform.localRotation;
+        clutch7_startRotation = clutch7.transform.localRotation;
+        tong_startRotation = tong.transform.localRotation;
+
+        footFR_startRotation = footFR.transform.localRotation;
+        cylinderFR_startRotation = cylinderFR.transform.localRotation;
+        pistonFR_startRotation = pistonFR.transform.localRotation;
+        footFL_startRotation = footFL.transform.localRotation;
+        cylinderFL_startRotation = cylinderFL.transform.localRotation;
+        pistonFL_startRotation = pistonFL.transform.localRotation;
+        footBR_startRotation = footBR.transform.localRotation;
+        cylinderBR_startRotation = cylinderBR.transform.localRotation;
+        pistonBR_startRotation = pistonBR.transform.localRotation;
+        footBL_startRotation = footBL.transform.localRotation;
+        cylinderBL_startRotation = cylinderBL.transform.localRotation;
+        pistonBL_startRotation = pistonBL.transform.localRotation;
+
+        pitcher_startRotation = pitcher.transform.localRotation;
+        cylinderRoller_startRotation = cylinderRoller.transform.localRotation;
+        roller_startRotation = roller.transform.localRotation;
+        yawer_startRotation = yawer.transform.localRotation;
+        grip_startRotation = grip.transform.localRotation;
+        pistonRoller_startRotation = pistonRoller.transform.localRotation;
+    }
+
+    public void SetStartValues()
+    {
+        speed = startSpeed;
+        speedRotation = startSpeedRotation;
+        speedElongation = startSpeedElongation;
+
+        body.transform.localPosition = body_startPosition;
+        cameras.transform.localPosition = cameras_startPosition;
+        arm0.transform.localPosition = arm0_startPosition;
+        arm1.transform.localPosition = arm1_startPosition;
+        arm2.transform.localPosition = arm2_startPosition;
+        arm3.transform.localPosition = arm3_startPosition;
+        arm4.transform.localPosition = arm4_startPosition;
+        arm5.transform.localPosition = arm5_startPosition;
+        arm6.transform.localPosition = arm6_startPosition;
+        link1.transform.localPosition = link1_startPosition;
+        link2.transform.localPosition = link2_startPosition;
+        link3.transform.localPosition = link3_startPosition;
+        link4.transform.localPosition = link4_startPosition;
+        link5.transform.localPosition = link5_startPosition;
+        link6.transform.localPosition = link6_startPosition;
+        cylinder1.transform.localPosition = cylinder1_startPosition;
+        cylinder2.transform.localPosition = cylinder2_startPosition;
+        cylinder3.transform.localPosition = cylinder3_startPosition;
+        cylinder5.transform.localPosition = cylinder5_startPosition;
+        cylinder7.transform.localPosition = cylinder7_startPosition;
+        piston1.transform.localPosition = piston1_startPosition;
+        piston2.transform.localPosition = piston2_startPosition;
+        piston3.transform.localPosition = piston3_startPosition;
+        piston5.transform.localPosition = piston5_startPosition;
+        piston7.transform.localPosition = piston7_startPosition;
+        fixed3.transform.localPosition = fixed3_startPosition;
+        fixed5.transform.localPosition = fixed5_startPosition;
+        fixed7.transform.localPosition = fixed7_startPosition;
+        clutch5.transform.localPosition = clutch5_startPosition;
+        clutch7.transform.localPosition = clutch7_startPosition;
+        tong.transform.localPosition = tong_startPosition;
+
+        footFR.transform.localPosition = footFR_startPosition;
+        cylinderFR.transform.localPosition = cylinderFR_startPosition;
+        pistonFR.transform.localPosition = pistonFR_startPosition;
+        footFL.transform.localPosition = footFL_startPosition;
+        cylinderFL.transform.localPosition = cylinderFL_startPosition;
+        pistonFL.transform.localPosition = pistonFL_startPosition;
+        footBR.transform.localPosition = footBR_startPosition;
+        cylinderBR.transform.localPosition = cylinderBR_startPosition;
+        pistonBR.transform.localPosition = pistonBR_startPosition;
+        footBL.transform.localPosition = footBL_startPosition;
+        cylinderBL.transform.localPosition = cylinderBL_startPosition;
+        pistonBL.transform.localPosition = pistonBL_startPositionv;
+
+        pitcher.transform.localPosition = pitcher_startPosition;
+        cylinderRoller.transform.localPosition = cylinderRoller_startPosition;
+        roller.transform.localPosition = roller_startPosition;
+        yawer.transform.localPosition = yawer_startPosition;
+        grip.transform.localPosition = grip_startPosition;
+        pistonRoller.transform.localPosition = pistonRoller_startPosition;
+
+        // Rotation
+        body.transform.localRotation = body_startRotation;
+        cameras.transform.localRotation = cameras_startRotation;
+        arm0.transform.localRotation = arm0_startRotation;
+        arm1.transform.localRotation = arm1_startRotation;
+        arm2.transform.localRotation = arm2_startRotation;
+        arm3.transform.localRotation = arm3_startRotation;
+        arm4.transform.localRotation = arm4_startRotation;
+        arm5.transform.localRotation = arm5_startRotation;
+        arm6.transform.localRotation = arm6_startRotation;
+        link1.transform.localRotation = link1_startRotation;
+        link2.transform.localRotation = link2_startRotation;
+        link3.transform.localRotation = link3_startRotation;
+        link4.transform.localRotation = link4_startRotation;
+        link5.transform.localRotation = link5_startRotation;
+        link6.transform.localRotation = link6_startRotation;
+        cylinder1.transform.localRotation = cylinder1_startRotation;
+        cylinder2.transform.localRotation = cylinder2_startRotation;
+        cylinder3.transform.localRotation = cylinder3_startRotation;
+        cylinder5.transform.localRotation = cylinder5_startRotation;
+        cylinder7.transform.localRotation = cylinder7_startRotation;
+        piston1.transform.localRotation = piston1_startRotation;
+        piston2.transform.localRotation = piston2_startRotation;
+        piston3.transform.localRotation = piston3_startRotation;
+        piston5.transform.localRotation = piston5_startRotation;
+        piston7.transform.localRotation = piston7_startRotation;
+        fixed3.transform.localRotation = fixed3_startRotation;
+        fixed5.transform.localRotation = fixed5_startRotation;
+        fixed7.transform.localRotation = fixed7_startRotation;
+        clutch5.transform.localRotation = clutch5_startRotation;
+        clutch7.transform.localRotation = clutch7_startRotation;
+        tong.transform.localRotation = tong_startRotation;
+
+        footFR.transform.localRotation = footFR_startRotation;
+        cylinderFR.transform.localRotation = cylinderFR_startRotation;
+        pistonFR.transform.localRotation = pistonFR_startRotation;
+        footFL.transform.localRotation = footFL_startRotation;
+        cylinderFL.transform.localRotation = cylinderFL_startRotation;
+        pistonFL.transform.localRotation = pistonFL_startRotation;
+        footBR.transform.localRotation = footBR_startRotation;
+        cylinderBR.transform.localRotation = cylinderBR_startRotation;
+        pistonBR.transform.localRotation = pistonBR_startRotation;
+        footBL.transform.localRotation = footBL_startRotation;
+        cylinderBL.transform.localRotation = cylinderBL_startRotation;
+        pistonBL.transform.localRotation = pistonBL_startRotation;
+
+        pitcher.transform.localRotation = pitcher_startRotation;
+        cylinderRoller.transform.localRotation = cylinderRoller_startRotation;
+        roller.transform.localRotation = roller_startRotation;
+        yawer.transform.localRotation = yawer_startRotation;
+        grip.transform.localRotation = grip_startRotation;
+        pistonRoller.transform.localRotation = pistonRoller_startRotation;
+
+        SetSize();
+        SetHits();
+
+        allowMove = true;
+        allowRotation = false;
     }
 
     void Start()
@@ -175,9 +512,8 @@ public class Example : MonoBehaviour
         SetSize();
         SetHits();
 
-        startSpeed = speed;
-        startSpeedRotation = speedRotation;
-        startSpeedElongation = speedElongation;
+        WriteStartValues();
+
         maxOverloadInverse = 1f / maxOverload;
 
         //touchSurface = true;
@@ -199,7 +535,22 @@ public class Example : MonoBehaviour
                 notificationSystem.Notify(NotificationSystem.notifyTypes.alert, "Удар");
                 break;
             }
-        }   
+        }
+    }
+
+    public bool IsAccessoryAvailableToJoin()
+    {
+        return joinCameraUI.color == colorConnect;
+    }
+
+    public void UnequipAccessory()
+    {
+        if (accessory)
+        {
+            accessory.Unequip();
+            IsEquip = EnumAccessory.empty;
+            equipped = false;
+        }
     }
 
     // Для событий, не связанных с физикой напрямую
@@ -290,9 +641,7 @@ public class Example : MonoBehaviour
             }
             else
             {
-                accessory.Unequip();
-                IsEquip = EnumAccessory.empty;
-                equipped = false;
+                UnequipAccessory();
                 notificationSystem.Notify(NotificationSystem.notifyTypes.message, "Оборудование снято");
             }
         }

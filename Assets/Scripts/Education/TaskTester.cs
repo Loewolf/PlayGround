@@ -5,8 +5,9 @@ public class TaskTester : MonoBehaviour
     public Task task;
     public EducationHandler educationHandler;
 
-    void Start()
+    public void ResetTask()
     {
-        educationHandler.SetTask(task);
+        educationHandler.EndTask(false);
+        if (task) educationHandler.SetTask(task);
     }
 }
