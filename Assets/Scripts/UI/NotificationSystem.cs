@@ -29,6 +29,18 @@ public class NotificationSystem : UiMovement
         refreshVisibility = RefreshVisibility();
     }
 
+    public void ChangeScale(bool value)
+    {
+        if (value)
+        {
+            background.rectTransform.anchorMax = new Vector3(0.7f, 0f);
+        }
+        else
+        {
+            background.rectTransform.anchorMax = new Vector3(1f, 0f);
+        }
+    }
+
     public void Notify(notifyTypes type, string textString)
     {
         switch (type)

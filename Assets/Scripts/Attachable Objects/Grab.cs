@@ -16,6 +16,11 @@ public class Grab : Accessory
     private float rot; // by Y axis
     private float attachedRot;
 
+    public AttachableObject GetAttachedObject()
+    {
+        return attachedObject;
+    }
+
     protected override void Start()
     {
         rigidbodyHandler.centerOfMass = centerOfMass;
@@ -51,6 +56,11 @@ public class Grab : Accessory
                 if (attached) break;
             }
         }
+    }
+
+    public float GetClawsRotation()
+    {
+        return rot;
     }
 
     public override void FirstAction()

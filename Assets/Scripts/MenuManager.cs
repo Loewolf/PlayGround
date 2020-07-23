@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Controllers;
 using Core;
 using UnityEngine;
+using View;
 
 public class GameManager : MonoBehaviour
 {
@@ -15,7 +16,7 @@ public class GameManager : MonoBehaviour
 
     public void Pause()
     {
-        PauseMenuView.SetGameManager(this);
+        //PauseMenuView.SetGameManager(this);
         PauseMenuView.Open(new PauseMenuController());
     }
 
