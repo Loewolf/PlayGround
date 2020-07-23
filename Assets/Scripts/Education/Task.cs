@@ -11,7 +11,7 @@ public class Task: MonoBehaviour
     public int value; // Количество очков, которое получит пользователь за выполнение задания
     public string[] taskDescriptions; // Набор описаний задачи
     public string[] instructions; // Набор инструкций для решения задачи
-    public bool instructionsEnabled;
+    public bool instructionsEnabled; // При false отключает отображение текущей инструкции
     public Vector2Int[] pairs; // Набор из индексов описания и инструкций, который будет выведен на заданном этапе
     public float completionDelay = 0; // Задержка при завершении задания
     protected int stage = 0; // Этап выполнения задания. Стартовый этап имеет индекс 0

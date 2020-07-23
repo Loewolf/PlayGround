@@ -5,10 +5,7 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Rigidbody))]
 public class Example : MonoBehaviour
 {
-    public GameObject player;//сама платформа
-
     protected GameObject body,
-                        cameras,
                         arm0,
                         arm1,
                         arm2,
@@ -61,7 +58,6 @@ public class Example : MonoBehaviour
                         pistonRoller;
 
     private Vector3 body_startPosition,
-                        cameras_startPosition,
                         arm0_startPosition,
                         arm1_startPosition,
                         arm2_startPosition,
@@ -113,7 +109,6 @@ public class Example : MonoBehaviour
                         pistonRoller_startPosition;
 
     private Quaternion body_startRotation,
-                        cameras_startRotation,
                         arm0_startRotation,
                         arm1_startRotation,
                         arm2_startRotation,
@@ -273,7 +268,6 @@ public class Example : MonoBehaviour
         startSpeedElongation = speedElongation;
 
         body_startPosition = body.transform.localPosition;
-        cameras_startPosition = cameras.transform.localPosition;
         arm0_startPosition = arm0.transform.localPosition;
         arm1_startPosition = arm1.transform.localPosition;
         arm2_startPosition = arm2.transform.localPosition;
@@ -326,7 +320,6 @@ public class Example : MonoBehaviour
 
         // Rotation
         body_startRotation = body.transform.localRotation;
-        cameras_startRotation = cameras.transform.localRotation;
         arm0_startRotation = arm0.transform.localRotation;
         arm1_startRotation = arm1.transform.localRotation;
         arm2_startRotation = arm2.transform.localRotation;
@@ -385,7 +378,6 @@ public class Example : MonoBehaviour
         speedElongation = startSpeedElongation;
 
         body.transform.localPosition = body_startPosition;
-        cameras.transform.localPosition = cameras_startPosition;
         arm0.transform.localPosition = arm0_startPosition;
         arm1.transform.localPosition = arm1_startPosition;
         arm2.transform.localPosition = arm2_startPosition;
@@ -438,7 +430,6 @@ public class Example : MonoBehaviour
 
         // Rotation
         body.transform.localRotation = body_startRotation;
-        cameras.transform.localRotation = cameras_startRotation;
         arm0.transform.localRotation = arm0_startRotation;
         arm1.transform.localRotation = arm1_startRotation;
         arm2.transform.localRotation = arm2_startRotation;
@@ -522,6 +513,8 @@ public class Example : MonoBehaviour
 
         accessory = null;
         accessories = new List<Accessory>();
+
+        notificationSystem.ChangeScale(joinCamera.isActiveAndEnabled);
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -545,7 +538,7 @@ public class Example : MonoBehaviour
 
     public void UnequipAccessory()
     {
-        if (accessory)
+        if (equipped)
         {
             accessory.Unequip();
             IsEquip = EnumAccessory.empty;
@@ -569,8 +562,9 @@ public class Example : MonoBehaviour
                         {
                             accessory = ac;
                             joinCamera.enabled = true;
+                            notificationSystem.ChangeScale(true);
                             joinCameraUI.gameObject.SetActive(true);
-                            joinCameraText.text = dist.ToString("F8");
+                            joinCameraText.text = dist.ToString("F8") + " m";
                             selected = true;
                             break;
                         }
@@ -595,7 +589,7 @@ public class Example : MonoBehaviour
                 }
                 else
                 {
-                    joinCameraText.text = distance.ToString("F8");
+                    joinCameraText.text = distance.ToString("F8") + " m";
                     if (distance < distanceToConnect)
                     {
                         joinCameraUI.color = colorConnect;
@@ -663,6 +657,7 @@ public class Example : MonoBehaviour
     private void TurnOffJoinCameraAndUI()
     {
         joinCamera.enabled = false;
+        notificationSystem.ChangeScale(false);
         joinCameraUI.gameObject.SetActive(false);
     }
 
@@ -695,14 +690,14 @@ public class Example : MonoBehaviour
         if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.UpArrow))
         {
             if (allowMove && touchSurface)
-                player.transform.position += body.transform.forward * speed;
+                transform.position += body.transform.forward * speed;
         }
 
         //Движение
         if (Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.DownArrow))
         {
             if (allowMove && touchSurface)
-                player.transform.position -= body.transform.forward * speed;
+                transform.position -= body.transform.forward * speed;
         }
 
         //Поворот
@@ -710,7 +705,7 @@ public class Example : MonoBehaviour
         {
             if (allowMove && touchSurface)
             {
-                player.transform.RotateAround(body.transform.position, body.transform.up, -speedRotation * Mathf.Rad2Deg);
+                transform.RotateAround(body.transform.position, body.transform.up, -speedRotation * Mathf.Rad2Deg);
             }
         }
 
@@ -719,7 +714,7 @@ public class Example : MonoBehaviour
         {
             if (allowMove && touchSurface)
             {
-                player.transform.RotateAround(body.transform.position, body.transform.up, speedRotation * Mathf.Rad2Deg);
+                transform.RotateAround(body.transform.position, body.transform.up, speedRotation * Mathf.Rad2Deg);
             }
         }
 
@@ -1667,9 +1662,7 @@ public class Example : MonoBehaviour
     // Привязка деталей
     void TieObjiects()
     {
-        player = GameObject.Find("MainGameObject");
         body = GameObject.Find("body");
-        cameras = GameObject.Find("cameras");
 
         // Связывание стрел
         {

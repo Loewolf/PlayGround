@@ -7,7 +7,7 @@ public class PointOfInterest : MonoBehaviour
     public float physicalRadiusOffset = 0.05f;
     public float height = 1f;
     public string targetTag = "Player";
-
+    public GameObject targetObject = null;
     private bool reached = false;
 
     public void ResetReached()
@@ -22,17 +22,37 @@ public class PointOfInterest : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == targetTag)
+        if (targetObject)
         {
-            reached = true;
+            if (targetObject == other.gameObject)
+            {
+                reached = true;
+            }
+        }
+        else
+        {
+            if (other.tag == targetTag)
+            {
+                reached = true;
+            }
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.tag == targetTag)
+        if (targetObject)
         {
-            reached = false;
+            if (targetObject == other.gameObject)
+            {
+                reached = false;
+            }
+        }
+        else
+        {
+            if (other.tag == targetTag)
+            {
+                reached = false;
+            }
         }
     }
 

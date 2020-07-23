@@ -56,5 +56,10 @@ public static class OtherMath
         float result = Mathf.Sqrt(l * l + d * d - 2 * d * l * Mathf.Cos(alpha));
         return result;
     }
+
+    public static float SquareRootOfOneMinusSquareSrc(float src)
+    {
+        return Mathf.Sqrt(1-src*src);
+    }
 }
 
