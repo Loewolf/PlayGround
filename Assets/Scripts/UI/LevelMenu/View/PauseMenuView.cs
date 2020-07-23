@@ -2,36 +2,59 @@
 using System.Collections;
 using System.Collections.Generic;
 using Controllers;
+using Core;
 using UnityEngine;
 
-public class PauseMenuView : BaseView<IPauseMenuView>,IPauseMenuView
+namespace View
 {
-    public RestartMenuView RestartMenuView;
-    public SelectLevelMenuView SelectLevelMenuView;
-    
-    protected override IPauseMenuView View => this;
-    public event Action BackEvent;
-    public event Action GoMainMenuEvent;
-    public event Action RestartEvent;
-    public event Action SelectLevelEvent;
 
-    public void Resume()
+    public class PauseMenuView : BaseView<IPauseMenuView>, IPauseMenuView, IMenuView
     {
-        BackEvent?.Invoke();
-    }
+        private MenuManager MenuManager;
 
-    public void StartAgain()
-    {
-        
-    }
+        public RestartMenuView RestartMenuView;
+        public SelectLevelMenuMenuView SelectLevelMenuMenuView;
 
-    public void MainMenu()
-    {
-        
-    }
+        protected override IPauseMenuView View => this;
+        public event Action BackEvent;
+        public event Action ResumeEvent;
+        public event Action GoMainMenuEvent;
+        public event Action RestartEvent;
+        public event Action<IView> SelectLevelEvent;
 
-    public void SelectLevels()
-    {
+
+        public void SetGameManager(MenuManager gm)
+        {
+            MenuManager = gm;
+        }
+
+        public void Resume()
+        {
+            ResumeEvent?.Invoke();
+            MenuManager?.Resume();
+        }
+
+        public void StartAgain()
+        {
+
+        }
+
+        public void MainMenu()
+        {
+
+        }
+
+        public void SelectLevels()
+        {
+            MenuManager.AddView(SelectLevelMenuMenuView);
+            SelectLevelEvent?.Invoke(SelectLevelMenuMenuView);
+            SelectLevelMenuMenuView.OpenPauseEvent += Open;
+        }
+
+        public void Back()
+        {
+            Resume();
+        }
+
     }
-    
 }

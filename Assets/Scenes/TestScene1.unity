@@ -1040,7 +1040,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RestartMenuView: {fileID: 0}
-  SelectLevelMenuView: {fileID: 167645098}
+  SelectLevelMenuMenuView: {fileID: 0}
 --- !u!1 &259381492
 GameObject:
   m_ObjectHideFlags: 0
