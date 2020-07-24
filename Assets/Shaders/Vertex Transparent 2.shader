@@ -1,4 +1,4 @@
-﻿Shader "Custom/Vertex Transparent Square"
+﻿Shader "Custom/Vertex Transparent Cubic"
 {
 	Properties
 	{
@@ -38,15 +38,15 @@
 			return o;
 		}
 
-		float square(const float x)
+		float cube(const float x)
 		{
-			return x * x;
+			return x * x * x;
 		}
 
 		fixed4 frag(v2f i) : SV_Target
 		{
 			half4 color = _Color;
-			color.a = square(i.color.r)*color.a;
+			color.a = cube(i.color.r) *color.a;
 			return color;
 		}
 	ENDCG

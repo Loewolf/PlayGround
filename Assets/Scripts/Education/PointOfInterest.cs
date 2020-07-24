@@ -1,26 +1,14 @@
 ﻿using UnityEngine;
 [RequireComponent(typeof(CapsuleCollider))]
-public class PointOfInterest : MonoBehaviour
+public class PointOfInterest : ReachablePoint
 {
     [Header("Модификаторы размера")]
     public float radius = 1f;
     public float physicalRadiusOffset = 0.05f;
     public float height = 1f;
-    public string targetTag = "Player";
     public GameObject targetObject = null;
-    private bool reached = false;
 
-    public void ResetReached()
-    {
-        reached = false;
-    }
-
-    public bool IsReached()
-    {
-        return reached;
-    }
-
-    private void OnTriggerEnter(Collider other)
+    protected override void OnTriggerEnter(Collider other)
     {
         if (targetObject)
         {
@@ -38,7 +26,7 @@ public class PointOfInterest : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit(Collider other)
+    protected override void OnTriggerExit(Collider other)
     {
         if (targetObject)
         {

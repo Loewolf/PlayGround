@@ -10,4 +10,10 @@ public class TaskTester : MonoBehaviour
         educationHandler.EndTask(false);
         if (task) educationHandler.SetTask(task);
     }
+
+    public void ResetTask(Task newTask)
+    {
+        educationHandler.EndTask(false);
+        educationHandler.SetTask(newTask);
+    }
 }
