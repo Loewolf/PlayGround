@@ -12,10 +12,13 @@ namespace View
     {
         protected abstract TView View { get; }
 
-        public void Open<T>(IController<T> controller)
-            where T : IView
+        protected abstract IController<T> CreateController<T>()
+            where T : IView;
+
+        public void Open()
         {
-            if (View is T view)
+            var controller = CreateController<TView>();
+            if (View is TView view)
                 controller?.OnOpen(view);
             gameObject.SetActive(true);
         }

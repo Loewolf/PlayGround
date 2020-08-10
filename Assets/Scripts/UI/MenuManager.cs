@@ -8,38 +8,66 @@ using View;
 
 public class MenuManager : MonoBehaviour
 {
+    [Header("Views")]
     public PauseMenuView PauseMenuView;
-    private Stack<IMenuView> _thisView = new Stack<IMenuView>();
+    public RestartMenuView RestartMenuView;
+    public SelectLevelMenuView SelectLevelMenuMenuView;
     
+    private Stack<IMenuView> _thisStackView = new Stack<IMenuView>();
+    
+    [Header("Buttons")]
     public KeyCode PauseButton;
     public KeyCode BackButton;
 
+    
+    private void Awake()
+    {
+        PauseMenuView.MenuManager = this;
+        SelectLevelMenuMenuView.MenuManager = this;
+        RestartMenuView.MenuManager = this;
+    }
+
     public void Pause()
     {
-        _thisView.Push(PauseMenuView);
-        PauseMenuView.SetGameManager(this);
-        PauseMenuView.Open(new PauseMenuController());
+        Time.timeScale = 0;
+        AddStackView(PauseMenuView);
+        PauseMenuView.Open();
     }
 
     public void Resume()
     {
-        PauseMenuView.SetGameManager(null);
+        Time.timeScale = 1;
     }
 
     public void Back()
     {
-        _thisView.Pop().Back();
+        _thisStackView.Peek().Back();
     }
 
-    public void AddView(IMenuView view)
+    public IView GetView()
     {
-        _thisView.Push(view);
+        return _thisStackView.Peek();
+    }
+
+    public void AddStackView(IMenuView view)
+    {
+        _thisStackView.Push(view);
+    }
+
+    public void RemoveStackView()
+    {
+        _thisStackView?.Pop();
     }
     public void Update()
     {
-        if (Input.GetKeyDown(PauseButton))
+        if (Input.GetKeyDown(PauseButton) && _thisStackView.Count == 0) 
         {
             Pause();
+        }
+
+        if (Input.GetKeyDown(BackButton) &&  _thisStackView.Count != 0)
+        {
+            Back();
         }
     }
 }

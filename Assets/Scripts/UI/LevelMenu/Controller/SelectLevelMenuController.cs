@@ -3,33 +3,36 @@ using System.Collections;
 using System.Collections.Generic;
 using Core;
 using UnityEngine;
+using View;
 
 namespace Controllers
 {
-    public interface ISelectLevelMenuView : IView
+    public interface ISelectLevelMenuView : IMenuView
     {
         event Action BackEvent;
-        event Action<IController<IPauseMenuView>> OpenPauseEvent;
+        //event Action<IController<IPauseMenuView>> OpenPauseEvent;
     }
     public class SelectLevelMenuController : IController<ISelectLevelMenuView>
     {
-        private ISelectLevelMenuView menuView;
+        private ISelectLevelMenuView _view;
         
         public void OnOpen(ISelectLevelMenuView menuView)
         {
-            this.menuView = menuView;
-            this.menuView.BackEvent += Back;
+            _view = menuView;
+            _view.BackEvent += Back;
         }
 
         public void OnClose(ISelectLevelMenuView menuView)
         {
-            this.menuView.BackEvent -= Back;
-            this.menuView = null;
+            _view.BackEvent -= Back;
+            _view = null;
         }
 
         public void Back()
         {
-            menuView.Close(this);
+            _view.MenuManager.RemoveStackView();
+            _view.MenuManager.GetView().Open();
+            _view.Close(this);
         }
         
     }
