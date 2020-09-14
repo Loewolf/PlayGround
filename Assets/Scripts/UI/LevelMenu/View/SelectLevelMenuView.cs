@@ -10,7 +10,6 @@ namespace View
     {
         public MenuManager MenuManager{ get; set; }
         protected override ISelectLevelMenuView View => this;
-        
         public event Action BackEvent;
 
         protected override IController<T> CreateController<T>()
@@ -23,5 +22,6 @@ namespace View
             BackEvent?.Invoke();
             
         }
+        
     }
 }

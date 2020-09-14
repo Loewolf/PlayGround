@@ -1,12 +1,23 @@
 ﻿using UnityEngine;
 using System;
 using System.Collections;
+using System.Xml.Serialization;
 
-public class Task: MonoBehaviour
+
+public interface TaskCurrentValue
+{
+
+    int currentValue { get; set; } //хранит текущее кол-во очков
+    int currentExtraValue { get; set; } //хранит текущее доп. кол-во очков(для задач доп. тренировки)
+}
+public class Task: MonoBehaviour, TaskCurrentValue
 {
     public Example mainGameObject;
-
+    public int currentValue { get; set; }
+    public int currentExtraValue { get; set; }
+    
     [Header("Свойства задачи")]
+    public string taskName; //название задачи, будет отображаться в меню уровней
     public Transform startPoint; // Точка, в которую будет отправлен робот при старте выполнения задания
     public int value; // Количество очков, которое получит пользователь за выполнение задания
     public string[] taskDescriptions; // Набор описаний задачи
@@ -89,7 +100,10 @@ public class Task: MonoBehaviour
     {
         DisableTaskGameObjects();
         if (isCompleted)
+        {
+            currentValue = currentValue < value ? value : currentValue;
             return value;
+        }
         else
             return 0;
     }

@@ -12,7 +12,7 @@ namespace View
     public class PauseMenuView : BaseView<IPauseMenuView>, IPauseMenuView
     {
         public MenuManager MenuManager{ get; set; }
-
+    
         protected override IPauseMenuView View => this;
         
         public event Action ResumeEvent;
