@@ -1,14 +1,24 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
+
 
 public class TaskTester : MonoBehaviour
 {
     public Task task;
     public EducationHandler educationHandler;
+    //public int NumberTask = 0;//для TaskEditor
+
+
 
     public void ResetTask()
     {
         educationHandler.EndTask(false);
-        if (task) educationHandler.SetTask(task);
+        if (this.task != null) educationHandler.SetTask(this.task);
+    }
+    public void ResetTask(Task task)
+    {
+        educationHandler.EndTask(false);
+        if (task != null) educationHandler.SetTask(task);
     }
 
     public void ResetTask(Task newTask)
