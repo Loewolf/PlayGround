@@ -31,6 +31,7 @@ public class AccessoryChange : Task
         }
         mainGameObject.UnequipAccessory();
         accessory.gameObject.SetActive(false);
+        joinPoint.gameObject.SetActive(false);
         separationPoint.gameObject.SetActive(false);
     }
 

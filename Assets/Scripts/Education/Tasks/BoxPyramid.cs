@@ -8,7 +8,7 @@ public class BoxPyramid : Task
     [Header("Объекты, связанные с задачей")]
     public Transform accessory;
     public Transform accessoryDefaultPoint;
-    public BoxPyramidLevel[] levels;
+    public ReachableBoxArea[] levels;
     public Rigidbody[] rigidbodies;
     public Transform[] rigidbodiesDefaultPoints;
     public MeshRenderer pointOfInterest;
@@ -70,7 +70,7 @@ public class BoxPyramid : Task
         int ret = 0;
         for (int i = 0; i < levelAmount; ++i)
         {
-            result += levels[i].GetBoxTaskResult();
+            result += levels[i].IsEnoughObjects();
         }
         if (result == levelAmount)
         {

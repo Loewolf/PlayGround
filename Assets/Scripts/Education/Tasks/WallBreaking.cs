@@ -1,18 +1,9 @@
 ﻿using UnityEngine;
 
-public class WallBreaking : Task
+public class WallBreaking : WallBreakingPattern
 {
-    [Header("Объекты, связанные с задачей")]
-    public Transform hammerTransform;
-    public HydraulicHammer hammer;
-    public Transform hammerDefaultPoint;
-
-    public GameObject wallPrefab;
-    public Transform wallDefaultPoint;
-    public Transform area;
+    [Header("Объекты, связанные с текущей задачей")]
     public PointOfInterest pointOfInterest;
-    public Transform grid; // Должен содержать дочерние объекты, имеющие только компонент ReachablePoint
-    public GameObject[] otherObjects;
 
     // Группа полей, определяющих векторы, используемые при вычислении угла гидромолота
     [Header("Вспомогательные точки")]
@@ -23,53 +14,25 @@ public class WallBreaking : Task
     public Transform axisXright;
     public Transform axisXleft;
 
-    private GameObject instantiatedWall;
     private Vector3 axisX;
     private Vector3 axisY;
-    private int reachablePointsAmount;
-    private ReachablePoint[] reachablePoints;
-    private int[] visitedPoints;
     private const float COS_EPS = 0.15f;
 
     protected override void EnableTaskGameObjects()
     {
-        foreach (GameObject obj in otherObjects)
-        {
-            obj.SetActive(true);
-        }
-        hammerTransform.gameObject.SetActive(true);
-        hammerTransform.transform.position = hammerDefaultPoint.position;
-        hammerTransform.transform.rotation = hammerDefaultPoint.rotation;
-        instantiatedWall = Instantiate(wallPrefab, wallDefaultPoint.position, wallDefaultPoint.rotation);
-        area.gameObject.SetActive(true);
+        EnableWallBreakingObjects();
 
         axisX = axisXright.position - axisXleft.position;
         axisY = axisYtop.position - axisYbottom.position;
 
         pointOfInterest.gameObject.SetActive(true);
         pointOfInterest.ResetReached();
-
-        reachablePointsAmount = grid.childCount;
-        reachablePoints = new ReachablePoint[reachablePointsAmount];
-        visitedPoints = new int[reachablePointsAmount];
-        for (int i = 0; i < reachablePointsAmount; ++i)
-        {
-            reachablePoints[i] = grid.GetChild(i).GetComponent<ReachablePoint>();
-            reachablePoints[i].ResetReached();
-            visitedPoints[i] = 0;
-        }
     }
 
     protected override void DisableTaskGameObjects()
     {
-        foreach (GameObject obj in otherObjects)
-        {
-            obj.SetActive(false);
-        }
-        mainGameObject.UnequipAccessory();
-        hammerTransform.gameObject.SetActive(false);
-        Destroy(instantiatedWall);
-        area.gameObject.SetActive(false);
+        DisableWallBreakingObjects();
+        pointOfInterest.gameObject.SetActive(false);
     }
 
     protected override int Task_0() // Присоединить оборудование
@@ -108,17 +71,6 @@ public class WallBreaking : Task
             SetStage(0, Task_0, true);
             return 1;
         }
-    }
-
-    private int CountVisitedPoints()
-    {
-        int amount = 0;
-        for (int i = 0; i < reachablePointsAmount; ++i)
-        {
-            if (reachablePoints[i].IsReached()) visitedPoints[i] = 1;
-            amount += visitedPoints[i];
-        }
-        return amount;
     }
 
     private int Task_2() // Уничтожить кусок стены

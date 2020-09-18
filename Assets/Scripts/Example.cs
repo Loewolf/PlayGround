@@ -546,6 +546,26 @@ public class Example : MonoBehaviour
         }
     }
 
+    public void EquipAccessoryWithForce(in Accessory accessory)
+    {
+        this.accessory = accessory;
+        EquipAccessory();
+        this.accessory.SetFixedDistanceAndRotation();
+    }
+
+    private void EquipAccessory()
+    {
+        accessory.Equip(join, this);
+
+        if (accessory.gameObject.name == "Гидромолот")
+            IsEquip = EnumAccessory.hydrohammer;
+        else
+            IsEquip = EnumAccessory.grab;
+
+        equipped = true;
+        notificationSystem.Notify(NotificationSystem.notifyTypes.message, "Оборудование сменено на " + accessory.name);
+    }
+
     // Для событий, не связанных с физикой напрямую
     private void Update()
     {
@@ -617,15 +637,7 @@ public class Example : MonoBehaviour
                 {
                     if (distance < distanceToConnect)
                     {
-                        accessory.Equip(join, this);
-
-                        if (accessory.gameObject.name == "Гидромолот")
-                            IsEquip = EnumAccessory.hydrohammer;
-                        else
-                            IsEquip = EnumAccessory.grab;
-
-                        equipped = true;
-                        notificationSystem.Notify(NotificationSystem.notifyTypes.message, "Оборудование сменено на " + accessory.name);
+                        EquipAccessory();
                     }
                     else
                     {

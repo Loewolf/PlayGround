@@ -6,43 +6,6 @@ public class PointOfInterest : ReachablePoint
     public float radius = 1f;
     public float physicalRadiusOffset = 0.05f;
     public float height = 1f;
-    public GameObject targetObject = null;
-
-    protected override void OnTriggerEnter(Collider other)
-    {
-        if (targetObject)
-        {
-            if (targetObject == other.gameObject)
-            {
-                reached = true;
-            }
-        }
-        else
-        {
-            if (other.tag == targetTag)
-            {
-                reached = true;
-            }
-        }
-    }
-
-    protected override void OnTriggerExit(Collider other)
-    {
-        if (targetObject)
-        {
-            if (targetObject == other.gameObject)
-            {
-                reached = false;
-            }
-        }
-        else
-        {
-            if (other.tag == targetTag)
-            {
-                reached = false;
-            }
-        }
-    }
 
     private void OnValidate()
     {

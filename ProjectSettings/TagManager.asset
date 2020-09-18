@@ -10,6 +10,8 @@ TagManager:
   - Caterpillar
   - Leg
   - Box
+  - Table
+  - Pipe
   layers:
   - Default
   - TransparentFX

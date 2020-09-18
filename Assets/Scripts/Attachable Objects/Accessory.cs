@@ -53,18 +53,24 @@ public class Accessory : AttachableObject
         equipped = false;
     }
 
+    public void SetFixedDistanceAndRotation()
+    {
+        StopCoroutine(setFixedDistance);
+        transform.localPosition = fixedDistance;
+        transform.localRotation = fixedRotation;
+        equipped = true;
+    }
+
     protected IEnumerator SetFixedDistance()
     {
         Vector3 startPosition = transform.localPosition;
         Quaternion startRotation = transform.localRotation;
-        Quaternion endRotation = Quaternion.Euler(fixedRotation.eulerAngles.x, fixedRotation.eulerAngles.y, startRotation.eulerAngles.z);
         for (float f = 0.1f; f <= 1; f += 0.1f)
         {
             transform.localPosition = Vector3.Lerp(startPosition, fixedDistance, f);
-            transform.localRotation = Quaternion.Lerp(startRotation, endRotation, f);
+            transform.localRotation = Quaternion.Lerp(startRotation, fixedRotation, f);
             yield return new WaitForFixedUpdate();
-        }
-        fixedRotation = endRotation;
+        }        
         equipped = true;
     }
 }

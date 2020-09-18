@@ -7,8 +7,8 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Hammer Area
-  m_Shader: {fileID: 4800000, guid: 96947b0ee4f80624c890f3bbcde8ee0c, type: 3}
+  m_Name: Transparent Box 2
+  m_Shader: {fileID: 4800000, guid: fe74acce885bd8242b9da2ee7e06fead, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -73,5 +73,5 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _Color: {r: 0.41037738, g: 0.72718954, b: 1, a: 0.74509805}
+    - _Color: {r: 0.19811322, g: 0.50777537, b: 0.56, a: 0.4509804}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}

@@ -107,7 +107,7 @@ MonoBehaviour:
   centerOfMass: {x: 0, y: 0, z: -0.3644374}
   mass: 150
   rigidbodyHandler: {fileID: 5867501645225592304}
-  antiSelfIntersectionBox: {fileID: 0}
+  antiSelfIntersectionBox: {fileID: 5867501646388376883}
   hitPoints: {fileID: 7039483031263285484}
   icon: {fileID: 0}
   imageTurnedOff: {fileID: 21300000, guid: b31f9fa21858dbc43af2361b6ed89517, type: 3}

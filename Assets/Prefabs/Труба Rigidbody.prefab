@@ -1,35 +1,5 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!64 &873063609973425511
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9168294940370148458}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Convex: 1
-  m_CookingOptions: 14
-  m_Mesh: {fileID: 2534964839176971238, guid: 98134bcbd00d29c438a622e42f0c00d9, type: 3}
---- !u!114 &873063609973425509
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9168294940370148458}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bffc8f72d9affc745b8b2e13a2b4c25d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  centerOfMass: {x: 0, y: 0, z: 0}
-  mass: 100
-  rigidbodyTaker: {fileID: 873063610999708749}
-  antiSelfIntersectionBox: {fileID: 873063610263052765}
 --- !u!1 &873063610263052765
 GameObject:
   m_ObjectHideFlags: 0
@@ -57,7 +27,7 @@ Transform:
   m_GameObject: {fileID: 873063610263052765}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 2}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 2}
   m_Children: []
   m_Father: {fileID: 5289207783979282041}
   m_RootOrder: 0
@@ -84,6 +54,7 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -120,11 +91,11 @@ GameObject:
   - component: {fileID: 873063610999708749}
   m_Layer: 0
   m_Name: "\u0422\u0440\u0443\u0431\u0430 Rigidbody"
-  m_TagString: Untagged
+  m_TagString: Pipe
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &873063610999708748
 Transform:
   m_ObjectHideFlags: 0
@@ -134,7 +105,7 @@ Transform:
   m_GameObject: {fileID: 873063610999708746}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 540.618, y: 50.106, z: 473.02}
-  m_LocalScale: {x: 0.1, y: 1, z: 0.1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5289207783979282041}
   m_Father: {fileID: 0}
@@ -156,6 +127,36 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!64 &873063609973425511
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9168294940370148458}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2534964839176971238, guid: 98134bcbd00d29c438a622e42f0c00d9, type: 3}
+--- !u!114 &873063609973425509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9168294940370148458}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bffc8f72d9affc745b8b2e13a2b4c25d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  centerOfMass: {x: 0, y: 0, z: 0}
+  mass: 100
+  rigidbodyHandler: {fileID: 873063610999708749}
+  antiSelfIntersectionBox: {fileID: 873063610263052765}
 --- !u!1001 &873063609973425507
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -242,6 +243,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: "\u0422\u0440\u0443\u0431\u0430"
+      objectReference: {fileID: 0}
+    - target: {fileID: -927199367670048503, guid: 98134bcbd00d29c438a622e42f0c00d9,
+        type: 3}
+      propertyPath: m_TagString
+      value: Pipe
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98134bcbd00d29c438a622e42f0c00d9, type: 3}
