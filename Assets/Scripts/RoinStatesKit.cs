@@ -2,14 +2,13 @@
 
 public class RoinStatesKit : MonoBehaviour
 {
-    [System.NonSerialized]
     public float speed,
                  speedRotation,
                  speedElongation;
-    [System.NonSerialized]
+
     public bool allowRotation,
                 allowMove;
-    [System.NonSerialized]
+
     public Vector3 body_position,
                    arm0_position,
                    arm1_position,
@@ -60,7 +59,7 @@ public class RoinStatesKit : MonoBehaviour
                    yawer_position,
                    grip_position,
                    pistonRoller_position;
-    [System.NonSerialized]
+
     public Quaternion body_rotation,
                        arm0_rotation,
                        arm1_rotation,
@@ -111,4 +110,18 @@ public class RoinStatesKit : MonoBehaviour
                        yawer_rotation,
                        grip_rotation,
                        pistonRoller_rotation;
+
+    public float alpha0,
+                alpha1, beta1, gamma1, d1, l1,
+                alpha2, beta2, gamma2, d2, l2,
+                alpha3, beta3, gamma3, d3, l3,
+                alpha5, beta5, gamma5, phi5, psi51, psi52, theta5,
+                l6,
+                alphaPitch, beta7, gamma7, phi7, psi71, psi72, theta7,
+                alphaFR, betaFR, gammaFR, dFR, lFR,
+                alphaFL, betaFL, gammaFL, dFL, lFL,
+                alphaBR, betaBR, gammaBR, dBR, lBR,
+                alphaBL, betaBL, gammaBL, dBL, lBL,
+                alphaRoll, betaRoll, gammaRoll, lRoll, dRoll,
+                alphaYaw;
 }

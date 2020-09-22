@@ -4,44 +4,7 @@ using UnityEngine.UI;
 [RequireComponent(typeof(Rigidbody))]
 public class Example : RoinPartsAndStates
 {
-    private RoinStatesKit defaultState;
-    [Header("Наборы состояний")]
-    public RoinStatesKit specialState;
-
     private bool touchSurface;
-
-    private float hitFootMin, //для лап 
-                 hitFootMax,
-                 hit1Min,
-                 hit1Max,
-                 hit2Min,
-                 hit2Max,
-                 hitFractureMin,
-                 hitFractureMax,
-                 hit5Min,
-                 hit5Max,
-                 hit6Min,
-                 hit6Max,
-                 hitPitchMin,
-                 hitPitchMax,
-                 hitRollMin,
-                 hitRollMax;
-    // Длины сторон и углы для вычисления треугольников
-    private float alpha0,
-                    alpha1, beta1, gamma1, d1, l1,
-                    alpha2, beta2, gamma2, d2, l2,
-                    alpha3, beta3, gamma3, d3, l3,
-                    alpha5, beta5, gamma5, phi5, psi51, psi52, theta5,
-                    OA5, OB5, CD5, BD5, OC5, //Размеры, которые остаются постоянными
-                    l6,
-                    alphaPitch, beta7, gamma7, phi7, psi71, psi72, theta7,
-                    OA7, OB7, CD7, BD7, OC7, //Размеры, которые остаются постоянными
-                    alphaFR, betaFR, gammaFR, dFR, lFR,
-                    alphaFL, betaFL, gammaFL, dFL, lFL,
-                    alphaBR, betaBR, gammaBR, dBR, lBR,
-                    alphaBL, betaBL, gammaBL, dBL, lBL,
-                    alphaRoll, betaRoll, gammaRoll, lRoll, dRoll,
-                    alphaYaw;
 
     [Header("Самопересечения")]
     public BoxMainObject test;
@@ -104,27 +67,9 @@ public class Example : RoinPartsAndStates
         test.SetLast(defaultBox);
     }
 
-    private void WriteDefaultState()
-    {
-        defaultState = gameObject.AddComponent(typeof(RoinStatesKit)) as RoinStatesKit;
-        WriteValuesToStatesKit(defaultState);
-        SetSize();
-        SetHits();
-    }
-
-    public void SetState()
-    {
-        if (specialState) SetValuesFromStatesKit(specialState);
-        else SetValuesFromStatesKit(defaultState);
-        SetSize();
-        SetHits();
-    }
-
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-
-        MatchProperties();
         WriteDefaultState();
 
         generalCenterOfMass = GetComponent<GeneralCenterOfMass>();
@@ -1286,157 +1231,6 @@ public class Example : RoinPartsAndStates
         {
             if (accessories.Contains(other.GetComponent<Accessory>())) accessories.Remove(other.GetComponent<Accessory>());
         }
-    }
-
-    //Задание размеров
-    void SetSize()
-    {
-        float h; //Переменная для вычисления изменяющихся сторон треугольников
-
-        //Угол поворота базы
-        {
-            alpha0 = 0;
-        }
-
-        //Размеры для первой стрелы
-        {
-            h = OtherMath.DistanceYZ(cylinder1, piston1);
-            l1 = OtherMath.DistanceYZ(cylinder1, link1);
-            d1 = OtherMath.DistanceYZ(piston1, link1);
-            alpha1 = Mathf.Acos((l1 * l1 + d1 * d1 - h * h) / (2 * l1 * d1));
-            beta1 = OtherMath.CalcBeta(l1, d1, h, alpha1);
-            gamma1 = PI - alpha1 - beta1;
-        }
-
-        //Размеры для второй стрелы
-        {
-            h = OtherMath.DistanceYZ(cylinder2, piston2);
-            l2 = OtherMath.DistanceYZ(cylinder2, link2);
-            d2 = OtherMath.DistanceYZ(piston2, link2);
-            alpha2 = Mathf.Acos((l2 * l2 + d2 * d2 - h * h) / (2 * l2 * d2));
-            beta2 = OtherMath.CalcBeta(l2, d2, h, alpha2);
-            gamma2 = PI - alpha2 - beta2;
-        }
-
-        //Размеры для излома
-        {
-            cylinder3.transform.SetParent(arm3.transform);
-            h = OtherMath.DistanceLocalYZ(cylinder3.localPosition, piston3.localPosition);
-            l3 = OtherMath.DistanceLocalYZ(cylinder3.localPosition, Vector3.zero);
-            d3 = OtherMath.DistanceLocalYZ(piston3.localPosition, Vector3.zero);
-            alpha3 = Mathf.Acos((l3 * l3 + d3 * d3 - h * h) / (2 * l3 * d3));
-            beta3 = OtherMath.CalcBeta(l3, d3, h, alpha3);
-            gamma3 = PI - alpha3 - beta3;
-            cylinder3.transform.SetParent(arm2.transform);
-        }
-
-        //Размеры для четвертой стрелы
-        {
-            OA5 = OtherMath.DistanceYZ(fixed5, cylinder5);
-            OB5 = OtherMath.DistanceYZ(fixed5, piston5);
-            h = OtherMath.DistanceYZ(piston5, cylinder5);
-            alpha5 = Mathf.Acos((OA5 * OA5 + OB5 * OB5 - h * h) / (2 * OB5 * OA5));
-            beta5 = OtherMath.CalcBeta(OA5, OB5, h, alpha5);
-            gamma5 = PI - alpha5 - beta5;
-            OC5 = OtherMath.DistanceYZ(fixed5, link5);
-            BD5 = OtherMath.DistanceYZ(piston5, clutch5);
-            CD5 = OtherMath.DistanceYZ(link5, clutch5);
-            h = OtherMath.DistanceYZ(piston5, link5);
-            theta5 = Mathf.Acos((BD5 * BD5 + CD5 * CD5 - h * h) / (2 * BD5 * CD5));
-            psi51 = Mathf.Acos((OC5 * OC5 + h * h - OB5 * OB5) / (2 * OC5 * h));
-            psi52 = OtherMath.CalcBeta(CD5, BD5, h, theta5);
-            phi5 = OtherMath.CalcBeta(OC5, h, OB5, psi51);
-        }
-
-        //Величина удлинения шестой стрелы
-        {
-            l6 = OtherMath.DistanceYZ(link5, link6);
-        }
-
-        //Размеры вычисления тангажа НПУ
-        {
-            OA7 = OtherMath.DistanceYZ(fixed7, cylinder7);
-            OB7 = OtherMath.DistanceYZ(fixed7, piston7);
-            h = OtherMath.DistanceYZ(piston7, cylinder7);
-            alphaPitch = Mathf.Acos((OA7 * OA7 + OB7 * OB7 - h * h) / (2 * OB7 * OA7));
-            beta7 = OtherMath.CalcBeta(OA7, OB7, h, alphaPitch);
-            gamma7 = PI - alphaPitch - beta7;
-            OC7 = OtherMath.DistanceYZ(fixed7, tong);
-            BD7 = OtherMath.DistanceYZ(piston7, clutch7);
-            CD7 = OtherMath.DistanceYZ(tong, clutch7);
-            h = OtherMath.DistanceYZ(piston7, tong);
-            theta7 = Mathf.Acos((BD7 * BD7 + CD7 * CD7 - h * h) / (2 * BD7 * CD7));
-            psi71 = Mathf.Acos((OC7 * OC7 + h * h - OB7 * OB7) / (2 * OC7 * h));
-            psi72 = OtherMath.CalcBeta(CD7, BD7, h, theta7);
-            phi7 = OtherMath.CalcBeta(OC7, h, OB7, psi71);
-        }
-
-        //Размеры лап
-        {
-            h = OtherMath.DistanceXYZ(cylinderFR, pistonFR);
-            lFR = OtherMath.DistanceXYZ(cylinderFR, footFR);
-            dFR = OtherMath.DistanceXYZ(pistonFR, footFR);
-            alphaFR = Mathf.Acos((lFR * lFR + dFR * dFR - h * h) / (2 * lFR * dFR));
-            betaFR = OtherMath.CalcBeta(lFR, dFR, h, alphaFR);
-            gammaFR = PI - alphaFR - betaFR;
-
-            h = OtherMath.DistanceXYZ(cylinderFL, pistonFL);
-            lFL = OtherMath.DistanceXYZ(cylinderFL, footFL);
-            dFL = OtherMath.DistanceXYZ(pistonFL, footFL);
-            alphaFL = Mathf.Acos((lFL * lFL + dFL * dFL - h * h) / (2 * lFL * dFL));
-            betaFL = OtherMath.CalcBeta(lFL, dFL, h, alphaFL);
-            gammaFL = PI - alphaFL - betaFL;
-
-            h = OtherMath.DistanceXYZ(cylinderBR, pistonBR);
-            lBR = OtherMath.DistanceXYZ(cylinderBR, footBR);
-            dBR = OtherMath.DistanceXYZ(pistonBR, footBR);
-            alphaBR = Mathf.Acos((lBR * lBR + dBR * dBR - h * h) / (2 * lBR * dBR));
-            betaBR = OtherMath.CalcBeta(lBR, dBR, h, alphaBR);
-            gammaBR = PI - alphaBR - betaBR;
-
-            h = OtherMath.DistanceXYZ(cylinderBL, pistonBL);
-            lBL = OtherMath.DistanceXYZ(cylinderBL, footBL);
-            dBL = OtherMath.DistanceXYZ(pistonBL, footBL);
-            alphaBL = Mathf.Acos((lBL * lBL + dBL * dBL - h * h) / (2 * lBL * dBL));
-            betaBL = OtherMath.CalcBeta(lBL, dBL, h, alphaBL);
-            gammaBL = PI - alphaBL - betaBL;
-        }
-
-        //Размеры для вычисления крена НПУ
-        {
-            h = OtherMath.DistanceXY(cylinderRoller, pistonRoller);
-            lRoll = OtherMath.DistanceXY(roller, cylinderRoller);
-            dRoll = OtherMath.DistanceXY(pistonRoller, roller);
-            alphaRoll = Mathf.Acos((lRoll * lRoll + dRoll * dRoll - h * h) / (2 * lRoll * dRoll));
-            betaRoll = OtherMath.CalcBeta(lRoll, dRoll, h, alphaRoll);
-            gammaRoll = PI - alphaRoll - betaRoll;
-        }
-
-        //Угол рыскания НПУ
-        {
-            alphaYaw = 0;
-        }
-    }
-
-    //Задание ограничений на повороты и перемещения
-    void SetHits()
-    {
-        hitFootMin = (alphaBL + alphaBR + alphaFR + alphaFL) / 4;
-        hitFootMax = 93 * Mathf.Deg2Rad;
-        hit1Max = 135 * Mathf.Deg2Rad;
-        hit1Min = 31 * Mathf.Deg2Rad;
-        hit2Max = 121 * Mathf.Deg2Rad;
-        hit2Min = 41 * Mathf.Deg2Rad;
-        hitFractureMin = 29 * Mathf.Deg2Rad;
-        hitFractureMax = 130 * Mathf.Deg2Rad;
-        hit5Max = 118 * Mathf.Deg2Rad;
-        hit5Min = 19 * Mathf.Deg2Rad;
-        hit6Min = l6;
-        hit6Max = 1.88f;
-        hitPitchMin = 26 * Mathf.Deg2Rad;
-        hitPitchMax = 153 * Mathf.Deg2Rad;
-        hitRollMin = 25 * Mathf.Deg2Rad;
-        hitRollMax = 118 * Mathf.Deg2Rad;
     }
 
     private void OnDrawGizmos()

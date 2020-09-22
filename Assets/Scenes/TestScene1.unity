@@ -4113,6 +4113,150 @@ Transform:
   m_Father: {fileID: 255145691}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &489213520
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 489213522}
+  - component: {fileID: 489213521}
+  m_Layer: 0
+  m_Name: New State
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &489213521
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 489213520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21c261a63f13c594f8be128fe3f18fa8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0
+  speedRotation: 0
+  speedElongation: 0
+  allowRotation: 0
+  allowMove: 0
+  body_position: {x: 0, y: 0, z: 0}
+  arm0_position: {x: 0, y: 0, z: 0}
+  arm1_position: {x: 0, y: 0, z: 0}
+  arm2_position: {x: 0, y: 0, z: 0}
+  arm3_position: {x: 0, y: 0, z: 0}
+  arm4_position: {x: 0, y: 0, z: 0}
+  arm5_position: {x: 0, y: 0, z: 0}
+  arm6_position: {x: 0, y: 0, z: 0}
+  link1_position: {x: 0, y: 0, z: 0}
+  link2_position: {x: 0, y: 0, z: 0}
+  link3_position: {x: 0, y: 0, z: 0}
+  link4_position: {x: 0, y: 0, z: 0}
+  link5_position: {x: 0, y: 0, z: 0}
+  link6_position: {x: 0, y: 0, z: 0}
+  cylinder1_position: {x: 0, y: 0, z: 0}
+  cylinder2_position: {x: 0, y: 0, z: 0}
+  cylinder3_position: {x: 0, y: 0, z: 0}
+  cylinder5_position: {x: 0, y: 0, z: 0}
+  cylinder7_position: {x: 0, y: 0, z: 0}
+  piston1_position: {x: 0, y: 0, z: 0}
+  piston2_position: {x: 0, y: 0, z: 0}
+  piston3_position: {x: 0, y: 0, z: 0}
+  piston5_position: {x: 0, y: 0, z: 0}
+  piston7_position: {x: 0, y: 0, z: 0}
+  fixed3_position: {x: 0, y: 0, z: 0}
+  fixed5_position: {x: 0, y: 0, z: 0}
+  fixed7_position: {x: 0, y: 0, z: 0}
+  clutch5_position: {x: 0, y: 0, z: 0}
+  clutch7_position: {x: 0, y: 0, z: 0}
+  tong_position: {x: 0, y: 0, z: 0}
+  footFR_position: {x: 0, y: 0, z: 0}
+  cylinderFR_position: {x: 0, y: 0, z: 0}
+  pistonFR_position: {x: 0, y: 0, z: 0}
+  footFL_position: {x: 0, y: 0, z: 0}
+  cylinderFL_position: {x: 0, y: 0, z: 0}
+  pistonFL_position: {x: 0, y: 0, z: 0}
+  footBR_position: {x: 0, y: 0, z: 0}
+  cylinderBR_position: {x: 0, y: 0, z: 0}
+  pistonBR_position: {x: 0, y: 0, z: 0}
+  footBL_position: {x: 0, y: 0, z: 0}
+  cylinderBL_position: {x: 0, y: 0, z: 0}
+  pistonBL_position: {x: 0, y: 0, z: 0}
+  pitcher_position: {x: 0, y: 0, z: 0}
+  cylinderRoller_position: {x: 0, y: 0, z: 0}
+  roller_position: {x: 0, y: 0, z: 0}
+  yawer_position: {x: 0, y: 0, z: 0}
+  grip_position: {x: 0, y: 0, z: 0}
+  pistonRoller_position: {x: 0, y: 0, z: 0}
+  body_rotation: {x: 0, y: 0, z: 0, w: 0}
+  arm0_rotation: {x: 0, y: 0, z: 0, w: 0}
+  arm1_rotation: {x: 0, y: 0, z: 0, w: 0}
+  arm2_rotation: {x: 0, y: 0, z: 0, w: 0}
+  arm3_rotation: {x: 0, y: 0, z: 0, w: 0}
+  arm4_rotation: {x: 0, y: 0, z: 0, w: 0}
+  arm5_rotation: {x: 0, y: 0, z: 0, w: 0}
+  arm6_rotation: {x: 0, y: 0, z: 0, w: 0}
+  link1_rotation: {x: 0, y: 0, z: 0, w: 0}
+  link2_rotation: {x: 0, y: 0, z: 0, w: 0}
+  link3_rotation: {x: 0, y: 0, z: 0, w: 0}
+  link4_rotation: {x: 0, y: 0, z: 0, w: 0}
+  link5_rotation: {x: 0, y: 0, z: 0, w: 0}
+  link6_rotation: {x: 0, y: 0, z: 0, w: 0}
+  cylinder1_rotation: {x: 0, y: 0, z: 0, w: 0}
+  cylinder2_rotation: {x: 0, y: 0, z: 0, w: 0}
+  cylinder3_rotation: {x: 0, y: 0, z: 0, w: 0}
+  cylinder5_rotation: {x: 0, y: 0, z: 0, w: 0}
+  cylinder7_rotation: {x: 0, y: 0, z: 0, w: 0}
+  piston1_rotation: {x: 0, y: 0, z: 0, w: 0}
+  piston2_rotation: {x: 0, y: 0, z: 0, w: 0}
+  piston3_rotation: {x: 0, y: 0, z: 0, w: 0}
+  piston5_rotation: {x: 0, y: 0, z: 0, w: 0}
+  piston7_rotation: {x: 0, y: 0, z: 0, w: 0}
+  fixed3_rotation: {x: 0, y: 0, z: 0, w: 0}
+  fixed5_rotation: {x: 0, y: 0, z: 0, w: 0}
+  fixed7_rotation: {x: 0, y: 0, z: 0, w: 0}
+  clutch5_rotation: {x: 0, y: 0, z: 0, w: 0}
+  clutch7_rotation: {x: 0, y: 0, z: 0, w: 0}
+  tong_rotation: {x: 0, y: 0, z: 0, w: 0}
+  footFR_rotation: {x: 0, y: 0, z: 0, w: 0}
+  cylinderFR_rotation: {x: 0, y: 0, z: 0, w: 0}
+  pistonFR_rotation: {x: 0, y: 0, z: 0, w: 0}
+  footFL_rotation: {x: 0, y: 0, z: 0, w: 0}
+  cylinderFL_rotation: {x: 0, y: 0, z: 0, w: 0}
+  pistonFL_rotation: {x: 0, y: 0, z: 0, w: 0}
+  footBR_rotation: {x: 0, y: 0, z: 0, w: 0}
+  cylinderBR_rotation: {x: 0, y: 0, z: 0, w: 0}
+  pistonBR_rotation: {x: 0, y: 0, z: 0, w: 0}
+  footBL_rotation: {x: 0, y: 0, z: 0, w: 0}
+  cylinderBL_rotation: {x: 0, y: 0, z: 0, w: 0}
+  pistonBL_rotation: {x: 0, y: 0, z: 0, w: 0}
+  pitcher_rotation: {x: 0, y: 0, z: 0, w: 0}
+  cylinderRoller_rotation: {x: 0, y: 0, z: 0, w: 0}
+  roller_rotation: {x: 0, y: 0, z: 0, w: 0}
+  yawer_rotation: {x: 0, y: 0, z: 0, w: 0}
+  grip_rotation: {x: 0, y: 0, z: 0, w: 0}
+  pistonRoller_rotation: {x: 0, y: 0, z: 0, w: 0}
+--- !u!4 &489213522
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 489213520}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 24
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &491241754
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29658,6 +29802,11 @@ PrefabInstance:
       propertyPath: notificationSystem
       value: 
       objectReference: {fileID: 1255422464}
+    - target: {fileID: 1008201080088543453, guid: 1c52e63fd24b2d8418630acba3dea744,
+        type: 3}
+      propertyPath: specialState
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1008201080088543454, guid: 1c52e63fd24b2d8418630acba3dea744,
         type: 3}
       propertyPath: m_Name
