@@ -81,10 +81,10 @@ public class Task: MonoBehaviour, TaskCurrentValue
         // Выключить все GameObject'ы, связанные с этим заданием
     }
 
-    protected void MainGameObjectSetStartPosition()
+    protected virtual void MainGameObjectSetStartPosition()
     {
         mainGameObject.UnequipAccessory();
-        mainGameObject.SetStartValues();
+        mainGameObject.SetState();
         mainGameObject.transform.position = startPoint.position;
         mainGameObject.transform.rotation = startPoint.rotation;
     }

@@ -4435,7 +4435,7 @@ Camera:
   m_GameObject: {fileID: 1008201079512076734}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 2
+  m_ClearFlags: 1
   m_BackGroundColor: {r: 0.15792987, g: 0.17355672, b: 0.1981132, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -4450,7 +4450,7 @@ Camera:
     width: 1
     height: 0.3
   near clip plane: 0.03
-  far clip plane: 10
+  far clip plane: 20
   field of view: 75
   orthographic: 0
   orthographic size: 5
@@ -6410,7 +6410,7 @@ Transform:
   m_GameObject: {fileID: 1008201080088543454}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 547.6, y: 50.079, z: 466.36}
-  m_LocalScale: {x: 1, y: 1, z: 1.0000002}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 5544333084178940386}
   - {fileID: 1008201078570345596}
@@ -6447,96 +6447,58 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cbb3a3b76299b9548aef35ce58e0ef2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
-  speedRotation: 4
-  speedElongation: 0
-  PI: 3.1415927
-  touchSurface: 0
-  allowRotation: 0
-  allowMove: 0
-  hitFootMin: 0
-  hitFootMax: 0
-  hit1Min: 0
-  hit1Max: 0
-  hit2Min: 0
-  hit2Max: 0
-  hitFractureMin: 0
-  hitFractureMax: 0
-  hit5Min: 0
-  hit5Max: 0
-  hit6Min: 0
-  hit6Max: 0
-  hitPitchMin: 0
-  hitPitchMax: 0
-  hitRollMin: 0
-  hitRollMax: 0
-  alpha0: 0
-  alpha1: 0
-  beta1: 0
-  gamma1: 0
-  d1: 0
-  l1: 0
-  alpha2: 0
-  beta2: 0
-  gamma2: 0
-  d2: 0
-  l2: 0
-  alpha3: 0
-  beta3: 0
-  gamma3: 0
-  d3: 0
-  l3: 0
-  alpha5: 0
-  beta5: 0
-  gamma5: 0
-  phi5: 0
-  psi51: 0
-  psi52: 0
-  theta5: 0
-  OA5: 0
-  OB5: 0
-  CD5: 0
-  BD5: 0
-  OC5: 0
-  l6: 0
-  alphaPitch: 0
-  beta7: 0
-  gamma7: 0
-  phi7: 0
-  psi71: 0
-  psi72: 0
-  theta7: 0
-  OA7: 0
-  OB7: 0
-  CD7: 0
-  BD7: 0
-  OC7: 0
-  alphaFR: 0
-  betaFR: 0
-  gammaFR: 0
-  dFR: 0
-  lFR: 0
-  alphaFL: 0
-  betaFL: 0
-  gammaFL: 0
-  dFL: 0
-  lFL: 0
-  alphaBR: 0
-  betaBR: 0
-  gammaBR: 0
-  dBR: 0
-  lBR: 0
-  alphaBL: 0
-  betaBL: 0
-  gammaBL: 0
-  dBL: 0
-  lBL: 0
-  alphaRoll: 0
-  betaRoll: 0
-  gammaRoll: 0
-  lRoll: 0
-  dRoll: 0
-  alphaYaw: 0
+  _body: {fileID: 1008201078570345596}
+  _arm0: {fileID: 1008201078514737746}
+  _arm1: {fileID: 1008201078598047358}
+  _arm2: {fileID: 1008201079842954999}
+  _arm3: {fileID: 1008201080031064016}
+  _arm4: {fileID: 1008201078512405533}
+  _arm5: {fileID: 1008201079003775693}
+  _arm6: {fileID: 1008201079077375846}
+  _link1: {fileID: 1008201080014327976}
+  _link2: {fileID: 1008201078813971613}
+  _link3: {fileID: 1008201079620232089}
+  _link4: {fileID: 1008201080326229451}
+  _link5: {fileID: 1008201078854792470}
+  _link6: {fileID: 1008201080085875365}
+  _cylinder1: {fileID: 1008201078374398017}
+  _cylinder2: {fileID: 1008201079106296762}
+  _cylinder3: {fileID: 1008201079017941570}
+  _cylinder5: {fileID: 1008201078823195923}
+  _cylinder7: {fileID: 1008201078779713502}
+  _piston1: {fileID: 1008201080434021642}
+  _piston2: {fileID: 1008201079253727344}
+  _piston3: {fileID: 1008201079600651153}
+  _piston5: {fileID: 1008201078568575219}
+  _piston7: {fileID: 1008201078463694533}
+  _fixed3: {fileID: 1008201079616294670}
+  _fixed5: {fileID: 1008201080071150523}
+  _fixed7: {fileID: 1008201079957518198}
+  _clutch5: {fileID: 1008201079959697825}
+  _clutch7: {fileID: 1008201079209972692}
+  _tong: {fileID: 1008201079236543153}
+  _footFR: {fileID: 1008201079872055373}
+  _cylinderFR: {fileID: 1008201078597266673}
+  _pistonFR: {fileID: 1008201078641845469}
+  _footFL: {fileID: 1008201079980817356}
+  _cylinderFL: {fileID: 1008201080085258297}
+  _pistonFL: {fileID: 1008201078904912224}
+  _footBR: {fileID: 1008201078392120545}
+  _cylinderBR: {fileID: 1008201078374725975}
+  _pistonBR: {fileID: 1008201079692345941}
+  _footBL: {fileID: 1008201079903200602}
+  _cylinderBL: {fileID: 1008201080398681615}
+  _pistonBL: {fileID: 1008201079820516972}
+  _pitcher: {fileID: 1008201079828178450}
+  _cylinderRoller: {fileID: 1008201079444511304}
+  _roller: {fileID: 1008201080126222780}
+  _yawer: {fileID: 1008201080476660183}
+  _grip: {fileID: 1008201078536442943}
+  _pistonRoller: {fileID: 1008201080231762834}
+  _speed: 2.5
+  _rotationSpeed: 0.5
+  _elongationSpeed: 0.5
+  specialState: {fileID: 0}
   test: {fileID: 1008201079363159334}
   defaultBox: {fileID: 1008201079221956087}
   rb: {fileID: 0}

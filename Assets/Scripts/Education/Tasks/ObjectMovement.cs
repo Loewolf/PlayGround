@@ -38,6 +38,7 @@ public class ObjectMovement : Task
 
     protected override void DisableTaskGameObjects()
     {
+        mainGameObject.UnequipAccessory();
         for (int i = 0; i < length; ++i)
         {
             targetObjects[i].transform.parent.gameObject.SetActive(false);
@@ -46,7 +47,6 @@ public class ObjectMovement : Task
         {
             obj.SetActive(false);
         }
-        mainGameObject.UnequipAccessory();
         grabTransform.gameObject.SetActive(false);
         pointOfInterest.gameObject.SetActive(false);
         marker.gameObject.SetActive(false);
