@@ -9,7 +9,7 @@ public class HydraulicHammer : Accessory
     public Sprite imageTurnedOff;
     public Sprite imageTurnedOn;
 
-    protected override void Start()
+    protected override void Awake()
     {
         rigidbodyHandler.centerOfMass = centerOfMass;
         rigidbodyHandler.mass = mass;
@@ -35,7 +35,6 @@ public class HydraulicHammer : Accessory
     {
         transform.parent = parent;
         example = ex;
-        example.generalCenterOfMass.list.Add(this);
         LeaveHandler(example);
 
         icon.gameObject.SetActive(true);
@@ -47,7 +46,6 @@ public class HydraulicHammer : Accessory
 
     public override void Unequip()
     {
-        example.generalCenterOfMass.list.Remove(this);
         ReturnToHandler(example);
 
         icon.gameObject.SetActive(false);

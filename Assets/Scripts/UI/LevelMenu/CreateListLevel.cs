@@ -15,11 +15,13 @@ public class CreateListLevel : MonoBehaviour
     public GameObject Button;
     public GameObject TransformParent;
 
+    private int levelCount;
+
     private void Awake()
     {
         //при первом запуске игры генерируем кнопки
-        
-        int levelCount = AllTasks.Length;
+        AllTasks.SetTasks();
+        levelCount = AllTasks.Length;
         for (int i = 0; i < levelCount; i++)
         {
             var button = Instantiate(Button, TransformParent.transform).GetComponent<ButtonInfo>();
@@ -34,7 +36,6 @@ public class CreateListLevel : MonoBehaviour
     private void OnEnable()
     {
         //при каждом открытии обновляем очки уровней
-        int levelCount = AllTasks.Length;
         for (int i = 0; i < levelCount; i++)
         {
             var task = AllTasks[i];

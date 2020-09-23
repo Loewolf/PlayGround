@@ -16,7 +16,7 @@ public class EducationHandler : MonoBehaviour
     public MaskableGraphic instructionMask;
     public float effectDuration = 1f;
 
-    private Task task;
+    private Task task = null;
     private IEnumerator maskFlicker;
     private float alpha = 1f;
     private float step;

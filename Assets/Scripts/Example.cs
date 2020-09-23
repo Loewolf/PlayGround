@@ -7,7 +7,7 @@ public class Example : RoinPartsAndStates
     private bool touchSurface;
 
     [Header("Самопересечения")]
-    public BoxMainObject test;
+    public BoxMainObject boxIntersection;
     public GameObject defaultBox;
 
     [HideInInspector] public Rigidbody rb;
@@ -39,9 +39,6 @@ public class Example : RoinPartsAndStates
     [Header("Система уведомлений")]
     public NotificationSystem notificationSystem;
 
-    public enum EnumAccessory { empty, hydrohammer, grab };
-    public static EnumAccessory IsEquip = EnumAccessory.empty;
-
     public void SetTouchSurface(bool value)
     {
         touchSurface = value;
@@ -59,12 +56,12 @@ public class Example : RoinPartsAndStates
 
     public void ChangeAntiIntersectionBox(GameObject box)
     {
-        test.SetLast(box);
+        boxIntersection.SetLast(box);
     }
 
     public void SetDefaultAntiIntersectionBox()
     {
-        test.SetLast(defaultBox);
+        boxIntersection.SetLast(defaultBox);
     }
 
     void Start()
@@ -77,6 +74,7 @@ public class Example : RoinPartsAndStates
 
         accessory = null;
         accessories = new List<Accessory>();
+        boxIntersection.SetMatrixType(accessory);
 
         notificationSystem.ChangeScale(joinCamera.isActiveAndEnabled);
     }
@@ -89,7 +87,7 @@ public class Example : RoinPartsAndStates
                 !contact.thisCollider.CompareTag("Leg") &&
                 !contact.thisCollider.CompareTag("Accessory"))
             {
-                notificationSystem.Notify(NotificationSystem.notifyTypes.alert, "Удар");
+                notificationSystem.Notify(NotificationSystem.NotificationTypes.alert, "Удар");
                 break;
             }
         }
@@ -105,7 +103,7 @@ public class Example : RoinPartsAndStates
         if (equipped)
         {
             accessory.Unequip();
-            IsEquip = EnumAccessory.empty;
+            boxIntersection.SetMatrixType(accessory);
             equipped = false;
         }
     }
@@ -120,14 +118,9 @@ public class Example : RoinPartsAndStates
     private void EquipAccessory()
     {
         accessory.Equip(join, this);
-
-        if (accessory.gameObject.name == "Гидромолот")
-            IsEquip = EnumAccessory.hydrohammer;
-        else
-            IsEquip = EnumAccessory.grab;
-
+        boxIntersection.SetMatrixType(accessory);
         equipped = true;
-        notificationSystem.Notify(NotificationSystem.notifyTypes.message, "Оборудование сменено на " + accessory.name);
+        notificationSystem.Notify(NotificationSystem.NotificationTypes.message, "Оборудование сменено на " + accessory.name);
     }
 
     // Для событий, не связанных с физикой напрямую
@@ -205,14 +198,14 @@ public class Example : RoinPartsAndStates
                     }
                     else
                     {
-                        notificationSystem.Notify(NotificationSystem.notifyTypes.warning, "Для присоединения сократите дистанцию");
+                        notificationSystem.Notify(NotificationSystem.NotificationTypes.warning, "Для присоединения сократите дистанцию");
                     }
                 }
             }
             else
             {
                 UnequipAccessory();
-                notificationSystem.Notify(NotificationSystem.notifyTypes.message, "Оборудование снято");
+                notificationSystem.Notify(NotificationSystem.NotificationTypes.message, "Оборудование снято");
             }
         }
 
@@ -245,7 +238,7 @@ public class Example : RoinPartsAndStates
             f = 0;
             if (overloadTimer <= 0)
             {
-                notificationSystem.Notify(NotificationSystem.notifyTypes.alert, "Перегруз");
+                notificationSystem.Notify(NotificationSystem.NotificationTypes.alert, "Перегруз");
                 overloadTimer = 5f;
             }
             else
@@ -309,9 +302,9 @@ public class Example : RoinPartsAndStates
                 RAM.RotateBase_Yaw(1, ref arm0, ref alpha0, currentSpeedRotation);
 
                 //если после вращения произошло самопересечение, то вовращаем все назад
-                if (test.DetectAllCollission())
+                if (boxIntersection.DetectAllCollission())
                 {
-                    notificationSystem.Notify(NotificationSystem.notifyTypes.alert, "Удар");
+                    notificationSystem.Notify(NotificationSystem.NotificationTypes.alert, "Удар");
                     arm0.transform.position = tmpv_1;
                     arm0.transform.rotation = tmpq_1;
                     alpha0 = tmpf_1;
@@ -330,9 +323,9 @@ public class Example : RoinPartsAndStates
                 float tmpf_1 = alpha0;
 
                 RAM.RotateBase_Yaw(-1, ref arm0, ref alpha0, currentSpeedRotation);
-                if (test.DetectAllCollission())
+                if (boxIntersection.DetectAllCollission())
                 {
-                    notificationSystem.Notify(NotificationSystem.notifyTypes.alert, "Удар");
+                    notificationSystem.Notify(NotificationSystem.NotificationTypes.alert, "Удар");
                     arm0.transform.position = tmpv_1;
                     arm0.transform.rotation = tmpq_1;
                     alpha0 = tmpf_1;
@@ -366,9 +359,9 @@ public class Example : RoinPartsAndStates
                         ref alpha1, ref beta1, ref gamma1,
                         l1, d1, currentSpeedRotation);
 
-                if (test.DetectAllCollission())
+                if (boxIntersection.DetectAllCollission())
                 {
-                    notificationSystem.Notify(NotificationSystem.notifyTypes.alert, "Удар");
+                    notificationSystem.Notify(NotificationSystem.NotificationTypes.alert, "Удар");
                     arm1.transform.position = tmpV_arm1;
                     arm1.transform.rotation = tmpQ_arm1;
                     cylinder1.transform.position = tmpV_cylinder1;
@@ -407,9 +400,9 @@ public class Example : RoinPartsAndStates
                         ref alpha1, ref beta1, ref gamma1,
                         l1, d1, currentSpeedRotation);
 
-                if (test.DetectAllCollission())
+                if (boxIntersection.DetectAllCollission())
                 {
-                    notificationSystem.Notify(NotificationSystem.notifyTypes.alert, "Удар");
+                    notificationSystem.Notify(NotificationSystem.NotificationTypes.alert, "Удар");
                     arm1.transform.position = tmpV_arm1;
                     arm1.transform.rotation = tmpQ_arm1;
                     cylinder1.transform.position = tmpV_cylinder1;
@@ -448,9 +441,9 @@ public class Example : RoinPartsAndStates
                         ref alpha2, ref beta2, ref gamma2,
                         l2, d2, currentSpeedRotation);
 
-                if (test.DetectAllCollission())
+                if (boxIntersection.DetectAllCollission())
                 {
-                    notificationSystem.Notify(NotificationSystem.notifyTypes.alert, "Удар");
+                    notificationSystem.Notify(NotificationSystem.NotificationTypes.alert, "Удар");
                     arm2.transform.position = tmpV_arm;
                     arm2.transform.rotation = tmpQ_arm;
                     cylinder2.transform.position = tmpV_cylinder;
@@ -489,9 +482,9 @@ public class Example : RoinPartsAndStates
                        ref alpha2, ref beta2, ref gamma2,
                        l2, d2, currentSpeedRotation);
 
-                if (test.DetectAllCollission())
+                if (boxIntersection.DetectAllCollission())
                 {
-                    notificationSystem.Notify(NotificationSystem.notifyTypes.alert, "Удар");
+                    notificationSystem.Notify(NotificationSystem.NotificationTypes.alert, "Удар");
                     arm2.transform.position = tmpV_arm;
                     arm2.transform.rotation = tmpQ_arm;
                     cylinder2.transform.position = tmpV_cylinder;
@@ -532,9 +525,9 @@ public class Example : RoinPartsAndStates
                        ref alpha3, ref beta3, ref gamma3,
                        l3, d3, currentSpeedRotation);
 
-                if (test.DetectAllCollission())
+                if (boxIntersection.DetectAllCollission())
                 {
-                    notificationSystem.Notify(NotificationSystem.notifyTypes.alert, "Удар");
+                    notificationSystem.Notify(NotificationSystem.NotificationTypes.alert, "Удар");
                     arm3.transform.position = tmpV_arm;
                     arm3.transform.rotation = tmpQ_arm;
                     cylinder3.transform.position = tmpV_cylinder;
@@ -577,9 +570,9 @@ public class Example : RoinPartsAndStates
                        ref alpha3, ref beta3, ref gamma3,
                        l3, d3, currentSpeedRotation);
 
-                if (test.DetectAllCollission())
+                if (boxIntersection.DetectAllCollission())
                 {
-                    notificationSystem.Notify(NotificationSystem.notifyTypes.alert, "Удар");
+                    notificationSystem.Notify(NotificationSystem.NotificationTypes.alert, "Удар");
                     arm3.transform.position = tmpV_arm;
                     arm3.transform.rotation = tmpQ_arm;
                     cylinder3.transform.position = tmpV_cylinder;
@@ -625,9 +618,9 @@ public class Example : RoinPartsAndStates
                         ref alpha5, ref beta5, ref gamma5, ref theta5, ref phi5, ref psi51, ref psi52,
                         OA5, OB5, OC5, BD5, CD5, currentSpeedRotation);
 
-                if (test.DetectAllCollission())
+                if (boxIntersection.DetectAllCollission())
                 {
-                    notificationSystem.Notify(NotificationSystem.notifyTypes.alert, "Удар");
+                    notificationSystem.Notify(NotificationSystem.NotificationTypes.alert, "Удар");
                     arm5.transform.position = tmpV_arm;
                     arm5.transform.rotation = tmpQ_arm;
                     cylinder5.transform.position = tmpV_cylinder;
@@ -676,9 +669,9 @@ public class Example : RoinPartsAndStates
                        ref alpha5, ref beta5, ref gamma5, ref theta5, ref phi5, ref psi51, ref psi52,
                        OA5, OB5, OC5, BD5, CD5, currentSpeedRotation);
 
-                if (test.DetectAllCollission())
+                if (boxIntersection.DetectAllCollission())
                 {
-                    notificationSystem.Notify(NotificationSystem.notifyTypes.alert, "Удар");
+                    notificationSystem.Notify(NotificationSystem.NotificationTypes.alert, "Удар");
                     arm5.transform.position = tmpV_arm;
                     arm5.transform.rotation = tmpQ_arm;
                     cylinder5.transform.position = tmpV_cylinder;
@@ -713,9 +706,9 @@ public class Example : RoinPartsAndStates
                 else if (l6 < hit6Max)
                     RAM.Elongation((hit6Max - l6) / currentSpeedElongation, ref arm6, ref l6, currentSpeedElongation);
 
-                if (test.DetectAllCollission())
+                if (boxIntersection.DetectAllCollission())
                 {
-                    notificationSystem.Notify(NotificationSystem.notifyTypes.alert, "Удар");
+                    notificationSystem.Notify(NotificationSystem.NotificationTypes.alert, "Удар");
                     arm6.transform.position = tmpV_arm;
                     arm6.transform.rotation = tmpQ_arm;
                     l6 = tmp_l;
@@ -737,9 +730,9 @@ public class Example : RoinPartsAndStates
                 else if (l6 > hit6Min)
                     RAM.Elongation((hit6Min - l6) / currentSpeedElongation, ref arm6, ref l6, currentSpeedElongation);
 
-                if (test.DetectAllCollission())
+                if (boxIntersection.DetectAllCollission())
                 {
-                    notificationSystem.Notify(NotificationSystem.notifyTypes.alert, "Удар");
+                    notificationSystem.Notify(NotificationSystem.NotificationTypes.alert, "Удар");
                     arm6.transform.position = tmpV_arm;
                     arm6.transform.rotation = tmpQ_arm;
                     l6 = tmp_l;
@@ -779,9 +772,9 @@ public class Example : RoinPartsAndStates
                         ref alphaPitch, ref beta7, ref gamma7, ref theta7, ref phi7, ref psi71, ref psi72,
                         OA7, OB7, OC7, BD7, CD7, currentSpeedRotation);
 
-                if (test.DetectAllCollission())
+                if (boxIntersection.DetectAllCollission())
                 {
-                    notificationSystem.Notify(NotificationSystem.notifyTypes.alert, "Удар");
+                    notificationSystem.Notify(NotificationSystem.NotificationTypes.alert, "Удар");
                     cylinder7.transform.position = tmpV_cylinder;
                     cylinder7.transform.rotation = tmpQ_cylinder;
                     piston7.transform.position = tmpV_piston;
@@ -836,9 +829,9 @@ public class Example : RoinPartsAndStates
                         ref alphaPitch, ref beta7, ref gamma7, ref theta7, ref phi7, ref psi71, ref psi72,
                         OA7, OB7, OC7, BD7, CD7, currentSpeedRotation);
 
-                if (test.DetectAllCollission())
+                if (boxIntersection.DetectAllCollission())
                 {
-                    notificationSystem.Notify(NotificationSystem.notifyTypes.alert, "Удар");
+                    notificationSystem.Notify(NotificationSystem.NotificationTypes.alert, "Удар");
                     cylinder7.transform.position = tmpV_cylinder;
                     cylinder7.transform.rotation = tmpQ_cylinder;
                     piston7.transform.position = tmpV_piston;
@@ -885,9 +878,9 @@ public class Example : RoinPartsAndStates
                        ref alphaRoll, ref betaRoll, ref gammaRoll,
                        lRoll, dRoll, currentSpeedRotation);
 
-                if (test.DetectAllCollission())
+                if (boxIntersection.DetectAllCollission())
                 {
-                    notificationSystem.Notify(NotificationSystem.notifyTypes.alert, "Удар");
+                    notificationSystem.Notify(NotificationSystem.NotificationTypes.alert, "Удар");
                     pitcher.transform.position = tmpV_roller;
                     pitcher.transform.rotation = tmpQ_roller;
                     cylinderRoller.transform.position = tmpV_cylinderRoller;
@@ -926,9 +919,9 @@ public class Example : RoinPartsAndStates
                       ref alphaRoll, ref betaRoll, ref gammaRoll,
                       lRoll, dRoll, currentSpeedRotation);
 
-                if (test.DetectAllCollission())
+                if (boxIntersection.DetectAllCollission())
                 {
-                    notificationSystem.Notify(NotificationSystem.notifyTypes.alert, "Удар");
+                    notificationSystem.Notify(NotificationSystem.NotificationTypes.alert, "Удар");
                     pitcher.transform.position = tmpV_roller;
                     pitcher.transform.rotation = tmpQ_roller;
                     cylinderRoller.transform.position = tmpV_cylinderRoller;
@@ -953,9 +946,9 @@ public class Example : RoinPartsAndStates
             if (allowRotation)
                 //RAM.RotateYaw(1, ref yawer, ref alphaYaw, speedRotation);
                 RAM.RotateBase_Yaw(1, ref yawer, ref alphaYaw, currentSpeedRotation);
-            if (test.DetectAllCollission())
+            if (boxIntersection.DetectAllCollission())
             {
-                notificationSystem.Notify(NotificationSystem.notifyTypes.alert, "Удар");
+                notificationSystem.Notify(NotificationSystem.NotificationTypes.alert, "Удар");
                 yawer.transform.position = tmpV_yawer;
                 yawer.transform.rotation = tmpQ_yawer;
 
@@ -972,9 +965,9 @@ public class Example : RoinPartsAndStates
             if (allowRotation)
                 // RAM.RotateYaw(-1, ref yawer, ref alphaYaw, speedRotation);
                 RAM.RotateBase_Yaw(-1, ref yawer, ref alphaYaw, currentSpeedRotation);
-            if (test.DetectAllCollission())
+            if (boxIntersection.DetectAllCollission())
             {
-                notificationSystem.Notify(NotificationSystem.notifyTypes.alert, "Удар");
+                notificationSystem.Notify(NotificationSystem.NotificationTypes.alert, "Удар");
                 yawer.transform.position = tmpV_yawer;
                 yawer.transform.rotation = tmpQ_yawer;
 
@@ -1049,9 +1042,9 @@ public class Example : RoinPartsAndStates
                 RAM.RaiseFoot((Mathf.Abs(alphaFR) - hitFootMin) / currentSpeedRotation, ref footBL, ref cylinderBL, ref pistonBL,
                     ref alphaBL, ref betaBL, ref gammaBL, lBL, dBL, currentSpeedRotation);
             }
-            if (test.DetectAllCollission())
+            if (boxIntersection.DetectAllCollission())
             {
-                notificationSystem.Notify(NotificationSystem.notifyTypes.alert, "Удар");
+                notificationSystem.Notify(NotificationSystem.NotificationTypes.alert, "Удар");
                 footFR.transform.position = tmpV_footFR;
                 footFR.transform.rotation = tmpQ_footFR;
                 cylinderFR.transform.position = tmpV_cylinderFR;
@@ -1164,9 +1157,9 @@ public class Example : RoinPartsAndStates
                 RAM.RaiseFoot((Mathf.Abs(alphaFR) - hitFootMax) / currentSpeedRotation, ref footBL, ref cylinderBL, ref pistonBL,
                     ref alphaBL, ref betaBL, ref gammaBL, lBL, dBL, currentSpeedRotation);
             }
-            if (test.DetectAllCollission())
+            if (boxIntersection.DetectAllCollission())
             {
-                notificationSystem.Notify(NotificationSystem.notifyTypes.alert, "Удар");
+                notificationSystem.Notify(NotificationSystem.NotificationTypes.alert, "Удар");
                 footFR.transform.position = tmpV_footFR;
                 footFR.transform.rotation = tmpQ_footFR;
                 cylinderFR.transform.position = tmpV_cylinderFR;

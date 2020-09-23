@@ -10,7 +10,7 @@ public class Accessory : AttachableObject
     protected Quaternion fixedRotation;
     protected IEnumerator setFixedDistance;
 
-    protected virtual void Start()
+    protected virtual void Awake()
     {
         rigidbodyHandler.centerOfMass = centerOfMass;
         rigidbodyHandler.mass = mass;
@@ -36,7 +36,6 @@ public class Accessory : AttachableObject
     {
         transform.parent = parent;
         example = ex;
-        example.generalCenterOfMass.list.Add(this);
         LeaveHandler(example);
 
         StopCoroutine(setFixedDistance);
@@ -46,7 +45,6 @@ public class Accessory : AttachableObject
 
     public virtual void Unequip()
     {
-        example.generalCenterOfMass.list.Remove(this);
         ReturnToHandler(example);
 
         example = null;

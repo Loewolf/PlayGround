@@ -233,6 +233,16 @@ public class RoinPartsAndStates : MonoBehaviour
         else SetValuesFromStatesKit(defaultState);
     }
 
+    public bool GetAllowMove()
+    {
+        return allowMove;
+    }
+
+    public bool GetAllowRotation()
+    {
+        return allowRotation;
+    }
+
     public void WriteValuesToStatesKit(RoinStatesKit kit)
     {
         kit.speed = defaultSpeed;

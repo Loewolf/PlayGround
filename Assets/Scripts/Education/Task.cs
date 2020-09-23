@@ -1,15 +1,13 @@
 ﻿using UnityEngine;
 using System;
 using System.Collections;
-using System.Xml.Serialization;
-
 
 public interface TaskCurrentValue
 {
-
     int currentValue { get; set; } //хранит текущее кол-во очков
     int currentExtraValue { get; set; } //хранит текущее доп. кол-во очков(для задач доп. тренировки)
 }
+
 public class Task: MonoBehaviour, TaskCurrentValue
 {
     public Example mainGameObject;
@@ -34,7 +32,7 @@ public class Task: MonoBehaviour, TaskCurrentValue
     protected string currentDescription;
     protected string currentInstruction;
     protected IEnumerator waitForSeconds;
-    protected int timerReturn = 0;
+    private int timerReturn = 0;
 
     protected void Awake()
     {
@@ -84,7 +82,7 @@ public class Task: MonoBehaviour, TaskCurrentValue
     protected void MainGameObjectSetStartPosition()
     {
         mainGameObject.UnequipAccessory();
-        SetSpecialState(); // Hook
+        SetSpecialState();
         mainGameObject.SetState();
         mainGameObject.transform.position = startPoint.position;
         mainGameObject.transform.rotation = startPoint.rotation;
@@ -93,6 +91,11 @@ public class Task: MonoBehaviour, TaskCurrentValue
     protected virtual void SetSpecialState()
     {
         // mainGameObject.specialState = "Состояние";
+    }
+
+    private void DropSpecialState()
+    {
+        mainGameObject.specialState = null;
     }
 
     public void Take()
@@ -105,6 +108,7 @@ public class Task: MonoBehaviour, TaskCurrentValue
     public int TurnIn(bool isCompleted)
     {
         DisableTaskGameObjects();
+        DropSpecialState();
         if (isCompleted)
         {
             currentValue = currentValue < value ? value : currentValue;
@@ -120,13 +124,25 @@ public class Task: MonoBehaviour, TaskCurrentValue
         return 0;
     }
 
-    protected int EndTask() // При завершении задания требуется установить делегат stageTask, равный EndTask
+    private void StartEndLoop(string debugMessage, int resultValue)
     {
-        Debug.Log("Task Completed");
+        timerReturn = 0;
+        Debug.Log(debugMessage);
         StopCoroutine(waitForSeconds);
-        waitForSeconds = WaitForSeconds(completionDelay, 2);
+        waitForSeconds = WaitForSeconds(completionDelay, resultValue);
         StartCoroutine(waitForSeconds);
         stageTask = EndLoop;
+    }
+
+    protected int EndTask() // При успешном завершении задания требуется установить делегат stageTask, равный EndTask
+    {
+        StartEndLoop("Задание успешно завершено", 2);
+        return timerReturn;
+    }
+
+    protected int TerminateTask() // При неудачном завершении задания требуется установить делегат stageTask, равный TerminateTask
+    {
+        StartEndLoop("Задание провалено", -1);
         return timerReturn;
     }
 

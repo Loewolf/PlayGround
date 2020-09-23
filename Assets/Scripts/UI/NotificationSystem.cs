@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class NotificationSystem : UiMovement
 {
-    public enum notifyTypes {message, warning, alert}
+    public enum NotificationTypes { message, warning, alert }
     [Header("Система уведомления")]
     public Image iconObject;
     public Text textObject;
@@ -41,21 +41,21 @@ public class NotificationSystem : UiMovement
         }
     }
 
-    public void Notify(notifyTypes type, string textString)
+    public void Notify(NotificationTypes type, string textString)
     {
         switch (type)
         {
-            case notifyTypes.message:
+            case NotificationTypes.message:
                 {
                     SetValues(messageSprite, textString, messageForegroundColor, messageBackgroundColor);
                     break;
                 }
-            case notifyTypes.warning:
+            case NotificationTypes.warning:
                 {
                     SetValues(warningSprite, textString, warningForegroundColor, warningBackgroundColor);
                     break;
                 }
-            case notifyTypes.alert:
+            case NotificationTypes.alert:
                 {
                     SetValues(alertSprite, textString, alertForegroundColor, alertBackgroundColor);
                     break;

@@ -12,6 +12,7 @@ TagManager:
   - Box
   - Table
   - Pipe
+  - Spawned Prop
   layers:
   - Default
   - TransparentFX
