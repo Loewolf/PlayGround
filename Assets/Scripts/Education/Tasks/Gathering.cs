@@ -1,5 +1,5 @@
-﻿
-using UnityEngine;
+﻿using UnityEngine;
+using System.Collections.Generic;
 
 public class Gathering : Task
 {
@@ -13,7 +13,15 @@ public class Gathering : Task
     public DestroyingArea destroyingArea;
     [Space(15)]
     public Transform randomObjectsContainer;
+    public SpiralPoints spiralPoints;
     [Range(1, 4)] public int oneTypeCount; // Сколько раз каждый из случайных объектов, дочерних к randomObjectsContainer, будет сгенерирован
+    private List<Transform> randomObjects;
+    private int objectsCount;
+
+    private void Start()
+    {
+        randomObjects = new List<Transform>();
+    }
 
     protected override void SetSpecialState()
     {
@@ -29,7 +37,19 @@ public class Gathering : Task
         crateTransform.gameObject.SetActive(true);
         destroyingArea.ResetReached();
 
-        destroyingArea.SetRequiredObjectsAmount(randomObjectsContainer.childCount * oneTypeCount);
+        objectsCount = randomObjectsContainer.childCount * oneTypeCount;
+        destroyingArea.SetRequiredObjectsAmount(objectsCount);
+        destroyingArea.SetGrab(grab);
+        spiralPoints.CreateSequence(objectsCount);
+        for (int i = 0; i < randomObjectsContainer.childCount; ++i)
+        {
+            for (int j = 0; j < oneTypeCount; ++j)
+            {
+                randomObjects.Add(Instantiate(randomObjectsContainer.GetChild(i), 
+                                              spiralPoints.GetWorldPositionOfPoint(i * oneTypeCount + j), 
+                                              Random.rotation));
+            }
+        }
     }
 
     protected override void DisableTaskGameObjects()
@@ -39,6 +59,12 @@ public class Gathering : Task
         cameraController.SetRegularCamera();
 
         crateTransform.gameObject.SetActive(false);
+
+        foreach (Transform randomObject in randomObjects)
+        {
+            if (randomObject) Destroy(randomObject.gameObject);
+        }
+        randomObjects.Clear();
     }
 
     protected override int Task_0() // Поместить все объекты в ящик

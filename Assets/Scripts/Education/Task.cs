@@ -124,10 +124,9 @@ public class Task: MonoBehaviour, TaskCurrentValue
         return 0;
     }
 
-    private void StartEndLoop(string debugMessage, int resultValue)
+    private void StartEndLoop(int resultValue)
     {
         timerReturn = 0;
-        Debug.Log(debugMessage);
         StopCoroutine(waitForSeconds);
         waitForSeconds = WaitForSeconds(completionDelay, resultValue);
         StartCoroutine(waitForSeconds);
@@ -136,13 +135,13 @@ public class Task: MonoBehaviour, TaskCurrentValue
 
     protected int EndTask() // При успешном завершении задания требуется установить делегат stageTask, равный EndTask
     {
-        StartEndLoop("Задание успешно завершено", 2);
+        StartEndLoop(2);
         return timerReturn;
     }
 
     protected int TerminateTask() // При неудачном завершении задания требуется установить делегат stageTask, равный TerminateTask
     {
-        StartEndLoop("Задание провалено", -1);
+        StartEndLoop(-1);
         return timerReturn;
     }
 

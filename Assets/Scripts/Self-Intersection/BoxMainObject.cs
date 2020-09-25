@@ -124,7 +124,6 @@ public class BoxMainObject : MonoBehaviour
                 matrixCross = matrixCrossGrab;
             else if (type == typeof(HydraulicHammer))
                 matrixCross = matrixCrossHydro;
-            Debug.Log(type);
         }
         else matrixCross = matrixCrossEmpty;
     }

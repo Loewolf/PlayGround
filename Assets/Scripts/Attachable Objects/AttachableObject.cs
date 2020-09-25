@@ -23,4 +23,9 @@ public class AttachableObject : CenterOfMass
         if (antiSelfIntersectionBox) ex.SetDefaultAntiIntersectionBox();
         ex.generalCenterOfMass.list.Remove(this);
     }
+
+    private void OnDestroy()
+    {
+        Destroy(rigidbodyHandler.gameObject);
+    }
 }
