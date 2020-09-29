@@ -1,20 +1,27 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 
+[System.Serializable]
+public class TransformQuantity
+{
+    public Transform transform;
+    public int quantity;
+}
+
 public class Gathering : Task
 {
     [Header("Объекты, связанные с задачей")]
     public Transform grabTransform;
     public Grab grab;
-    public CameraController cameraController;
     public RoinStatesKit specialState;
     [Space(15)]
     public Transform crateTransform;
     public DestroyingArea destroyingArea;
     [Space(15)]
-    public Transform randomObjectsContainer;
+    public TransformQuantity[] transformQuantities;
+    [Space(15)]
     public SpiralPoints spiralPoints;
-    [Range(1, 4)] public int oneTypeCount; // Сколько раз каждый из случайных объектов, дочерних к randomObjectsContainer, будет сгенерирован
+    public Vector2 axisYSpawnRange;
     private List<Transform> randomObjects;
     private int objectsCount;
 
@@ -28,26 +35,37 @@ public class Gathering : Task
         mainGameObject.specialState = specialState;
     }
 
+    private int CountObjects()
+    {
+        int count = 0;
+        for (int i = 0; i < transformQuantities.Length; ++i)
+        {
+            count += transformQuantities[i].quantity;
+        }
+        return count;
+    }
+
     protected override void EnableTaskGameObjects()
     {
         grabTransform.gameObject.SetActive(true);
-        mainGameObject.EquipAccessoryWithForce(grab);
-        cameraController.SetSpecialCamera(CameraController.SpecialCameras.Class_3_Tasks);
+        mainGameObject.EquipAccessoryWithForce(grab);       
 
         crateTransform.gameObject.SetActive(true);
         destroyingArea.ResetReached();
 
-        objectsCount = randomObjectsContainer.childCount * oneTypeCount;
+        objectsCount = CountObjects();
         destroyingArea.SetRequiredObjectsAmount(objectsCount);
         destroyingArea.SetGrab(grab);
         spiralPoints.CreateSequence(objectsCount);
-        for (int i = 0; i < randomObjectsContainer.childCount; ++i)
+        objectsCount = 0;
+        for (int i = 0; i < transformQuantities.Length; ++i)
         {
-            for (int j = 0; j < oneTypeCount; ++j)
+            for (int j = 0; j < transformQuantities[i].quantity; ++j)
             {
-                randomObjects.Add(Instantiate(randomObjectsContainer.GetChild(i), 
-                                              spiralPoints.GetWorldPositionOfPoint(i * oneTypeCount + j), 
+                randomObjects.Add(Instantiate(transformQuantities[i].transform, 
+                                              spiralPoints.GetWorldPositionOfPoint(objectsCount) + Vector3.up*Random.Range(axisYSpawnRange.x, axisYSpawnRange.y), 
                                               Random.rotation));
+                objectsCount++;
             }
         }
     }
@@ -56,7 +74,6 @@ public class Gathering : Task
     {
         mainGameObject.UnequipAccessory();
         grabTransform.gameObject.SetActive(false);
-        cameraController.SetRegularCamera();
 
         crateTransform.gameObject.SetActive(false);
 

@@ -91,11 +91,13 @@ public class Task: MonoBehaviour, TaskCurrentValue
     protected virtual void SetSpecialState()
     {
         // mainGameObject.specialState = "Состояние";
+        //mainGameObject.cameraController.SetSpecialCamera(CameraController.SpecialCameras.Class_3_Tasks);
     }
 
     private void DropSpecialState()
     {
         mainGameObject.specialState = null;
+        mainGameObject.cameraController.SetRegularCamera();
     }
 
     public void Take()

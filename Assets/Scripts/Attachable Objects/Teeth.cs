@@ -14,6 +14,15 @@ public class Teeth : MonoBehaviour
             if (isLeft) grab.Left.Add(ao);
             else grab.Right.Add(ao);
         }
+        else
+        {
+            ao = other.transform.parent.GetComponent<AttachableObject>();
+            if (ao)
+            {
+                if (isLeft) grab.Left.Add(ao);
+                else grab.Right.Add(ao);
+            }
+        }
     }
 
     private void OnTriggerExit(Collider other)
@@ -24,6 +33,14 @@ public class Teeth : MonoBehaviour
         {
             if (isLeft) grab.Left.Remove(ao);
             else grab.Right.Remove(ao);
+        }
+        {
+            ao = other.transform.parent.GetComponent<AttachableObject>();
+            if (ao)
+            {
+                if (isLeft) grab.Left.Remove(ao);
+                else grab.Right.Remove(ao);
+            }
         }
     }
 

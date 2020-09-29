@@ -26,10 +26,25 @@ public class DestroyingArea : ReachablePoint
         if (CheckForMatches(other))
         {
             AttachableObject ao = other.GetComponent<AttachableObject>();
-            if (ao && grab.GetAttachedObject() != ao)
+            if (ao)
             {
-                objectsAtPoint++;
-                Destroy(other.gameObject);
+                if (grab.GetAttachedObject() != ao)
+                {
+                    objectsAtPoint++;
+                    Destroy(ao.gameObject);
+                }
+            }
+            else
+            {
+                ao = other.transform.parent.GetComponent<AttachableObject>();
+                if (ao)
+                {
+                    if (grab.GetAttachedObject() != ao)
+                    {
+                        objectsAtPoint++;
+                        Destroy(ao.gameObject);
+                    }
+                }
             }
         }
     }

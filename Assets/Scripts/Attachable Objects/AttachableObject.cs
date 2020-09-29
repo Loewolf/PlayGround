@@ -26,6 +26,6 @@ public class AttachableObject : CenterOfMass
 
     private void OnDestroy()
     {
-        Destroy(rigidbodyHandler.gameObject);
+        if (rigidbodyHandler) Destroy(rigidbodyHandler.gameObject);
     }
 }

@@ -6,6 +6,8 @@ public class Example : RoinPartsAndStates
 {
     private bool touchSurface;
 
+    [Header("Камера")]
+    public CameraController cameraController;
     [Header("Самопересечения")]
     public BoxMainObject boxIntersection;
     public GameObject defaultBox;
