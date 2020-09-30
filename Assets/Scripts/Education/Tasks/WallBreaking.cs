@@ -26,7 +26,6 @@ public class WallBreaking : WallBreakingPattern
         axisY = axisYtop.position - axisYbottom.position;
 
         pointOfInterest.gameObject.SetActive(true);
-        pointOfInterest.ResetReached();
     }
 
     protected override void DisableTaskGameObjects()

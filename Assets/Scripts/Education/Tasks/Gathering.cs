@@ -51,7 +51,6 @@ public class Gathering : Task
         mainGameObject.EquipAccessoryWithForce(grab);       
 
         crateTransform.gameObject.SetActive(true);
-        destroyingArea.ResetReached();
 
         objectsCount = CountObjects();
         destroyingArea.SetRequiredObjectsAmount(objectsCount);

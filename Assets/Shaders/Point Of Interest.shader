@@ -17,6 +17,7 @@
 	CGPROGRAM
 		#pragma vertex vert
 		#pragma fragment frag
+		#include "UnityCG.cginc"
 
 		struct appdata
 		{
@@ -52,15 +53,7 @@
 
 		fixed4 frag(v2f i) : SV_Target
 		{
-			half4 color;
-			if (i.texcoord.x <= _Value) 
-			{
-				color = _Color2;
-			}
-			else
-			{
-				color = _Color;
-			}
+			half4 color = lerp(_Color, _Color2, step(i.texcoord.x, _Value));
 			color.a = square(i.color.r)*color.a;
 			return color;
 		}

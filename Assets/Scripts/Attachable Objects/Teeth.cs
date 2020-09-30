@@ -16,11 +16,14 @@ public class Teeth : MonoBehaviour
         }
         else
         {
-            ao = other.transform.parent.GetComponent<AttachableObject>();
-            if (ao)
+            if (other.transform.parent)
             {
-                if (isLeft) grab.Left.Add(ao);
-                else grab.Right.Add(ao);
+                ao = other.transform.parent.GetComponent<AttachableObject>();
+                if (ao)
+                {
+                    if (isLeft) grab.Left.Add(ao);
+                    else grab.Right.Add(ao);
+                }
             }
         }
     }
@@ -35,11 +38,14 @@ public class Teeth : MonoBehaviour
             else grab.Right.Remove(ao);
         }
         {
-            ao = other.transform.parent.GetComponent<AttachableObject>();
-            if (ao)
+            if (other.transform.parent)
             {
-                if (isLeft) grab.Left.Remove(ao);
-                else grab.Right.Remove(ao);
+                ao = other.transform.parent.GetComponent<AttachableObject>();
+                if (ao)
+                {
+                    if (isLeft) grab.Left.Remove(ao);
+                    else grab.Right.Remove(ao);
+                }
             }
         }
     }

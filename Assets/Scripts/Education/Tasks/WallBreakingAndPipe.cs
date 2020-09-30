@@ -24,7 +24,6 @@ public class WallBreakingAndPipe : WallBreakingPattern
         pipe.rotation = pipeDefaultPoint.rotation;
 
         pipeTracker.gameObject.SetActive(true);
-        pipeTracker.ResetReached();
     }
 
     protected override void DisableTaskGameObjects()

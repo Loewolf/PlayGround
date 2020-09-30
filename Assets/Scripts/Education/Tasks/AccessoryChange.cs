@@ -19,8 +19,6 @@ public class AccessoryChange : Task
         joinPoint.gameObject.SetActive(true);
         accessory.position = accessoryDefaultPoint.position;
         accessory.rotation = accessoryDefaultPoint.rotation;
-        joinPoint.ResetReached();
-        separationPoint.ResetReached();
     }
 
     protected override void DisableTaskGameObjects()

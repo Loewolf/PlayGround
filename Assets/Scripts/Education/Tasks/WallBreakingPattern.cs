@@ -38,7 +38,6 @@ public class WallBreakingPattern : Task
         for (int i = 0; i < reachablePointsAmount; ++i)
         {
             reachablePoints[i] = grid.GetChild(i).GetComponent<ReachablePoint>();
-            reachablePoints[i].ResetReached();
             visitedPoints[i] = 0;
         }
     }

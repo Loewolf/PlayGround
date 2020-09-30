@@ -1,34 +1,19 @@
 ﻿using UnityEngine;
 
-public class SpiralPoints : MonoBehaviour
+public class SpiralPoints : CircleSegmentBorders
 {
     [Min(0f)] public float lowerRadius;
     [Min(0f)] public float upperRadius;
     [Space(15)]
-    [Range(0f, 360f)] public float lowerAngle;
-    [Range(0f, 360f)] public float upperAngle;
-    [Space(15)]
     [Min(0)] public int stepAtStart;
 
     private const float VOGEL = 16.4495926918f;
-    private const float DOUBLE_PI = Mathf.PI * 2f;
 
     private int pointsCount;
     private float angleRadAddition; // Случайное число от 0 до 2*PI
     private float[] anglesRad;
     private int[] steps;
     private float vogelMultiplier;
-
-    private float lowerAngleRad;
-    private float upperAngleRelativeToLowerRad;
-
-    private void SetBorders()
-    {
-        lowerAngleRad = lowerAngle * Mathf.Deg2Rad;
-        upperAngleRelativeToLowerRad = upperAngle - lowerAngle;
-        if (upperAngleRelativeToLowerRad < 0) upperAngleRelativeToLowerRad += 360f;
-        upperAngleRelativeToLowerRad *= Mathf.Deg2Rad;
-    }
 
     public void CreateSequence(in int count)
     {
@@ -56,15 +41,6 @@ public class SpiralPoints : MonoBehaviour
             return transform.position + PolarCoordinateSystem.PolarToCartesianXZ(anglesRad[i],
                                         lowerRadius + vogelMultiplier * Mathf.Sqrt(steps[i]));
         else return Vector3.zero;
-    }
-
-    private bool OutsideBorders(float angleRad)
-    {
-        angleRad %= DOUBLE_PI;
-        angleRad -= lowerAngleRad;
-        if (angleRad < 0) angleRad += DOUBLE_PI;
-        if (angleRad <= upperAngleRelativeToLowerRad) return false;
-        else return true;
     }
 
     private void SetVogelAngle(in int i)
