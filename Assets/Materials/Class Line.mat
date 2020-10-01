@@ -67,12 +67,13 @@ Material:
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
+    - _ScaleX: 0.25
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
     - _Value: 0.434
-    - _Value1: 0.419
+    - _Value1: 0.434
     - _Value2: 0.576
     - _ZWrite: 1
     m_Colors:

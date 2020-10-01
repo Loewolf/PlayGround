@@ -7,10 +7,12 @@ public class CircularPath : CircleSegmentBorders
     [Min(0f)] public float upperRadius;
     public Vector2 heightRange;
     public float yellowZoneHeightAddition;
+    [Space(15)]
+    public Vector3[] positions;
     private List<float> anglesRad;
     private int count;
-    [HideInInspector] public Vector3[] positions;
-    [HideInInspector] public float[] progressAtPoint;
+    private float[] progressAtPoint;
+    private float pathLength;
 
     private void Awake()
     {
@@ -39,7 +41,7 @@ public class CircularPath : CircleSegmentBorders
         if (OutsideBorders(angleAddition)) positions[0] += Vector3.up * Random.Range(heightRange.x, heightRange.y);
         else positions[0] += Vector3.up * (yellowZoneHeightAddition + Random.Range(heightRange.x, heightRange.y));
 
-        float pathLength = 0;
+        pathLength = 0;
 
         for (int i = 1; i < count; ++i)
         {
@@ -65,23 +67,29 @@ public class CircularPath : CircleSegmentBorders
         progress = progressAtPoint[(index - 1) % count];
     }
 
+    public float GetPathLength()
+    {
+        return pathLength;
+    }
+
     private void OnDrawGizmosSelected()
     {
         SetBorders();
         Gizmos.color = Color.yellow;
-        Vector3 previousPointLower = transform.position + PolarCoordinateSystem.PolarToCartesianXZ(lowerAngleRad, lowerRadius),
-                previousPointUpper = transform.position + PolarCoordinateSystem.PolarToCartesianXZ(lowerAngleRad, upperRadius),
+        Vector3 positionWithUpAddition = transform.position + Vector3.up * yellowZoneHeightAddition;
+        Vector3 previousPointLower = positionWithUpAddition + PolarCoordinateSystem.PolarToCartesianXZ(lowerAngleRad, lowerRadius),
+                previousPointUpper = positionWithUpAddition + PolarCoordinateSystem.PolarToCartesianXZ(lowerAngleRad, upperRadius),
             currentPointLower, currentPointUpper;
         Gizmos.DrawLine(previousPointLower, previousPointUpper);
 
         int n = 32;
-        float nInversed = upperAngleRelativeToLowerRad / n, currentAngle;
+        float nInversed = upperAngleRelativeToLowerRad / n, currentAngle = 0;
 
         for (int i = 1; i <= n; ++i)
         {
             currentAngle = lowerAngleRad + i * nInversed;
-            currentPointLower = transform.position + PolarCoordinateSystem.PolarToCartesianXZ(currentAngle, lowerRadius);
-            currentPointUpper = transform.position + PolarCoordinateSystem.PolarToCartesianXZ(currentAngle, upperRadius);
+            currentPointLower = positionWithUpAddition + PolarCoordinateSystem.PolarToCartesianXZ(currentAngle, lowerRadius);
+            currentPointUpper = positionWithUpAddition + PolarCoordinateSystem.PolarToCartesianXZ(currentAngle, upperRadius);
             Gizmos.DrawLine(previousPointLower, currentPointLower);
             Gizmos.DrawLine(previousPointUpper, currentPointUpper);
             previousPointLower = currentPointLower;
@@ -90,6 +98,9 @@ public class CircularPath : CircleSegmentBorders
         Gizmos.DrawLine(previousPointLower, previousPointUpper);
 
         Gizmos.color = Color.green;
+        previousPointLower -= Vector3.up * yellowZoneHeightAddition;
+        previousPointUpper -= Vector3.up * yellowZoneHeightAddition;
+        Gizmos.DrawLine(previousPointLower, previousPointUpper);
         nInversed = (DOUBLE_PI - upperAngleRelativeToLowerRad) / n;
         float upperAngleRad = lowerAngleRad + upperAngleRelativeToLowerRad;
         for (int i = 1; i <= n; ++i)
@@ -102,5 +113,6 @@ public class CircularPath : CircleSegmentBorders
             previousPointLower = currentPointLower;
             previousPointUpper = currentPointUpper;
         }
+        Gizmos.DrawLine(previousPointLower, previousPointUpper);
     }
 }

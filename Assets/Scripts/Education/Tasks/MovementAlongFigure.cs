@@ -33,6 +33,7 @@ public class MovementAlongFigure : Task
         lineRenderer.SetPositions(circularPath.positions);
         currentPosition = 0;
         previosProgress = 0;
+        material.mainTextureScale = new Vector2(circularPath.GetPathLength() / lineRenderer.startWidth, 1f);
         UpdatePosition();
     }
 

@@ -4446,7 +4446,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 20.5, y: 0}
+  m_AnchoredPosition: {x: 20.499878, y: 0}
   m_SizeDelta: {x: -51, y: -10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!4 &458241425 stripped
@@ -8334,14 +8334,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06e5ed6cf40ca264b835d3090c4b6880, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lowerAngle: 240
-  upperAngle: 300
+  lowerAngle: 225
+  upperAngle: 315
   lowerRadius: 2.4
   upperRadius: 3.5
-  heightRange: {x: 0, y: 0}
-  yellowZoneHeightAddition: 0
+  heightRange: {x: -0.5, y: 1}
+  yellowZoneHeightAddition: 1
   positions: []
-  progressAtPoint: []
 --- !u!1 &1062155589
 GameObject:
   m_ObjectHideFlags: 0
@@ -16002,8 +16001,8 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
+  near clip plane: 0.25
+  far clip plane: 500
   field of view: 60
   orthographic: 0
   orthographic size: 5

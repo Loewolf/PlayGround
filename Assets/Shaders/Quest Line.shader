@@ -8,11 +8,11 @@
 		_Color3("Color 3", Color) = (1,1,1,1)
 		_Value1("Value Lower", Range(0,1)) = 0
 		_Value2("Value Upper", Range(0,1)) = 0
+		_ScaleX("Scale X", float) = 1.0
 	}
 		SubShader
 		{
 		Tags {"Queue" = "Transparent" "RenderType" = "Transparent"}
-		Cull Off
 		ZWrite On
 		Blend SrcAlpha OneMinusSrcAlpha
 		Pass
@@ -42,6 +42,7 @@
 			fixed4 _Color3;
 			fixed _Value1;
 			fixed _Value2;
+			float _ScaleX;
 			static const fixed4 clear = fixed4(0.0, 0.0, 0.0, 0.0);
 
 			v2f vert(appdata v)
@@ -50,21 +51,25 @@
 				o.vertex = UnityObjectToClipPos(v.vertex);
 				o.texcoord = v.texcoord;
 				o.texcoord2 = TRANSFORM_TEX(v.texcoord, _MainTex);
-				o.texcoord2.x = o.texcoord2.x - 2.0 * _Time.y;
+				o.texcoord2.x = o.texcoord2.x * _ScaleX - 2.0 * _Time.y;
 				return o;
 			}
 
-			float square(const float x)
+			float cube(float x)
 			{
-				return x * x;
+				return x * x * x;
 			}
 
 			fixed4 frag(v2f i) : SV_Target
 			{
+				_Value2 += 0.001;
 				fixed4 color = clear;
 				fixed red = tex2D(_MainTex, i.texcoord2).r;
+				float f = max((i.texcoord.x - _Value1) / (_Value2 - _Value1), 0.0);
+				float grad = 1.0 - cube(max(0.0, abs(2.0*f - 1.0) * 2.0 - 1.0));
+				fixed4 midColor = (1.0 - red) * _Color1 + red * _Color3;
 				color += lerp(clear, _Color2, step(i.texcoord.x, _Value1));
-				color += lerp(clear, (1.0 - red) * _Color1 + red * _Color3, step(0.0, (_Value2 - i.texcoord.x)*sign(i.texcoord.x - _Value1)));
+				color += lerp(lerp(lerp(_Color2, midColor, grad), lerp(_Color1, midColor, grad), step(0.5, f)), clear, step((_Value2 - i.texcoord.x)*sign(i.texcoord.x - _Value1), 0.0));
 				color += lerp(clear, _Color1, step(_Value2, i.texcoord.x));
 				return color;
 			}
