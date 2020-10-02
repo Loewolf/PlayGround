@@ -7,15 +7,15 @@ public class MovementAlongFigure : Task
     public ReachablePointNoColliderCheck reachablePoint;
     public LineRenderer lineRenderer;
     public CircularPath circularPath;
+    public SmoothQuestLine smoothQuestLine;
     [Min(3)] public int expectedSegmentsCount;
-    private Material material;
+    [Range(1, 9)] public int pointsInSegment;
     private int positionCount;
     private int currentPosition;
-    private float previosProgress;
-
+    private int positionToFollow;
     private void Start()
     {
-        material = lineRenderer.material;
+        smoothQuestLine.SetMaterial(lineRenderer.material);
     }
 
     protected override void SetSpecialState()
@@ -28,12 +28,12 @@ public class MovementAlongFigure : Task
         reachablePoint.gameObject.SetActive(true);
         lineRenderer.gameObject.SetActive(true);
 
-        positionCount = circularPath.SetPositions(expectedSegmentsCount);
-        lineRenderer.positionCount = positionCount;
-        lineRenderer.SetPositions(circularPath.positions);
+        lineRenderer.positionCount = circularPath.SetPositions(expectedSegmentsCount, pointsInSegment);
+        lineRenderer.SetPositions(circularPath.mainPositions);
+        positionCount = circularPath.GetCount();
         currentPosition = 0;
-        previosProgress = 0;
-        material.mainTextureScale = new Vector2(circularPath.GetPathLength() / lineRenderer.startWidth, 1f);
+        positionToFollow = pointsInSegment;
+        smoothQuestLine.SetStartValues(circularPath.GetPathLength() / lineRenderer.startWidth, 0f, 0.001f);
         UpdatePosition();
     }
 
@@ -45,24 +45,26 @@ public class MovementAlongFigure : Task
 
     private bool UpdatePosition()
     {
-        currentPosition++;
-        if (currentPosition > positionCount)
+        if (currentPosition < positionCount)
         {
-            material.SetFloat("_Value1", 1f);
-            material.SetFloat("_Value2", 1f);
-            return true;
+            if (positionToFollow >= positionCount)
+            {
+                smoothQuestLine.SetValues(circularPath.GetProgressByIndex(currentPosition), 1f);
+            }
+            else
+            {
+                smoothQuestLine.SetValues(circularPath.GetProgressByIndex(currentPosition), circularPath.GetProgressByIndex(positionToFollow));
+                positionToFollow++;
+            }
+            currentPosition++;
+            reachablePoint.transform.position = circularPath.GetPositionByIndex(currentPosition);
+            reachablePoint.ResetReached();
+            return false;
         }
         else
         {
-            Vector3 newPosition = Vector3.zero;
-            float currentProgress = 0;
-            circularPath.GetPropertiesByIndex(currentPosition, ref newPosition, ref currentProgress);
-            reachablePoint.transform.position = newPosition;
-            reachablePoint.ResetReached();
-            material.SetFloat("_Value1", previosProgress);
-            material.SetFloat("_Value2", currentProgress);
-            previosProgress = currentProgress;
-            return false;
+            smoothQuestLine.SetValues(1f, 1.001f);
+            return true;
         }
     }
 

@@ -8,7 +8,8 @@ public class CircularPath : CircleSegmentBorders
     public Vector2 heightRange;
     public float yellowZoneHeightAddition;
     [Space(15)]
-    public Vector3[] positions;
+    public Vector3[] mainPositions;
+    private Vector3[] allPositions;
     private List<float> anglesRad;
     private int count;
     private float[] progressAtPoint;
@@ -19,7 +20,7 @@ public class CircularPath : CircleSegmentBorders
         anglesRad = new List<float>();
     }
 
-    public int SetPositions(int expectedSegmentsCount)
+    public int SetPositions(int expectedSegmentsCount, int pointsInSegment) // Возвращает количество основных позиций
     {
         if (expectedSegmentsCount < 1) return 0;
         SetBorders();
@@ -33,38 +34,79 @@ public class CircularPath : CircleSegmentBorders
             angle += Random.Range(halfStep, threeSecondStep);
             anglesRad.Add(angle);
         }
-        count = anglesRad.Count;
-        positions = new Vector3[count];
+        int anglesRadCount = anglesRad.Count;
+        count = anglesRadCount * pointsInSegment;
+        mainPositions = new Vector3[anglesRadCount];
+        allPositions = new Vector3[count];
         progressAtPoint = new float[count];
 
-        positions[0] = transform.position + PolarCoordinateSystem.PolarToCartesianXZ(angleAddition, Random.Range(lowerRadius, upperRadius));
-        if (OutsideBorders(angleAddition)) positions[0] += Vector3.up * Random.Range(heightRange.x, heightRange.y);
-        else positions[0] += Vector3.up * (yellowZoneHeightAddition + Random.Range(heightRange.x, heightRange.y));
+        mainPositions[0] = transform.position + PolarCoordinateSystem.PolarToCartesianXZ(angleAddition, Random.Range(lowerRadius, upperRadius));
+        if (OutsideBorders(angleAddition)) mainPositions[0] += Vector3.up * Random.Range(heightRange.x, heightRange.y);
+        else mainPositions[0] += Vector3.up * (yellowZoneHeightAddition + Random.Range(heightRange.x, heightRange.y));
+
+        allPositions[0] = mainPositions[0];
+        progressAtPoint[0] = 0f;
 
         pathLength = 0;
+        int curIndex = 0, prevIndex = 0;
+        float prevLength = 0, pointsInSegmentInverted = 1f / pointsInSegment, f = 0;
 
-        for (int i = 1; i < count; ++i)
+        for (int i = 1; i < anglesRadCount; ++i)
         {
+            curIndex += pointsInSegment;
             angle = angleAddition + direction * anglesRad[i];
-            positions[i] = transform.position + PolarCoordinateSystem.PolarToCartesianXZ(angle, Random.Range(lowerRadius, upperRadius));
-            if (OutsideBorders(angle)) positions[i] += Vector3.up * Random.Range(heightRange.x, heightRange.y);
-            else positions[i] += Vector3.up * (yellowZoneHeightAddition + Random.Range(heightRange.x, heightRange.y));
-            pathLength += Vector3.Magnitude(positions[i] - positions[i - 1]);
-            progressAtPoint[i - 1] = pathLength;
+            mainPositions[i] = transform.position + PolarCoordinateSystem.PolarToCartesianXZ(angle, Random.Range(lowerRadius, upperRadius));
+            if (OutsideBorders(angle)) mainPositions[i] += Vector3.up * Random.Range(heightRange.x, heightRange.y);
+            else mainPositions[i] += Vector3.up * (yellowZoneHeightAddition + Random.Range(heightRange.x, heightRange.y));
+            prevLength = pathLength;
+            pathLength += Vector3.Magnitude(mainPositions[i] - mainPositions[i - 1]);
+
+            allPositions[curIndex] = mainPositions[i];
+            progressAtPoint[curIndex] = pathLength;
         }
-        pathLength += Vector3.Magnitude(positions[0] - positions[count - 1]);
-        progressAtPoint[count - 1] = pathLength;
-        for (int i = 0; i < count; ++i)
+        pathLength += Vector3.Magnitude(mainPositions[0] - mainPositions[anglesRadCount - 1]);
+
+        for (int i = 1; i < anglesRadCount; ++i)
         {
-            progressAtPoint[i] /= pathLength;
+            curIndex = i * pointsInSegment;
+            progressAtPoint[curIndex] /= pathLength;
+
+            for (int j = 1; j < pointsInSegment; ++j)
+            {
+                f = j * pointsInSegmentInverted;
+                allPositions[prevIndex + j] = Vector3.Lerp(allPositions[prevIndex], allPositions[curIndex], f);
+                progressAtPoint[prevIndex + j] = Mathf.Lerp(progressAtPoint[prevIndex], progressAtPoint[curIndex], f);
+            }
+            prevIndex = curIndex;
         }
+        curIndex = 0;
+        progressAtPoint[curIndex] = 1f;
+        for (int j = 1; j < pointsInSegment; ++j)
+        {
+            f = j * pointsInSegmentInverted;
+            allPositions[prevIndex + j] = Vector3.Lerp(allPositions[prevIndex], allPositions[curIndex], f);
+            progressAtPoint[prevIndex + j] = Mathf.Lerp(progressAtPoint[prevIndex], progressAtPoint[curIndex], f);
+        }
+        progressAtPoint[0] = 0f;
+
+        return anglesRadCount;
+    }
+
+    public int GetCount()
+    {
         return count;
     }
 
-    public void GetPropertiesByIndex(int index, ref Vector3 position, ref float progress)
+    public Vector3 GetPositionByIndex(int index)
     {
-        position = positions[index % count];
-        progress = progressAtPoint[(index - 1) % count];
+        index %= count;
+        return allPositions[index];
+    }
+
+    public float GetProgressByIndex(int index)
+    {
+        index %= count;
+        return progressAtPoint[index];
     }
 
     public float GetPathLength()

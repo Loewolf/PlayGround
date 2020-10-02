@@ -7,7 +7,7 @@
 		_Color2("Color 2", Color) = (1,1,1,1)
 		_Color3("Color 3", Color) = (1,1,1,1)
 		_Value1("Value Lower", Range(0,1)) = 0
-		_Value2("Value Upper", Range(0,1)) = 0
+		_Value2("Value Upper", Range(0,1.001)) = 0
 		_ScaleX("Scale X", float) = 1.0
 	}
 		SubShader
@@ -62,7 +62,6 @@
 
 			fixed4 frag(v2f i) : SV_Target
 			{
-				_Value2 += 0.001;
 				fixed4 color = clear;
 				fixed red = tex2D(_MainTex, i.texcoord2).r;
 				float f = max((i.texcoord.x - _Value1) / (_Value2 - _Value1), 0.0);
