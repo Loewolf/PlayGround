@@ -1,6 +1,11 @@
 ﻿using UnityEngine;
 public static class OtherMath
 {
+    public static float SmoothStep(float f)
+    {
+        return f * f * (3f - 2f * f);
+    }
+
     // Расстояние между точками в параллельных плоскостях
     public static float DistanceYZ(Transform A, Transform B)
     {

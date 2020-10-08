@@ -23,6 +23,9 @@ public class Task: MonoBehaviour, TaskCurrentValue
     public bool instructionsEnabled; // При false отключает отображение текущей инструкции
     public Vector2Int[] pairs; // Набор из индексов описания и инструкций, который будет выведен на заданном этапе
     public float completionDelay = 0; // Задержка при завершении задания
+    [Header("Таймер")]
+    public float timeLimit = 0f; // Количество секунд, выделяемое на задание. Если меньше или равно 0, то таймер не запускается
+
     protected int stage = 0; // Этап выполнения задания. Стартовый этап имеет индекс 0
     /* если 0, то выполняется промежуточный этап задачи
        если 1, то промежуточный этап задачи успешно выполнен (изменяются описание и инструкции задания)
@@ -33,6 +36,7 @@ public class Task: MonoBehaviour, TaskCurrentValue
     protected string currentInstruction;
     protected IEnumerator waitForSeconds;
     private int timerReturn = 0;
+    [HideInInspector] public bool isWaitingForCompletion = false; // Этот флаг поднимается при вызове EndTask или TerminateTask, чтобы по истечении времени таймера не происходил сброс задания
 
     protected void Awake()
     {
@@ -104,6 +108,7 @@ public class Task: MonoBehaviour, TaskCurrentValue
     {
         MainGameObjectSetStartPosition();
         EnableTaskGameObjects();
+        isWaitingForCompletion = false;
         SetStage(0, Task_0, instructionsEnabled);
     }
 
@@ -111,6 +116,7 @@ public class Task: MonoBehaviour, TaskCurrentValue
     {
         DisableTaskGameObjects();
         DropSpecialState();
+        isWaitingForCompletion = false;
         if (isCompleted)
         {
             currentValue = currentValue < value ? value : currentValue;
@@ -132,6 +138,7 @@ public class Task: MonoBehaviour, TaskCurrentValue
         StopCoroutine(waitForSeconds);
         waitForSeconds = WaitForSeconds(completionDelay, resultValue);
         StartCoroutine(waitForSeconds);
+        isWaitingForCompletion = true;
         stageTask = EndLoop;
     }
 
@@ -141,7 +148,7 @@ public class Task: MonoBehaviour, TaskCurrentValue
         return timerReturn;
     }
 
-    protected int TerminateTask() // При неудачном завершении задания требуется установить делегат stageTask, равный TerminateTask
+    public int TerminateTask() // При неудачном завершении задания требуется установить делегат stageTask, равный TerminateTask
     {
         StartEndLoop(-1);
         return timerReturn;

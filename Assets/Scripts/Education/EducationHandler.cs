@@ -16,12 +16,19 @@ public class EducationHandler : MonoBehaviour
     public MaskableGraphic instructionMask;
     public float effectDuration = 1f;
 
+    [Header("Таймер")]
+    public TimerContent timerContent;
+    public string timeoutText;
+
     private Task task = null;
     private IEnumerator maskFlicker;
     private float alpha = 1f;
     private float step;
 
-    private IEnumerator MaskFlicker(string newTaskDescription = null, bool instructionsEnabled = false, string newInstruction = null)
+    private float timeLeft = 0f;
+    private bool timerIsUsed = false;
+
+    private IEnumerator MaskFlicker(string newTaskDescription = null, bool instructionsEnabled = false, string newInstruction = null, bool setTerminateColor = false)
     {
         while (alpha > 0f)
         {
@@ -31,6 +38,13 @@ public class EducationHandler : MonoBehaviour
         }
         alpha = 0;
         SetTextValues(newTaskDescription, instructionsEnabled, newInstruction);
+        if (setTerminateColor) timerContent.SetTerminateColor();
+        else if (task.isWaitingForCompletion)
+        {
+            timerContent.SetEndColor();
+            timerIsUsed = false;
+        }
+
         while (alpha < 1f)
         {
             alpha += Time.deltaTime * step;
@@ -77,12 +91,29 @@ public class EducationHandler : MonoBehaviour
         }
     }
 
+    private void SetTimer(float value)
+    {
+        if (value <= 0)
+        {
+            timerIsUsed = false;
+        }
+        else
+        {
+            timerIsUsed = true;
+            timeLeft = value;
+            timerContent.UpdateTime(timeLeft);
+            timerContent.SetDefaultColor();
+        }
+        timerContent.gameObject.SetActive(timerIsUsed);
+    }
+
     public void SetTask(Task newTask)
     {
         task = newTask;
         task.Take();
         ChangeWindowsActivity(true);
         SetTextValues(task.GetCurrentDescription(), task.instructionsEnabled, task.GetCurrentInstruction());
+        SetTimer(task.timeLimit);
         ResetEffect();
     }
 
@@ -106,6 +137,7 @@ public class EducationHandler : MonoBehaviour
     {
         if (task)
         {
+            UpdateTime();
             int result = task.CheckStageTask();
             switch (result)
             {
@@ -130,6 +162,23 @@ public class EducationHandler : MonoBehaviour
                         break;
                     }
                 default: break; // если 0, то выполняется промежуточный этап задачи
+            }
+        }
+    }
+
+    private void UpdateTime()
+    {
+        if (timerIsUsed)
+        {
+            timeLeft -= Time.deltaTime;
+            timerContent.UpdateTime(timeLeft);
+            if (timeLeft <= 0 && !task.isWaitingForCompletion)
+            {
+                task.TerminateTask();
+                StopCoroutine(maskFlicker);
+                maskFlicker = MaskFlicker(timeoutText, false, null, true);
+                StartCoroutine(maskFlicker);
+                timerIsUsed = false;
             }
         }
     }
