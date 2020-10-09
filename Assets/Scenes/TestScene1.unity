@@ -781,6 +781,7 @@ MonoBehaviour:
   completionDelay: 5
   timeLimit: 0
   isWaitingForCompletion: 0
+  isSuccesfullyEnded: 0
   grabTransform: {fileID: 1573459297}
   grab: {fileID: 49877849}
   specialState: {fileID: 5117397}
@@ -1254,6 +1255,7 @@ MonoBehaviour:
   completionDelay: 5
   timeLimit: 0
   isWaitingForCompletion: 0
+  isSuccesfullyEnded: 0
   stabilityTime: 5
   speedThreshold: 0.02
   accessory: {fileID: 1573459297}
@@ -1358,6 +1360,7 @@ MonoBehaviour:
   completionDelay: 5
   timeLimit: 0
   isWaitingForCompletion: 0
+  isSuccesfullyEnded: 0
   grabTransform: {fileID: 1573459297}
   grab: {fileID: 49877849}
   specialState: {fileID: 5117397}
@@ -1500,6 +1503,7 @@ MonoBehaviour:
   completionDelay: 5
   timeLimit: 0
   isWaitingForCompletion: 0
+  isSuccesfullyEnded: 0
   grabTransform: {fileID: 1573459297}
   grab: {fileID: 49877849}
   specialState: {fileID: 5117397}
@@ -1733,6 +1737,7 @@ MonoBehaviour:
   completionDelay: 5
   timeLimit: 260
   isWaitingForCompletion: 0
+  isSuccesfullyEnded: 0
   grabTransform: {fileID: 1573459297}
   grab: {fileID: 49877849}
   specialState: {fileID: 5117397}
@@ -1932,6 +1937,7 @@ MonoBehaviour:
   completionDelay: 5
   timeLimit: 260
   isWaitingForCompletion: 0
+  isSuccesfullyEnded: 0
   grabTransform: {fileID: 1573459297}
   grab: {fileID: 49877849}
   specialState: {fileID: 5117397}
@@ -2041,6 +2047,7 @@ MonoBehaviour:
   completionDelay: 5
   timeLimit: 245
   isWaitingForCompletion: 0
+  isSuccesfullyEnded: 0
   grabTransform: {fileID: 1573459297}
   grab: {fileID: 49877849}
   specialState: {fileID: 5117397}
@@ -2368,6 +2375,7 @@ MonoBehaviour:
   completionDelay: 5
   timeLimit: 0
   isWaitingForCompletion: 0
+  isSuccesfullyEnded: 0
   grabTransform: {fileID: 1573459297}
   grab: {fileID: 49877849}
   specialState: {fileID: 5117397}
@@ -2477,6 +2485,7 @@ MonoBehaviour:
   completionDelay: 5
   timeLimit: 305
   isWaitingForCompletion: 0
+  isSuccesfullyEnded: 0
   grabTransform: {fileID: 1573459297}
   grab: {fileID: 49877849}
   specialState: {fileID: 5117397}
@@ -3400,7 +3409,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 720, y: -406.25}
+  m_AnchoredPosition: {x: 720, y: -406}
   m_SizeDelta: {x: 800, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &249479232
@@ -4603,6 +4612,7 @@ MonoBehaviour:
   completionDelay: 5
   timeLimit: 0
   isWaitingForCompletion: 0
+  isSuccesfullyEnded: 0
   specialState: {fileID: 5117397}
   reachablePoint: {fileID: 1587606300}
   lineRenderer: {fileID: 36680576}
@@ -4974,6 +4984,7 @@ MonoBehaviour:
   completionDelay: 5
   timeLimit: 0
   isWaitingForCompletion: 0
+  isSuccesfullyEnded: 0
   stabilityTime: 5
   speedThreshold: 0.02
   accessory: {fileID: 1573459297}
@@ -5154,6 +5165,7 @@ MonoBehaviour:
   completionDelay: 5
   timeLimit: 0
   isWaitingForCompletion: 0
+  isSuccesfullyEnded: 0
   grabTransform: {fileID: 1573459297}
   grab: {fileID: 49877849}
   specialState: {fileID: 5117397}
@@ -5777,6 +5789,7 @@ MonoBehaviour:
   completionDelay: 5
   timeLimit: 0
   isWaitingForCompletion: 0
+  isSuccesfullyEnded: 0
   grabTransform: {fileID: 1573459297}
   grab: {fileID: 49877849}
   specialState: {fileID: 5117397}
@@ -6120,6 +6133,7 @@ MonoBehaviour:
   completionDelay: 5
   timeLimit: 140
   isWaitingForCompletion: 0
+  isSuccesfullyEnded: 0
   specialState: {fileID: 5117397}
   reachablePoint: {fileID: 1587606300}
   lineRenderer: {fileID: 36680576}
@@ -6206,6 +6220,7 @@ MonoBehaviour:
   completionDelay: 5
   timeLimit: 230
   isWaitingForCompletion: 0
+  isSuccesfullyEnded: 0
   grabTransform: {fileID: 1573459297}
   grab: {fileID: 49877849}
   specialState: {fileID: 5117397}
@@ -6314,6 +6329,7 @@ MonoBehaviour:
   completionDelay: 5
   timeLimit: 0
   isWaitingForCompletion: 0
+  isSuccesfullyEnded: 0
   accessory: {fileID: 1573459297}
   accessoryDefaultPoint: {fileID: 438357468}
   separationPoint: {fileID: 705163428}
@@ -6400,6 +6416,7 @@ MonoBehaviour:
   completionDelay: 5
   timeLimit: 0
   isWaitingForCompletion: 0
+  isSuccesfullyEnded: 0
   stabilityTime: 5
   speedThreshold: 0.02
   accessory: {fileID: 1573459297}
@@ -6528,6 +6545,7 @@ MonoBehaviour:
   completionDelay: 5
   timeLimit: 0
   isWaitingForCompletion: 0
+  isSuccesfullyEnded: 0
   specialState: {fileID: 5117397}
   reachablePoint: {fileID: 1587606300}
   lineRenderer: {fileID: 36680576}
@@ -6644,6 +6662,7 @@ MonoBehaviour:
   completionDelay: 5
   timeLimit: 260
   isWaitingForCompletion: 0
+  isSuccesfullyEnded: 0
   grabTransform: {fileID: 1573459297}
   grab: {fileID: 49877849}
   specialState: {fileID: 5117397}
@@ -7006,6 +7025,7 @@ MonoBehaviour:
   completionDelay: 5
   timeLimit: 0
   isWaitingForCompletion: 0
+  isSuccesfullyEnded: 0
   grabTransform: {fileID: 1573459297}
   grab: {fileID: 49877849}
   specialState: {fileID: 5117397}
@@ -7398,7 +7418,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 720, y: -81.25}
+  m_AnchoredPosition: {x: 720, y: -81}
   m_SizeDelta: {x: 800, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &645645815
@@ -7668,6 +7688,7 @@ MonoBehaviour:
   completionDelay: 5
   timeLimit: 0
   isWaitingForCompletion: 0
+  isSuccesfullyEnded: 0
   specialState: {fileID: 5117397}
   reachablePoint: {fileID: 1587606300}
   lineRenderer: {fileID: 36680576}
@@ -8758,6 +8779,7 @@ MonoBehaviour:
   completionDelay: 5
   timeLimit: 0
   isWaitingForCompletion: 0
+  isSuccesfullyEnded: 0
   accessory: {fileID: 458241425}
   accessoryDefaultPoint: {fileID: 1100518229}
   joinPoint: {fileID: 440030326}
@@ -8837,6 +8859,7 @@ MonoBehaviour:
   completionDelay: 5
   timeLimit: 120
   isWaitingForCompletion: 0
+  isSuccesfullyEnded: 0
   specialState: {fileID: 5117397}
   reachablePoint: {fileID: 1587606300}
   lineRenderer: {fileID: 36680576}
@@ -9140,7 +9163,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 720, y: -568.75}
+  m_AnchoredPosition: {x: 720, y: -569}
   m_SizeDelta: {x: 800, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &838923453
@@ -9420,6 +9443,7 @@ MonoBehaviour:
   completionDelay: 5
   timeLimit: 0
   isWaitingForCompletion: 0
+  isSuccesfullyEnded: 0
   accessory: {fileID: 1573459297}
   accessoryDefaultPoint: {fileID: 438357468}
   separationPoint: {fileID: 705163428}
@@ -9873,6 +9897,7 @@ MonoBehaviour:
   completionDelay: 5
   timeLimit: 170
   isWaitingForCompletion: 0
+  isSuccesfullyEnded: 0
   grabTransform: {fileID: 1573459297}
   grab: {fileID: 49877849}
   specialState: {fileID: 5117397}
@@ -9975,6 +10000,7 @@ MonoBehaviour:
   completionDelay: 5
   timeLimit: 0
   isWaitingForCompletion: 0
+  isSuccesfullyEnded: 0
   specialState: {fileID: 5117397}
   reachablePoint: {fileID: 1587606300}
   lineRenderer: {fileID: 36680576}
@@ -10109,6 +10135,7 @@ MonoBehaviour:
   completionDelay: 5
   timeLimit: 0
   isWaitingForCompletion: 0
+  isSuccesfullyEnded: 0
   stabilityTime: 5
   speedThreshold: 0.02
   accessory: {fileID: 1573459297}
@@ -10221,6 +10248,7 @@ MonoBehaviour:
   completionDelay: 5
   timeLimit: 200
   isWaitingForCompletion: 0
+  isSuccesfullyEnded: 0
   grabTransform: {fileID: 1573459297}
   grab: {fileID: 49877849}
   specialState: {fileID: 5117397}
@@ -10329,6 +10357,7 @@ MonoBehaviour:
   completionDelay: 5
   timeLimit: 0
   isWaitingForCompletion: 0
+  isSuccesfullyEnded: 0
   grabTransform: {fileID: 1573459297}
   grab: {fileID: 49877849}
   specialState: {fileID: 5117397}
@@ -10801,7 +10830,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 720, y: -243.75}
+  m_AnchoredPosition: {x: 720, y: -244}
   m_SizeDelta: {x: 800, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1005855792
@@ -11031,6 +11060,7 @@ MonoBehaviour:
   completionDelay: 5
   timeLimit: 0
   isWaitingForCompletion: 0
+  isSuccesfullyEnded: 0
   grabTransform: {fileID: 1573459297}
   grab: {fileID: 49877849}
   grabDefaultPoint: {fileID: 438357468}
@@ -11165,6 +11195,7 @@ MonoBehaviour:
   completionDelay: 5
   timeLimit: 0
   isWaitingForCompletion: 0
+  isSuccesfullyEnded: 0
   grabTransform: {fileID: 1573459297}
   grab: {fileID: 49877849}
   specialState: {fileID: 5117397}
@@ -11329,6 +11360,7 @@ MonoBehaviour:
   completionDelay: 5
   timeLimit: 0
   isWaitingForCompletion: 0
+  isSuccesfullyEnded: 0
   grabTransform: {fileID: 1573459297}
   grab: {fileID: 49877849}
   specialState: {fileID: 5117397}
@@ -11844,6 +11876,7 @@ MonoBehaviour:
   completionDelay: 5
   timeLimit: 0
   isWaitingForCompletion: 0
+  isSuccesfullyEnded: 0
   grabTransform: {fileID: 1573459297}
   grab: {fileID: 49877849}
   specialState: {fileID: 5117397}
@@ -11996,6 +12029,7 @@ MonoBehaviour:
   completionDelay: 5
   timeLimit: 160
   isWaitingForCompletion: 0
+  isSuccesfullyEnded: 0
   specialState: {fileID: 5117397}
   reachablePoint: {fileID: 1587606300}
   lineRenderer: {fileID: 36680576}
@@ -12082,6 +12116,7 @@ MonoBehaviour:
   completionDelay: 5
   timeLimit: 290
   isWaitingForCompletion: 0
+  isSuccesfullyEnded: 0
   grabTransform: {fileID: 1573459297}
   grab: {fileID: 49877849}
   specialState: {fileID: 5117397}
@@ -12322,6 +12357,7 @@ MonoBehaviour:
   completionDelay: 5
   timeLimit: 150
   isWaitingForCompletion: 0
+  isSuccesfullyEnded: 0
   specialState: {fileID: 5117397}
   reachablePoint: {fileID: 1587606300}
   lineRenderer: {fileID: 36680576}
@@ -12498,6 +12534,7 @@ MonoBehaviour:
   completionDelay: 5
   timeLimit: 0
   isWaitingForCompletion: 0
+  isSuccesfullyEnded: 0
   stabilityTime: 5
   speedThreshold: 0.02
   accessory: {fileID: 1573459297}
@@ -12517,6 +12554,12 @@ MonoBehaviour:
   otherObjects:
   - {fileID: 2014271786}
   - {fileID: 444479746}
+--- !u!1 &1216411698 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 331272865209518941, guid: cf13124282d526c4e8b413a670a8f6f3,
+    type: 3}
+  m_PrefabInstance: {fileID: 281805385}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1231503636
 GameObject:
   m_ObjectHideFlags: 0
@@ -13027,6 +13070,7 @@ MonoBehaviour:
   completionDelay: 5
   timeLimit: 215
   isWaitingForCompletion: 0
+  isSuccesfullyEnded: 0
   grabTransform: {fileID: 1573459297}
   grab: {fileID: 49877849}
   specialState: {fileID: 5117397}
@@ -13342,6 +13386,7 @@ MonoBehaviour:
   completionDelay: 5
   timeLimit: 0
   isWaitingForCompletion: 0
+  isSuccesfullyEnded: 0
   grabTransform: {fileID: 1573459297}
   grab: {fileID: 49877849}
   specialState: {fileID: 5117397}
@@ -13564,6 +13609,7 @@ MonoBehaviour:
   completionDelay: 5
   timeLimit: 0
   isWaitingForCompletion: 0
+  isSuccesfullyEnded: 0
   stabilityTime: 3
   speedThreshold: 0.02
   accessory: {fileID: 1573459297}
@@ -13660,6 +13706,7 @@ MonoBehaviour:
   completionDelay: 5
   timeLimit: 0
   isWaitingForCompletion: 0
+  isSuccesfullyEnded: 0
   accessory: {fileID: 458241425}
   accessoryDefaultPoint: {fileID: 1100518229}
   separationPoint: {fileID: 705163428}
@@ -13813,6 +13860,7 @@ MonoBehaviour:
   completionDelay: 5
   timeLimit: 0
   isWaitingForCompletion: 0
+  isSuccesfullyEnded: 0
   specialState: {fileID: 5117397}
   reachablePoint: {fileID: 1587606300}
   lineRenderer: {fileID: 36680576}
@@ -14789,6 +14837,7 @@ MonoBehaviour:
   completionDelay: 5
   timeLimit: 0
   isWaitingForCompletion: 0
+  isSuccesfullyEnded: 0
   grabTransform: {fileID: 1573459297}
   grab: {fileID: 49877849}
   specialState: {fileID: 5117397}
@@ -14891,6 +14940,7 @@ MonoBehaviour:
   completionDelay: 5
   timeLimit: 0
   isWaitingForCompletion: 0
+  isSuccesfullyEnded: 0
   specialState: {fileID: 5117397}
   reachablePoint: {fileID: 1587606300}
   lineRenderer: {fileID: 36680576}
@@ -15258,6 +15308,7 @@ MonoBehaviour:
   completionDelay: 5
   timeLimit: 0
   isWaitingForCompletion: 0
+  isSuccesfullyEnded: 0
   stabilityTime: 5
   speedThreshold: 0.02
   accessory: {fileID: 1573459297}
@@ -15360,6 +15411,7 @@ MonoBehaviour:
   completionDelay: 5
   timeLimit: 260
   isWaitingForCompletion: 0
+  isSuccesfullyEnded: 0
   grabTransform: {fileID: 1573459297}
   grab: {fileID: 49877849}
   specialState: {fileID: 5117397}
@@ -15468,6 +15520,7 @@ MonoBehaviour:
   completionDelay: 5
   timeLimit: 0
   isWaitingForCompletion: 0
+  isSuccesfullyEnded: 0
   accessory: {fileID: 458241425}
   accessoryDefaultPoint: {fileID: 1100518229}
   separationPoint: {fileID: 705163428}
@@ -15655,6 +15708,7 @@ MonoBehaviour:
   completionDelay: 5
   timeLimit: 215
   isWaitingForCompletion: 0
+  isSuccesfullyEnded: 0
   grabTransform: {fileID: 1573459297}
   grab: {fileID: 49877849}
   specialState: {fileID: 5117397}
@@ -16022,6 +16076,7 @@ MonoBehaviour:
   completionDelay: 5
   timeLimit: 0
   isWaitingForCompletion: 0
+  isSuccesfullyEnded: 0
   accessory: {fileID: 1573459297}
   accessoryDefaultPoint: {fileID: 438357468}
   joinPoint: {fileID: 648521797302845174}
@@ -16342,6 +16397,7 @@ MonoBehaviour:
   completionDelay: 5
   timeLimit: 130
   isWaitingForCompletion: 0
+  isSuccesfullyEnded: 0
   specialState: {fileID: 5117397}
   reachablePoint: {fileID: 1587606300}
   lineRenderer: {fileID: 36680576}
@@ -16878,6 +16934,7 @@ MonoBehaviour:
   completionDelay: 5
   timeLimit: 0
   isWaitingForCompletion: 0
+  isSuccesfullyEnded: 0
   grabTransform: {fileID: 1573459297}
   grab: {fileID: 49877849}
   specialState: {fileID: 5117397}
@@ -16986,6 +17043,7 @@ MonoBehaviour:
   completionDelay: 5
   timeLimit: 0
   isWaitingForCompletion: 0
+  isSuccesfullyEnded: 0
   grabTransform: {fileID: 1573459297}
   grab: {fileID: 49877849}
   specialState: {fileID: 5117397}
@@ -17094,6 +17152,7 @@ MonoBehaviour:
   completionDelay: 5
   timeLimit: 0
   isWaitingForCompletion: 0
+  isSuccesfullyEnded: 0
   grabTransform: {fileID: 1573459297}
   grab: {fileID: 49877849}
   specialState: {fileID: 5117397}
@@ -17203,6 +17262,7 @@ MonoBehaviour:
   completionDelay: 5
   timeLimit: 0
   isWaitingForCompletion: 0
+  isSuccesfullyEnded: 0
   hammerTransform: {fileID: 458241425}
   hammerDefaultPoint: {fileID: 1100518229}
   wallPrefab: {fileID: 3593526089474025579, guid: 747bfc91d5220c040a5fa1a7181686b1,
@@ -17873,6 +17933,7 @@ MonoBehaviour:
   completionDelay: 5
   timeLimit: 0
   isWaitingForCompletion: 0
+  isSuccesfullyEnded: 0
   specialState: {fileID: 5117397}
   reachablePoint: {fileID: 1587606300}
   lineRenderer: {fileID: 36680576}
@@ -18360,6 +18421,7 @@ MonoBehaviour:
   completionDelay: 5
   timeLimit: 0
   isWaitingForCompletion: 0
+  isSuccesfullyEnded: 0
   grabTransform: {fileID: 1573459297}
   grab: {fileID: 49877849}
   specialState: {fileID: 5117397}
@@ -18530,6 +18592,7 @@ MonoBehaviour:
   completionDelay: 5
   timeLimit: 0
   isWaitingForCompletion: 0
+  isSuccesfullyEnded: 0
   accessory: {fileID: 1573459297}
   accessoryDefaultPoint: {fileID: 438357468}
   separationPoint: {fileID: 705163428}
@@ -18874,6 +18937,7 @@ MonoBehaviour:
   completionDelay: 5
   timeLimit: 25
   isWaitingForCompletion: 0
+  isSuccesfullyEnded: 0
   hammerTransform: {fileID: 458241425}
   hammer: {fileID: 1338148213795760951}
   hammerDefaultPoint: {fileID: 1100518229}
@@ -19033,6 +19097,11 @@ PrefabInstance:
       propertyPath: targetTag
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5964397945629334195, guid: d3c32eb23ad92b24eb032059065f0ca9,
+        type: 3}
+      propertyPath: targetObject
+      value: 
+      objectReference: {fileID: 1216411698}
     - target: {fileID: 6418200266623360758, guid: d3c32eb23ad92b24eb032059065f0ca9,
         type: 3}
       propertyPath: m_Name
@@ -19298,6 +19367,7 @@ MonoBehaviour:
   completionDelay: 5
   timeLimit: 0
   isWaitingForCompletion: 0
+  isSuccesfullyEnded: 0
   grabTransform: {fileID: 1573459297}
   grab: {fileID: 49877849}
   specialState: {fileID: 5117397}
@@ -19469,6 +19539,7 @@ MonoBehaviour:
   completionDelay: 5
   timeLimit: 0
   isWaitingForCompletion: 0
+  isSuccesfullyEnded: 0
   stabilityTime: 3
   speedThreshold: 0.02
   accessory: {fileID: 1573459297}
@@ -19559,6 +19630,7 @@ MonoBehaviour:
   completionDelay: 5
   timeLimit: 0
   isWaitingForCompletion: 0
+  isSuccesfullyEnded: 0
   specialState: {fileID: 5117397}
   reachablePoint: {fileID: 1587606300}
   lineRenderer: {fileID: 36680576}
@@ -20252,6 +20324,7 @@ MonoBehaviour:
   completionDelay: 5
   timeLimit: 0
   isWaitingForCompletion: 0
+  isSuccesfullyEnded: 0
   hammerTransform: {fileID: 458241425}
   hammer: {fileID: 1338148213795760951}
   hammerDefaultPoint: {fileID: 1100518229}
@@ -20329,6 +20402,7 @@ MonoBehaviour:
   completionDelay: 5
   timeLimit: 0
   isWaitingForCompletion: 0
+  isSuccesfullyEnded: 0
   specialState: {fileID: 5117397}
   reachablePoint: {fileID: 1587606300}
   lineRenderer: {fileID: 36680576}
@@ -20410,6 +20484,7 @@ MonoBehaviour:
   completionDelay: 5
   timeLimit: 0
   isWaitingForCompletion: 0
+  isSuccesfullyEnded: 0
   hammerTransform: {fileID: 458241425}
   hammerDefaultPoint: {fileID: 1100518229}
   wallPrefab: {fileID: 3593526089474025579, guid: 747bfc91d5220c040a5fa1a7181686b1,
@@ -20614,6 +20689,7 @@ MonoBehaviour:
   completionDelay: 5
   timeLimit: 0
   isWaitingForCompletion: 0
+  isSuccesfullyEnded: 0
   showInstructions: 1
   grabTransform: {fileID: 1573459297}
   grab: {fileID: 49877849}
@@ -21265,6 +21341,7 @@ MonoBehaviour:
   completionDelay: 5
   timeLimit: 200
   isWaitingForCompletion: 0
+  isSuccesfullyEnded: 0
   grabTransform: {fileID: 1573459297}
   grab: {fileID: 49877849}
   specialState: {fileID: 5117397}
@@ -21373,6 +21450,7 @@ MonoBehaviour:
   completionDelay: 5
   timeLimit: 0
   isWaitingForCompletion: 0
+  isSuccesfullyEnded: 0
   grabTransform: {fileID: 1573459297}
   grab: {fileID: 49877849}
   specialState: {fileID: 5117397}
@@ -21652,6 +21730,7 @@ MonoBehaviour:
   completionDelay: 5
   timeLimit: 0
   isWaitingForCompletion: 0
+  isSuccesfullyEnded: 0
   specialState: {fileID: 5117397}
   reachablePoint: {fileID: 1587606300}
   lineRenderer: {fileID: 36680576}
@@ -21737,6 +21816,7 @@ MonoBehaviour:
   completionDelay: 5
   timeLimit: 0
   isWaitingForCompletion: 0
+  isSuccesfullyEnded: 0
   grabTransform: {fileID: 1573459297}
   grab: {fileID: 49877849}
   specialState: {fileID: 5117397}
@@ -22031,6 +22111,7 @@ MonoBehaviour:
   completionDelay: 5
   timeLimit: 275
   isWaitingForCompletion: 0
+  isSuccesfullyEnded: 0
   grabTransform: {fileID: 1573459297}
   grab: {fileID: 49877849}
   specialState: {fileID: 5117397}
@@ -22391,6 +22472,7 @@ MonoBehaviour:
   completionDelay: 5
   timeLimit: 290
   isWaitingForCompletion: 0
+  isSuccesfullyEnded: 0
   grabTransform: {fileID: 1573459297}
   grab: {fileID: 49877849}
   specialState: {fileID: 5117397}

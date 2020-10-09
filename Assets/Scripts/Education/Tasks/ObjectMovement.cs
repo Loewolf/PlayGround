@@ -33,7 +33,7 @@ public class ObjectMovement : Task
         grabTransform.gameObject.SetActive(true);
         grabTransform.transform.position = grabDefaultPoint.position;
         grabTransform.transform.rotation = grabDefaultPoint.rotation;
-        if (!showInstructions) instructionsEnabled = false; 
+        if (!showInstructions) instructionsEnabled = false;
     }
 
     protected override void DisableTaskGameObjects()

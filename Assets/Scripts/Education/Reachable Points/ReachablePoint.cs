@@ -14,7 +14,18 @@ public class ReachablePoint : MonoBehaviour
     private void Awake()
     {
         colliders = new List<Collider>();
+        Classify();
+    }
+
+    private void Classify()
+    {
         if (targetObject) CheckForMatches = CheckGameObject;
+        else CheckForMatches = CheckTag;
+    }
+
+    public void Reclassify(bool useObject)
+    {
+        if (useObject) CheckForMatches = CheckGameObject;
         else CheckForMatches = CheckTag;
     }
 
