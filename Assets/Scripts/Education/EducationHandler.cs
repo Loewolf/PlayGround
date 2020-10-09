@@ -28,7 +28,7 @@ public class EducationHandler : MonoBehaviour
     private float timeLeft = 0f;
     private bool timerIsUsed = false;
 
-    private IEnumerator MaskFlicker(string newTaskDescription = null, bool instructionsEnabled = false, string newInstruction = null, bool setTerminateColor = false)
+    private IEnumerator MaskFlicker(string newTaskDescription = null, bool instructionsEnabled = false, string newInstruction = null)
     {
         while (alpha > 0f)
         {
@@ -37,11 +37,14 @@ public class EducationHandler : MonoBehaviour
             yield return null;
         }
         alpha = 0;
+
         SetTextValues(newTaskDescription, instructionsEnabled, newInstruction);
-        if (setTerminateColor) timerContent.SetTerminateColor();
-        else if (task.isWaitingForCompletion)
+        if (task.isWaitingForCompletion)
         {
-            timerContent.SetEndColor();
+            if (task.isSuccesfullyEnded)
+                timerContent.SetEndColor();
+            else
+                timerContent.SetTerminateColor();
             timerIsUsed = false;
         }
 
@@ -176,7 +179,7 @@ public class EducationHandler : MonoBehaviour
             {
                 task.TerminateTask();
                 StopCoroutine(maskFlicker);
-                maskFlicker = MaskFlicker(timeoutText, false, null, true);
+                maskFlicker = MaskFlicker(timeoutText, false, null);
                 StartCoroutine(maskFlicker);
                 timerIsUsed = false;
             }

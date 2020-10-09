@@ -8,14 +8,18 @@ public interface TaskCurrentValue
     int currentExtraValue { get; set; } //хранит текущее доп. кол-во очков(для задач доп. тренировки)
 }
 
-public class Task: MonoBehaviour, TaskCurrentValue
+public class Task : MonoBehaviour, TaskCurrentValue
 {
     public Example mainGameObject;
     public int currentValue { get; set; }
     public int currentExtraValue { get; set; }
-    
+
+    [Header("Наименование задачи")]
+    public string taskNamePrefix;
+    public string taskNameBody;
+    public string taskNameSuffix;
+    [HideInInspector] public string taskName; //название задачи, будет отображаться в меню уровней. Собирается из префикса, основной части и суффикса
     [Header("Свойства задачи")]
-    public string taskName; //название задачи, будет отображаться в меню уровней
     public Transform startPoint; // Точка, в которую будет отправлен робот при старте выполнения задания
     public int value; // Количество очков, которое получит пользователь за выполнение задания
     public string[] taskDescriptions; // Набор описаний задачи
@@ -37,10 +41,17 @@ public class Task: MonoBehaviour, TaskCurrentValue
     protected IEnumerator waitForSeconds;
     private int timerReturn = 0;
     [HideInInspector] public bool isWaitingForCompletion = false; // Этот флаг поднимается при вызове EndTask или TerminateTask, чтобы по истечении времени таймера не происходил сброс задания
+    [HideInInspector] public bool isSuccesfullyEnded = false;
 
     protected void Awake()
     {
+        ConnectNameParts();
         waitForSeconds = WaitForSeconds(0, 0);
+    }
+
+    private void ConnectNameParts()
+    {
+        taskName = taskNamePrefix + ' ' + taskNameBody + ' ' + taskNameSuffix;
     }
 
     public string GetCurrentDescription()
@@ -132,25 +143,26 @@ public class Task: MonoBehaviour, TaskCurrentValue
         return 0;
     }
 
-    private void StartEndLoop(int resultValue)
+    private void StartEndLoop(int resultValue, bool successValue)
     {
         timerReturn = 0;
         StopCoroutine(waitForSeconds);
         waitForSeconds = WaitForSeconds(completionDelay, resultValue);
         StartCoroutine(waitForSeconds);
         isWaitingForCompletion = true;
+        isSuccesfullyEnded = successValue;
         stageTask = EndLoop;
     }
 
     protected int EndTask() // При успешном завершении задания требуется установить делегат stageTask, равный EndTask
     {
-        StartEndLoop(2);
+        StartEndLoop(2, true);
         return timerReturn;
     }
 
     public int TerminateTask() // При неудачном завершении задания требуется установить делегат stageTask, равный TerminateTask
     {
-        StartEndLoop(-1);
+        StartEndLoop(-1, false);
         return timerReturn;
     }
 
