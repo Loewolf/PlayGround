@@ -2,12 +2,18 @@
 
 public class ObjectMovement : Task
 {
-    public bool showInstructions = true; // При false отключает отображение всех инструкций для этого задания
-    [Header("Объекты, связанные с задачей")]
+    [Space(15)]
+    [Tooltip("При false для задания потребуется всего 3 описания: подбор захвата, подбор объекта и его сброс, завершение задания")]
+    public bool showUniqueDescriptions = true;
+    [Tooltip("При false отключает отображение всех инструкций для этого задания")]
+    public bool showInstructions = true;
+    [Space(10, order = 0)]
+    [Header("Объекты, связанные с задачей", order = 1)]
     public Transform grabTransform;
     public Grab grab;
     public Transform grabDefaultPoint;
     public PointOfInterest pointOfInterest;
+    public Transform pointOfInterestDefaultPosition;
     public AttachableObject[] targetObjects;
     public Transform[] targetObjectsDefaultPositions;
     public GameObject[] otherObjects;
@@ -19,7 +25,7 @@ public class ObjectMovement : Task
     protected override void EnableTaskGameObjects()
     {
         length = targetObjects.Length;
-        for (int i=0; i<length; ++i)
+        for (int i = 0; i < length; ++i)
         {
             Transform parent = targetObjects[i].transform.parent;
             parent.gameObject.SetActive(true);
@@ -34,6 +40,8 @@ public class ObjectMovement : Task
         grabTransform.transform.position = grabDefaultPoint.position;
         grabTransform.transform.rotation = grabDefaultPoint.rotation;
         if (!showInstructions) instructionsEnabled = false;
+        pointOfInterest.transform.position = pointOfInterestDefaultPosition.position;
+        pointOfInterest.transform.rotation = pointOfInterestDefaultPosition.rotation;
     }
 
     protected override void DisableTaskGameObjects()
@@ -68,14 +76,17 @@ public class ObjectMovement : Task
         if (currentObject < length)
         {
             marker.gameObject.SetActive(true);
-            marker.SetTarget(targetObjects[currentObject].GetComponent<Collider>());
-            pointOfInterest.targetObject = targetObjects[currentObject].gameObject;
+            marker.UpdatePosition(targetObjects[currentObject].gameObject);
+
+            pointOfInterest.targetObject = targetObjects[currentObject].transform;
             pointOfInterest.ResetReached();
-            SetStage(currentObject + 1, Task_1, showInstructions);
+            if (showUniqueDescriptions) SetStage(currentObject + 1, Task_1, showInstructions);
+            else SetStage(1, Task_1, showInstructions);
         }
         else
         {
-            SetStage(length + 1, EndTask, false);
+            if (showUniqueDescriptions) SetStage(length + 1, EndTask, false);
+            else SetStage(2, EndTask, false);
         }
         return 1;
     }
@@ -85,24 +96,29 @@ public class ObjectMovement : Task
         if (grab.GetAttachedObject() == targetObjects[currentObject])
         {
             marker.gameObject.SetActive(false);
-            SetStage(currentObject + 1, Task_2, showInstructions);
+            if (showUniqueDescriptions) SetStage(currentObject + 1, Task_2, showInstructions);
+            else SetStage(1, Task_2, showInstructions);
         }
         return 0;
     }
 
     private int Task_2() // Сбросить объект в указанную область
     {
-        if (pointOfInterest.IsReached()&&!grab.GetAttachedObject())
+        if (pointOfInterest.IsReached() && !grab.GetAttachedObject())
         {
             currentObject++;
-            SetStage(currentObject + 1, Task_ObjectSelector, showInstructions);
+            if (showUniqueDescriptions) SetStage(currentObject + 1, Task_ObjectSelector, showInstructions);
+            else SetStage(1, Task_ObjectSelector, showInstructions);
         }
         else
         {
             if (grab.GetAttachedObject() != targetObjects[currentObject])
             {
                 marker.gameObject.SetActive(true);
-                SetStage(currentObject + 1, Task_1, showInstructions);
+                marker.UpdatePosition(targetObjects[currentObject].gameObject);
+
+                if (showUniqueDescriptions) SetStage(currentObject + 1, Task_1, showInstructions);
+                else SetStage(1, Task_1, showInstructions);
             }
         }
         return 0;

@@ -12,6 +12,7 @@ public class BoxPyramid : Task
     public Rigidbody[] rigidbodies;
     public Transform[] rigidbodiesDefaultPoints;
     public MeshRenderer pointOfInterest;
+    public Transform pointOfInterestDefaultPosition;
     public GameObject[] otherObjects;
 
     private int levelAmount;
@@ -42,6 +43,8 @@ public class BoxPyramid : Task
             rigidbodies[i].rotation = rigidbodiesDefaultPoints[i].rotation;
         }
         pointOfInterest.gameObject.SetActive(true);
+        pointOfInterest.transform.position = pointOfInterestDefaultPosition.position;
+        pointOfInterest.transform.rotation = pointOfInterestDefaultPosition.rotation;
         levelAmount = levels.Length;
         timeSpent = 0;
         material.SetFloat("_Value", 0);

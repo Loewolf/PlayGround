@@ -23,7 +23,8 @@ public class DestroyingArea : ReachablePoint
 
     protected override void OnTriggerEnter(Collider other)
     {
-        if (CheckForMatches(other))
+        Transform otherTransform = other.transform;
+        if (CheckForMatches(ref otherTransform))
         {
             AttachableObject ao = other.GetComponent<AttachableObject>();
             if (ao)

@@ -22,13 +22,13 @@ public class CreateListLevel : MonoBehaviour
         //при первом запуске игры генерируем кнопки
         AllTasks.SetTasks();
         levelCount = AllTasks.Length;
-        for (int i = 0; i < levelCount; i++)
+        for (int i = 0, j = 1; i < levelCount; i++, j++)
         {
-            var button = Instantiate(Button, TransformParent.transform).GetComponent<ButtonInfo>();
+            ButtonInfo button = Instantiate(Button, TransformParent.transform).GetComponent<ButtonInfo>();
             _buttons.Add(button);
-            var task = AllTasks[i];
+            Task task = AllTasks[i];
             button.Button.onClick.AddListener(() => TaskTester.ResetTask(task));
-            button.LevelName.text = task.taskName;
+            button.LevelName.text = j.ToString() + ". " + task.taskName;
             button.LevelScore.text = task.currentValue.ToString();
         }
     }
@@ -38,9 +38,7 @@ public class CreateListLevel : MonoBehaviour
         //при каждом открытии обновляем очки уровней
         for (int i = 0; i < levelCount; i++)
         {
-            var task = AllTasks[i];
-            _buttons[i].LevelScore.text = task.currentValue.ToString();
-
+            _buttons[i].LevelScore.text = AllTasks[i].currentValue.ToString();
         }
     }
 }

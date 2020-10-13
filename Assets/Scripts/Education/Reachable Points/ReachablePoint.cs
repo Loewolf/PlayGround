@@ -4,16 +4,16 @@ using UnityEngine;
 public class ReachablePoint : MonoBehaviour
 {
     public string targetTag = "Player";
-    public GameObject targetObject = null;
+    public Transform targetObject = null;
 
     protected int objectsAtPoint = 0;
-    protected delegate bool CheckForMatchesDelegate(in Collider other);
+    protected delegate bool CheckForMatchesDelegate(ref Transform other);
     protected CheckForMatchesDelegate CheckForMatches;
-    protected List<Collider> colliders;
+    protected List<Transform> transforms;
 
     private void Awake()
     {
-        colliders = new List<Collider>();
+        transforms = new List<Transform>();
         Classify();
     }
 
@@ -34,14 +34,18 @@ public class ReachablePoint : MonoBehaviour
         ResetReached();
     }
 
-    private bool CheckTag(in Collider other)
+    private bool CheckTag(ref Transform other)
     {
         return other.tag == targetTag;
     }
 
-    private bool CheckGameObject(in Collider other)
+    private bool CheckGameObject(ref Transform other)
     {
-        return other.gameObject == targetObject;
+        while (other && other != targetObject)
+        {
+            other = other.parent;
+        }
+        return other;
     }
 
     public bool IsReached()
@@ -52,24 +56,26 @@ public class ReachablePoint : MonoBehaviour
     public virtual void ResetReached()
     {
         objectsAtPoint = 0;
-        if (colliders != null) colliders.Clear();
+        if (transforms != null) transforms.Clear();
     }
 
     protected virtual void OnTriggerEnter(Collider other)
     {
-        if (CheckForMatches(other) && !colliders.Contains(other))
+        Transform otherTransform = other.transform;
+        if (CheckForMatches(ref otherTransform) && !transforms.Contains(otherTransform))
         {
             objectsAtPoint++;
-            colliders.Add(other);
+            transforms.Add(otherTransform);
         }
     }
 
     protected virtual void OnTriggerExit(Collider other)
     {
-        if (CheckForMatches(other) && colliders.Contains(other))
+        Transform otherTransform = other.transform;
+        if (CheckForMatches(ref otherTransform) && transforms.Contains(otherTransform))
         {
             objectsAtPoint--;
-            colliders.Remove(other);
+            transforms.Remove(otherTransform);
         }
     }
 }

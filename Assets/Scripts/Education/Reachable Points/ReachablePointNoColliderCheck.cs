@@ -10,7 +10,8 @@ public class ReachablePointNoColliderCheck : ReachablePoint
 
     protected override void OnTriggerEnter(Collider other)
     {
-        if (CheckForMatches(other))
+        Transform otherTransform = other.transform;
+        if (CheckForMatches(ref otherTransform))
         {
             objectsAtPoint++;
         }

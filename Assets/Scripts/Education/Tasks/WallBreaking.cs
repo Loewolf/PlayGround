@@ -50,7 +50,7 @@ public class WallBreaking : WallBreakingPattern
         return (Mathf.Abs(OtherMath.CosOfAngleBetweenTwoVectors(hammerVector, axisX)) < COS_EPS) && (Mathf.Abs(OtherMath.CosOfAngleBetweenTwoVectors(hammerVector, axisY)) < COS_EPS);
     }
 
-    private int Task_1() // Установить молот под углом 90-epsilon градусов
+    private int Task_1() // Установить молот под углом 90 - epsilon градусов
     {
         if (mainGameObject.GetEquipped())
         {

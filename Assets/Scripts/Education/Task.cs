@@ -73,7 +73,7 @@ public class Task : MonoBehaviour, TaskCurrentValue
     {
         stage = nextStage;
         stageTask = newTask;
-        instructionsEnabled = instructionsStatus;
+        instructionsEnabled = instructionsStatus && pairs[stage].y < instructions.Length && instructions[pairs[stage].y] != "";
         if (stage < pairs.Length)
         {
             currentDescription = taskDescriptions[pairs[stage].x];

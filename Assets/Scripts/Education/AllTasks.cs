@@ -1,18 +1,29 @@
-﻿using UnityEngine;
+﻿using System.Collections.Generic;
+using UnityEngine;
 
 public class AllTasks : MonoBehaviour
 {
-    //уровни нельзя меняться местами, если уже начался сеанс пользователя.
+    //уровни нельзя менять местами, если уже начался сеанс пользователя.
     //если порядок был изменен, то необходимо сбросить все очки, полученные пользователем (начать заново)
-    private Task[] Tasks;
+    private List<Task> Tasks;
 
     public void SetTasks()
     {
         int count = transform.childCount;
-        Tasks = new Task[count];
+        Tasks = new List<Task>();
         for (int i = 0; i < count; ++i)
         {
-            Tasks[i] = transform.GetChild(i).GetComponent<Task>();
+            Transform child = transform.GetChild(i);
+            Task task = child.GetComponent<Task>();
+            if (!task) // Встретили каталог
+            {
+                int innerCount = child.childCount;
+                for (int j = 0; j < innerCount; ++j)
+                {
+                    Tasks.Add(child.GetChild(j).GetComponent<Task>());
+                }
+            }
+            else Tasks.Add(task);
         }
     }
 
@@ -23,6 +34,6 @@ public class AllTasks : MonoBehaviour
 
     public int Length
     {
-        get => Tasks.Length;
+        get => Tasks.Count;
     }
 }
