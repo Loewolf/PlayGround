@@ -2,13 +2,9 @@
 
 public class WallBreakingSimplified : WallBreakingPattern
 {
-    public Transform areaDefaultPosition;
-
     protected override void EnableTaskGameObjects()
     {
         EnableWallBreakingObjects();
-        area.transform.position = areaDefaultPosition.position;
-        area.transform.rotation = areaDefaultPosition.rotation;
     }
 
     protected override void DisableTaskGameObjects()

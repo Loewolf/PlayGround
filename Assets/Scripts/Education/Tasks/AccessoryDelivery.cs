@@ -21,6 +21,7 @@ public class AccessoryDelivery : Task
         accessory.position = accessoryDefaultPoint.position;
         accessory.rotation = accessoryDefaultPoint.rotation;
         pedestal.position = pedestalDefaultPoint.position;
+        pedestal.rotation = pedestalDefaultPoint.rotation;
         separationPoint.ResetReached();
     }
 

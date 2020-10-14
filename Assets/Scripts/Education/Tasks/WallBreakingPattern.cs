@@ -9,6 +9,7 @@ public class WallBreakingPattern : Task
     public GameObject wallPrefab;
     public Transform wallDefaultPoint;
     public Transform area;
+    public Transform areaDefaultPosition;
     public Transform grid; // Является дочерним объектом к Area, 
     // содержит объекты с компонентом ReachablePoint
 
@@ -31,7 +32,8 @@ public class WallBreakingPattern : Task
         hammerTransform.rotation = hammerDefaultPoint.rotation;
         instantiatedWall = Instantiate(wallPrefab, wallDefaultPoint.position, wallDefaultPoint.rotation);
         area.gameObject.SetActive(true);
-
+        area.transform.position = areaDefaultPosition.position;
+        area.transform.rotation = areaDefaultPosition.rotation;
         reachablePointsAmount = grid.childCount;
         reachablePoints = new ReachablePoint[reachablePointsAmount];
         visitedPoints = new int[reachablePointsAmount];
