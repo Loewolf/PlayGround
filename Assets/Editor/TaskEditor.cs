@@ -1,4 +1,5 @@
-﻿using UnityEditor;
+﻿using System;
+using UnityEditor;
 using UnityEngine;
 [CustomEditor(typeof(TaskTester))]
 public class TilesUpdaterEditor : Editor
@@ -12,4 +13,5 @@ public class TilesUpdaterEditor : Editor
             taskTester.ResetTask();
         }
     }
+    
 }

@@ -7,8 +7,9 @@ using View;
 
 public interface IRestartMenuView : IMenuView
 {
-    event Action RestartEvent;
+    event Action ResetEvent;
     event Action BackEvent;
+    TaskTester TaskTester { get; set; }
 }
 public class RestartMenuController : IController<IRestartMenuView>
 {
@@ -16,26 +17,27 @@ public class RestartMenuController : IController<IRestartMenuView>
     public void OnOpen(IRestartMenuView view)
     {
         _view = view;
-        _view.RestartEvent += Restart;
+        _view.ResetEvent += Reset;
         _view.BackEvent += Back;
     }
 
     public void OnClose(IRestartMenuView view)
     {
-        _view.RestartEvent -= Restart;
+        _view.ResetEvent -= Reset;
         _view.BackEvent -= Back;
         _view = null;
     }
 
-    public void Restart()
+    public void Reset()
     {
-        
+        _view.TaskTester.ResetTask();
+        _view.PauseMenuManager.AllBack();
     }
 
     public void Back()
     {
-        _view.MenuManager.RemoveStackView();
-        _view.MenuManager.GetView().Open();
+        _view.PauseMenuManager.RemoveStackView();
+        _view.PauseMenuManager.GetView().Open();
         _view.Close(this);
     }
 }

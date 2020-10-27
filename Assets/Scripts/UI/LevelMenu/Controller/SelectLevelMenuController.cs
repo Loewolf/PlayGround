@@ -30,8 +30,8 @@ namespace Controllers
 
         public void Back()
         {
-            _view.MenuManager.RemoveStackView();
-            _view.MenuManager.GetView().Open();
+            _view.PauseMenuManager.RemoveStackView();
+            _view.PauseMenuManager.GetView().Open();
             _view.Close(this);
         }
         

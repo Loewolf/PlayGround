@@ -3,6 +3,11 @@ using System;
 using System.Collections;
 using System.Xml.Serialization;
 
+public enum TaskMode
+{
+    Education,
+    Training
+}
 
 public interface TaskCurrentValue
 {
@@ -15,7 +20,8 @@ public class Task: MonoBehaviour, TaskCurrentValue
     public Example mainGameObject;
     public int currentValue { get; set; }
     public int currentExtraValue { get; set; }
-    
+    public TaskMode taskMode { get; set; }//этот таск в режиме обучения или доп. тренировок?
+
     [Header("Свойства задачи")]
     public string taskName; //название задачи, будет отображаться в меню уровней
     public Transform startPoint; // Точка, в которую будет отправлен робот при старте выполнения задания
@@ -101,13 +107,27 @@ public class Task: MonoBehaviour, TaskCurrentValue
         DisableTaskGameObjects();
         if (isCompleted)
         {
-            currentValue = currentValue < value ? value : currentValue;
+            if (taskMode == TaskMode.Education)
+            {
+                currentValue = currentValue < value ? value : currentValue;
+            }
+            else
+            {
+                currentExtraValue = currentExtraValue < value ? value : currentExtraValue;
+            }
             return value;
         }
         else
             return 0;
     }
 
+    public void RemoveValue()
+    {
+        currentValue = 0;
+        currentExtraValue = 0;
+    }
+    
+    
     // Рекомендуется использовать данный способ наименования для последующих заданий
     protected virtual int Task_0() // Обязательная функция, отвечающая за выполнение первой части задания
     {

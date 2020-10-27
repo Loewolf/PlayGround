@@ -17,7 +17,11 @@ public class TaskTester : MonoBehaviour
     }
     public void ResetTask(Task task)
     {
+
         educationHandler.EndTask(false);
-        if (task != null) educationHandler.SetTask(task);
+        if (task == null)
+            return;
+        this.task = task;
+        educationHandler.SetTask(this.task);
     }
 }
