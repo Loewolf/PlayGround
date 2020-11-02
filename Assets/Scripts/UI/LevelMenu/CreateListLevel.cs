@@ -1,44 +1,73 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using UnityEditor;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 
 
 public class CreateListLevel : MonoBehaviour
 {
-    public AllTasks AllTasks;
-    public TaskTester TaskTester;
+    public Task[] Tasks;
+    public EducationHandler educationHandler;
     private List<ButtonInfo> _buttons = new List<ButtonInfo>();
-    
+
     [Header("Для генерации кнопок")]
     public GameObject Button;
-    public GameObject TransformParent;
+    public Transform ButtonParent;
 
-    private int levelCount;
-
-    private void Awake()
+    //isEducationMode
+    //true - обычный режим обучения
+    //false - режим доп. тренировок
+    public void SetTasks(Task[] task, TaskMode mode)
     {
-        //при первом запуске игры генерируем кнопки
-        AllTasks.SetTasks();
-        levelCount = AllTasks.Length;
-        for (int i = 0, j = 1; i < levelCount; i++, j++)
-        {
-            ButtonInfo button = Instantiate(Button, TransformParent.transform).GetComponent<ButtonInfo>();
-            _buttons.Add(button);
-            Task task = AllTasks[i];
-            button.Button.onClick.AddListener(() => TaskTester.ResetTask(task));
-            button.LevelName.text = j.ToString() + ". " + task.taskName;
-            button.LevelScore.text = task.currentValue.ToString();
-        }
+        Tasks = task;
+        GenerateLevels(mode);
+        Debug.Log(Tasks.Length);
     }
 
     private void OnEnable()
     {
-        //при каждом открытии обновляем очки уровней
+        //при каждом открытии, обновляем очки уровней
+        UpdateLevels();
+    }
+
+    public void GenerateLevels(TaskMode mode)
+    {
+        RemoveList();
+        int levelCount = Tasks.Length;
         for (int i = 0; i < levelCount; i++)
         {
-            _buttons[i].LevelScore.text = AllTasks[i].currentValue.ToString();
+            if (Tasks[i])
+            {
+                ButtonInfo button = Instantiate(Button, ButtonParent).GetComponent<ButtonInfo>();
+                _buttons.Add(button);
+                Task task = Tasks[i];
+                button.SetTask(task, mode, i + 1);
+                button.SetEvent(() => educationHandler.DropAndSetTask(task));
+            }
+        }
+    }
+
+    public void RemoveList()
+    {
+        foreach (var button in _buttons)
+        {
+            Destroy(button.gameObject);
+        }
+        _buttons.Clear();
+    }
+
+    public void UpdateLevels()
+    {
+        foreach (var button in _buttons)
+        {
+            if (Tasks.Contains(button.GetTask()))
+            {
+                button.UpdateInfo();
+            }
         }
     }
 }

@@ -8,7 +8,7 @@ namespace View
 {
     public class SelectLevelMenuView : BaseView<ISelectLevelMenuView>, ISelectLevelMenuView
     {
-        public MenuManager MenuManager{ get; set; }
+        public PauseMenuManager PauseMenuManager { get; set; }
         protected override ISelectLevelMenuView View => this;
         public event Action BackEvent;
 

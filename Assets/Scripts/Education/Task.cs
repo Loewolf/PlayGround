@@ -2,6 +2,12 @@
 using System;
 using System.Collections;
 
+public enum TaskMode
+{
+    Education,
+    Training
+}
+
 public interface TaskCurrentValue
 {
     int currentValue { get; set; } //хранит текущее кол-во очков
@@ -13,12 +19,12 @@ public class Task : MonoBehaviour, TaskCurrentValue
     public Example mainGameObject;
     public int currentValue { get; set; }
     public int currentExtraValue { get; set; }
-
+    public TaskMode taskMode { get; set; } // Определяет тип задачи: в режиме обучения или доп. тренировок
     [Header("Наименование задачи")]
     public string taskNamePrefix;
     public string taskNameBody;
     public string taskNameSuffix;
-    [HideInInspector] public string taskName; //название задачи, будет отображаться в меню уровней. Собирается из префикса, основной части и суффикса
+    [HideInInspector] public string taskName; // Название задачи, будет отображаться в меню уровней. Собирается из префикса, основной части и суффикса
     [Header("Свойства задачи")]
     public Transform startPoint; // Точка, в которую будет отправлен робот при старте выполнения задания
     public int value; // Количество очков, которое получит пользователь за выполнение задания
@@ -130,7 +136,14 @@ public class Task : MonoBehaviour, TaskCurrentValue
         isWaitingForCompletion = false;
         if (isCompleted)
         {
-            currentValue = currentValue < value ? value : currentValue;
+            if (taskMode == TaskMode.Education)
+            {
+                currentValue = currentValue < value ? value : currentValue;
+            }
+            else
+            {
+                currentExtraValue = currentExtraValue < value ? value : currentExtraValue;
+            }
             return value;
         }
         else
@@ -175,5 +188,11 @@ public class Task : MonoBehaviour, TaskCurrentValue
     {
         if (seconds>0) yield return new WaitForSeconds(seconds);
         timerReturn = returnValue;
+    }
+
+    public void RemoveValue()
+    {
+        currentValue = 0;
+        currentExtraValue = 0;
     }
 }

@@ -11,13 +11,13 @@ namespace View
 
     public class PauseMenuView : BaseView<IPauseMenuView>, IPauseMenuView
     {
-        public MenuManager MenuManager{ get; set; }
-    
+        public PauseMenuManager PauseMenuManager { get; set; }
+
         protected override IPauseMenuView View => this;
         
         public event Action ResumeEvent;
-        public event Action<IMenuView> RestartEvent;
-        public event Action GoMainMenuEvent;
+        public event Action<IMenuView> ResetEvent;
+        public event Action MainMenuEvent;
         public event Action<IMenuView> SelectLevelEvent;
 
 
@@ -35,17 +35,17 @@ namespace View
 
         public void Restart()
         {
-            RestartEvent?.Invoke(MenuManager.RestartMenuView);
+            ResetEvent?.Invoke(PauseMenuManager.RestartMenuView);
         }
 
         public void MainMenu()
         {
-
+            MainMenuEvent?.Invoke();
         }
 
         public void SelectLevels()
         {
-            SelectLevelEvent?.Invoke(MenuManager.SelectLevelMenuMenuView);
+            SelectLevelEvent?.Invoke(PauseMenuManager.SelectLevelMenuMenuView);
         }
 
         public  void Back()

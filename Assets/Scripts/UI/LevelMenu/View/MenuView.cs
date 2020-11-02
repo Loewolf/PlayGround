@@ -9,7 +9,7 @@ namespace View
 {
     public interface IMenuView:IView
     {
-        MenuManager MenuManager { get; set; }
+        PauseMenuManager PauseMenuManager { get; set; }
 
         void Back();
     }

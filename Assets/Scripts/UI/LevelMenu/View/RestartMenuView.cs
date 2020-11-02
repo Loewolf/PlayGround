@@ -9,15 +9,21 @@ using View;
 
 public class RestartMenuView:BaseView<IRestartMenuView>,IRestartMenuView
 {
-    public MenuManager MenuManager { get; set; }
+    public PauseMenuManager PauseMenuManager { get; set; }
+    public EducationHandler educationHandler { get; set; }
     protected override IRestartMenuView View => this;
-    
-    public event Action RestartEvent;
+
+    public event Action ResetEvent;
     public event Action BackEvent;
     
     protected override IController<T> CreateController<T>()
     {
         return (IController<T>) new RestartMenuController();
+    }
+
+    public void ResetTask()
+    {
+        ResetEvent?.Invoke();
     }
 
     public void Back()

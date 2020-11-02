@@ -185,4 +185,22 @@ public class EducationHandler : MonoBehaviour
             }
         }
     }
+
+    public void ResetTask()
+    {
+        Task currentTask = task;
+        EndTask(false);
+        SetTask(currentTask);
+    }
+
+    public void DropAndSetTask(Task task)
+    {
+        DropTask();
+        if (task) SetTask(task);
+    }
+
+    public void DropTask()
+    {
+        EndTask(false);
+    }
 }

@@ -10,8 +10,8 @@ namespace Controllers
     public interface IPauseMenuView : IMenuView
     {
         event Action ResumeEvent;
-        event Action<IMenuView> RestartEvent;
-        event Action GoMainMenuEvent;
+        event Action<IMenuView> ResetEvent;
+        event Action MainMenuEvent;
         event Action<IMenuView> SelectLevelEvent;
     }
     public class PauseMenuController : IController<IPauseMenuView>
@@ -22,39 +22,43 @@ namespace Controllers
         {
             _view = view;
             _view.ResumeEvent += Resume;
-            _view.RestartEvent += Restart;
+            _view.MainMenuEvent += MainMenu;
+            _view.ResetEvent += Restart;
             _view.SelectLevelEvent += SelectLevels;
         }
 
         public void OnClose(IPauseMenuView view)
         {
             _view.ResumeEvent -= Resume;
-            _view.RestartEvent -= Restart;
+            _view.MainMenuEvent -= MainMenu;
+            _view.ResetEvent -= Restart;
             _view.SelectLevelEvent -= SelectLevels;
             _view = null;
         }
         
         public void Resume()
         {
-            _view.MenuManager.Resume();
-            _view.MenuManager.RemoveStackView();
+            _view.PauseMenuManager.Resume();
+            _view.PauseMenuManager.RemoveStackView();
             _view.Close(this);
         }
         public void Restart(IMenuView restartView)
         {
-            _view.MenuManager.AddStackView(restartView);
+            _view.PauseMenuManager.AddStackView(restartView);
             restartView.Open();
             _view.Close(this);
         }
 
         public void MainMenu()
         {
-        
+            //не работает
+            /*_view.Back();
+            _view.PauseMenuManager.MainMenuManager.Open();*/
         }
 
         public void SelectLevels(IMenuView selectLvlView)
         {
-            _view.MenuManager.AddStackView(selectLvlView);
+            _view.PauseMenuManager.AddStackView(selectLvlView);
             selectLvlView.Open();
             _view.Close(this);
         }
