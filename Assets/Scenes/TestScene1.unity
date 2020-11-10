@@ -1424,6 +1424,95 @@ MonoBehaviour:
     quantity: 0
   spiralPoints: {fileID: 1954308245}
   axisYSpawnRange: {x: 0, y: 1.5}
+--- !u!1 &60182625
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 60182626}
+  - component: {fileID: 60182627}
+  m_Layer: 0
+  m_Name: "-\u041A\u043B\u0430\u0441\u0441 1\u0414. 3. \u0423\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0430
+    \u043F\u043E\u043B\u043E\u0436\u0435\u043D\u0438\u044F \u0441\u0442\u0440\u0435\u043B\u044B.
+    3"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &60182626
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 60182625}
+  m_LocalRotation: {x: 0.0038074898, y: -0.00014257105, z: 0.0074879723, w: 0.9999648}
+  m_LocalPosition: {x: 556.46655, y: 49.93876, z: 434.8176}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1061503389}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: -0.44200003, z: 2.9180002}
+--- !u!114 &60182627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 60182625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a0b4f9e4cdeedb4f8e3f2993411c493, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainGameObject: {fileID: 556734307}
+  taskNamePrefix: "<color=#61c410ff>\u041A\u043B\u0430\u0441\u0441 1</color>.  <color=#c95624ff>\u0414\u043E\u043F.
+    \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
+  taskNameBody: "\u0423\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0430 \u043F\u043E\u043B\u043E\u0436\u0435\u043D\u0438\u044F
+    \u0441\u0442\u0440\u0435\u043B\u044B."
+  taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 3"
+  taskName: 
+  startPoint: {fileID: 60182626}
+  value: 2
+  taskDescriptions:
+  - "1. \u0414\u043E\u0441\u0442\u0438\u0433\u043D\u0438\u0442\u0435 \u043E\u0431\u043B\u0430\u0441\u0442\u0438,
+    \u043E\u0442\u043C\u0435\u0447\u0435\u043D\u043D\u043E\u0439 \u0437\u0435\u043B\u0435\u043D\u044B\u043C
+    \u0446\u0432\u0435\u0442\u043E\u043C"
+  - "2. \u041E\u043F\u0443\u0441\u0442\u0438\u0442\u0435 \u0430\u0443\u0442\u0440\u0438\u0433\u0435\u0440\u044B"
+  - "3. \u0412\u044B\u0432\u0435\u0434\u0438\u0442\u0435 \u043F\u043E\u043B\u043E\u0436\u0435\u043D\u0438\u0435
+    \u0441\u0442\u0440\u0435\u043B\u044B \u0432 \u0443\u043A\u0430\u0437\u0430\u043D\u043D\u0443\u044E
+    \u043A\u043E\u043D\u0444\u0438\u0433\u0443\u0440\u0430\u0446\u0438\u044E"
+  - "\u0417\u0430\u0434\u0430\u043D\u0438\u0435 \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u043E.
+    \u041F\u043E\u0437\u0434\u0440\u0430\u0432\u043B\u044F\u0435\u043C!"
+  instructions:
+  - 
+  instructionsEnabled: 0
+  pairs:
+  - {x: 0, y: 0}
+  - {x: 1, y: 0}
+  - {x: 2, y: 0}
+  - {x: 3, y: 0}
+  completionDelay: 5
+  timeLimit: 100
+  isWaitingForCompletion: 0
+  isSuccesfullyEnded: 0
+  showInstructions: 0
+  body: {fileID: 5544333085217472721}
+  joinPoint: {fileID: 8084278930475410819, guid: 1918a07c58bcdc549be39438b0015f56,
+    type: 3}
+  armTemp: {fileID: 8920596383725858504, guid: d74b8763578db4545aeabfaea82027c0, type: 3}
+  mainArm:
+  - {fileID: 5544333085217472720}
+  - {fileID: 5544333085217472719}
+  - {fileID: 5544333085217472718}
+  - {fileID: 5544333085217472717}
+  - {fileID: 5544333085217472716}
+  - {fileID: 5544333085217472715}
+  - {fileID: 5544333085217472714}
 --- !u!1 &61281492
 GameObject:
   m_ObjectHideFlags: 0
@@ -1454,6 +1543,95 @@ Transform:
   m_Father: {fileID: 1654057883}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!1 &62322817
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 62322818}
+  - component: {fileID: 62322819}
+  m_Layer: 0
+  m_Name: "-\u041A\u043B\u0430\u0441\u0441 1\u0414. 10. \u0423\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0430
+    \u043F\u043E\u043B\u043E\u0436\u0435\u043D\u0438\u044F \u0441\u0442\u0440\u0435\u043B\u044B.
+    10"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &62322818
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 62322817}
+  m_LocalRotation: {x: 0.00010662495, y: -0.72604424, z: -0.00007954519, w: 0.68764806}
+  m_LocalPosition: {x: 598.93427, y: 49.99903, z: 390.72195}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1061503389}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &62322819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 62322817}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a0b4f9e4cdeedb4f8e3f2993411c493, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainGameObject: {fileID: 556734307}
+  taskNamePrefix: "<color=#61c410ff>\u041A\u043B\u0430\u0441\u0441 1</color>.  <color=#c95624ff>\u0414\u043E\u043F.
+    \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
+  taskNameBody: "\u0423\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0430 \u043F\u043E\u043B\u043E\u0436\u0435\u043D\u0438\u044F
+    \u0441\u0442\u0440\u0435\u043B\u044B."
+  taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 10"
+  taskName: 
+  startPoint: {fileID: 62322818}
+  value: 2
+  taskDescriptions:
+  - "1. \u0414\u043E\u0441\u0442\u0438\u0433\u043D\u0438\u0442\u0435 \u043E\u0431\u043B\u0430\u0441\u0442\u0438,
+    \u043E\u0442\u043C\u0435\u0447\u0435\u043D\u043D\u043E\u0439 \u0437\u0435\u043B\u0435\u043D\u044B\u043C
+    \u0446\u0432\u0435\u0442\u043E\u043C"
+  - "2. \u041E\u043F\u0443\u0441\u0442\u0438\u0442\u0435 \u0430\u0443\u0442\u0440\u0438\u0433\u0435\u0440\u044B"
+  - "3. \u0412\u044B\u0432\u0435\u0434\u0438\u0442\u0435 \u043F\u043E\u043B\u043E\u0436\u0435\u043D\u0438\u0435
+    \u0441\u0442\u0440\u0435\u043B\u044B \u0432 \u0443\u043A\u0430\u0437\u0430\u043D\u043D\u0443\u044E
+    \u043A\u043E\u043D\u0444\u0438\u0433\u0443\u0440\u0430\u0446\u0438\u044E"
+  - "\u0417\u0430\u0434\u0430\u043D\u0438\u0435 \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u043E.
+    \u041F\u043E\u0437\u0434\u0440\u0430\u0432\u043B\u044F\u0435\u043C!"
+  instructions:
+  - 
+  instructionsEnabled: 0
+  pairs:
+  - {x: 0, y: 0}
+  - {x: 1, y: 0}
+  - {x: 2, y: 0}
+  - {x: 3, y: 0}
+  completionDelay: 5
+  timeLimit: 60
+  isWaitingForCompletion: 0
+  isSuccesfullyEnded: 0
+  showInstructions: 0
+  body: {fileID: 5544333085217472721}
+  joinPoint: {fileID: 7212395728634711586, guid: b4d72d1fede25c14fa36b7edc5571609,
+    type: 3}
+  armTemp: {fileID: 3786068128908356252, guid: d97640f63c07b874f8be1dbbdcb158e6, type: 3}
+  mainArm:
+  - {fileID: 5544333085217472720}
+  - {fileID: 5544333085217472719}
+  - {fileID: 5544333085217472718}
+  - {fileID: 5544333085217472717}
+  - {fileID: 5544333085217472716}
+  - {fileID: 5544333085217472715}
+  - {fileID: 5544333085217472714}
 --- !u!1 &65297317
 GameObject:
   m_ObjectHideFlags: 0
@@ -2139,7 +2317,7 @@ Transform:
   - {fileID: 1906073417}
   - {fileID: 587187881}
   m_Father: {fileID: 1693494932}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &105283814
 GameObject:
@@ -7410,7 +7588,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 20.5, y: 0}
+  m_AnchoredPosition: {x: 20.49997, y: 0}
   m_SizeDelta: {x: -51, y: -10}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!4 &458241425 stripped
@@ -9085,7 +9263,7 @@ Transform:
   - {fileID: 1169772997}
   - {fileID: 1145291668}
   m_Father: {fileID: 1693494932}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &593731381
 GameObject:
@@ -9711,6 +9889,95 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 645645813}
   m_CullTransparentMesh: 0
+--- !u!1 &650742039
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 650742040}
+  - component: {fileID: 650742041}
+  m_Layer: 0
+  m_Name: "-\u041A\u043B\u0430\u0441\u0441 1\u0414. 8. \u0423\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0430
+    \u043F\u043E\u043B\u043E\u0436\u0435\u043D\u0438\u044F \u0441\u0442\u0440\u0435\u043B\u044B.
+    8"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &650742040
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 650742039}
+  m_LocalRotation: {x: 0.000001986278, y: -0.99980783, z: 0.0000065863123, w: 0.019603875}
+  m_LocalPosition: {x: 595, y: 50, z: 479.55832}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1061503389}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &650742041
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 650742039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a0b4f9e4cdeedb4f8e3f2993411c493, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainGameObject: {fileID: 556734307}
+  taskNamePrefix: "<color=#61c410ff>\u041A\u043B\u0430\u0441\u0441 1</color>.  <color=#c95624ff>\u0414\u043E\u043F.
+    \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
+  taskNameBody: "\u0423\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0430 \u043F\u043E\u043B\u043E\u0436\u0435\u043D\u0438\u044F
+    \u0441\u0442\u0440\u0435\u043B\u044B."
+  taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 8"
+  taskName: 
+  startPoint: {fileID: 650742040}
+  value: 2
+  taskDescriptions:
+  - "1. \u0414\u043E\u0441\u0442\u0438\u0433\u043D\u0438\u0442\u0435 \u043E\u0431\u043B\u0430\u0441\u0442\u0438,
+    \u043E\u0442\u043C\u0435\u0447\u0435\u043D\u043D\u043E\u0439 \u0437\u0435\u043B\u0435\u043D\u044B\u043C
+    \u0446\u0432\u0435\u0442\u043E\u043C"
+  - "2. \u041E\u043F\u0443\u0441\u0442\u0438\u0442\u0435 \u0430\u0443\u0442\u0440\u0438\u0433\u0435\u0440\u044B"
+  - "3. \u0412\u044B\u0432\u0435\u0434\u0438\u0442\u0435 \u043F\u043E\u043B\u043E\u0436\u0435\u043D\u0438\u0435
+    \u0441\u0442\u0440\u0435\u043B\u044B \u0432 \u0443\u043A\u0430\u0437\u0430\u043D\u043D\u0443\u044E
+    \u043A\u043E\u043D\u0444\u0438\u0433\u0443\u0440\u0430\u0446\u0438\u044E"
+  - "\u0417\u0430\u0434\u0430\u043D\u0438\u0435 \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u043E.
+    \u041F\u043E\u0437\u0434\u0440\u0430\u0432\u043B\u044F\u0435\u043C!"
+  instructions:
+  - 
+  instructionsEnabled: 0
+  pairs:
+  - {x: 0, y: 0}
+  - {x: 1, y: 0}
+  - {x: 2, y: 0}
+  - {x: 3, y: 0}
+  completionDelay: 5
+  timeLimit: 50
+  isWaitingForCompletion: 0
+  isSuccesfullyEnded: 0
+  showInstructions: 0
+  body: {fileID: 5544333085217472721}
+  joinPoint: {fileID: 8136738399341896792, guid: c37eb2f0ecd197f478af1deb16a06454,
+    type: 3}
+  armTemp: {fileID: 3019058552912904203, guid: 79f084f1abc47b54db8d10bf113a37a0, type: 3}
+  mainArm:
+  - {fileID: 5544333085217472720}
+  - {fileID: 5544333085217472719}
+  - {fileID: 5544333085217472718}
+  - {fileID: 5544333085217472717}
+  - {fileID: 5544333085217472716}
+  - {fileID: 5544333085217472715}
+  - {fileID: 5544333085217472714}
 --- !u!1 &654058456
 GameObject:
   m_ObjectHideFlags: 0
@@ -13356,7 +13623,7 @@ Transform:
   - {fileID: 782836436}
   - {fileID: 1933840520}
   m_Father: {fileID: 1693494932}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &965829730
 GameObject:
@@ -14056,6 +14323,95 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1005855790}
   m_CullTransparentMesh: 0
+--- !u!1 &1009613621
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1009613622}
+  - component: {fileID: 1009613623}
+  m_Layer: 0
+  m_Name: "-\u041A\u043B\u0430\u0441\u0441 1\u0414. 2. \u0423\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0430
+    \u043F\u043E\u043B\u043E\u0436\u0435\u043D\u0438\u044F \u0441\u0442\u0440\u0435\u043B\u044B.
+    2"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1009613622
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1009613621}
+  m_LocalRotation: {x: 0.00030957346, y: 0.4653701, z: 0.0006929012, w: 0.8851159}
+  m_LocalPosition: {x: 536.47876, y: 49.99843, z: 453.73874}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1061503389}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1009613623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1009613621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a0b4f9e4cdeedb4f8e3f2993411c493, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainGameObject: {fileID: 556734307}
+  taskNamePrefix: "<color=#61c410ff>\u041A\u043B\u0430\u0441\u0441 1</color>.  <color=#c95624ff>\u0414\u043E\u043F.
+    \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
+  taskNameBody: "\u0423\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0430 \u043F\u043E\u043B\u043E\u0436\u0435\u043D\u0438\u044F
+    \u0441\u0442\u0440\u0435\u043B\u044B."
+  taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 2"
+  taskName: 
+  startPoint: {fileID: 1009613622}
+  value: 2
+  taskDescriptions:
+  - "1. \u0414\u043E\u0441\u0442\u0438\u0433\u043D\u0438\u0442\u0435 \u043E\u0431\u043B\u0430\u0441\u0442\u0438,
+    \u043E\u0442\u043C\u0435\u0447\u0435\u043D\u043D\u043E\u0439 \u0437\u0435\u043B\u0435\u043D\u044B\u043C
+    \u0446\u0432\u0435\u0442\u043E\u043C"
+  - "2. \u041E\u043F\u0443\u0441\u0442\u0438\u0442\u0435 \u0430\u0443\u0442\u0440\u0438\u0433\u0435\u0440\u044B"
+  - "3. \u0412\u044B\u0432\u0435\u0434\u0438\u0442\u0435 \u043F\u043E\u043B\u043E\u0436\u0435\u043D\u0438\u0435
+    \u0441\u0442\u0440\u0435\u043B\u044B \u0432 \u0443\u043A\u0430\u0437\u0430\u043D\u043D\u0443\u044E
+    \u043A\u043E\u043D\u0444\u0438\u0433\u0443\u0440\u0430\u0446\u0438\u044E"
+  - "\u0417\u0430\u0434\u0430\u043D\u0438\u0435 \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u043E.
+    \u041F\u043E\u0437\u0434\u0440\u0430\u0432\u043B\u044F\u0435\u043C!"
+  instructions:
+  - 
+  instructionsEnabled: 0
+  pairs:
+  - {x: 0, y: 0}
+  - {x: 1, y: 0}
+  - {x: 2, y: 0}
+  - {x: 3, y: 0}
+  completionDelay: 5
+  timeLimit: 40
+  isWaitingForCompletion: 0
+  isSuccesfullyEnded: 0
+  showInstructions: 0
+  body: {fileID: 5544333085217472721}
+  joinPoint: {fileID: 5109406445428780936, guid: cfeaee12d79edcb458db1c4cba4b819c,
+    type: 3}
+  armTemp: {fileID: 5963783218093016150, guid: 0864caef07f4ae244b2c687f69797875, type: 3}
+  mainArm:
+  - {fileID: 5544333085217472720}
+  - {fileID: 5544333085217472719}
+  - {fileID: 5544333085217472718}
+  - {fileID: 5544333085217472717}
+  - {fileID: 5544333085217472716}
+  - {fileID: 5544333085217472715}
+  - {fileID: 5544333085217472714}
 --- !u!1001 &1011375241
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14142,6 +14498,83 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1011375241}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1033316185
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1033316186}
+  - component: {fileID: 1033316187}
+  m_Layer: 0
+  m_Name: "-\u041A\u043B\u0430\u0441\u0441 1\u0423. 3. \u0410\u0443\u0442\u0440\u0438\u0433\u0435\u0440\u044B
+    \u0432\u0432\u0435\u0440\u0445"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1033316186
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1033316185}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 6.800003}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 6665804573919341156}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1033316187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1033316185}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b16914634407c4b4cbf7b3aa4f06181d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainGameObject: {fileID: 556734307}
+  taskNamePrefix: "<color=#61c410ff>\u041A\u043B\u0430\u0441\u0441 1</color>."
+  taskNameBody: "\u041F\u043E\u0434\u043D\u0438\u043C\u0430\u043D\u0438\u0435/\u043E\u043F\u0443\u0441\u043A\u0430\u043D\u0438\u0435
+    \u0430\u0443\u0442\u0440\u0438\u0433\u0435\u0440\u043E\u0432"
+  taskNameSuffix: 
+  taskName: 
+  startPoint: {fileID: 599818724}
+  value: 1
+  taskDescriptions:
+  - "\u041E\u043F\u0443\u0441\u0442\u0438\u0442\u0435 \u0430\u0443\u0442\u0440\u0438\u0433\u0435\u0440\u044B"
+  - "\u041F\u043E\u0434\u043D\u0438\u043C\u0438\u0442\u0435 \u0430\u0443\u0442\u0440\u0438\u0433\u0435\u0440\u044B"
+  - "\u0417\u0430\u0434\u0430\u043D\u0438\u0435 \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u043E.
+    \u041F\u043E\u0437\u0434\u0440\u0430\u0432\u043B\u044F\u0435\u043C!"
+  instructions:
+  - "\u041F\u0435\u0440\u0435\u043A\u043B\u044E\u0447\u0438\u0442\u044C \u0440\u0435\u0436\u0438\u043C
+    \u0443\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u0438\u044F \"\u0410\u0443\u0442\u0440\u0438\u0433\u0435\u0440\u044B\",
+    \u043B\u0435\u0432\u044B\u0439 \u0434\u0436\u043E\u0439\u0441\u0442\u0438\u043A 
+    \u0432\u0432\u0435\u0440\u0445, \u043A\u043D\u043E\u043F\u043A\u0438 \u043D\u0435
+    \u043D\u0430\u0436\u0430\u0442\u044B (\u043A\u043B\u0430\u0432\u0438\u0448\u0430
+    E)"
+  instructionsEnabled: 1
+  pairs:
+  - {x: 0, y: 0}
+  - {x: 1, y: 0}
+  - {x: 2, y: 0}
+  completionDelay: 5
+  timeLimit: 0
+  isWaitingForCompletion: 0
+  isSuccesfullyEnded: 0
+  showInstructions: 0
+  autr: 1
+  key: 65000000
+  time: 0
 --- !u!1 &1034078523
 GameObject:
   m_ObjectHideFlags: 0
@@ -14515,6 +14948,46 @@ MonoBehaviour:
     quantity: 0
   spiralPoints: {fileID: 1954308245}
   axisYSpawnRange: {x: 0, y: 1.5}
+--- !u!1 &1061503388
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1061503389}
+  m_Layer: 0
+  m_Name: "\u041A\u043B\u0430\u0441\u0441 1\u0414"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1061503389
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1061503388}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1677382575}
+  - {fileID: 1009613622}
+  - {fileID: 60182626}
+  - {fileID: 1374929868}
+  - {fileID: 1720734309}
+  - {fileID: 1421245251}
+  - {fileID: 1416704424}
+  - {fileID: 650742040}
+  - {fileID: 1235777197}
+  - {fileID: 62322818}
+  m_Father: {fileID: 1693494932}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1062155589
 GameObject:
   m_ObjectHideFlags: 0
@@ -16368,6 +16841,95 @@ Transform:
   m_Father: {fileID: 1034078524}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 49.578003, z: 0}
+--- !u!1 &1235777196
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1235777197}
+  - component: {fileID: 1235777198}
+  m_Layer: 0
+  m_Name: "-\u041A\u043B\u0430\u0441\u0441 1\u0414. 9. \u0423\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0430
+    \u043F\u043E\u043B\u043E\u0436\u0435\u043D\u0438\u044F \u0441\u0442\u0440\u0435\u043B\u044B.
+    9"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1235777197
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1235777196}
+  m_LocalRotation: {x: -0.0000019273918, y: 0.9997617, z: 0.00003878958, w: 0.021832153}
+  m_LocalPosition: {x: 589.3135, y: 49.988487, z: 497.1095}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1061503389}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1235777198
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1235777196}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a0b4f9e4cdeedb4f8e3f2993411c493, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainGameObject: {fileID: 556734307}
+  taskNamePrefix: "<color=#61c410ff>\u041A\u043B\u0430\u0441\u0441 1</color>.  <color=#c95624ff>\u0414\u043E\u043F.
+    \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
+  taskNameBody: "\u0423\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0430 \u043F\u043E\u043B\u043E\u0436\u0435\u043D\u0438\u044F
+    \u0441\u0442\u0440\u0435\u043B\u044B."
+  taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 9"
+  taskName: 
+  startPoint: {fileID: 1235777197}
+  value: 2
+  taskDescriptions:
+  - "1. \u0414\u043E\u0441\u0442\u0438\u0433\u043D\u0438\u0442\u0435 \u043E\u0431\u043B\u0430\u0441\u0442\u0438,
+    \u043E\u0442\u043C\u0435\u0447\u0435\u043D\u043D\u043E\u0439 \u0437\u0435\u043B\u0435\u043D\u044B\u043C
+    \u0446\u0432\u0435\u0442\u043E\u043C"
+  - "2. \u041E\u043F\u0443\u0441\u0442\u0438\u0442\u0435 \u0430\u0443\u0442\u0440\u0438\u0433\u0435\u0440\u044B"
+  - "3. \u0412\u044B\u0432\u0435\u0434\u0438\u0442\u0435 \u043F\u043E\u043B\u043E\u0436\u0435\u043D\u0438\u0435
+    \u0441\u0442\u0440\u0435\u043B\u044B \u0432 \u0443\u043A\u0430\u0437\u0430\u043D\u043D\u0443\u044E
+    \u043A\u043E\u043D\u0444\u0438\u0433\u0443\u0440\u0430\u0446\u0438\u044E"
+  - "\u0417\u0430\u0434\u0430\u043D\u0438\u0435 \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u043E.
+    \u041F\u043E\u0437\u0434\u0440\u0430\u0432\u043B\u044F\u0435\u043C!"
+  instructions:
+  - 
+  instructionsEnabled: 0
+  pairs:
+  - {x: 0, y: 0}
+  - {x: 1, y: 0}
+  - {x: 2, y: 0}
+  - {x: 3, y: 0}
+  completionDelay: 5
+  timeLimit: 60
+  isWaitingForCompletion: 0
+  isSuccesfullyEnded: 0
+  showInstructions: 0
+  body: {fileID: 5544333085217472721}
+  joinPoint: {fileID: 466507945080011533, guid: 99ad9d210d6cefb40a99ae3cedbcd01e,
+    type: 3}
+  armTemp: {fileID: 261236667017485942, guid: d18be9cf56974ea46b7cafdb8f459142, type: 3}
+  mainArm:
+  - {fileID: 5544333085217472720}
+  - {fileID: 5544333085217472719}
+  - {fileID: 5544333085217472718}
+  - {fileID: 5544333085217472717}
+  - {fileID: 5544333085217472716}
+  - {fileID: 5544333085217472715}
+  - {fileID: 5544333085217472714}
 --- !u!1001 &1241178202
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17967,7 +18529,7 @@ Transform:
   - {fileID: 1718655734}
   - {fileID: 535309712}
   m_Father: {fileID: 1693494932}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1361585550
 GameObject:
@@ -18190,6 +18752,97 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1369934648}
   m_CullTransparentMesh: 0
+--- !u!1 &1374929867
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1374929868}
+  - component: {fileID: 1374929869}
+  m_Layer: 0
+  m_Name: "-\u041A\u043B\u0430\u0441\u0441 1\u0414. 4. \u0423\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0430
+    \u043F\u043E\u043B\u043E\u0436\u0435\u043D\u0438\u044F \u0441\u0442\u0440\u0435\u043B\u044B.
+    4"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1374929868
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1374929867}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 558.46, y: 50.079, z: 517.78}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1061503389}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1374929869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1374929867}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a0b4f9e4cdeedb4f8e3f2993411c493, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainGameObject: {fileID: 556734307}
+  taskNamePrefix: "<color=#61c410ff>\u041A\u043B\u0430\u0441\u0441 1</color>.  <color=#c95624ff>\u0414\u043E\u043F.
+    \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
+  taskNameBody: "\u0423\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0430 \u043F\u043E\u043B\u043E\u0436\u0435\u043D\u0438\u044F
+    \u0441\u0442\u0440\u0435\u043B\u044B."
+  taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 4"
+  taskName: 
+  startPoint: {fileID: 1374929868}
+  value: 2
+  taskDescriptions:
+  - "1. \u0414\u043E\u0441\u0442\u0438\u0433\u043D\u0438\u0442\u0435 \u043E\u0431\u043B\u0430\u0441\u0442\u0438,
+    \u043E\u0442\u043C\u0435\u0447\u0435\u043D\u043D\u043E\u0439 \u0437\u0435\u043B\u0435\u043D\u044B\u043C
+    \u0446\u0432\u0435\u0442\u043E\u043C"
+  - "2. \u041E\u043F\u0443\u0441\u0442\u0438\u0442\u0435 \u0430\u0443\u0442\u0440\u0438\u0433\u0435\u0440\u044B"
+  - "3. \u0412\u044B\u0432\u0435\u0434\u0438\u0442\u0435 \u043F\u043E\u043B\u043E\u0436\u0435\u043D\u0438\u0435
+    \u0441\u0442\u0440\u0435\u043B\u044B \u0432 \u0443\u043A\u0430\u0437\u0430\u043D\u043D\u0443\u044E
+    \u043A\u043E\u043D\u0444\u0438\u0433\u0443\u0440\u0430\u0446\u0438\u044E"
+  - "\u0417\u0430\u0434\u0430\u043D\u0438\u0435 \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u043E.
+    \u041F\u043E\u0437\u0434\u0440\u0430\u0432\u043B\u044F\u0435\u043C!"
+  instructions:
+  - "\u0414\u0432\u0438\u0433\u0430\u0439\u0442\u0435\u0441\u044C \u0432\u043F\u0435\u0440\u0435\u0434,
+    \u0437\u0430\u0442\u0435\u043C \u043F\u043E\u0432\u0435\u0440\u043D\u0438\u0442\u0435
+    \u043D\u0430\u043F\u0440\u0430\u0432\u043E"
+  instructionsEnabled: 1
+  pairs:
+  - {x: 0, y: 0}
+  - {x: 1, y: 0}
+  - {x: 2, y: 0}
+  - {x: 3, y: 0}
+  completionDelay: 5
+  timeLimit: 80
+  isWaitingForCompletion: 0
+  isSuccesfullyEnded: 0
+  showInstructions: 0
+  body: {fileID: 5544333085217472721}
+  joinPoint: {fileID: 3028859386053012975, guid: 78b4a33453220a643966d542d1240514,
+    type: 3}
+  armTemp: {fileID: 7328087311504513668, guid: a68fc3b8abca3b64aa512e31928b3bfe, type: 3}
+  mainArm:
+  - {fileID: 5544333085217472720}
+  - {fileID: 5544333085217472719}
+  - {fileID: 5544333085217472718}
+  - {fileID: 5544333085217472717}
+  - {fileID: 5544333085217472716}
+  - {fileID: 5544333085217472715}
+  - {fileID: 5544333085217472714}
 --- !u!1001 &1379981777
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18652,6 +19305,185 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1530918246}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1416704423
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1416704424}
+  - component: {fileID: 1416704425}
+  m_Layer: 0
+  m_Name: "-\u041A\u043B\u0430\u0441\u0441 1\u0414. 7. \u0423\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0430
+    \u043F\u043E\u043B\u043E\u0436\u0435\u043D\u0438\u044F \u0441\u0442\u0440\u0435\u043B\u044B.
+    7"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1416704424
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1416704423}
+  m_LocalRotation: {x: 0.016417673, y: -0.09844235, z: 0.020368483, w: 0.9947989}
+  m_LocalPosition: {x: 531.9551, y: 50.3666, z: 384.6365}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1061503389}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1416704425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1416704423}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a0b4f9e4cdeedb4f8e3f2993411c493, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainGameObject: {fileID: 556734307}
+  taskNamePrefix: "<color=#61c410ff>\u041A\u043B\u0430\u0441\u0441 1</color>.  <color=#c95624ff>\u0414\u043E\u043F.
+    \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
+  taskNameBody: "\u0423\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0430 \u043F\u043E\u043B\u043E\u0436\u0435\u043D\u0438\u044F
+    \u0441\u0442\u0440\u0435\u043B\u044B."
+  taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 7"
+  taskName: 
+  startPoint: {fileID: 1416704424}
+  value: 2
+  taskDescriptions:
+  - "1. \u0414\u043E\u0441\u0442\u0438\u0433\u043D\u0438\u0442\u0435 \u043E\u0431\u043B\u0430\u0441\u0442\u0438,
+    \u043E\u0442\u043C\u0435\u0447\u0435\u043D\u043D\u043E\u0439 \u0437\u0435\u043B\u0435\u043D\u044B\u043C
+    \u0446\u0432\u0435\u0442\u043E\u043C"
+  - "2. \u041E\u043F\u0443\u0441\u0442\u0438\u0442\u0435 \u0430\u0443\u0442\u0440\u0438\u0433\u0435\u0440\u044B"
+  - "3. \u0412\u044B\u0432\u0435\u0434\u0438\u0442\u0435 \u043F\u043E\u043B\u043E\u0436\u0435\u043D\u0438\u0435
+    \u0441\u0442\u0440\u0435\u043B\u044B \u0432 \u0443\u043A\u0430\u0437\u0430\u043D\u043D\u0443\u044E
+    \u043A\u043E\u043D\u0444\u0438\u0433\u0443\u0440\u0430\u0446\u0438\u044E"
+  - "\u0417\u0430\u0434\u0430\u043D\u0438\u0435 \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u043E.
+    \u041F\u043E\u0437\u0434\u0440\u0430\u0432\u043B\u044F\u0435\u043C!"
+  instructions:
+  - 
+  instructionsEnabled: 0
+  pairs:
+  - {x: 0, y: 0}
+  - {x: 1, y: 0}
+  - {x: 2, y: 0}
+  - {x: 3, y: 0}
+  completionDelay: 5
+  timeLimit: 40
+  isWaitingForCompletion: 0
+  isSuccesfullyEnded: 0
+  showInstructions: 0
+  body: {fileID: 5544333085217472721}
+  joinPoint: {fileID: 1164190977565611358, guid: ece4b23c5104662449c98578330db952,
+    type: 3}
+  armTemp: {fileID: 7819415203393852504, guid: cef2e8c4db99988489d9f571bc18df59, type: 3}
+  mainArm:
+  - {fileID: 5544333085217472720}
+  - {fileID: 5544333085217472719}
+  - {fileID: 5544333085217472718}
+  - {fileID: 5544333085217472717}
+  - {fileID: 5544333085217472716}
+  - {fileID: 5544333085217472715}
+  - {fileID: 5544333085217472714}
+--- !u!1 &1421245250
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1421245251}
+  - component: {fileID: 1421245252}
+  m_Layer: 0
+  m_Name: "-\u041A\u043B\u0430\u0441\u0441 1\u0414. 6. \u0423\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0430
+    \u043F\u043E\u043B\u043E\u0436\u0435\u043D\u0438\u044F \u0441\u0442\u0440\u0435\u043B\u044B.
+    6"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1421245251
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1421245250}
+  m_LocalRotation: {x: 0.0000134274305, y: -0.017096456, z: -0.0026802951, w: 0.9998503}
+  m_LocalPosition: {x: 605.39954, y: 49.996643, z: 310.75443}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1061503389}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1421245252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1421245250}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a0b4f9e4cdeedb4f8e3f2993411c493, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainGameObject: {fileID: 556734307}
+  taskNamePrefix: "<color=#61c410ff>\u041A\u043B\u0430\u0441\u0441 1</color>.  <color=#c95624ff>\u0414\u043E\u043F.
+    \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
+  taskNameBody: "\u0423\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0430 \u043F\u043E\u043B\u043E\u0436\u0435\u043D\u0438\u044F
+    \u0441\u0442\u0440\u0435\u043B\u044B."
+  taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 6"
+  taskName: 
+  startPoint: {fileID: 1421245251}
+  value: 2
+  taskDescriptions:
+  - "1. \u0414\u043E\u0441\u0442\u0438\u0433\u043D\u0438\u0442\u0435 \u043E\u0431\u043B\u0430\u0441\u0442\u0438,
+    \u043E\u0442\u043C\u0435\u0447\u0435\u043D\u043D\u043E\u0439 \u0437\u0435\u043B\u0435\u043D\u044B\u043C
+    \u0446\u0432\u0435\u0442\u043E\u043C"
+  - "2. \u041E\u043F\u0443\u0441\u0442\u0438\u0442\u0435 \u0430\u0443\u0442\u0440\u0438\u0433\u0435\u0440\u044B"
+  - "3. \u0412\u044B\u0432\u0435\u0434\u0438\u0442\u0435 \u043F\u043E\u043B\u043E\u0436\u0435\u043D\u0438\u0435
+    \u0441\u0442\u0440\u0435\u043B\u044B \u0432 \u0443\u043A\u0430\u0437\u0430\u043D\u043D\u0443\u044E
+    \u043A\u043E\u043D\u0444\u0438\u0433\u0443\u0440\u0430\u0446\u0438\u044E"
+  - "\u0417\u0430\u0434\u0430\u043D\u0438\u0435 \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u043E.
+    \u041F\u043E\u0437\u0434\u0440\u0430\u0432\u043B\u044F\u0435\u043C!"
+  instructions:
+  - "\u0421 \u043B\u0438\u0446\u0435\u0432\u043E\u0439 \u0441\u0442\u043E\u0440\u043E\u043D\u044B
+    \u0434\u043E\u043C\u0430"
+  instructionsEnabled: 1
+  pairs:
+  - {x: 0, y: 0}
+  - {x: 1, y: 0}
+  - {x: 2, y: 0}
+  - {x: 3, y: 0}
+  completionDelay: 5
+  timeLimit: 60
+  isWaitingForCompletion: 0
+  isSuccesfullyEnded: 0
+  showInstructions: 0
+  body: {fileID: 5544333085217472721}
+  joinPoint: {fileID: 2035456951316796725, guid: 1d1ce005afd61d0438c1f3924e19d7d7,
+    type: 3}
+  armTemp: {fileID: 7344259128749979230, guid: f40e442983029c148b6a41747c5179da, type: 3}
+  mainArm:
+  - {fileID: 5544333085217472720}
+  - {fileID: 5544333085217472719}
+  - {fileID: 5544333085217472718}
+  - {fileID: 5544333085217472717}
+  - {fileID: 5544333085217472716}
+  - {fileID: 5544333085217472715}
+  - {fileID: 5544333085217472714}
 --- !u!1 &1422882934
 GameObject:
   m_ObjectHideFlags: 0
@@ -23038,6 +23870,95 @@ MonoBehaviour:
   otherObjects:
   - {fileID: 2014271786}
   - {fileID: 444479746}
+--- !u!1 &1677382574
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1677382575}
+  - component: {fileID: 1677382576}
+  m_Layer: 0
+  m_Name: "-\u041A\u043B\u0430\u0441\u0441 1\u0414. 1. \u0423\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0430
+    \u043F\u043E\u043B\u043E\u0436\u0435\u043D\u0438\u044F \u0441\u0442\u0440\u0435\u043B\u044B.
+    1"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1677382575
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1677382574}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 547.6, y: 50.079, z: 466.36}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1061503389}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1677382576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1677382574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a0b4f9e4cdeedb4f8e3f2993411c493, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainGameObject: {fileID: 556734307}
+  taskNamePrefix: "<color=#61c410ff>\u041A\u043B\u0430\u0441\u0441 1</color>.  <color=#c95624ff>\u0414\u043E\u043F.
+    \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
+  taskNameBody: "\u0423\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0430 \u043F\u043E\u043B\u043E\u0436\u0435\u043D\u0438\u044F
+    \u0441\u0442\u0440\u0435\u043B\u044B."
+  taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 1"
+  taskName: 
+  startPoint: {fileID: 1677382575}
+  value: 2
+  taskDescriptions:
+  - "1. \u0414\u043E\u0441\u0442\u0438\u0433\u043D\u0438\u0442\u0435 \u043E\u0431\u043B\u0430\u0441\u0442\u0438,
+    \u043E\u0442\u043C\u0435\u0447\u0435\u043D\u043D\u043E\u0439 \u0437\u0435\u043B\u0435\u043D\u044B\u043C
+    \u0446\u0432\u0435\u0442\u043E\u043C"
+  - "2. \u041E\u043F\u0443\u0441\u0442\u0438\u0442\u0435 \u0430\u0443\u0442\u0440\u0438\u0433\u0435\u0440\u044B"
+  - "3. \u0412\u044B\u0432\u0435\u0434\u0438\u0442\u0435 \u043F\u043E\u043B\u043E\u0436\u0435\u043D\u0438\u0435
+    \u0441\u0442\u0440\u0435\u043B\u044B \u0432 \u0443\u043A\u0430\u0437\u0430\u043D\u043D\u0443\u044E
+    \u043A\u043E\u043D\u0444\u0438\u0433\u0443\u0440\u0430\u0446\u0438\u044E"
+  - "\u0417\u0430\u0434\u0430\u043D\u0438\u0435 \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u043E.
+    \u041F\u043E\u0437\u0434\u0440\u0430\u0432\u043B\u044F\u0435\u043C!"
+  instructions:
+  - 
+  instructionsEnabled: 0
+  pairs:
+  - {x: 0, y: 0}
+  - {x: 1, y: 0}
+  - {x: 2, y: 0}
+  - {x: 3, y: 0}
+  completionDelay: 5
+  timeLimit: 30
+  isWaitingForCompletion: 0
+  isSuccesfullyEnded: 0
+  showInstructions: 0
+  body: {fileID: 5544333085217472721}
+  joinPoint: {fileID: 5015025549146253407, guid: 18c5ba89d4930f247af88678faee342e,
+    type: 3}
+  armTemp: {fileID: 5251559792659632831, guid: e9eb5b47b84eeb240b67458c4e3ebad7, type: 3}
+  mainArm:
+  - {fileID: 5544333085217472720}
+  - {fileID: 5544333085217472719}
+  - {fileID: 5544333085217472718}
+  - {fileID: 5544333085217472717}
+  - {fileID: 5544333085217472716}
+  - {fileID: 5544333085217472715}
+  - {fileID: 5544333085217472714}
 --- !u!1 &1686519790
 GameObject:
   m_ObjectHideFlags: 0
@@ -23266,6 +24187,7 @@ Transform:
   m_Children:
   - {fileID: 6665804573919341156}
   - {fileID: 1038384613}
+  - {fileID: 1061503389}
   - {fileID: 954763819}
   - {fileID: 1980454244}
   - {fileID: 102101407}
@@ -23300,8 +24222,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Tasks:
-  - {fileID: 0}
+  - {fileID: 6665804574137760821}
   - {fileID: 6665804572983367644}
+  - {fileID: 1033316187}
   - {fileID: 6665804574113547496}
   - {fileID: 6665804573329344428}
   - {fileID: 6665804572662060464}
@@ -23312,9 +24235,8 @@ MonoBehaviour:
   - {fileID: 6665804573642409950}
   - {fileID: 6665804573881462322}
   - {fileID: 6665804572841669566}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 6665804572819250770}
+  - {fileID: 6665804572955320944}
   - {fileID: 7925063082210279024}
   - {fileID: 7925063082410514536}
   - {fileID: 7925063080608309897}
@@ -23325,16 +24247,16 @@ MonoBehaviour:
   - {fileID: 7925063081836933867}
   - {fileID: 7925063081516600197}
   - {fileID: 7925063081569179012}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1677382576}
+  - {fileID: 1009613623}
+  - {fileID: 60182627}
+  - {fileID: 1374929869}
+  - {fileID: 1720734310}
+  - {fileID: 1421245252}
+  - {fileID: 1416704425}
+  - {fileID: 650742041}
+  - {fileID: 1235777198}
+  - {fileID: 62322819}
   - {fileID: 1549959168}
   - {fileID: 1039004756}
   - {fileID: 1955971907}
@@ -23767,6 +24689,95 @@ MonoBehaviour:
   smoothQuestLine: {fileID: 36680578}
   expectedSegmentsCount: 9
   pointsInSegment: 7
+--- !u!1 &1720734308
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1720734309}
+  - component: {fileID: 1720734310}
+  m_Layer: 0
+  m_Name: "-\u041A\u043B\u0430\u0441\u0441 1\u0414. 5. \u0423\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0430
+    \u043F\u043E\u043B\u043E\u0436\u0435\u043D\u0438\u044F \u0441\u0442\u0440\u0435\u043B\u044B.
+    5"
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1720734309
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1720734308}
+  m_LocalRotation: {x: -0.15111382, y: 0.06699271, z: 0.044312324, w: -0.98524773}
+  m_LocalPosition: {x: 621.51227, y: 92.72979, z: 191.45332}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1061503389}
+  m_RootOrder: 4
+  m_LocalEulerAnglesHint: {x: 31.29, y: -10.599001, z: -3.0030003}
+--- !u!114 &1720734310
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1720734308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7a0b4f9e4cdeedb4f8e3f2993411c493, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mainGameObject: {fileID: 556734307}
+  taskNamePrefix: "<color=#61c410ff>\u041A\u043B\u0430\u0441\u0441 1</color>.  <color=#c95624ff>\u0414\u043E\u043F.
+    \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
+  taskNameBody: "\u0423\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0430 \u043F\u043E\u043B\u043E\u0436\u0435\u043D\u0438\u044F
+    \u0441\u0442\u0440\u0435\u043B\u044B."
+  taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 5"
+  taskName: 
+  startPoint: {fileID: 1720734309}
+  value: 2
+  taskDescriptions:
+  - "1. \u0414\u043E\u0441\u0442\u0438\u0433\u043D\u0438\u0442\u0435 \u043E\u0431\u043B\u0430\u0441\u0442\u0438,
+    \u043E\u0442\u043C\u0435\u0447\u0435\u043D\u043D\u043E\u0439 \u0437\u0435\u043B\u0435\u043D\u044B\u043C
+    \u0446\u0432\u0435\u0442\u043E\u043C"
+  - "2. \u041E\u043F\u0443\u0441\u0442\u0438\u0442\u0435 \u0430\u0443\u0442\u0440\u0438\u0433\u0435\u0440\u044B"
+  - "3. \u0412\u044B\u0432\u0435\u0434\u0438\u0442\u0435 \u043F\u043E\u043B\u043E\u0436\u0435\u043D\u0438\u0435
+    \u0441\u0442\u0440\u0435\u043B\u044B \u0432 \u0443\u043A\u0430\u0437\u0430\u043D\u043D\u0443\u044E
+    \u043A\u043E\u043D\u0444\u0438\u0433\u0443\u0440\u0430\u0446\u0438\u044E"
+  - "\u0417\u0430\u0434\u0430\u043D\u0438\u0435 \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u043E.
+    \u041F\u043E\u0437\u0434\u0440\u0430\u0432\u043B\u044F\u0435\u043C!"
+  instructions:
+  - 
+  instructionsEnabled: 0
+  pairs:
+  - {x: 0, y: 0}
+  - {x: 1, y: 0}
+  - {x: 2, y: 0}
+  - {x: 3, y: 0}
+  completionDelay: 5
+  timeLimit: 60
+  isWaitingForCompletion: 0
+  isSuccesfullyEnded: 0
+  showInstructions: 0
+  body: {fileID: 5544333085217472721}
+  joinPoint: {fileID: 4981976439695996898, guid: acb585237b219e943b30303e4d584189,
+    type: 3}
+  armTemp: {fileID: 8654710968902936918, guid: 27ae7d9c0ef26194c90eb23f9f66787a, type: 3}
+  mainArm:
+  - {fileID: 5544333085217472720}
+  - {fileID: 5544333085217472719}
+  - {fileID: 5544333085217472718}
+  - {fileID: 5544333085217472717}
+  - {fileID: 5544333085217472716}
+  - {fileID: 5544333085217472715}
+  - {fileID: 5544333085217472714}
 --- !u!1001 &1722393257
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27799,7 +28810,7 @@ Transform:
   - {fileID: 55124876}
   - {fileID: 1947762043}
   m_Father: {fileID: 1693494932}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1994203090
 GameObject:
@@ -32676,7 +33687,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6665804573919341156}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6665804572184083193
 MonoBehaviour:
@@ -32702,16 +33713,23 @@ MonoBehaviour:
   - "\u0417\u0430\u0434\u0430\u043D\u0438\u0435 \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u043E.
     \u041F\u043E\u0437\u0434\u0440\u0430\u0432\u043B\u044F\u0435\u043C!"
   instructions:
-  - 5
+  - "\u041F\u0435\u0440\u0435\u043A\u043B\u044E\u0447\u0438\u0442\u044C \u0440\u0435\u0436\u0438\u043C
+    \u0443\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u0438\u044F \"\u0425\u043E\u0434\",
+    \u043F\u0440\u0430\u0432\u044B\u0439  \u0434\u0436\u043E\u0439\u0441\u0442\u0438\u043A
+    \u0432\u043D\u0438\u0437, \u043A\u043D\u043E\u043F\u043A\u0438  \u043D\u0435
+    \u043D\u0430\u0436\u0430\u0442\u044B(\u041A\u043B\u0430\u0432\u0438\u0448\u0430
+    A)"
   instructionsEnabled: 1
   pairs:
   - {x: 0, y: 0}
+  - {x: 0, y: 0}
   - {x: 1, y: 0}
-  completionDelay: 0
+  completionDelay: 5
   timeLimit: 0
   isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
   showInstructions: 0
+  autr: 0
   key: 61000000
   time: 1
 --- !u!1 &6665804572184083195
@@ -32725,7 +33743,7 @@ GameObject:
   - component: {fileID: 6665804572184083192}
   - component: {fileID: 6665804572184083193}
   m_Layer: 0
-  m_Name: "-\u041A\u043B\u0430\u0441\u0441 1\u0423. 6. \u0414\u0432\u0438\u0436\u0435\u043D\u0438\u0435
+  m_Name: "-\u041A\u043B\u0430\u0441\u0441 1\u0423. 7. \u0414\u0432\u0438\u0436\u0435\u043D\u0438\u0435
     \u0432\u043B\u0435\u0432\u043E"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32756,16 +33774,23 @@ MonoBehaviour:
   - "\u0417\u0430\u0434\u0430\u043D\u0438\u0435 \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u043E.
     \u041F\u043E\u0437\u0434\u0440\u0430\u0432\u043B\u044F\u0435\u043C!"
   instructions:
-  - 5
+  - "\u041F\u0435\u0440\u0435\u043A\u043B\u044E\u0447\u0438\u0442\u044C \u0440\u0435\u0436\u0438\u043C
+    \u0443\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u0438\u044F \"\u0425\u043E\u0434\",
+    \u043B\u0435\u0432\u044B\u0439  \u0434\u0436\u043E\u0439\u0441\u0442\u0438\u043A
+    \u0432\u0432\u0435\u0440\u0445, \u043A\u043D\u043E\u043F\u043A\u0438  \u043D\u0435
+    \u043D\u0430\u0436\u0430\u0442\u044B(\u041A\u043B\u0430\u0432\u0438\u0448\u0430
+    D)"
   instructionsEnabled: 1
   pairs:
   - {x: 0, y: 0}
+  - {x: 0, y: 0}
   - {x: 1, y: 0}
-  completionDelay: 0
+  completionDelay: 5
   timeLimit: 0
   isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
   showInstructions: 0
+  autr: 0
   key: 64000000
   time: 1
 --- !u!1 &6665804572662060466
@@ -32779,7 +33804,7 @@ GameObject:
   - component: {fileID: 6665804572662060467}
   - component: {fileID: 6665804572662060464}
   m_Layer: 0
-  m_Name: "-\u041A\u043B\u0430\u0441\u0441 1\u0423. 5. \u0414\u0432\u0436\u0435\u043D\u0438\u0435
+  m_Name: "-\u041A\u043B\u0430\u0441\u0441 1\u0423. 6. \u0414\u0432\u0436\u0435\u043D\u0438\u0435
     \u0432\u043F\u0440\u0430\u0432\u043E"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32798,7 +33823,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6665804573919341156}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6665804572819250764
 GameObject:
@@ -32811,13 +33836,13 @@ GameObject:
   - component: {fileID: 6665804572819250765}
   - component: {fileID: 6665804572819250770}
   m_Layer: 0
-  m_Name: "-\u041A\u043B\u0430\u0441\u0441 1\u0423. 13. \u041D\u0430\u043A\u043B\u043E\u043D
+  m_Name: "-\u041A\u043B\u0430\u0441\u0441 1\u0423. 14. \u041D\u0430\u043A\u043B\u043E\u043D
     \u0440\u0430\u0431\u043E\u0447\u0435\u0433\u043E \u0438\u043D\u0441\u0442\u0440\u0443\u043C\u0435\u043D\u0442\u0430"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6665804572819250765
 Transform:
   m_ObjectHideFlags: 0
@@ -32830,7 +33855,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6665804573919341156}
-  m_RootOrder: 12
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6665804572819250770
 MonoBehaviour:
@@ -32846,27 +33871,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainGameObject: {fileID: 556734307}
   taskNamePrefix: "<color=#61c410ff>\u041A\u043B\u0430\u0441\u0441 1</color>."
-  taskNameBody: 
+  taskNameBody: "\u041D\u0430\u043A\u043B\u043E\u043D \u0440\u0430\u0431\u043E\u0447\u0435\u0433\u043E
+    \u0438\u043D\u0441\u0442\u0440\u0443\u043C\u0435\u043D\u0442\u0430"
   taskNameSuffix: 
   taskName: 
   startPoint: {fileID: 599818724}
   value: 1
   taskDescriptions:
-  - 
+  - "\u041E\u043F\u0443\u0441\u0442\u0438\u0442\u0435 \u0430\u0443\u0442\u0440\u0438\u0433\u0435\u0440\u044B"
+  - "\u041D\u0430\u043A\u043B\u043E\u043D\u0438\u0442\u0435 \u0440\u0430\u0431\u043E\u0447\u0438\u0439
+    \u0438\u043D\u0441\u0442\u0440\u0443\u043C\u0435\u043D\u0442"
   - "\u0417\u0430\u0434\u0430\u043D\u0438\u0435 \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u043E.
     \u041F\u043E\u0437\u0434\u0440\u0430\u0432\u043B\u044F\u0435\u043C!"
   instructions:
-  - 5
+  - "\u041F\u0435\u0440\u0435\u043A\u043B\u044E\u0447\u0438\u0442\u044C \u0440\u0435\u0436\u0438\u043C\u0443\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u0438\u044F
+    \"\u0421\u0442\u0440\u0435\u043B\u0430\", \u043F\u0440\u0430\u0432\u044B\u0439
+    \u0434\u0436\u043E\u0439\u0441\u0442\u0438\u043A \u0432\u0432\u0435\u0440\u0445/\u0432\u043D\u0438\u0437,
+    \u043A\u043D\u043E\u043F\u043A\u0438 \u043D\u0435 \u043D\u0430\u0436\u0430\u0442\u044B
+    (\u043A\u043B\u0430\u0432\u0438\u0448\u0438 Z, X, C \u0438 V)"
   instructionsEnabled: 0
   pairs:
   - {x: 0, y: 0}
-  - {x: 0, y: 0}
-  completionDelay: 0
+  - {x: 1, y: 0}
+  - {x: 2, y: 0}
+  completionDelay: 5
   timeLimit: 0
   isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
   showInstructions: 1
-  key: 
+  autr: 1
+  key: 7a000000780000006300000076000000
   time: 1
 --- !u!1 &6665804572841669560
 GameObject:
@@ -32879,7 +33913,7 @@ GameObject:
   - component: {fileID: 6665804572841669561}
   - component: {fileID: 6665804572841669566}
   m_Layer: 0
-  m_Name: "-\u041A\u043B\u0430\u0441\u0441 1\u0423. 12. \u041F\u044F\u0442\u044B\u0439
+  m_Name: "-\u041A\u043B\u0430\u0441\u0441 1\u0423. 13. \u041F\u044F\u0442\u044B\u0439
     \u0441\u0435\u0433\u043C\u0435\u043D\u0442"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -32898,7 +33932,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6665804573919341156}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6665804572841669566
 MonoBehaviour:
@@ -32920,22 +33954,29 @@ MonoBehaviour:
   startPoint: {fileID: 599818724}
   value: 1
   taskDescriptions:
+  - "\u041E\u043F\u0443\u0441\u0442\u0438\u0442\u0435 \u0430\u0443\u0442\u0440\u0438\u0433\u0435\u0440\u044B"
   - "\u041F\u043E\u0440\u0430\u0431\u043E\u0442\u0430\u0439\u0442\u0435 \u043F\u044F\u0442\u044B\u043C
     \u0441\u0435\u0433\u043C\u0435\u043D\u0442\u043E\u043C \u0440\u0430\u0431\u043E\u0447\u0435\u0439
     \u0441\u0442\u0440\u0435\u043B\u044B"
   - "\u0417\u0430\u0434\u0430\u043D\u0438\u0435 \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u043E.
     \u041F\u043E\u0437\u0434\u0440\u0430\u0432\u043B\u044F\u0435\u043C!"
   instructions:
-  - 5
+  - "\u041F\u0435\u0440\u0435\u043A\u043B\u044E\u0447\u0438\u0442\u044C \u0440\u0435\u0436\u0438\u043C\u0443\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u0438\u044F
+    \"\u0421\u0442\u0440\u0435\u043B\u0430\", \u043B\u0435\u0432\u044B\u0439 \u0434\u0436\u043E\u0439\u0441\u0442\u0438\u043A
+    \u0432\u043F\u0440\u0430\u0432\u043E/\u0432\u043B\u0435\u0432\u043E, \u043A\u043D\u043E\u043F\u043A\u0438
+    \u043D\u0435 \u043D\u0430\u0436\u0430\u0442\u044B (\u043A\u043B\u0430\u0432\u0438\u0448\u0438
+    L \u0438 K)"
   instructionsEnabled: 1
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
-  completionDelay: 0
+  - {x: 2, y: 0}
+  completionDelay: 5
   timeLimit: 0
   isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
   showInstructions: 0
+  autr: 1
   key: 6c0000006b000000
   time: 1
 --- !u!114 &6665804572955320944
@@ -32952,27 +33993,36 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mainGameObject: {fileID: 556734307}
   taskNamePrefix: "<color=#61c410ff>\u041A\u043B\u0430\u0441\u0441 1</color>."
-  taskNameBody: 
+  taskNameBody: "\u041F\u043E\u0432\u043E\u0440\u043E\u0442 \u0440\u0430\u0431\u043E\u0447\u0435\u0433\u043E
+    \u0438\u043D\u0441\u0442\u0440\u0443\u043C\u0435\u043D\u0442\u0430"
   taskNameSuffix: 
   taskName: 
   startPoint: {fileID: 599818724}
   value: 1
   taskDescriptions:
-  - 
+  - "\u041E\u043F\u0443\u0441\u0442\u0438\u0442\u0435 \u0430\u0443\u0442\u0440\u0438\u0433\u0435\u0440\u044B"
+  - "\u041F\u043E\u0432\u0435\u0440\u043D\u0438\u0442\u0435 \u0440\u0430\u0431\u043E\u0447\u0438\u0439
+    \u0438\u043D\u0441\u0442\u0443\u0440\u0443\u043C\u0435\u043D\u0442"
   - "\u0417\u0430\u0434\u0430\u043D\u0438\u0435 \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u043E.
     \u041F\u043E\u0437\u0434\u0440\u0430\u0432\u043B\u044F\u0435\u043C!"
   instructions:
-  - 5
+  - "\u041F\u0435\u0440\u0435\u043A\u043B\u044E\u0447\u0438\u0442\u044C \u0440\u0435\u0436\u0438\u043C\u0443\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u0438\u044F
+    \"\u0421\u0442\u0440\u0435\u043B\u0430\", \u043F\u0440\u0430\u0432\u044B\u0439
+    \u0434\u0436\u043E\u0439\u0441\u0442\u0438\u043A \u0432\u043F\u0440\u0430\u0432\u043E/\u0432\u043B\u0435\u0432\u043E,
+    \u043A\u043D\u043E\u043F\u043A\u0438 \u043D\u0435 \u043D\u0430\u0436\u0430\u0442\u044B(\u043A\u043B\u0430\u0432\u0438\u0448\u0438
+    N \u0438 B)"
   instructionsEnabled: 0
   pairs:
   - {x: 0, y: 0}
-  - {x: 0, y: 0}
-  completionDelay: 0
+  - {x: 1, y: 0}
+  - {x: 2, y: 0}
+  completionDelay: 5
   timeLimit: 0
   isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
   showInstructions: 1
-  key: 
+  autr: 1
+  key: 6e00000062000000
   time: 1
 --- !u!1 &6665804572955320946
 GameObject:
@@ -32985,13 +34035,13 @@ GameObject:
   - component: {fileID: 6665804572955320947}
   - component: {fileID: 6665804572955320944}
   m_Layer: 0
-  m_Name: "-\u041A\u043B\u0430\u0441\u0441 1\u0423. 14. \u041F\u043E\u0432\u043E\u0440\u043E\u0442
+  m_Name: "-\u041A\u043B\u0430\u0441\u0441 1\u0423. 15. \u041F\u043E\u0432\u043E\u0440\u043E\u0442
     \u0440\u0430\u0431\u043E\u0447\u0435\u0433\u043E \u0438\u043D\u0441\u0442\u0440\u0443\u043C\u0435\u043D\u0442\u0430"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &6665804572955320947
 Transform:
   m_ObjectHideFlags: 0
@@ -33004,7 +34054,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6665804573919341156}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6665804572983367644
 MonoBehaviour:
@@ -33027,22 +34077,28 @@ MonoBehaviour:
   startPoint: {fileID: 599818724}
   value: 1
   taskDescriptions:
-  - "\u0423\u043F\u0440\u0430\u0432\u043B\u044F\u0439\u0442\u0435 \u0430\u0443\u0442\u0440\u0438\u0433\u0435\u0440\u0430\u043C\u0438"
+  - "\u041E\u043F\u0443\u0441\u0442\u0438\u0442\u0435 \u0430\u0443\u0442\u0440\u0438\u0433\u0435\u0440"
   - "\u0417\u0430\u0434\u0430\u043D\u0438\u0435 \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u043E.
     \u041F\u043E\u0437\u0434\u0440\u0430\u0432\u043B\u044F\u0435\u043C!"
   instructions:
-  - 5
+  - "\u041F\u0435\u0440\u0435\u043A\u043B\u044E\u0447\u0438\u0442\u044C \u0440\u0435\u0436\u0438\u043C
+    \u0443\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u0438\u044F \"\u0410\u0443\u0442\u0440\u0438\u0433\u0435\u0440\u044B\",
+    \u043B\u0435\u0432\u044B\u0439 \u0434\u0436\u043E\u0439\u0441\u0442\u0438\u043A
+    \u0432\u043D\u0438\u0437, \u043A\u043D\u043E\u043F\u043A\u0438 \u043D\u0435 \u043D\u0430\u0436\u0430\u0442\u044B
+    (\u043A\u043B\u0430\u0432\u0438\u0448\u0430 Q)"
   instructionsEnabled: 1
   pairs:
   - {x: 0, y: 0}
+  - {x: 0, y: 0}
   - {x: 1, y: 0}
-  completionDelay: 1
+  completionDelay: 5
   timeLimit: 0
   isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
   showInstructions: 0
-  key: 6500000071000000
-  time: 5
+  autr: 0
+  key: 71000000
+  time: 1
 --- !u!1 &6665804572983367646
 GameObject:
   m_ObjectHideFlags: 0
@@ -33054,7 +34110,8 @@ GameObject:
   - component: {fileID: 6665804572983367647}
   - component: {fileID: 6665804572983367644}
   m_Layer: 0
-  m_Name: "-\u041A\u043B\u0430\u0441\u0441 1\u0423. 2. \u0410\u0443\u0442\u0440\u0438\u0433\u0435\u0440\u044B"
+  m_Name: "-\u041A\u043B\u0430\u0441\u0441 1\u0423. 2. \u0410\u0443\u0442\u0440\u0438\u0433\u0435\u0440\u044B
+    \u0432\u043D\u0438\u0437"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33095,22 +34152,30 @@ MonoBehaviour:
   startPoint: {fileID: 599818724}
   value: 1
   taskDescriptions:
+  - "\u041E\u043F\u0443\u0441\u0442\u0438\u0442\u0435 \u0430\u0443\u0442\u0440\u0438\u0433\u0435\u0440\u044B"
   - "\u041F\u043E\u0440\u0430\u0431\u043E\u0442\u0430\u0439\u0442\u0435 \u043F\u0435\u0440\u0432\u044B\u043C
     \u0441\u0435\u0433\u043C\u0435\u043D\u0442\u043E\u043C \u0440\u0430\u0431\u043E\u0447\u0435\u0439
     \u0441\u0442\u0440\u0435\u043B\u044B"
   - "\u0417\u0430\u0434\u0430\u043D\u0438\u0435 \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u043E.
     \u041F\u043E\u0437\u0434\u0440\u0430\u0432\u043B\u044F\u0435\u043C!"
   instructions:
-  - 5
+  - "\u041F\u0435\u0440\u0435\u043A\u043B\u044E\u0447\u0438\u0442\u044C \u0440\u0435\u0436\u0438\u043C\u0443\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u0438\u044F
+    \"\u0421\u0442\u0440\u0435\u043B\u0430\", \u043F\u0440\u0430\u0432\u044B\u0439
+    \u0434\u0436\u043E\u0439\u0441\u0442\u0438\u043A \u0432\u043F\u0440\u0430\u0432\u043E/\u0432\u043B\u0435\u0432\u043E,
+    \u043F\u0440\u0438 \u043D\u0430\u0436\u0430\u0442\u043E\u0439 \u043B\u0435\u0432\u043E\u0439
+    \u043A\u043D\u043E\u043F\u043A\u0435(\u043A\u043B\u0430\u0432\u0438\u0448\u0438
+    U \u0438 T)"
   instructionsEnabled: 1
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
-  completionDelay: 0
+  - {x: 2, y: 0}
+  completionDelay: 5
   timeLimit: 0
   isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
   showInstructions: 0
+  autr: 1
   key: 7500000079000000
   time: 1
 --- !u!1 &6665804573015798178
@@ -33124,7 +34189,7 @@ GameObject:
   - component: {fileID: 6665804573015798179}
   - component: {fileID: 6665804573015798176}
   m_Layer: 0
-  m_Name: "-\u041A\u043B\u0430\u0441\u0441 1\u0423. 8. \u041F\u0435\u0440\u0432\u044B\u0439
+  m_Name: "-\u041A\u043B\u0430\u0441\u0441 1\u0423. 9. \u041F\u0435\u0440\u0432\u044B\u0439
     \u0441\u0435\u0433\u043C\u0435\u043D\u0442 \u0440\u0430\u0431\u043E\u0447\u0435\u0439
     \u0441\u0442\u0440\u0435\u043B\u044B"
   m_TagString: Untagged
@@ -33144,7 +34209,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6665804573919341156}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6665804573226439728
 GameObject:
@@ -33157,7 +34222,7 @@ GameObject:
   - component: {fileID: 6665804573226439729}
   - component: {fileID: 6665804573226439734}
   m_Layer: 0
-  m_Name: "-\u041A\u043B\u0430\u0441\u0441 1\u0423. 9. \u0412\u0442\u043E\u0440\u043E\u0439
+  m_Name: "-\u041A\u043B\u0430\u0441\u0441 1\u0423. 10. \u0412\u0442\u043E\u0440\u043E\u0439
     \u0441\u0435\u0433\u043C\u0435\u043D\u0442 \u0440\u0430\u0431\u043E\u0447\u0435\u0439
     \u0441\u0442\u0440\u0435\u043B\u044B"
   m_TagString: Untagged
@@ -33177,7 +34242,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6665804573919341156}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6665804573226439734
 MonoBehaviour:
@@ -33200,6 +34265,7 @@ MonoBehaviour:
   startPoint: {fileID: 599818724}
   value: 1
   taskDescriptions:
+  - "\u041E\u043F\u0443\u0441\u0442\u0438\u0442\u0435 \u0430\u0443\u0442\u0440\u0438\u0433\u0435\u0440\u044B"
   - "\u041F\u043E\u0440\u0430\u0431\u043E\u0442\u0430\u0439\u0442\u0435 \u0432\u0442\u043E\u0440\u044B\u043C
     \u0441\u0435\u0433\u043C\u0435\u043D\u0442\u043E\u043C \u0440\u0430\u0431\u043E\u0447\u0435\u0439
     \u0441\u0442\u0440\u0435\u043B\u044B \u041F\u0435\u0440\u0435\u043A\u043B\u044E\u0447\u0438\u0442\u044C
@@ -33209,16 +34275,22 @@ MonoBehaviour:
   - "\u0417\u0430\u0434\u0430\u043D\u0438\u0435 \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u043E.
     \u041F\u043E\u0437\u0434\u0440\u0430\u0432\u043B\u044F\u0435\u043C!"
   instructions:
-  - 5
+  - "\u041F\u0435\u0440\u0435\u043A\u043B\u044E\u0447\u0438\u0442\u044C \u0440\u0435\u0436\u0438\u043C\u0443\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u0438\u044F
+    \"\u0421\u0442\u0440\u0435\u043B\u0430\", \u043F\u0440\u0430\u0432\u044B\u0439
+    \u0434\u0436\u043E\u0439\u0441\u0442\u0438\u043A \u0432\u043F\u0435\u0440\u0451\u0434/\u043D\u0430\u0437\u0430\u0434,
+    \u043A\u043D\u043E\u043F\u043A\u0438 \u043D\u0435 \u043D\u0430\u0436\u0430\u0442\u044B(\u041A\u043B\u0430\u0432\u0438\u0448\u0438
+    O \u0438 I)"
   instructionsEnabled: 1
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
-  completionDelay: 0
+  - {x: 2, y: 0}
+  completionDelay: 5
   timeLimit: 0
   isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
   showInstructions: 0
+  autr: 1
   key: 6f00000069000000
   time: 1
 --- !u!114 &6665804573329344428
@@ -33245,16 +34317,23 @@ MonoBehaviour:
   - "\u0417\u0430\u0434\u0430\u043D\u0438\u0435 \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u043E.
     \u041F\u043E\u0437\u0434\u0440\u0430\u0432\u043B\u044F\u0435\u043C!"
   instructions:
-  - 5
+  - "\u041F\u0435\u0440\u0435\u043A\u043B\u044E\u0447\u0438\u0442\u044C \u0440\u0435\u0436\u0438\u043C
+    \u0443\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u0438\u044F \"\u0425\u043E\u0434\",
+    \u043B\u0435\u0432\u044B\u0439 \u0438 \u043F\u0440\u0430\u0432\u044B\u0439 \u0438
+    \u0434\u0436\u043E\u0439\u0441\u0442\u0438\u043A \u0432\u043D\u0438\u0437, \u043A\u043D\u043E\u043F\u043A\u0438 
+    \u043D\u0435 \u043D\u0430\u0436\u0430\u0442\u044B(\u041A\u043B\u0430\u0432\u0438\u0448\u0430
+    S)"
   instructionsEnabled: 1
   pairs:
   - {x: 0, y: 0}
+  - {x: 0, y: 0}
   - {x: 1, y: 0}
-  completionDelay: 0
+  completionDelay: 5
   timeLimit: 0
   isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
   showInstructions: 0
+  autr: 0
   key: 73000000
   time: 1
 --- !u!1 &6665804573329344430
@@ -33268,7 +34347,7 @@ GameObject:
   - component: {fileID: 6665804573329344431}
   - component: {fileID: 6665804573329344428}
   m_Layer: 0
-  m_Name: "-\u041A\u043B\u0430\u0441\u0441 1\u0423. 4. \u0414\u0432\u0438\u0436\u0435\u043D\u0438\u0435
+  m_Name: "-\u041A\u043B\u0430\u0441\u0441 1\u0423. 5. \u0414\u0432\u0438\u0436\u0435\u043D\u0438\u0435
     \u043D\u0430\u0437\u0430\u0434"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33287,7 +34366,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6665804573919341156}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6665804573642409944
 GameObject:
@@ -33300,7 +34379,7 @@ GameObject:
   - component: {fileID: 6665804573642409945}
   - component: {fileID: 6665804573642409950}
   m_Layer: 0
-  m_Name: "-\u041A\u043B\u0430\u0441\u0441 1\u0423. 10. \u0418\u0437\u043B\u043E\u043C"
+  m_Name: "-\u041A\u043B\u0430\u0441\u0441 1\u0423. 11. \u0418\u0437\u043B\u043E\u043C"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33318,7 +34397,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6665804573919341156}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6665804573642409950
 MonoBehaviour:
@@ -33340,20 +34419,26 @@ MonoBehaviour:
   startPoint: {fileID: 599818724}
   value: 1
   taskDescriptions:
+  - "\u041E\u043F\u0443\u0441\u0442\u0438\u0442\u0435 \u0430\u0443\u0442\u0440\u0438\u0433\u0435\u0440\u044B"
   - "\u041F\u043E\u0440\u0430\u0431\u043E\u0442\u0430\u0439\u0442\u0435 \u0438\u0437\u043B\u043E\u043C\u043E\u043C"
   - "\u0417\u0430\u0434\u0430\u043D\u0438\u0435 \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u043E.
     \u041F\u043E\u0437\u0434\u0440\u0430\u0432\u043B\u044F\u0435\u043C!"
   instructions:
-  - 5
+  - "\u041F\u0435\u0440\u0435\u043A\u043B\u044E\u0447\u0438\u0442\u044C \u0440\u0435\u0436\u0438\u043C\u0443\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u0438\u044F
+    \"\u0421\u0442\u0440\u0435\u043B\u0430\", \u043B\u0435\u0432\u044B\u0439 \u0434\u0436\u043E\u0439\u0441\u0442\u0438\u043A
+    \u0432\u043F\u0435\u0440\u0451\u0434/\u043D\u0430\u0437\u0430\u0434(\u043A\u043B\u0430\u0432\u0438\u0448\u0430
+    F \u0438 G)"
   instructionsEnabled: 1
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
-  completionDelay: 0
+  - {x: 2, y: 0}
+  completionDelay: 5
   timeLimit: 0
   isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
   showInstructions: 0
+  autr: 1
   key: 6600000067000000
   time: 1
 --- !u!1 &6665804573881462316
@@ -33367,7 +34452,7 @@ GameObject:
   - component: {fileID: 6665804573881462317}
   - component: {fileID: 6665804573881462322}
   m_Layer: 0
-  m_Name: "-\u041A\u043B\u0430\u0441\u0441 1\u0423. 11. \u0427\u0435\u0442\u0432\u0435\u0440\u0442\u044B\u0439
+  m_Name: "-\u041A\u043B\u0430\u0441\u0441 1\u0423. 12. \u0427\u0435\u0442\u0432\u0435\u0440\u0442\u044B\u0439
     \u0441\u0435\u0433\u043C\u0435\u043D\u0442 "
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33386,7 +34471,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6665804573919341156}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6665804573881462322
 MonoBehaviour:
@@ -33408,21 +34493,28 @@ MonoBehaviour:
   startPoint: {fileID: 599818724}
   value: 1
   taskDescriptions:
+  - "\u041E\u043F\u0443\u0441\u0442\u0438\u0442\u0435 \u0430\u0443\u0442\u0440\u0438\u0433\u0435\u0440\u044B"
   - "\u041F\u043E\u0432\u0435\u0440\u043D\u0438\u0442\u0435 \u0447\u0435\u0442\u0432\u0435\u0440\u0442\u044B\u0439
     \u0441\u0435\u0433\u043C\u0435\u043D\u0442"
   - "\u0417\u0430\u0434\u0430\u043D\u0438\u0435 \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u043E.
     \u041F\u043E\u0437\u0434\u0440\u0430\u0432\u043B\u044F\u0435\u043C!"
   instructions:
-  - 5
+  - "\u041F\u0435\u0440\u0435\u043A\u043B\u044E\u0447\u0438\u0442\u044C \u0440\u0435\u0436\u0438\u043C\u0443\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u0438\u044F
+    \"\u0421\u0442\u0440\u0435\u043B\u0430\", \u043F\u0440\u0430\u0432\u044B\u0439
+    \u0434\u0436\u043E\u0439\u0441\u0442\u0438\u043A \u0432\u043F\u0440\u0430\u0432\u043E/\u0432\u043B\u0435\u0432\u043E,
+    \u043A\u043D\u043E\u043F\u043A\u0438 \u043D\u0435 \u043D\u0430\u0436\u0430\u0442\u044B(\u043A\u043B\u0430\u0432\u0438\u0448\u0438
+    J \u0438 H)"
   instructionsEnabled: 1
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
-  completionDelay: 0
+  - {x: 2, y: 0}
+  completionDelay: 5
   timeLimit: 0
   isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
   showInstructions: 0
+  autr: 1
   key: 6a00000068000000
   time: 1
 --- !u!4 &6665804573919341156
@@ -33438,6 +34530,7 @@ Transform:
   m_Children:
   - {fileID: 6665804574137760820}
   - {fileID: 6665804572983367647}
+  - {fileID: 1033316186}
   - {fileID: 6665804574113547499}
   - {fileID: 6665804573329344431}
   - {fileID: 6665804572662060467}
@@ -33480,7 +34573,7 @@ GameObject:
   - component: {fileID: 6665804574037550313}
   - component: {fileID: 6665804574037550318}
   m_Layer: 0
-  m_Name: "-\u041A\u043B\u0430\u0441\u0441 1\u0423. 7. \u041F\u043E\u0432\u043E\u0440\u043E\u0442
+  m_Name: "-\u041A\u043B\u0430\u0441\u0441 1\u0423. 8. \u041F\u043E\u0432\u043E\u0440\u043E\u0442
     \u0431\u0430\u0437\u044B \u0440\u0430\u0431\u043E\u0447\u0435\u0439 \u0441\u0442\u0440\u0435\u043B\u044B"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33499,7 +34592,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6665804573919341156}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6665804574037550318
 MonoBehaviour:
@@ -33522,21 +34615,27 @@ MonoBehaviour:
   startPoint: {fileID: 599818724}
   value: 1
   taskDescriptions:
+  - "\u041E\u043F\u0443\u0441\u0442\u0438\u0442\u0435 \u0430\u0443\u0442\u0440\u0438\u0433\u0435\u0440\u044B"
   - "\u041F\u043E\u0432\u0435\u0440\u043D\u0438\u0442\u0435 \u0431\u0430\u0437\u0443
     \u0440\u0430\u0431\u043E\u0447\u0435\u0439 \u0441\u0442\u0440\u0435\u043B\u044B"
   - "\u0417\u0430\u0434\u0430\u043D\u0438\u0435 \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u043E.
     \u041F\u043E\u0437\u0434\u0440\u0430\u0432\u043B\u044F\u0435\u043C!"
   instructions:
-  - 5
+  - "\u041F\u0435\u0440\u0435\u043A\u043B\u044E\u0447\u0438\u0442\u044C \u0440\u0435\u0436\u0438\u043C\u0443\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u0438\u044F
+    \"\u0421\u0442\u0440\u0435\u043B\u0430\", \u043B\u0435\u0432\u044B\u0439 \u0434\u0436\u043E\u0439\u0441\u0442\u0438\u043A
+    \u0432\u043F\u0440\u0430\u0432\u043E/\u0432\u043B\u0435\u0432\u043E(\u043A\u043B\u0430\u0432\u0438\u0448\u0438
+    R \u0438 T)"
   instructionsEnabled: 1
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
-  completionDelay: 0
+  - {x: 2, y: 0}
+  completionDelay: 5
   timeLimit: 0
   isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
   showInstructions: 0
+  autr: 1
   key: 7200000074000000
   time: 1
 --- !u!114 &6665804574113547496
@@ -33563,16 +34662,23 @@ MonoBehaviour:
   - "\u0417\u0430\u0434\u0430\u043D\u0438\u0435 \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u043E.
     \u041F\u043E\u0437\u0434\u0430\u0440\u0432\u043B\u044F\u0435\u043C!"
   instructions:
-  - 5
+  - "\u041F\u0435\u0440\u0435\u043A\u043B\u044E\u0447\u0438\u0442\u044C \u0440\u0435\u0436\u0438\u043C
+    \u0443\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u0438\u044F \"\u0425\u043E\u0434\",
+    \u043B\u0435\u0432\u044B\u0439 \u0438 \u043F\u0440\u0430\u0432\u044B\u0439 \u0438
+    \u0434\u0436\u043E\u0439\u0441\u0442\u0438\u043A \u0432\u0432\u0435\u0440\u0445,
+    \u043A\u043D\u043E\u043F\u043A\u0438  \u043D\u0435 \u043D\u0430\u0436\u0430\u0442\u044B(\u041A\u043B\u0430\u0432\u0438\u0448\u0430
+    W)"
   instructionsEnabled: 1
   pairs:
   - {x: 0, y: 0}
+  - {x: 0, y: 0}
   - {x: 1, y: 0}
-  completionDelay: 0
+  completionDelay: 5
   timeLimit: 0
   isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
   showInstructions: 0
+  autr: 0
   key: 77000000
   time: 1
 --- !u!1 &6665804574113547498
@@ -33586,7 +34692,7 @@ GameObject:
   - component: {fileID: 6665804574113547499}
   - component: {fileID: 6665804574113547496}
   m_Layer: 0
-  m_Name: "-\u041A\u043B\u0430\u0441\u0441 1\u0423. 3. \u0414\u0432\u0438\u0436\u0435\u043D\u0438\u0435
+  m_Name: "-\u041A\u043B\u0430\u0441\u0441 1\u0423. 4. \u0414\u0432\u0438\u0436\u0435\u043D\u0438\u0435
     \u0432\u043F\u0435\u0440\u0435\u0434"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -33605,7 +34711,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6665804573919341156}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &6665804574137760820
 Transform:
@@ -33646,18 +34752,21 @@ MonoBehaviour:
   - "\u0417\u0430\u0434\u0430\u043D\u0438\u0435 \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u043E\u044E
     \u041F\u043E\u0437\u0434\u0440\u0430\u0432\u043B\u044F\u0435\u043C!"
   instructions:
-  - 5
+  - "\u041D\u0430\u0436\u043C\u0438\u0442\u0435 \u043A\u043D\u043E\u043F\u043A\u0443
+    \u0432\u043A\u043B\u044E\u0447\u0435\u043D\u0438\u044F \u0444\u0430\u0440\u044B"
   instructionsEnabled: 1
   pairs:
   - {x: 0, y: 0}
+  - {x: 0, y: 0}
   - {x: 1, y: 0}
-  completionDelay: 2
+  completionDelay: 5
   timeLimit: 0
   isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
   showInstructions: 0
-  key: 00000000
-  time: 1
+  autr: 0
+  key: 5b0000005d000000
+  time: 0
 --- !u!1 &6665804574137760823
 GameObject:
   m_ObjectHideFlags: 0
@@ -33675,7 +34784,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!1001 &7220588098387355721
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -34458,7 +35567,8 @@ MonoBehaviour:
   - "1. \u0414\u043E\u0441\u0442\u0438\u0433\u043D\u0438\u0442\u0435 \u043E\u0431\u043B\u0430\u0441\u0442\u0438,
     \u043E\u0442\u043C\u0435\u0447\u0435\u043D\u043D\u043E\u0439 \u0437\u0435\u043B\u0435\u043D\u044B\u043C
     \u0446\u0432\u0435\u0442\u043E\u043C"
-  - "2. \u0412\u044B\u0432\u0435\u0434\u0438\u0442\u0435 \u043F\u043E\u043B\u043E\u0436\u0435\u043D\u0438\u0435
+  - "2. \u041E\u043F\u0443\u0441\u0442\u0438\u0442\u0435 \u0430\u0443\u0442\u0440\u0438\u0433\u0435\u0440\u044B"
+  - "3. \u0412\u044B\u0432\u0435\u0434\u0438\u0442\u0435 \u043F\u043E\u043B\u043E\u0436\u0435\u043D\u0438\u0435
     \u0441\u0442\u0440\u0435\u043B\u044B \u0432 \u0443\u043A\u0430\u0437\u0430\u043D\u043D\u0443\u044E
     \u043A\u043E\u043D\u0444\u0438\u0433\u0443\u0440\u0430\u0446\u0438\u044E"
   - "\u0417\u0430\u0434\u0430\u043D\u0438\u0435 \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u043E.
@@ -34470,6 +35580,7 @@ MonoBehaviour:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
+  - {x: 3, y: 0}
   completionDelay: 5
   timeLimit: 0
   isWaitingForCompletion: 0
@@ -34530,7 +35641,8 @@ MonoBehaviour:
   - "1. \u0414\u043E\u0441\u0442\u0438\u0433\u043D\u0438\u0442\u0435 \u043E\u0431\u043B\u0430\u0441\u0442\u0438,
     \u043E\u0442\u043C\u0435\u0447\u0435\u043D\u043D\u043E\u0439 \u0437\u0435\u043B\u0435\u043D\u044B\u043C
     \u0446\u0432\u0435\u0442\u043E\u043C"
-  - "2. \u0412\u044B\u0432\u0435\u0434\u0438\u0442\u0435 \u043F\u043E\u043B\u043E\u0436\u0435\u043D\u0438\u0435
+  - "2. \u041E\u043F\u0443\u0441\u0442\u0438\u0442\u0435 \u0430\u0443\u0442\u0440\u0438\u0433\u0435\u0440\u044B"
+  - "3. \u0412\u044B\u0432\u0435\u0434\u0438\u0442\u0435 \u043F\u043E\u043B\u043E\u0436\u0435\u043D\u0438\u0435
     \u0441\u0442\u0440\u0435\u043B\u044B \u0432 \u0443\u043A\u0430\u0437\u0430\u043D\u043D\u0443\u044E
     \u043A\u043E\u043D\u0444\u0438\u0433\u0443\u0440\u0430\u0446\u0438\u044E"
   - "\u0417\u0430\u0434\u0430\u043D\u0438\u0435 \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u043E.
@@ -34543,6 +35655,7 @@ MonoBehaviour:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
+  - {x: 3, y: 0}
   completionDelay: 5
   timeLimit: 0
   isWaitingForCompletion: 0
@@ -34631,7 +35744,8 @@ MonoBehaviour:
   - "1. \u0414\u043E\u0441\u0442\u0438\u0433\u043D\u0438\u0442\u0435 \u043E\u0431\u043B\u0430\u0441\u0442\u0438,
     \u043E\u0442\u043C\u0435\u0447\u0435\u043D\u043D\u043E\u0439 \u0437\u0435\u043B\u0435\u043D\u044B\u043C
     \u0446\u0432\u0435\u0442\u043E\u043C"
-  - "2. \u0412\u044B\u0432\u0435\u0434\u0438\u0442\u0435 \u043F\u043E\u043B\u043E\u0436\u0435\u043D\u0438\u0435
+  - "2. \u041E\u043F\u0443\u0441\u0442\u0438\u0442\u0435 \u0430\u0443\u0442\u0440\u0438\u0433\u0435\u0440\u044B"
+  - "3. \u0412\u044B\u0432\u0435\u0434\u0438\u0442\u0435 \u043F\u043E\u043B\u043E\u0436\u0435\u043D\u0438\u0435
     \u0441\u0442\u0440\u0435\u043B\u044B \u0432 \u0443\u043A\u0430\u0437\u0430\u043D\u043D\u0443\u044E
     \u043A\u043E\u043D\u0444\u0438\u0433\u0443\u0440\u0430\u0446\u0438\u044E"
   - "\u0417\u0430\u0434\u0430\u043D\u0438\u0435 \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u043E.
@@ -34643,6 +35757,7 @@ MonoBehaviour:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
+  - {x: 3, y: 0}
   completionDelay: 5
   timeLimit: 0
   isWaitingForCompletion: 0
@@ -34703,7 +35818,8 @@ MonoBehaviour:
   - "1. \u0414\u043E\u0441\u0442\u0438\u0433\u043D\u0438\u0442\u0435 \u043E\u0431\u043B\u0430\u0441\u0442\u0438,
     \u043E\u0442\u043C\u0435\u0447\u0435\u043D\u043D\u043E\u0439 \u0437\u0435\u043B\u0435\u043D\u044B\u043C
     \u0446\u0432\u0435\u0442\u043E\u043C"
-  - "2. \u0412\u044B\u0432\u0435\u0434\u0438\u0442\u0435 \u043F\u043E\u043B\u043E\u0436\u0435\u043D\u0438\u0435
+  - "2. \u041E\u043F\u0443\u0441\u0442\u0438\u0442\u0435 \u0430\u0443\u0442\u0440\u0438\u0433\u0435\u0440\u044B"
+  - "3. \u0412\u044B\u0432\u0435\u0434\u0438\u0442\u0435 \u043F\u043E\u043B\u043E\u0436\u0435\u043D\u0438\u0435
     \u0441\u0442\u0440\u0435\u043B\u044B \u0432 \u0443\u043A\u0430\u0437\u0430\u043D\u043D\u0443\u044E
     \u043A\u043E\u043D\u0444\u0438\u0433\u0443\u0440\u0430\u0446\u0438\u044E"
   - "\u0417\u0430\u0434\u0430\u043D\u0438\u0435 \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u043E.
@@ -34715,6 +35831,7 @@ MonoBehaviour:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
+  - {x: 3, y: 0}
   completionDelay: 5
   timeLimit: 0
   isWaitingForCompletion: 0
@@ -34739,9 +35856,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7925063081153565664}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 521.01, y: 47.45, z: 430.08}
-  m_LocalScale: {x: 1.2, y: 1, z: 1.2}
+  m_LocalRotation: {x: 0.016417673, y: -0.09844235, z: 0.020368483, w: 0.9947989}
+  m_LocalPosition: {x: 531.9551, y: 50.3666, z: 384.6365}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1038384613}
   m_RootOrder: 6
@@ -34803,7 +35920,8 @@ MonoBehaviour:
   - "1. \u0414\u043E\u0441\u0442\u0438\u0433\u043D\u0438\u0442\u0435 \u043E\u0431\u043B\u0430\u0441\u0442\u0438,
     \u043E\u0442\u043C\u0435\u0447\u0435\u043D\u043D\u043E\u0439 \u0437\u0435\u043B\u0435\u043D\u044B\u043C
     \u0446\u0432\u0435\u0442\u043E\u043C"
-  - "2. \u0412\u044B\u0432\u0435\u0434\u0438\u0442\u0435 \u043F\u043E\u043B\u043E\u0436\u0435\u043D\u0438\u0435
+  - "2. \u041E\u043F\u0443\u0441\u0442\u0438\u0442\u0435 \u0430\u0443\u0442\u0440\u0438\u0433\u0435\u0440\u044B"
+  - "3. \u0412\u044B\u0432\u0435\u0434\u0438\u0442\u0435 \u043F\u043E\u043B\u043E\u0436\u0435\u043D\u0438\u0435
     \u0441\u0442\u0440\u0435\u043B\u044B \u0432 \u0443\u043A\u0430\u0437\u0430\u043D\u043D\u0443\u044E
     \u043A\u043E\u043D\u0444\u0438\u0433\u0443\u0440\u0430\u0446\u0438\u044E"
   - "\u0417\u0430\u0434\u0430\u043D\u0438\u0435 \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u043E.
@@ -34817,6 +35935,7 @@ MonoBehaviour:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
+  - {x: 3, y: 0}
   completionDelay: 5
   timeLimit: 0
   isWaitingForCompletion: 0
@@ -34891,7 +36010,8 @@ MonoBehaviour:
   - "1. \u0414\u043E\u0441\u0442\u0438\u0433\u043D\u0438\u0442\u0435 \u043E\u0431\u043B\u0430\u0441\u0442\u0438,
     \u043E\u0442\u043C\u0435\u0447\u0435\u043D\u043D\u043E\u0439 \u0437\u0435\u043B\u0435\u043D\u044B\u043C
     \u0446\u0432\u0435\u0442\u043E\u043C"
-  - "2. \u0412\u044B\u0432\u0435\u0434\u0438\u0442\u0435 \u043F\u043E\u043B\u043E\u0436\u0435\u043D\u0438\u0435
+  - "2. \u041E\u043F\u0443\u0441\u0442\u0438\u0442\u0435 \u0430\u0443\u0442\u0440\u0438\u0433\u0435\u0440\u044B"
+  - "3. \u0412\u044B\u0432\u0435\u0434\u0438\u0442\u0435 \u043F\u043E\u043B\u043E\u0436\u0435\u043D\u0438\u0435
     \u0441\u0442\u0440\u0435\u043B\u044B \u0432 \u0443\u043A\u0430\u0437\u0430\u043D\u043D\u0443\u044E
     \u043A\u043E\u043D\u0444\u0438\u0433\u0443\u0440\u0430\u0446\u0438\u044E"
   - "\u0417\u0430\u0434\u0430\u043D\u0438\u0435 \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u043E.
@@ -34903,6 +36023,7 @@ MonoBehaviour:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
+  - {x: 3, y: 0}
   completionDelay: 5
   timeLimit: 0
   isWaitingForCompletion: 0
@@ -34963,7 +36084,8 @@ MonoBehaviour:
   - "1. \u0414\u043E\u0441\u0442\u0438\u0433\u043D\u0438\u0442\u0435 \u043E\u0431\u043B\u0430\u0441\u0442\u0438,
     \u043E\u0442\u043C\u0435\u0447\u0435\u043D\u043D\u043E\u0439 \u0437\u0435\u043B\u0435\u043D\u044B\u043C
     \u0446\u0432\u0435\u0442\u043E\u043C"
-  - "2. \u0412\u044B\u0432\u0435\u0434\u0438\u0442\u0435 \u043F\u043E\u043B\u043E\u0436\u0435\u043D\u0438\u0435
+  - "2. \u041E\u043F\u0443\u0441\u0442\u0438\u0442\u0435 \u0430\u0443\u0442\u0440\u0438\u0433\u0435\u0440\u044B"
+  - "3. \u0412\u044B\u0432\u0435\u0434\u0438\u0442\u0435 \u043F\u043E\u043B\u043E\u0436\u0435\u043D\u0438\u0435
     \u0441\u0442\u0440\u0435\u043B\u044B \u0432 \u0443\u043A\u0430\u0437\u0430\u043D\u043D\u0443\u044E
     \u043A\u043E\u043D\u0444\u0438\u0433\u0443\u0440\u0430\u0446\u0438\u044E"
   - "\u0417\u0430\u0434\u0430\u043D\u0438\u0435 \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u043E.
@@ -34975,6 +36097,7 @@ MonoBehaviour:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
+  - {x: 3, y: 0}
   completionDelay: 5
   timeLimit: 0
   isWaitingForCompletion: 0
@@ -35013,9 +36136,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7925063081836933865}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 598, y: 50.06, z: 425.3}
-  m_LocalScale: {x: 1.2, y: 1, z: 1.2}
+  m_LocalRotation: {x: 0.000001986278, y: -0.99980783, z: 0.0000065863123, w: 0.019603875}
+  m_LocalPosition: {x: 595, y: 50, z: 479.55832}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1038384613}
   m_RootOrder: 7
@@ -35057,13 +36180,14 @@ MonoBehaviour:
     \u0441\u0442\u0440\u0435\u043B\u044B."
   taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 8"
   taskName: 
-  startPoint: {fileID: 0}
+  startPoint: {fileID: 7925063081836933864}
   value: 2
   taskDescriptions:
   - "1. \u0414\u043E\u0441\u0442\u0438\u0433\u043D\u0438\u0442\u0435 \u043E\u0431\u043B\u0430\u0441\u0442\u0438,
     \u043E\u0442\u043C\u0435\u0447\u0435\u043D\u043D\u043E\u0439 \u0437\u0435\u043B\u0435\u043D\u044B\u043C
     \u0446\u0432\u0435\u0442\u043E\u043C"
-  - "2. \u0412\u044B\u0432\u0435\u0434\u0438\u0442\u0435 \u043F\u043E\u043B\u043E\u0436\u0435\u043D\u0438\u0435
+  - "2. \u041E\u043F\u0443\u0441\u0442\u0438\u0442\u0435 \u0430\u0443\u0442\u0440\u0438\u0433\u0435\u0440\u044B"
+  - "3. \u0412\u044B\u0432\u0435\u0434\u0438\u0442\u0435 \u043F\u043E\u043B\u043E\u0436\u0435\u043D\u0438\u0435
     \u0441\u0442\u0440\u0435\u043B\u044B \u0432 \u0443\u043A\u0430\u0437\u0430\u043D\u043D\u0443\u044E
     \u043A\u043E\u043D\u0444\u0438\u0433\u0443\u0440\u0430\u0446\u0438\u044E"
   - "\u0417\u0430\u0434\u0430\u043D\u0438\u0435 \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u043E.
@@ -35075,6 +36199,7 @@ MonoBehaviour:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
+  - {x: 3, y: 0}
   completionDelay: 5
   timeLimit: 0
   isWaitingForCompletion: 0
@@ -35135,7 +36260,8 @@ MonoBehaviour:
   - "1. \u0414\u043E\u0441\u0442\u0438\u0433\u043D\u0438\u0442\u0435 \u043E\u0431\u043B\u0430\u0441\u0442\u0438,
     \u043E\u0442\u043C\u0435\u0447\u0435\u043D\u043D\u043E\u0439 \u0437\u0435\u043B\u0435\u043D\u044B\u043C
     \u0446\u0432\u0435\u0442\u043E\u043C"
-  - "2. \u0412\u044B\u0432\u0435\u0434\u0438\u0442\u0435 \u043F\u043E\u043B\u043E\u0436\u0435\u043D\u0438\u0435
+  - "2. \u041E\u043F\u0443\u0441\u0442\u0438\u0442\u0435 \u0430\u0443\u0442\u0440\u0438\u0433\u0435\u0440\u044B"
+  - "3. \u0412\u044B\u0432\u0435\u0434\u0438\u0442\u0435 \u043F\u043E\u043B\u043E\u0436\u0435\u043D\u0438\u0435
     \u0441\u0442\u0440\u0435\u043B\u044B \u0432 \u0443\u043A\u0430\u0437\u0430\u043D\u043D\u0443\u044E
     \u043A\u043E\u043D\u0444\u0438\u0433\u0443\u0440\u0430\u0446\u0438\u044E"
   - "\u0417\u0430\u0434\u0430\u043D\u0438\u0435 \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u043E.
@@ -35147,6 +36273,7 @@ MonoBehaviour:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
+  - {x: 3, y: 0}
   completionDelay: 5
   timeLimit: 0
   isWaitingForCompletion: 0
@@ -35221,7 +36348,8 @@ MonoBehaviour:
   - "1. \u0414\u043E\u0441\u0442\u0438\u0433\u043D\u0438\u0442\u0435 \u043E\u0431\u043B\u0430\u0441\u0442\u0438,
     \u043E\u0442\u043C\u0435\u0447\u0435\u043D\u043D\u043E\u0439 \u0437\u0435\u043B\u0435\u043D\u044B\u043C
     \u0446\u0432\u0435\u0442\u043E\u043C"
-  - "2. \u0412\u044B\u0432\u0435\u0434\u0438\u0442\u0435 \u043F\u043E\u043B\u043E\u0436\u0435\u043D\u0438\u0435
+  - "2. \u041E\u043F\u0443\u0441\u0442\u0438\u0442\u0435 \u0430\u0443\u0442\u0440\u0438\u0433\u0435\u0440\u044B"
+  - "3. \u0412\u044B\u0432\u0435\u0434\u0438\u0442\u0435 \u043F\u043E\u043B\u043E\u0436\u0435\u043D\u0438\u0435
     \u0441\u0442\u0440\u0435\u043B\u044B \u0432 \u0443\u043A\u0430\u0437\u0430\u043D\u043D\u0443\u044E
     \u043A\u043E\u043D\u0444\u0438\u0433\u0443\u0440\u0430\u0446\u0438\u044E"
   - "\u0417\u0430\u0434\u0430\u043D\u0438\u0435 \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u043E.
@@ -35233,6 +36361,7 @@ MonoBehaviour:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
+  - {x: 3, y: 0}
   completionDelay: 5
   timeLimit: 0
   isWaitingForCompletion: 0
