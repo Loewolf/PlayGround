@@ -21,6 +21,7 @@ public class EducationHandler : MonoBehaviour
     public string timeoutText;
 
     private Task task = null;
+    private Task previousTask = null;
     private IEnumerator maskFlicker;
     private float alpha = 1f;
     private float step;
@@ -124,6 +125,7 @@ public class EducationHandler : MonoBehaviour
     {
         if (task)
         {
+            previousTask = task;
             task.TurnIn(result);
             task = null;
         }
@@ -188,9 +190,15 @@ public class EducationHandler : MonoBehaviour
 
     public void ResetTask()
     {
-        Task currentTask = task;
-        EndTask(false);
-        SetTask(currentTask);
+        if (task)
+        {
+            EndTask(false);
+            SetTask(previousTask);
+        }
+        else if (previousTask)
+        {
+            SetTask(previousTask);
+        }
     }
 
     public void DropAndSetTask(Task task)
