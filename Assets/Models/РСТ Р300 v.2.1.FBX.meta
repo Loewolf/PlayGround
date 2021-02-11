@@ -1,0 +1,387 @@
+fileFormatVersion: 2
+guid: a157d33b1daa1d54eb5b29eea15efdde
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: 10
+    100002: 11
+    100004: 12
+    100006: 13
+    100008: 14
+    100010: 15
+    100012: 16
+    100014: 2
+    100016: 27
+    100018: 28
+    100020: 29
+    100022: 3
+    100024: 30
+    100026: 4
+    100028: 5
+    100030: 6
+    100032: 7
+    100034: 8
+    100036: 80\xf540\xf5302 (606) \xc3\xe8\xe4\xf0\xee\xf6\xe8\xeb\xe8\xed\
+    100038: 80\xf540\xf5302 \xcf \xc3\xe8\xe4\xf0\xee\xf6\xe8\xeb\xe8\xed\x
+    100040: 9
+    100042: \u0111\u03ae070.420.000
+    100044: \u0111\u03ae105.100.510.000
+    100046: \u0111\u03ae105.100.510.001
+    100048: \u0111\u03ae105.100.510.002
+    100050: \u0111\u03ae105.100.510.003
+    100052: \u0111\u03ae105.100.520.000
+    100054: \u0111\u03ae105.100.520.001
+    100056: \u0111\u03ae105.100.520.002
+    100058: \u0111\u03ae105.100.520.003
+    100060: \u0111\u03ae105.100.591.000
+    100062: \u0111\u03ae105.100.591.001
+    100064: \u0111\u03ae105.100.591.002
+    100066: \u0111\u03ae105.100.591.003
+    100068: \u0111\u03ae105.200.310.000
+    100070: \u0111\u03ae105.200.320.000
+    100072: \u0111\u03ae105.200.330.000
+    100074: \u0111\u03ae105.200.410.000
+    100076: \u0111\u03ae105.200.420.000
+    100078: \u04ff\u47a0\U000b19a4\ue9a9@/\U000a6af6\u9980
+    100080: \u05c3-105.60\U000f0df3.11-\u0515\u0240
+    100082: \u05c3-105.60\U000f0df3.11-\u0515\u0240001
+    100084: \u05c3-105.60\U000f0df3.11-\u0515\u0240002
+    100086: \u05c3-105.60\U000f0df3.11-\u0515\u0240003
+    100088: \u05c3-105.60\U000f0df3.11-\u0515\u0240004
+    100090: \u05c3-105.60\U000f0df3.11-\u0515\u0240005
+    100092: \u05c3-105.60\U000f0df3.11-\u0515\u0240006
+    100094: \u05c3-105.60\U000f0df3.11-\u0515\u0240007
+    100096: \xc3\xe8\xe4\xf0\xee\xf6\xe8\xeb\xe8\xed\xe4\xf0 80.40-257
+    100098: \xc7\xe2\xe5\xe7\xe4\xe0 \xef\xf0\xe8\xe2\xee\xe4\xed\xe0\x.000
+    100100: \xc7\xe2\xe5\xe7\xe4\xe0 \xef\xf0\xe8\xe2\xee\xe4\xed\xe0\xff G
+    100102: \xcd\xe0\xef\xf0\xe0\xe2\xeb\xff\xfe\xf9\xe5\xe5 \xea\xee\x.000
+    100104: \xcd\xe0\xef\xf0\xe0\xe2\xeb\xff\xfe\xf9\xe5\xe5 \xea\xee\xeb\x
+    100106: \xce\xef\xee\xf0\xe0 c\xf2\xf0\xe5\xeb\xfb
+    100108: "\u0413\u0443\u0441\u0435\u043D\u0438\u0446\u04301"
+    100110: "\u0413\u0443\u0441\u0435\u043D\u0438\u0446\u04302"
+    100112: //RootNode
+    100114: "\u0425\u043E\u0434\u043E\u0432\u0430\u044F \u0440\u043E\u0431\u043E\u0442\u0430
+      \u0412\u0413\u0423"
+    400000: 10
+    400002: 11
+    400004: 12
+    400006: 13
+    400008: 14
+    400010: 15
+    400012: 16
+    400014: 2
+    400016: 27
+    400018: 28
+    400020: 29
+    400022: 3
+    400024: 30
+    400026: 4
+    400028: 5
+    400030: 6
+    400032: 7
+    400034: 8
+    400036: 80\xf540\xf5302 (606) \xc3\xe8\xe4\xf0\xee\xf6\xe8\xeb\xe8\xed\
+    400038: 80\xf540\xf5302 \xcf \xc3\xe8\xe4\xf0\xee\xf6\xe8\xeb\xe8\xed\x
+    400040: 9
+    400042: \u0111\u03ae070.420.000
+    400044: \u0111\u03ae105.100.510.000
+    400046: \u0111\u03ae105.100.510.001
+    400048: \u0111\u03ae105.100.510.002
+    400050: \u0111\u03ae105.100.510.003
+    400052: \u0111\u03ae105.100.520.000
+    400054: \u0111\u03ae105.100.520.001
+    400056: \u0111\u03ae105.100.520.002
+    400058: \u0111\u03ae105.100.520.003
+    400060: \u0111\u03ae105.100.591.000
+    400062: \u0111\u03ae105.100.591.001
+    400064: \u0111\u03ae105.100.591.002
+    400066: \u0111\u03ae105.100.591.003
+    400068: \u0111\u03ae105.200.310.000
+    400070: \u0111\u03ae105.200.320.000
+    400072: \u0111\u03ae105.200.330.000
+    400074: \u0111\u03ae105.200.410.000
+    400076: \u0111\u03ae105.200.420.000
+    400078: \u04ff\u47a0\U000b19a4\ue9a9@/\U000a6af6\u9980
+    400080: \u05c3-105.60\U000f0df3.11-\u0515\u0240
+    400082: \u05c3-105.60\U000f0df3.11-\u0515\u0240001
+    400084: \u05c3-105.60\U000f0df3.11-\u0515\u0240002
+    400086: \u05c3-105.60\U000f0df3.11-\u0515\u0240003
+    400088: \u05c3-105.60\U000f0df3.11-\u0515\u0240004
+    400090: \u05c3-105.60\U000f0df3.11-\u0515\u0240005
+    400092: \u05c3-105.60\U000f0df3.11-\u0515\u0240006
+    400094: \u05c3-105.60\U000f0df3.11-\u0515\u0240007
+    400096: \xc3\xe8\xe4\xf0\xee\xf6\xe8\xeb\xe8\xed\xe4\xf0 80.40-257
+    400098: \xc7\xe2\xe5\xe7\xe4\xe0 \xef\xf0\xe8\xe2\xee\xe4\xed\xe0\x.000
+    400100: \xc7\xe2\xe5\xe7\xe4\xe0 \xef\xf0\xe8\xe2\xee\xe4\xed\xe0\xff G
+    400102: \xcd\xe0\xef\xf0\xe0\xe2\xeb\xff\xfe\xf9\xe5\xe5 \xea\xee\x.000
+    400104: \xcd\xe0\xef\xf0\xe0\xe2\xeb\xff\xfe\xf9\xe5\xe5 \xea\xee\xeb\x
+    400106: \xce\xef\xee\xf0\xe0 c\xf2\xf0\xe5\xeb\xfb
+    400108: "\u0413\u0443\u0441\u0435\u043D\u0438\u0446\u04301"
+    400110: "\u0413\u0443\u0441\u0435\u043D\u0438\u0446\u04302"
+    400112: //RootNode
+    400114: "\u0425\u043E\u0434\u043E\u0432\u0430\u044F \u0440\u043E\u0431\u043E\u0442\u0430
+      \u0412\u0413\u0423"
+    2100000: No Name
+    2100002: Material
+    2300000: 10
+    2300002: 11
+    2300004: 12
+    2300006: 13
+    2300008: 14
+    2300010: 15
+    2300012: 16
+    2300014: 2
+    2300016: 27
+    2300018: 28
+    2300020: 29
+    2300022: 3
+    2300024: 30
+    2300026: 4
+    2300028: 5
+    2300030: 6
+    2300032: 7
+    2300034: 8
+    2300036: 80\xf540\xf5302 (606) \xc3\xe8\xe4\xf0\xee\xf6\xe8\xeb\xe8\xed\
+    2300038: 80\xf540\xf5302 \xcf \xc3\xe8\xe4\xf0\xee\xf6\xe8\xeb\xe8\xed\x
+    2300040: 9
+    2300042: \u0111\u03ae070.420.000
+    2300044: \u0111\u03ae105.100.510.000
+    2300046: \u0111\u03ae105.100.510.001
+    2300048: \u0111\u03ae105.100.510.002
+    2300050: \u0111\u03ae105.100.510.003
+    2300052: \u0111\u03ae105.100.520.000
+    2300054: \u0111\u03ae105.100.520.001
+    2300056: \u0111\u03ae105.100.520.002
+    2300058: \u0111\u03ae105.100.520.003
+    2300060: \u0111\u03ae105.100.591.000
+    2300062: \u0111\u03ae105.100.591.001
+    2300064: \u0111\u03ae105.100.591.002
+    2300066: \u0111\u03ae105.100.591.003
+    2300068: \u0111\u03ae105.200.310.000
+    2300070: \u0111\u03ae105.200.320.000
+    2300072: \u0111\u03ae105.200.330.000
+    2300074: \u0111\u03ae105.200.410.000
+    2300076: \u0111\u03ae105.200.420.000
+    2300078: \u04ff\u47a0\U000b19a4\ue9a9@/\U000a6af6\u9980
+    2300080: \u05c3-105.60\U000f0df3.11-\u0515\u0240
+    2300082: \u05c3-105.60\U000f0df3.11-\u0515\u0240001
+    2300084: \u05c3-105.60\U000f0df3.11-\u0515\u0240002
+    2300086: \u05c3-105.60\U000f0df3.11-\u0515\u0240003
+    2300088: \u05c3-105.60\U000f0df3.11-\u0515\u0240004
+    2300090: \u05c3-105.60\U000f0df3.11-\u0515\u0240005
+    2300092: \u05c3-105.60\U000f0df3.11-\u0515\u0240006
+    2300094: \u05c3-105.60\U000f0df3.11-\u0515\u0240007
+    2300096: \xc3\xe8\xe4\xf0\xee\xf6\xe8\xeb\xe8\xed\xe4\xf0 80.40-257
+    2300098: \xc7\xe2\xe5\xe7\xe4\xe0 \xef\xf0\xe8\xe2\xee\xe4\xed\xe0\x.000
+    2300100: \xc7\xe2\xe5\xe7\xe4\xe0 \xef\xf0\xe8\xe2\xee\xe4\xed\xe0\xff G
+    2300102: \xcd\xe0\xef\xf0\xe0\xe2\xeb\xff\xfe\xf9\xe5\xe5 \xea\xee\x.000
+    2300104: \xcd\xe0\xef\xf0\xe0\xe2\xeb\xff\xfe\xf9\xe5\xe5 \xea\xee\xeb\x
+    2300106: \xce\xef\xee\xf0\xe0 c\xf2\xf0\xe5\xeb\xfb
+    2300108: "\u0413\u0443\u0441\u0435\u043D\u0438\u0446\u04301"
+    2300110: "\u0413\u0443\u0441\u0435\u043D\u0438\u0446\u04302"
+    2300112: "\u0425\u043E\u0434\u043E\u0432\u0430\u044F \u0440\u043E\u0431\u043E\u0442\u0430
+      \u0412\u0413\u0423"
+    3300000: 10
+    3300002: 11
+    3300004: 12
+    3300006: 13
+    3300008: 14
+    3300010: 15
+    3300012: 16
+    3300014: 2
+    3300016: 27
+    3300018: 28
+    3300020: 29
+    3300022: 3
+    3300024: 30
+    3300026: 4
+    3300028: 5
+    3300030: 6
+    3300032: 7
+    3300034: 8
+    3300036: 80\xf540\xf5302 (606) \xc3\xe8\xe4\xf0\xee\xf6\xe8\xeb\xe8\xed\
+    3300038: 80\xf540\xf5302 \xcf \xc3\xe8\xe4\xf0\xee\xf6\xe8\xeb\xe8\xed\x
+    3300040: 9
+    3300042: \u0111\u03ae070.420.000
+    3300044: \u0111\u03ae105.100.510.000
+    3300046: \u0111\u03ae105.100.510.001
+    3300048: \u0111\u03ae105.100.510.002
+    3300050: \u0111\u03ae105.100.510.003
+    3300052: \u0111\u03ae105.100.520.000
+    3300054: \u0111\u03ae105.100.520.001
+    3300056: \u0111\u03ae105.100.520.002
+    3300058: \u0111\u03ae105.100.520.003
+    3300060: \u0111\u03ae105.100.591.000
+    3300062: \u0111\u03ae105.100.591.001
+    3300064: \u0111\u03ae105.100.591.002
+    3300066: \u0111\u03ae105.100.591.003
+    3300068: \u0111\u03ae105.200.310.000
+    3300070: \u0111\u03ae105.200.320.000
+    3300072: \u0111\u03ae105.200.330.000
+    3300074: \u0111\u03ae105.200.410.000
+    3300076: \u0111\u03ae105.200.420.000
+    3300078: \u04ff\u47a0\U000b19a4\ue9a9@/\U000a6af6\u9980
+    3300080: \u05c3-105.60\U000f0df3.11-\u0515\u0240
+    3300082: \u05c3-105.60\U000f0df3.11-\u0515\u0240001
+    3300084: \u05c3-105.60\U000f0df3.11-\u0515\u0240002
+    3300086: \u05c3-105.60\U000f0df3.11-\u0515\u0240003
+    3300088: \u05c3-105.60\U000f0df3.11-\u0515\u0240004
+    3300090: \u05c3-105.60\U000f0df3.11-\u0515\u0240005
+    3300092: \u05c3-105.60\U000f0df3.11-\u0515\u0240006
+    3300094: \u05c3-105.60\U000f0df3.11-\u0515\u0240007
+    3300096: \xc3\xe8\xe4\xf0\xee\xf6\xe8\xeb\xe8\xed\xe4\xf0 80.40-257
+    3300098: \xc7\xe2\xe5\xe7\xe4\xe0 \xef\xf0\xe8\xe2\xee\xe4\xed\xe0\x.000
+    3300100: \xc7\xe2\xe5\xe7\xe4\xe0 \xef\xf0\xe8\xe2\xee\xe4\xed\xe0\xff G
+    3300102: \xcd\xe0\xef\xf0\xe0\xe2\xeb\xff\xfe\xf9\xe5\xe5 \xea\xee\x.000
+    3300104: \xcd\xe0\xef\xf0\xe0\xe2\xeb\xff\xfe\xf9\xe5\xe5 \xea\xee\xeb\x
+    3300106: \xce\xef\xee\xf0\xe0 c\xf2\xf0\xe5\xeb\xfb
+    3300108: "\u0413\u0443\u0441\u0435\u043D\u0438\u0446\u04301"
+    3300110: "\u0413\u0443\u0441\u0435\u043D\u0438\u0446\u04302"
+    3300112: "\u0425\u043E\u0434\u043E\u0432\u0430\u044F \u0440\u043E\u0431\u043E\u0442\u0430
+      \u0412\u0413\u0423"
+    4300000: \xcd\xe0\xef\xf0\xe0\xe2\xeb\xff\xfe\xf9\xe5\xe5 \xea\xee\xeb\x
+    4300002: \xc7\xe2\xe5\xe7\xe4\xe0 \xef\xf0\xe8\xe2\xee\xe4\xed\xe0\x.000
+    4300004: "\u0413\u0443\u0441\u0435\u043D\u0438\u0446\u04301"
+    4300006: "\u0413\u0443\u0441\u0435\u043D\u0438\u0446\u04302"
+    4300008: \xcd\xe0\xef\xf0\xe0\xe2\xeb\xff\xfe\xf9\xe5\xe5 \xea\xee\x.000
+    4300010: \xc7\xe2\xe5\xe7\xe4\xe0 \xef\xf0\xe8\xe2\xee\xe4\xed\xe0\xff G
+    4300012: \u0111\u03ae105.100.520.003
+    4300014: \u0111\u03ae105.100.520.002
+    4300016: \u0111\u03ae105.100.520.001
+    4300018: \u0111\u03ae105.100.520.000
+    4300020: "\u0425\u043E\u0434\u043E\u0432\u0430\u044F \u0440\u043E\u0431\u043E\u0442\u0430
+      \u0412\u0413\u0423"
+    4300022: 13
+    4300024: 29
+    4300026: 7
+    4300028: 27
+    4300030: 2
+    4300032: 30
+    4300034: \u0111\u03ae105.200.330.000
+    4300036: \xce\xef\xee\xf0\xe0 c\xf2\xf0\xe5\xeb\xfb
+    4300038: \u0111\u03ae105.200.320.000
+    4300040: 80\xf540\xf5302 (606) \xc3\xe8\xe4\xf0\xee\xf6\xe8\xeb\xe8\xed\
+    4300042: 80\xf540\xf5302 \xcf \xc3\xe8\xe4\xf0\xee\xf6\xe8\xeb\xe8\xed\x
+    4300044: \u04ff\u47a0\U000b19a4\ue9a9@/\U000a6af6\u9980
+    4300046: \u0111\u03ae105.200.310.000
+    4300048: 3
+    4300050: 9
+    4300052: 10
+    4300054: 4
+    4300056: \u0111\u03ae105.200.410.000
+    4300058: \u0111\u03ae105.200.420.000
+    4300060: 8
+    4300062: 12
+    4300064: 6
+    4300066: \xc3\xe8\xe4\xf0\xee\xf6\xe8\xeb\xe8\xed\xe4\xf0 80.40-257
+    4300068: 14
+    4300070: 15
+    4300072: 16
+    4300074: 5
+    4300076: \u0111\u03ae070.420.000
+    4300078: 28
+    4300080: 11
+    4300082: \u05c3-105.60\U000f0df3.11-\u0515\u0240003
+    4300084: \u05c3-105.60\U000f0df3.11-\u0515\u0240002
+    4300086: \u0111\u03ae105.100.510.001
+    4300088: \u0111\u03ae105.100.591.001
+    4300090: \u0111\u03ae105.100.510.000
+    4300092: \u05c3-105.60\U000f0df3.11-\u0515\u0240001
+    4300094: \u05c3-105.60\U000f0df3.11-\u0515\u0240
+    4300096: \u0111\u03ae105.100.591.000
+    4300098: \u0111\u03ae105.100.510.003
+    4300100: \u05c3-105.60\U000f0df3.11-\u0515\u0240007
+    4300102: \u05c3-105.60\U000f0df3.11-\u0515\u0240005
+    4300104: \u0111\u03ae105.100.591.003
+    4300106: \u0111\u03ae105.100.510.002
+    4300108: \u05c3-105.60\U000f0df3.11-\u0515\u0240006
+    4300110: \u05c3-105.60\U000f0df3.11-\u0515\u0240004
+    4300112: \u0111\u03ae105.100.591.002
+    7400000: Take 001
+    9500000: //RootNode
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.001
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
