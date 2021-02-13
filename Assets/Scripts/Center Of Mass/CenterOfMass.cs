@@ -1,5 +1,5 @@
 ﻿using UnityEngine;
-[AddComponentMenu("_Center Of Mass/Local")]
+[AddComponentMenu("Center Of Mass/Local Center Of Mass")]
 public class CenterOfMass : MonoBehaviour
 {
     public Vector3 centerOfMass;

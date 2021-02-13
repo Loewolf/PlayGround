@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
-[AddComponentMenu("_Center Of Mass/General")]
+[AddComponentMenu("Center Of Mass/General Center Of Mass")]
 [RequireComponent(typeof(Rigidbody))]
 public class GeneralCenterOfMass : MonoBehaviour
 {

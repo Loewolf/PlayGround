@@ -4,26 +4,23 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - CanBer
-  - Can
   - Accessory
   - Box
   - Table
   - Pipe
   - Spawned Prop
-  - Leg
-  - Caterpillar
+  - Wall Fragment
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Post-Processing
   - Water
   - UI
   - 
   - 
   - Static Objects
-  - Post-Processing
+  - 
   - 
   - 
   - 
