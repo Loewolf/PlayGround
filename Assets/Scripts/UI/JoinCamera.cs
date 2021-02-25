@@ -8,22 +8,22 @@ public class JoinCamera : MonoBehaviour
     public Camera joinCamera;
     public float aspectRatio = 1.6f;
     [Space(10)]
-    public MaskableGraphic joinCameraUI; // должна иметь дочерний объект Text
+    public MaskableGraphic joinCameraUI;
     public Text joinCameraText;
     public Color colorReadyToConnect;
     public Color colorNotReady;
 
     private void Awake()
     {
-        if (!instance)
+        if (instance)
         {
-            instance = this;
-            SetJoinCameraRectByAspectRatio();
+            Debug.Log("Instance of JoinCamera already exists");
+            Destroy(this);
         }
         else
         {
-            Debug.Log("Instance of JoinCamera " + " already exists");
-            Destroy(this);
+            instance = this;
+            SetJoinCameraRectByAspectRatio();
         }
     }
 

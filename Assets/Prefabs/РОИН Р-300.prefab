@@ -241,7 +241,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.22284424, y: 0.05, z: 0.37928364}
+  m_Size: {x: 0.1728442, y: 0.04, z: 0.3292836}
   m_Center: {x: -0.00011969491, y: 0.11, z: 0.0037810386}
 --- !u!114 &2592469676912592882
 MonoBehaviour:
@@ -621,7 +621,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.22284424, y: 0.05, z: 0.37928364}
+  m_Size: {x: 0.1728442, y: 0.04, z: 0.3292836}
   m_Center: {x: -0.00011969491, y: 0.11, z: 0.0037810386}
 --- !u!114 &2592469677044693868
 MonoBehaviour:
@@ -842,7 +842,7 @@ ArticulationBody:
   m_XDrive:
     lowerLimit: -2
     upperLimit: 125
-    stiffness: 1000000
+    stiffness: 10000000
     damping: 50
     forceLimit: 3.4028235e+38
     target: 0
@@ -1023,7 +1023,7 @@ ArticulationBody:
   m_XDrive:
     lowerLimit: -0.5
     upperLimit: 0
-    stiffness: 1000000
+    stiffness: 10000000
     damping: 50
     forceLimit: 3.4028235e+38
     target: 0
@@ -2497,7 +2497,7 @@ ArticulationBody:
   m_XDrive:
     lowerLimit: -105
     upperLimit: 25
-    stiffness: 1000000
+    stiffness: 10000000
     damping: 50
     forceLimit: 3.4028235e+38
     target: 0
@@ -3180,7 +3180,7 @@ ArticulationBody:
   m_XDrive:
     lowerLimit: -95
     upperLimit: 5
-    stiffness: 1000000
+    stiffness: 10000000
     damping: 50
     forceLimit: 3.4028235e+38
     target: 0
@@ -3219,8 +3219,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 30
-  decreaseValueButton: 103
-  increaseValueButton: 102
+  decreaseValueButton: 102
+  increaseValueButton: 103
 --- !u!114 &2592469677650980582
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3851,7 +3851,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.22284424, y: 0.05, z: 0.37928364}
+  m_Size: {x: 0.1728442, y: 0.04, z: 0.3292836}
   m_Center: {x: -0.00011969491, y: 0.11, z: 0.0037810386}
 --- !u!114 &2592469677747887872
 MonoBehaviour:
@@ -4025,7 +4025,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.22284424, y: 0.05, z: 0.37928364}
+  m_Size: {x: 0.1728442, y: 0.04, z: 0.3292836}
   m_Center: {x: -0.00011969491, y: 0.11, z: 0.0037810386}
 --- !u!114 &2592469677756517982
 MonoBehaviour:
@@ -4855,7 +4855,7 @@ ArticulationBody:
   m_XDrive:
     lowerLimit: 0
     upperLimit: 0
-    stiffness: 1000000
+    stiffness: 10000000
     damping: 50
     forceLimit: 3.4028235e+38
     target: 0
@@ -5499,11 +5499,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8b09087f99abc7438e3d01a1d1b5fef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  centerOfMass: {x: 0, y: 0.26, z: 0.08}
+  centerOfMass: {x: 0, y: 0.46, z: 0.08}
   mass: 3796
   articulationBody: {fileID: 2592469678155211682}
   alwaysAllowRotations: 0
-  startLinearSpeed: 3000000
+  startLinearSpeed: 2700000
   startAngularSpeed: 2400000
   caterpillarLeftCollisionCounter: {fileID: 2592469677318260454}
   caterpillarRightCollisionCounter: {fileID: 2592469677342004596}
@@ -5529,8 +5529,9 @@ MonoBehaviour:
   - {fileID: 2592469677762676321}
   - {fileID: 2592469678474774493}
   accessoryJoinPoint: {fileID: 2592469677976262305}
+  regularCamerasContainer: {fileID: 7131161341553861472}
+  specialCamerasContainer: {fileID: 3555899818782549618}
   defaultState: {fileID: 2592469678155211357}
-  specialState: {fileID: 0}
   timeForSettingState: 2
 --- !u!114 &2592469678155211357
 MonoBehaviour:
@@ -5708,7 +5709,7 @@ ArticulationBody:
   m_XDrive:
     lowerLimit: -35
     upperLimit: 35
-    stiffness: 1000000
+    stiffness: 10000000
     damping: 50
     forceLimit: 3.4028235e+38
     target: 0
@@ -6462,7 +6463,7 @@ ArticulationBody:
   m_XDrive:
     lowerLimit: -5
     upperLimit: 95
-    stiffness: 1000000
+    stiffness: 10000000
     damping: 50
     forceLimit: 3.4028235e+38
     target: 0
@@ -6500,7 +6501,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2652be3fb72b0be47b95f6f78e310746, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 30
+  speed: -30
   decreaseValueButton: 102
   increaseValueButton: 103
 --- !u!114 &2592469678346784088
@@ -6641,6 +6642,7 @@ GameObject:
   - component: {fileID: 2592469678415447188}
   - component: {fileID: 2592469678415447195}
   - component: {fileID: 2592469678415447194}
+  - component: {fileID: 1521680147}
   m_Layer: 0
   m_Name: "\u041E\u0441\u044C \u0442\u0430\u043D\u0433\u0430\u0436\u0430"
   m_TagString: Player
@@ -6740,7 +6742,7 @@ ArticulationBody:
   m_XDrive:
     lowerLimit: -125
     upperLimit: 15
-    stiffness: 1000000
+    stiffness: 10000000
     damping: 50
     forceLimit: 3.4028235e+38
     target: 0
@@ -6804,8 +6806,21 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.34629494, y: 0.3659149, z: 0.22640531}
-  m_Center: {x: -0.03367419, y: 0.13448735, z: -0.055892684}
+  m_Size: {x: 0.34629494, y: 0.2, z: 0.2}
+  m_Center: {x: -0.03367419, y: 0.13448735, z: -0.046}
+--- !u!65 &1521680147
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2592469678415447191}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.34629494, y: 0.36591482, z: 0.1}
+  m_Center: {x: -0.03373518, y: 0.13448703, z: 0}
 --- !u!1 &2592469678423252205
 GameObject:
   m_ObjectHideFlags: 0
@@ -7212,7 +7227,7 @@ ArticulationBody:
   m_XDrive:
     lowerLimit: 0
     upperLimit: 85
-    stiffness: 1000000
+    stiffness: 10000000
     damping: 50
     forceLimit: 3.4028235e+38
     target: 0

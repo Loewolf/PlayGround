@@ -23,6 +23,8 @@ public class MovementAlongFigure : Task
         reachablePoint.gameObject.SetActive(true);
         lineRenderer.gameObject.SetActive(true);
 
+        reachablePoint.targetObject = robot.accessoryJoinPoint.transform;
+        reachablePoint.Reclassify(true);
         lineRenderer.positionCount = circularPath.SetPositions(expectedSegmentsCount, pointsInSegment);
         lineRenderer.SetPositions(circularPath.mainPositions);
         positionCount = circularPath.GetCount();
@@ -34,6 +36,7 @@ public class MovementAlongFigure : Task
 
     protected override void DisableTaskGameObjects()
     {
+        reachablePoint.targetObject = null;
         reachablePoint.gameObject.SetActive(false);
         lineRenderer.gameObject.SetActive(false);
     }

@@ -13,8 +13,6 @@ public class ArticulationBodyXDriveModification : MonoBehaviour
     private float angleModifier;
     private bool rotationAllowed = true;
     private bool inRadians;
-    private Vector3 startPosition;
-    private Quaternion startRotation;
 
     private void Awake()
     {
@@ -22,8 +20,6 @@ public class ArticulationBodyXDriveModification : MonoBehaviour
         fixedSpeed = speed * Time.fixedDeltaTime;
         inRadians = articulationBody.jointType != ArticulationJointType.PrismaticJoint;
         angleModifier = inRadians ? Mathf.Rad2Deg : 1f;
-        startPosition = transform.localPosition;
-        startRotation = transform.localRotation;
     }
 
     private void FixedUpdate()
@@ -52,6 +48,12 @@ public class ArticulationBodyXDriveModification : MonoBehaviour
         MoveTo(articulationBody.jointPosition[0] * angleModifier + fixedSpeed);
     }
 
+    private void SetZeroVelocity()
+    {
+        articulationBody.velocity = Vector3.zero;
+        articulationBody.angularVelocity = Vector3.zero;
+    }
+
     public void MoveTo(float value)
     {
         xDrive = articulationBody.xDrive;
@@ -64,9 +66,8 @@ public class ArticulationBodyXDriveModification : MonoBehaviour
         rotationAllowed = value;
     }
 
-    private void SetZeroVelocity()
+    public float GetXDriveTarget()
     {
-        articulationBody.velocity = Vector3.zero;
-        articulationBody.angularVelocity = Vector3.zero;
+        return articulationBody.xDrive.target;
     }
 }

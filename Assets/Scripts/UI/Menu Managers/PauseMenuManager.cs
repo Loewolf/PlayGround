@@ -13,7 +13,6 @@ public class PauseMenuManager : MonoBehaviour
     public RestartMenuView RestartMenuView;
     public SelectLevelMenuView SelectLevelMenuMenuView;
     public MainMenuManager MainMenuManager;
-    public EducationHandler educationHandler;
     private Stack<IMenuView> _thisStackView = new Stack<IMenuView>();
     
     [Header("Buttons")]
@@ -26,7 +25,6 @@ public class PauseMenuManager : MonoBehaviour
         PauseMenuView.PauseMenuManager = this;
         SelectLevelMenuMenuView.PauseMenuManager = this;
         RestartMenuView.PauseMenuManager = this;
-        RestartMenuView.educationHandler = SelectLevelMenuMenuView.GetComponent<CreateListLevel>().educationHandler;
     }
 
     //пауза

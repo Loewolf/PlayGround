@@ -18,6 +18,8 @@ public class NonPlayerCollisionCounter : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (!(other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("Accessory"))) collisionCount++;
+        if (!(other.gameObject.CompareTag("Player") || 
+            other.gameObject.CompareTag("Accessory") || 
+            other.gameObject.CompareTag("Transparent"))) collisionCount++;
     }
 }

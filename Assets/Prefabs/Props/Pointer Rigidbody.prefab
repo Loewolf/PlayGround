@@ -60,7 +60,7 @@ GameObject:
   - component: {fileID: 740797640470925121}
   m_Layer: 0
   m_Name: Upper Cylinder
-  m_TagString: Untagged
+  m_TagString: Attachable Object Collider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -105,7 +105,7 @@ GameObject:
   - component: {fileID: 2097984442848993684}
   m_Layer: 0
   m_Name: Lower Cylinder
-  m_TagString: Untagged
+  m_TagString: Attachable Object Collider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -151,7 +151,7 @@ GameObject:
   - component: {fileID: 6060725356478795497}
   m_Layer: 0
   m_Name: Arrow
-  m_TagString: Untagged
+  m_TagString: Attachable Object Collider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

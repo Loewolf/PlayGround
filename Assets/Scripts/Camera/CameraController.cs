@@ -5,70 +5,71 @@ public class CameraController : MonoBehaviour {
     public static CameraController instance;
 
     public Camera targetCamera;
-    public Transform regularCamerasContainer;
-    private Transform[] regularCamerasTransforms;
+    public KeyCode nextCameraKeyCode = KeyCode.RightBracket;
+    public KeyCode previousCameraKeyCode = KeyCode.LeftBracket;
     private int currentCamera;
-
-    public Transform specialCamerasContainer;
-    private Transform[] specialCamerasTransforms;
     private bool isUsingSpecialCamera = false;
+    private bool camerasSet = false;
+
+    private Transform regularCamerasContainer;
+    private int regularTransformsCount;
+    private Transform specialCamerasContainer;
+    private int specialTransformsCount;
 
     public enum SpecialCameras { Class_3_Tasks };
 
     private void Awake()
     {
-        if (!instance)
+        if (instance)
         {
-            instance = this;
+            Debug.Log("Instance of CameraController already exists");
+            Destroy(this);
         }
         else
         {
-            Debug.Log("Instance of CameraController " + " already exists");
-            Destroy(this);
+            instance = this;
         }
     }
 
-    void Start()
+    public void SetCamerasContainers(RobotController robotController)
     {
-        int count = regularCamerasContainer.childCount;
-        regularCamerasTransforms = new Transform[count];
-        for (int i = 0; i < count; ++i)
-            regularCamerasTransforms[i] = regularCamerasContainer.GetChild(i);
+        regularCamerasContainer = robotController.regularCamerasContainer;
+        regularTransformsCount = regularCamerasContainer.childCount;
+        specialCamerasContainer = robotController.specialCamerasContainer;
+        specialTransformsCount = specialCamerasContainer.childCount;
+
         currentCamera = 0;
-        AttachCameraToTransform(regularCamerasTransforms[currentCamera]);
-
-        count = specialCamerasContainer.childCount;
-        specialCamerasTransforms = new Transform[count];
-        for (int i = 0; i < count; ++i)
-            specialCamerasTransforms[i] = specialCamerasContainer.GetChild(i);
+        AttachCameraToTransform(regularCamerasContainer.GetChild(currentCamera));
+        camerasSet = true;
     }
 
-    void Update()
+    private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.RightBracket) && !isUsingSpecialCamera)
+        if (camerasSet && !isUsingSpecialCamera)
         {
-            currentCamera++;
-            if (currentCamera >= regularCamerasTransforms.Length) currentCamera = 0;
-            AttachCameraToTransform(regularCamerasTransforms[currentCamera]);
-        }
-        if (Input.GetKeyDown(KeyCode.LeftBracket) && !isUsingSpecialCamera)
-        {
-            currentCamera--;
-            if (currentCamera < 0) currentCamera = regularCamerasTransforms.Length - 1;
-            AttachCameraToTransform(regularCamerasTransforms[currentCamera]);
+            if (Input.GetKeyDown(nextCameraKeyCode))
+            {
+                currentCamera = (currentCamera + 1) % regularTransformsCount;
+                AttachCameraToTransform(regularCamerasContainer.GetChild(currentCamera));
+            }
+            if (Input.GetKeyDown(previousCameraKeyCode))
+            {
+                currentCamera = (currentCamera - 1 + regularTransformsCount) % regularTransformsCount;
+                AttachCameraToTransform(regularCamerasContainer.GetChild(currentCamera));
+            }
         }
     }
 
     public void SetSpecialCamera(SpecialCameras specialCamera)
     {
         isUsingSpecialCamera = true;
-        AttachCameraToTransform(specialCamerasTransforms[(int)specialCamera]);
+        AttachCameraToTransform(specialCamerasContainer.GetChild((int)specialCamera));
     }
 
     public void SetRegularCamera()
     {
         isUsingSpecialCamera = false;
-        AttachCameraToTransform(regularCamerasTransforms[currentCamera]);
+        AttachCameraToTransform(regularCamerasContainer.GetChild(currentCamera));
     }
 
     public void AttachCameraToTransform(Transform targetTransform)

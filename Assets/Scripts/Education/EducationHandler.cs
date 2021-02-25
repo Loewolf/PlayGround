@@ -4,7 +4,8 @@ using UnityEngine.UI;
 
 public class EducationHandler : MonoBehaviour
 {
-    public RobotController selectedRobot;
+    public static EducationHandler instance;
+
     [Space(10)]
     public Text taskDescription;
     public Text instruction;
@@ -24,6 +25,19 @@ public class EducationHandler : MonoBehaviour
     private IEnumerator maskFlicker;
     private float alpha = 1f;
     private float step;
+
+    private void Awake()
+    {
+        if (instance)
+        {
+            Debug.Log("Instance of EducationHandler already exists");
+            Destroy(this);
+        }
+        else
+        {
+            instance = this;
+        }
+    }
 
     private float timeLeft = 0f;
     private bool timerIsUsed = false;
@@ -125,12 +139,15 @@ public class EducationHandler : MonoBehaviour
 
     private void SetValuesFromTask()
     {
-        task.Take(selectedRobot);
-        ChangeWindowsActivity(true);
-        SetTextValues(task.GetCurrentDescription(), task.instructionsEnabled, task.GetCurrentInstruction());
-        SetTimer(task.GetTimeWithDelay());
-        ResetEffect();
-        taskValuesAreSet = true;
+        if (RobotSelector.instance)
+        {
+            task.Take(RobotSelector.instance.SelectedRobotController);
+            ChangeWindowsActivity(true);
+            SetTextValues(task.GetCurrentDescription(), task.instructionsEnabled, task.GetCurrentInstruction());
+            SetTimer(task.GetTimeWithDelay());
+            ResetEffect();
+            taskValuesAreSet = true;
+        }
     }
 
     public void EndTask(bool result)

@@ -8,9 +8,10 @@ public class RigidbodyHydraulicHammer : RigidbodyAccessory
     public string turnedOnIconName;
     private bool canDestroy;
 
-    private void Start()
+    protected override void Start()
     {
         SetState(false);
+        base.Start();
     }
 
     private void ChangeStateAndIcon(bool state)

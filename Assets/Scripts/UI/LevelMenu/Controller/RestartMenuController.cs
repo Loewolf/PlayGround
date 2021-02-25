@@ -9,7 +9,6 @@ public interface IRestartMenuView : IMenuView
 {
     event Action ResetEvent;
     event Action BackEvent;
-    EducationHandler educationHandler { get; set; }
 }
 public class RestartMenuController : IController<IRestartMenuView>
 {
@@ -30,7 +29,7 @@ public class RestartMenuController : IController<IRestartMenuView>
 
     public void Reset()
     {
-        _view.educationHandler.ResetTask();
+        EducationHandler.instance?.ResetTask();
         _view.PauseMenuManager.AllBack();
     }
 

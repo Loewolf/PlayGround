@@ -11,7 +11,6 @@ using UnityEngine.UI;
 public class CreateListLevel : MonoBehaviour
 {
     public Task[] Tasks;
-    public EducationHandler educationHandler;
     private List<ButtonInfo> _buttons = new List<ButtonInfo>();
 
     [Header("Для генерации кнопок")]
@@ -25,7 +24,6 @@ public class CreateListLevel : MonoBehaviour
     {
         Tasks = task;
         GenerateLevels(mode);
-        Debug.Log(Tasks.Length);
     }
 
     private void OnEnable()
@@ -46,7 +44,7 @@ public class CreateListLevel : MonoBehaviour
                 _buttons.Add(button);
                 Task task = Tasks[i];
                 button.SetTask(task, mode, i + 1);
-                button.SetEvent(() => educationHandler.DropAndSetTask(task));
+                button.SetEvent(() => EducationHandler.instance?.DropAndSetTask(task));
             }
         }
     }

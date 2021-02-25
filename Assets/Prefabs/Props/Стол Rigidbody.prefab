@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8559003011114226774}
   m_Layer: 0
   m_Name: "\u0414\u043E\u0441\u043A\u0430 4"
-  m_TagString: Table
+  m_TagString: Attachable Object Collider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -56,7 +56,7 @@ GameObject:
   - component: {fileID: 6755116112587888095}
   m_Layer: 0
   m_Name: "\u0414\u043E\u0441\u043A\u0430 1"
-  m_TagString: Table
+  m_TagString: Attachable Object Collider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -100,7 +100,7 @@ GameObject:
   - component: {fileID: 7844208037511127816}
   m_Layer: 0
   m_Name: "\u041D\u043E\u0436\u043A\u0430 2"
-  m_TagString: Table
+  m_TagString: Attachable Object Collider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -144,7 +144,7 @@ GameObject:
   - component: {fileID: 697351110481114475}
   m_Layer: 0
   m_Name: "\u041D\u043E\u0436\u043A\u0430 3"
-  m_TagString: Table
+  m_TagString: Attachable Object Collider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -236,7 +236,7 @@ GameObject:
   - component: {fileID: 8296172377216978380}
   m_Layer: 0
   m_Name: "\u041B\u0430\u0432\u043A\u0430 2"
-  m_TagString: Table
+  m_TagString: Attachable Object Collider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -268,22 +268,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.16, y: 0.06, z: 0.28}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &8360601876541465498
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6306130006175389929}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bffc8f72d9affc745b8b2e13a2b4c25d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  centerOfMass: {x: 0, y: -0.15, z: 0}
-  mass: 25
-  rigidbodyHandler: {fileID: 5129930106849776834}
-  antiSelfIntersectionBox: {fileID: 0}
 --- !u!114 &3278761647589045098
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -311,7 +295,7 @@ GameObject:
   - component: {fileID: 8835570849118713433}
   m_Layer: 0
   m_Name: "\u0414\u043E\u0441\u043A\u0430 3"
-  m_TagString: Table
+  m_TagString: Attachable Object Collider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -355,7 +339,7 @@ GameObject:
   - component: {fileID: 1316472765297793159}
   m_Layer: 0
   m_Name: "\u041A\u0440\u044B\u0448\u043A\u0430"
-  m_TagString: Table
+  m_TagString: Attachable Object Collider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -399,7 +383,7 @@ GameObject:
   - component: {fileID: 8041313875367324497}
   m_Layer: 0
   m_Name: "\u041D\u043E\u0436\u043A\u0430 4"
-  m_TagString: Table
+  m_TagString: Attachable Object Collider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -443,7 +427,7 @@ GameObject:
   - component: {fileID: 5116356244219903332}
   m_Layer: 0
   m_Name: "\u0414\u043E\u0441\u043A\u0430 2"
-  m_TagString: Table
+  m_TagString: Attachable Object Collider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -487,7 +471,7 @@ GameObject:
   - component: {fileID: 5803482473960422291}
   m_Layer: 0
   m_Name: "\u041B\u0430\u0432\u043A\u0430 1"
-  m_TagString: Table
+  m_TagString: Attachable Object Collider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -531,7 +515,7 @@ GameObject:
   - component: {fileID: 4910511246354179692}
   m_Layer: 0
   m_Name: "\u041D\u043E\u0436\u043A\u0430 1"
-  m_TagString: Table
+  m_TagString: Attachable Object Collider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

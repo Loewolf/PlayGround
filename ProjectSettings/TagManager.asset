@@ -10,6 +10,8 @@ TagManager:
   - Pipe
   - Spawned Prop
   - Wall Fragment
+  - Attachable Object Collider
+  - Transparent
   layers:
   - Default
   - TransparentFX

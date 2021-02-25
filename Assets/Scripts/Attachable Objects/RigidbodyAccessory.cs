@@ -13,6 +13,11 @@ public class RigidbodyAccessory : RigidbodyAttachableObject
         setFixedDistance = SetFixedDistanceSmoothly();
     }
 
+    protected virtual void Start()
+    {
+        rigidbody.gameObject.SetActive(false);
+    }
+
     public void Equip(AccessoryJoinPoint newTarget, bool smooth = true)
     {
         parentObject = newTarget;
