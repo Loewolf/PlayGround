@@ -3,24 +3,19 @@ using UnityEngine;
 [RequireComponent(typeof(Collider))]
 public class ReachablePoint : MonoBehaviour
 {
+    public bool useObjects = false;
     public string targetTag = "Player";
-    public Transform targetObject = null;
+    public List<Transform> targetObjects;
 
     protected int objectsAtPoint = 0;
     protected delegate bool CheckForMatchesDelegate(ref Transform other);
     protected CheckForMatchesDelegate CheckForMatches;
-    protected List<Transform> transforms;
+    protected HashSet<Transform> transforms;
 
     private void Awake()
     {
-        transforms = new List<Transform>();
-        Classify();
-    }
-
-    private void Classify()
-    {
-        if (targetObject) CheckForMatches = CheckGameObject;
-        else CheckForMatches = CheckTag;
+        transforms = new HashSet<Transform>();
+        Reclassify(useObjects);
     }
 
     public void Reclassify(bool useObject)
@@ -41,7 +36,7 @@ public class ReachablePoint : MonoBehaviour
 
     private bool CheckGameObject(ref Transform other)
     {
-        while (other && other != targetObject)
+        while (other && !targetObjects.Contains(other))
         {
             other = other.parent;
         }

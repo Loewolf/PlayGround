@@ -3,6 +3,7 @@
 public class MovementAlongFigure : Task
 {
     [Header("Объекты, связанные с задачей")]
+    public int seed = 0;
     public ReachablePointNoColliderCheck reachablePoint;
     public LineRenderer lineRenderer;
     public CircularPath circularPath;
@@ -20,11 +21,11 @@ public class MovementAlongFigure : Task
 
     protected override void EnableTaskGameObjects()
     {
+        Random.InitState(seed);
         reachablePoint.gameObject.SetActive(true);
         lineRenderer.gameObject.SetActive(true);
 
-        reachablePoint.targetObject = robot.accessoryJoinPoint.transform;
-        reachablePoint.Reclassify(true);
+        reachablePoint.targetObjects.Add(robot.accessoryJoinPoint.transform);
         lineRenderer.positionCount = circularPath.SetPositions(expectedSegmentsCount, pointsInSegment);
         lineRenderer.SetPositions(circularPath.mainPositions);
         positionCount = circularPath.GetCount();
@@ -36,7 +37,7 @@ public class MovementAlongFigure : Task
 
     protected override void DisableTaskGameObjects()
     {
-        reachablePoint.targetObject = null;
+        reachablePoint.targetObjects.Remove(robot.accessoryJoinPoint.transform);
         reachablePoint.gameObject.SetActive(false);
         lineRenderer.gameObject.SetActive(false);
     }

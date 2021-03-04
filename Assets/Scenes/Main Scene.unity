@@ -504,14 +504,13 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2111939977}
-  - {fileID: 554263046}
   m_Father: {fileID: 393769044}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: -20}
-  m_SizeDelta: {x: -79.99999, y: 140}
+  m_SizeDelta: {x: -79.99999, y: 200}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &18072067
 MonoBehaviour:
@@ -641,6 +640,7 @@ MonoBehaviour:
   timeLimit: 0
   isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  seed: 18
   grabTransform: {fileID: 845794440}
   grab: {fileID: 4381265060945316290}
   crateTransform: {fileID: 886802228472308051}
@@ -670,6 +670,82 @@ MonoBehaviour:
     quantity: 1
   spiralPoints: {fileID: 1954308245}
   axisYSpawnRange: {x: 0, y: 1.5}
+--- !u!1 &28759593
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 28759594}
+  - component: {fileID: 28759596}
+  - component: {fileID: 28759595}
+  m_Layer: 5
+  m_Name: Penalty Time
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &28759594
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 28759593}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1470291765}
+  m_Father: {fileID: 554263046}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 21.1}
+  m_Pivot: {x: 0.5, y: 1}
+--- !u!114 &28759595
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 28759593}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.9245283, g: 0.7391183, b: 0.33579564, a: 0.7490196}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 041c44294dae2eb44911d04b6af3e5a8, type: 3}
+  m_Type: 1
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 0.5
+--- !u!222 &28759596
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 28759593}
+  m_CullTransparentMesh: 1
 --- !u!1 &36680575
 GameObject:
   m_ObjectHideFlags: 0
@@ -1160,6 +1236,7 @@ MonoBehaviour:
   timeLimit: 0
   isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  seed: 0
   grabTransform: {fileID: 845794440}
   grab: {fileID: 4381265060945316290}
   crateTransform: {fileID: 886802228472308051}
@@ -1297,8 +1374,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bbb0054f4e138146a6b78d56bf767c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useObjects: 0
   targetTag: Accessory
-  targetObject: {fileID: 0}
+  targetObjects: []
 --- !u!65 &65642100
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1389,6 +1467,7 @@ MonoBehaviour:
   timeLimit: 0
   isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  seed: 8
   grabTransform: {fileID: 845794440}
   grab: {fileID: 4381265060945316290}
   crateTransform: {fileID: 886802228472308051}
@@ -1578,8 +1657,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bbb0054f4e138146a6b78d56bf767c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useObjects: 0
   targetTag: Accessory
-  targetObject: {fileID: 0}
+  targetObjects: []
 --- !u!65 &71639319
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1637,8 +1717,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bbb0054f4e138146a6b78d56bf767c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useObjects: 0
   targetTag: Accessory
-  targetObject: {fileID: 0}
+  targetObjects: []
 --- !u!65 &85146136
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1845,6 +1926,7 @@ MonoBehaviour:
   timeLimit: 260
   isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  seed: 42
   grabTransform: {fileID: 845794440}
   grab: {fileID: 4381265060945316290}
   crateTransform: {fileID: 886802228472308051}
@@ -2024,8 +2106,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bbb0054f4e138146a6b78d56bf767c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useObjects: 0
   targetTag: Accessory
-  targetObject: {fileID: 0}
+  targetObjects: []
 --- !u!65 &105283817
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2147,6 +2230,7 @@ MonoBehaviour:
   timeLimit: 260
   isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  seed: 38
   grabTransform: {fileID: 845794440}
   grab: {fileID: 4381265060945316290}
   crateTransform: {fileID: 886802228472308051}
@@ -2254,6 +2338,7 @@ MonoBehaviour:
   timeLimit: 245
   isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  seed: 40
   grabTransform: {fileID: 845794440}
   grab: {fileID: 4381265060945316290}
   crateTransform: {fileID: 886802228472308051}
@@ -2884,6 +2969,7 @@ MonoBehaviour:
   timeLimit: 0
   isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  seed: 16
   grabTransform: {fileID: 845794440}
   grab: {fileID: 4381265060945316290}
   crateTransform: {fileID: 886802228472308051}
@@ -2991,6 +3077,7 @@ MonoBehaviour:
   timeLimit: 305
   isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  seed: 44
   grabTransform: {fileID: 845794440}
   grab: {fileID: 4381265060945316290}
   crateTransform: {fileID: 886802228472308051}
@@ -3821,8 +3908,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bbb0054f4e138146a6b78d56bf767c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useObjects: 0
   targetTag: Accessory
-  targetObject: {fileID: 0}
+  targetObjects: []
 --- !u!65 &187687597
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4804,8 +4892,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: aa3b3d578f5c7e444b6757aef9d82ae5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useObjects: 0
   targetTag: Spawned Prop
-  targetObject: {fileID: 0}
+  targetObjects: []
 --- !u!1 &253151927
 GameObject:
   m_ObjectHideFlags: 0
@@ -4850,8 +4939,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bbb0054f4e138146a6b78d56bf767c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useObjects: 0
   targetTag: Accessory
-  targetObject: {fileID: 0}
+  targetObjects: []
 --- !u!65 &253151930
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5599,8 +5689,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49672243a4404c349afad1b2ac4a2da4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetTag: Box
-  targetObject: {fileID: 0}
+  useObjects: 1
+  targetTag: 
+  targetObjects:
+  - {fileID: 1103354775}
+  - {fileID: 703701393}
+  - {fileID: 491241755}
+  - {fileID: 640170965}
   globalScale: {x: 1.1, y: 0.2, z: 1.1}
   requiredObjectsAmount: 1
   resultValue: 1
@@ -5954,8 +6049,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bbb0054f4e138146a6b78d56bf767c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useObjects: 0
   targetTag: Accessory
-  targetObject: {fileID: 0}
+  targetObjects: []
 --- !u!65 &320924533
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6605,6 +6701,7 @@ MonoBehaviour:
   timeLimit: 0
   isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  seed: 21
   reachablePoint: {fileID: 1587606300}
   lineRenderer: {fileID: 36680576}
   circularPath: {fileID: 1055799848}
@@ -6884,8 +6981,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bbb0054f4e138146a6b78d56bf767c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useObjects: 0
   targetTag: Accessory
-  targetObject: {fileID: 0}
+  targetObjects: []
 --- !u!65 &406048442
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7238,6 +7336,7 @@ MonoBehaviour:
   timeLimit: 0
   isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  seed: 7
   grabTransform: {fileID: 845794440}
   grab: {fileID: 4381265060945316290}
   crateTransform: {fileID: 886802228472308051}
@@ -7459,6 +7558,18 @@ Transform:
   m_Father: {fileID: 5967983760033468430}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &434670087 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6207872722247387048, guid: cf13124282d526c4e8b413a670a8f6f3,
+    type: 3}
+  m_PrefabInstance: {fileID: 281805385}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe05f77c93254ee40a5a9b94eac5da39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &438357467
 GameObject:
   m_ObjectHideFlags: 0
@@ -7858,6 +7969,7 @@ MonoBehaviour:
   timeLimit: 0
   isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  seed: 11
   grabTransform: {fileID: 845794440}
   grab: {fileID: 4381265060945316290}
   crateTransform: {fileID: 886802228472308051}
@@ -8080,8 +8192,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bbb0054f4e138146a6b78d56bf767c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useObjects: 0
   targetTag: Accessory
-  targetObject: {fileID: 0}
+  targetObjects: []
 --- !u!65 &484474888
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8438,6 +8551,7 @@ MonoBehaviour:
   timeLimit: 140
   isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  seed: 47
   reachablePoint: {fileID: 1587606300}
   lineRenderer: {fileID: 36680576}
   circularPath: {fileID: 1055799848}
@@ -8522,6 +8636,7 @@ MonoBehaviour:
   timeLimit: 230
   isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  seed: 35
   grabTransform: {fileID: 845794440}
   grab: {fileID: 4381265060945316290}
   crateTransform: {fileID: 886802228472308051}
@@ -8951,6 +9066,7 @@ MonoBehaviour:
   timeLimit: 0
   isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  seed: 29
   reachablePoint: {fileID: 1587606300}
   lineRenderer: {fileID: 36680576}
   circularPath: {fileID: 1055799848}
@@ -9065,6 +9181,7 @@ MonoBehaviour:
   timeLimit: 260
   isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  seed: 36
   grabTransform: {fileID: 845794440}
   grab: {fileID: 4381265060945316290}
   crateTransform: {fileID: 886802228472308051}
@@ -9207,19 +9324,20 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 554263045}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 570096075}
-  m_Father: {fileID: 18072066}
+  - {fileID: 28759594}
+  m_Father: {fileID: 2111939977}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -5}
   m_SizeDelta: {x: 100, y: 40}
-  m_Pivot: {x: 0.5, y: 0}
+  m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &554263047
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9232,12 +9350,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d16a1fdf2d0361449a54b187c57674be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maskableGraphic: {fileID: 554263048}
+  timerImage: {fileID: 554263048}
   timerText: {fileID: 570096076}
   defaultColor: {r: 1, g: 1, b: 1, a: 0.7490196}
-  dangerColor: {r: 1, g: 0.54700005, b: 0.54700005, a: 0.7490196}
-  endColor: {r: 0.6862745, g: 0.84705883, b: 0.99215686, a: 0.7490196}
+  endColor: {r: 0.6868548, g: 0.84630316, b: 0.990566, a: 0.7490196}
+  dangerColor: {r: 0.9245283, g: 0.7391183, b: 0.33579564, a: 0.7490196}
   terminateColor: {r: 1, g: 0.2783019, b: 0.2783019, a: 0.7490196}
+  penaltyTimeImage: {fileID: 28759595}
 --- !u!114 &554263048
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9332,7 +9451,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 0
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -9763,6 +9882,7 @@ MonoBehaviour:
   timeLimit: 0
   isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  seed: 5
   grabTransform: {fileID: 845794440}
   grab: {fileID: 4381265060945316290}
   crateTransform: {fileID: 886802228472308051}
@@ -9836,8 +9956,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bbb0054f4e138146a6b78d56bf767c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useObjects: 0
   targetTag: Accessory
-  targetObject: {fileID: 0}
+  targetObjects: []
 --- !u!65 &595766731
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10412,6 +10533,7 @@ MonoBehaviour:
   timeLimit: 0
   isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  seed: 23
   reachablePoint: {fileID: 1587606300}
   lineRenderer: {fileID: 36680576}
   circularPath: {fileID: 1055799848}
@@ -10710,8 +10832,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d07f3450b505a594abdce949bad11f74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useObjects: 0
   targetTag: Player
-  targetObject: {fileID: 0}
+  targetObjects: []
   radius: 1.7
   physicalRadiusOffset: 0.5
   height: 1
@@ -12143,6 +12266,7 @@ MonoBehaviour:
   timeLimit: 120
   isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  seed: 45
   reachablePoint: {fileID: 1587606300}
   lineRenderer: {fileID: 36680576}
   circularPath: {fileID: 1055799848}
@@ -12384,8 +12508,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bbb0054f4e138146a6b78d56bf767c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetTag: Pipe
-  targetObject: {fileID: 0}
+  useObjects: 1
+  targetTag: 
+  targetObjects:
+  - {fileID: 1911529670}
 --- !u!65 &812498090
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13222,8 +13348,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49672243a4404c349afad1b2ac4a2da4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetTag: Box
-  targetObject: {fileID: 0}
+  useObjects: 1
+  targetTag: 
+  targetObjects:
+  - {fileID: 1300820085}
+  - {fileID: 5937359}
+  - {fileID: 1408164167}
+  - {fileID: 1784030265}
+  - {fileID: 569696675}
+  - {fileID: 978953244}
   globalScale: {x: 0.7, y: 0.2, z: 2}
   requiredObjectsAmount: 3
   resultValue: 1
@@ -13405,8 +13538,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bbb0054f4e138146a6b78d56bf767c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useObjects: 0
   targetTag: Accessory
-  targetObject: {fileID: 0}
+  targetObjects: []
 --- !u!65 &884246228
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -13593,6 +13727,7 @@ MonoBehaviour:
   timeLimit: 170
   isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  seed: 30
   grabTransform: {fileID: 845794440}
   grab: {fileID: 4381265060945316290}
   crateTransform: {fileID: 886802228472308051}
@@ -13693,12 +13828,25 @@ MonoBehaviour:
   timeLimit: 0
   isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  seed: 24
   reachablePoint: {fileID: 1587606300}
   lineRenderer: {fileID: 36680576}
   circularPath: {fileID: 1055799848}
   smoothQuestLine: {fileID: 36680578}
   expectedSegmentsCount: 6
   pointsInSegment: 7
+--- !u!114 &913086385 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3808638854716218239, guid: 193e1280724caae49847c91093fedb01,
+    type: 3}
+  m_PrefabInstance: {fileID: 873063609282323665}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe05f77c93254ee40a5a9b94eac5da39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &919209447
 GameObject:
   m_ObjectHideFlags: 0
@@ -13998,6 +14146,7 @@ MonoBehaviour:
   timeLimit: 200
   isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  seed: 31
   grabTransform: {fileID: 845794440}
   grab: {fileID: 4381265060945316290}
   crateTransform: {fileID: 886802228472308051}
@@ -14104,6 +14253,7 @@ MonoBehaviour:
   timeLimit: 0
   isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  seed: 15
   grabTransform: {fileID: 845794440}
   grab: {fileID: 4381265060945316290}
   crateTransform: {fileID: 886802228472308051}
@@ -14207,8 +14357,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49672243a4404c349afad1b2ac4a2da4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetTag: Box
-  targetObject: {fileID: 0}
+  useObjects: 1
+  targetTag: 
+  targetObjects:
+  - {fileID: 1103354775}
+  - {fileID: 703701393}
+  - {fileID: 491241755}
+  - {fileID: 640170965}
   globalScale: {x: 1.1, y: 0.2, z: 1.1}
   requiredObjectsAmount: 1
   resultValue: 1
@@ -14269,8 +14424,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49672243a4404c349afad1b2ac4a2da4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetTag: Box
-  targetObject: {fileID: 0}
+  useObjects: 1
+  targetTag: 
+  targetObjects:
+  - {fileID: 1300820085}
+  - {fileID: 5937359}
+  - {fileID: 1408164167}
+  - {fileID: 1784030265}
+  - {fileID: 569696675}
+  - {fileID: 978953244}
   globalScale: {x: 0.7, y: 0.2, z: 0.4}
   requiredObjectsAmount: 1
   resultValue: 1
@@ -14491,8 +14653,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bbb0054f4e138146a6b78d56bf767c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useObjects: 0
   targetTag: Accessory
-  targetObject: {fileID: 0}
+  targetObjects: []
 --- !u!65 &965829733
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14580,8 +14743,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49672243a4404c349afad1b2ac4a2da4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetTag: Box
-  targetObject: {fileID: 0}
+  useObjects: 1
+  targetTag: 
+  targetObjects:
+  - {fileID: 1103354775}
+  - {fileID: 703701393}
+  - {fileID: 491241755}
+  - {fileID: 640170965}
   globalScale: {x: 1.1, y: 0.2, z: 1.1}
   requiredObjectsAmount: 1
   resultValue: 1
@@ -14734,8 +14902,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bbb0054f4e138146a6b78d56bf767c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useObjects: 0
   targetTag: Accessory
-  targetObject: {fileID: 0}
+  targetObjects: []
 --- !u!65 &998696559
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -14878,8 +15047,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bbb0054f4e138146a6b78d56bf767c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useObjects: 0
   targetTag: Accessory
-  targetObject: {fileID: 0}
+  targetObjects: []
 --- !u!65 &1000068046
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15700,6 +15870,7 @@ MonoBehaviour:
   timeLimit: 0
   isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  seed: 17
   grabTransform: {fileID: 845794440}
   grab: {fileID: 4381265060945316290}
   crateTransform: {fileID: 886802228472308051}
@@ -15904,6 +16075,7 @@ MonoBehaviour:
   timeLimit: 0
   isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  seed: 9
   grabTransform: {fileID: 845794440}
   grab: {fileID: 4381265060945316290}
   crateTransform: {fileID: 886802228472308051}
@@ -16653,6 +16825,7 @@ MonoBehaviour:
   timeLimit: 0
   isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  seed: 10
   grabTransform: {fileID: 845794440}
   grab: {fileID: 4381265060945316290}
   crateTransform: {fileID: 886802228472308051}
@@ -16892,6 +17065,7 @@ MonoBehaviour:
   timeLimit: 160
   isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  seed: 49
   reachablePoint: {fileID: 1587606300}
   lineRenderer: {fileID: 36680576}
   circularPath: {fileID: 1055799848}
@@ -16976,6 +17150,7 @@ MonoBehaviour:
   timeLimit: 290
   isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  seed: 43
   grabTransform: {fileID: 845794440}
   grab: {fileID: 4381265060945316290}
   crateTransform: {fileID: 886802228472308051}
@@ -17049,8 +17224,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bbb0054f4e138146a6b78d56bf767c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useObjects: 0
   targetTag: Accessory
-  targetObject: {fileID: 0}
+  targetObjects: []
 --- !u!65 &1150568525
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17292,6 +17468,7 @@ MonoBehaviour:
   timeLimit: 150
   isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  seed: 48
   reachablePoint: {fileID: 1587606300}
   lineRenderer: {fileID: 36680576}
   circularPath: {fileID: 1055799848}
@@ -17372,8 +17549,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bbb0054f4e138146a6b78d56bf767c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useObjects: 0
   targetTag: Accessory
-  targetObject: {fileID: 0}
+  targetObjects: []
 --- !u!65 &1179984063
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -18355,6 +18533,7 @@ MonoBehaviour:
   timeLimit: 215
   isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  seed: 33
   grabTransform: {fileID: 845794440}
   grab: {fileID: 4381265060945316290}
   crateTransform: {fileID: 886802228472308051}
@@ -18428,8 +18607,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49672243a4404c349afad1b2ac4a2da4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetTag: Box
-  targetObject: {fileID: 0}
+  useObjects: 1
+  targetTag: 
+  targetObjects:
+  - {fileID: 1847411927928087210}
   globalScale: {x: 2, y: 0.2, z: 2}
   requiredObjectsAmount: 1
   resultValue: -1
@@ -18892,8 +19073,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bbb0054f4e138146a6b78d56bf767c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useObjects: 0
   targetTag: Accessory
-  targetObject: {fileID: 0}
+  targetObjects: []
 --- !u!65 &1281176487
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19070,6 +19252,7 @@ MonoBehaviour:
   timeLimit: 0
   isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  seed: 19
   grabTransform: {fileID: 845794440}
   grab: {fileID: 4381265060945316290}
   crateTransform: {fileID: 886802228472308051}
@@ -19418,8 +19601,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49672243a4404c349afad1b2ac4a2da4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetTag: Pipe
-  targetObject: {fileID: 0}
+  useObjects: 1
+  targetTag: 
+  targetObjects:
+  - {fileID: 4683406080720506961}
   globalScale: {x: 1, y: 0.1, z: 1}
   requiredObjectsAmount: 1
   resultValue: 1
@@ -19513,6 +19698,7 @@ MonoBehaviour:
   timeLimit: 0
   isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  seed: 27
   reachablePoint: {fileID: 1587606300}
   lineRenderer: {fileID: 36680576}
   circularPath: {fileID: 1055799848}
@@ -19659,8 +19845,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d07f3450b505a594abdce949bad11f74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useObjects: 0
   targetTag: Player
-  targetObject: {fileID: 0}
+  targetObjects: []
   radius: 1.7
   physicalRadiusOffset: 0.5
   height: 1
@@ -19964,8 +20151,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bbb0054f4e138146a6b78d56bf767c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useObjects: 0
   targetTag: Accessory
-  targetObject: {fileID: 0}
+  targetObjects: []
 --- !u!65 &1392859191
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20023,8 +20211,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bbb0054f4e138146a6b78d56bf767c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useObjects: 0
   targetTag: Accessory
-  targetObject: {fileID: 0}
+  targetObjects: []
 --- !u!65 &1397072515
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20082,8 +20271,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bbb0054f4e138146a6b78d56bf767c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useObjects: 0
   targetTag: Accessory
-  targetObject: {fileID: 0}
+  targetObjects: []
 --- !u!65 &1398757056
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20754,8 +20944,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bbb0054f4e138146a6b78d56bf767c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useObjects: 0
   targetTag: Accessory
-  targetObject: {fileID: 0}
+  targetObjects: []
 --- !u!65 &1450283579
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20852,8 +21043,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bbb0054f4e138146a6b78d56bf767c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useObjects: 0
   targetTag: Accessory
-  targetObject: {fileID: 0}
+  targetObjects: []
 --- !u!65 &1455157730
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20974,6 +21166,7 @@ MonoBehaviour:
   timeLimit: 0
   isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  seed: 13
   grabTransform: {fileID: 845794440}
   grab: {fileID: 4381265060945316290}
   crateTransform: {fileID: 886802228472308051}
@@ -21074,6 +21267,7 @@ MonoBehaviour:
   timeLimit: 0
   isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  seed: 20
   reachablePoint: {fileID: 1587606300}
   lineRenderer: {fileID: 36680576}
   circularPath: {fileID: 1055799848}
@@ -21162,6 +21356,85 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1470053606}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1470291764
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1470291765}
+  - component: {fileID: 1470291767}
+  - component: {fileID: 1470291766}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1470291765
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1470291764}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 28759594}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1470291766
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1470291764}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 11
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 1
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 0
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: "\u0448\u0442\u0440\u0430\u0444\u043D\u043E\u0435 \u0432\u0440\u0435\u043C\u044F"
+--- !u!222 &1470291767
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1470291764}
+  m_CullTransparentMesh: 1
 --- !u!1001 &1473697304
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21462,6 +21735,7 @@ MonoBehaviour:
   timeLimit: 260
   isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  seed: 37
   grabTransform: {fileID: 845794440}
   grab: {fileID: 4381265060945316290}
   crateTransform: {fileID: 886802228472308051}
@@ -21626,8 +21900,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bbb0054f4e138146a6b78d56bf767c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useObjects: 0
   targetTag: Accessory
-  targetObject: {fileID: 0}
+  targetObjects: []
 --- !u!65 &1492484172
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21685,8 +21960,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bbb0054f4e138146a6b78d56bf767c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useObjects: 0
   targetTag: Accessory
-  targetObject: {fileID: 0}
+  targetObjects: []
 --- !u!65 &1500729963
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21970,6 +22246,7 @@ MonoBehaviour:
   timeLimit: 215
   isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  seed: 34
   grabTransform: {fileID: 845794440}
   grab: {fileID: 4381265060945316290}
   crateTransform: {fileID: 886802228472308051}
@@ -22266,8 +22543,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49672243a4404c349afad1b2ac4a2da4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetTag: Box
-  targetObject: {fileID: 0}
+  useObjects: 1
+  targetTag: 
+  targetObjects:
+  - {fileID: 1103354775}
+  - {fileID: 703701393}
+  - {fileID: 491241755}
+  - {fileID: 640170965}
   globalScale: {x: 1.1, y: 0.2, z: 1.1}
   requiredObjectsAmount: 1
   resultValue: 1
@@ -22510,8 +22792,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bbb0054f4e138146a6b78d56bf767c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useObjects: 0
   targetTag: Accessory
-  targetObject: {fileID: 0}
+  targetObjects: []
 --- !u!65 &1549098450
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22826,8 +23109,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bbb0054f4e138146a6b78d56bf767c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useObjects: 0
   targetTag: Accessory
-  targetObject: {fileID: 0}
+  targetObjects: []
 --- !u!65 &1567071247
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22913,6 +23197,7 @@ MonoBehaviour:
   timeLimit: 130
   isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  seed: 46
   reachablePoint: {fileID: 1587606300}
   lineRenderer: {fileID: 36680576}
   circularPath: {fileID: 1055799848}
@@ -22963,8 +23248,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bbb0054f4e138146a6b78d56bf767c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useObjects: 0
   targetTag: Accessory
-  targetObject: {fileID: 0}
+  targetObjects: []
 --- !u!65 &1580665034
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23022,8 +23308,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bbb0054f4e138146a6b78d56bf767c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useObjects: 0
   targetTag: Accessory
-  targetObject: {fileID: 0}
+  targetObjects: []
 --- !u!65 &1582339737
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23214,8 +23501,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a51a409d7c82ff942841d6a95db0e757, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useObjects: 0
   targetTag: 
-  targetObject: {fileID: 0}
+  targetObjects: []
 --- !u!135 &1587606301
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -23835,8 +24123,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bbb0054f4e138146a6b78d56bf767c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useObjects: 0
   targetTag: Accessory
-  targetObject: {fileID: 0}
+  targetObjects: []
 --- !u!65 &1630173785
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -23957,6 +24246,7 @@ MonoBehaviour:
   timeLimit: 0
   isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  seed: 3
   grabTransform: {fileID: 845794440}
   grab: {fileID: 4381265060945316290}
   crateTransform: {fileID: 886802228472308051}
@@ -24063,6 +24353,7 @@ MonoBehaviour:
   timeLimit: 0
   isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  seed: 4
   grabTransform: {fileID: 845794440}
   grab: {fileID: 4381265060945316290}
   crateTransform: {fileID: 886802228472308051}
@@ -24169,6 +24460,7 @@ MonoBehaviour:
   timeLimit: 0
   isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  seed: 6
   grabTransform: {fileID: 845794440}
   grab: {fileID: 4381265060945316290}
   crateTransform: {fileID: 886802228472308051}
@@ -24373,8 +24665,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bbb0054f4e138146a6b78d56bf767c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useObjects: 0
   targetTag: Accessory
-  targetObject: {fileID: 0}
+  targetObjects: []
 --- !u!65 &1656292531
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -25399,6 +25692,7 @@ MonoBehaviour:
   timeLimit: 0
   isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  seed: 28
   reachablePoint: {fileID: 1587606300}
   lineRenderer: {fileID: 36680576}
   circularPath: {fileID: 1055799848}
@@ -25467,11 +25761,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 463862829695948710, guid: cb253ef8bbc61644b8164cc2ccb4f527,
-        type: 3}
-      propertyPath: m_Constraints
-      value: 14
-      objectReference: {fileID: 0}
     - target: {fileID: 463862829695948711, guid: cb253ef8bbc61644b8164cc2ccb4f527,
         type: 3}
       propertyPath: m_Name
@@ -25482,46 +25771,6 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 463862829695948711, guid: cb253ef8bbc61644b8164cc2ccb4f527,
-        type: 3}
-      propertyPath: m_TagString
-      value: Spawned Prop
-      objectReference: {fileID: 0}
-    - target: {fileID: 463862830789009481, guid: cb253ef8bbc61644b8164cc2ccb4f527,
-        type: 3}
-      propertyPath: m_TagString
-      value: Spawned Prop
-      objectReference: {fileID: 0}
-    - target: {fileID: 2059914015558942808, guid: cb253ef8bbc61644b8164cc2ccb4f527,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 8c2510eaf2a1f664f8ba6508d2f96b3c, type: 2}
-    - target: {fileID: 2138100448731365872, guid: cb253ef8bbc61644b8164cc2ccb4f527,
-        type: 3}
-      propertyPath: m_TagString
-      value: Spawned Prop
-      objectReference: {fileID: 0}
-    - target: {fileID: 2666262489620896407, guid: cb253ef8bbc61644b8164cc2ccb4f527,
-        type: 3}
-      propertyPath: m_TagString
-      value: Spawned Prop
-      objectReference: {fileID: 0}
-    - target: {fileID: 3101298538469403060, guid: cb253ef8bbc61644b8164cc2ccb4f527,
-        type: 3}
-      propertyPath: m_TagString
-      value: Spawned Prop
-      objectReference: {fileID: 0}
-    - target: {fileID: 5808075169194644592, guid: cb253ef8bbc61644b8164cc2ccb4f527,
-        type: 3}
-      propertyPath: m_TagString
-      value: Spawned Prop
-      objectReference: {fileID: 0}
-    - target: {fileID: 6434686972896249609, guid: cb253ef8bbc61644b8164cc2ccb4f527,
-        type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: 8c2510eaf2a1f664f8ba6508d2f96b3c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb253ef8bbc61644b8164cc2ccb4f527, type: 3}
 --- !u!4 &1722393258 stripped
@@ -25655,8 +25904,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bbb0054f4e138146a6b78d56bf767c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useObjects: 0
   targetTag: Accessory
-  targetObject: {fileID: 0}
+  targetObjects: []
 --- !u!65 &1730583987
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -25925,6 +26175,18 @@ Transform:
   m_Father: {fileID: 1034078524}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: -25.283, z: 0}
+--- !u!114 &1792192944 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4253764484526644500, guid: 7dd361f7aa6616f499b62421ee44aedd,
+    type: 3}
+  m_PrefabInstance: {fileID: 6344856738462755073}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe05f77c93254ee40a5a9b94eac5da39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1794270404
 GameObject:
   m_ObjectHideFlags: 0
@@ -25974,8 +26236,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d07f3450b505a594abdce949bad11f74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useObjects: 0
   targetTag: Player
-  targetObject: {fileID: 0}
+  targetObjects: []
   radius: 1.7
   physicalRadiusOffset: 0.5
   height: 1
@@ -26086,8 +26349,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49672243a4404c349afad1b2ac4a2da4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetTag: Box
-  targetObject: {fileID: 0}
+  useObjects: 1
+  targetTag: 
+  targetObjects:
+  - {fileID: 1300820085}
+  - {fileID: 5937359}
+  - {fileID: 1408164167}
+  - {fileID: 1784030265}
+  - {fileID: 569696675}
+  - {fileID: 978953244}
   globalScale: {x: 0.7, y: 0.2, z: 1.2}
   requiredObjectsAmount: 2
   resultValue: 1
@@ -26181,6 +26451,7 @@ MonoBehaviour:
   timeLimit: 0
   isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  seed: 1
   grabTransform: {fileID: 845794440}
   grab: {fileID: 4381265060945316290}
   crateTransform: {fileID: 886802228472308051}
@@ -26254,8 +26525,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49672243a4404c349afad1b2ac4a2da4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetTag: Box
-  targetObject: {fileID: 0}
+  useObjects: 1
+  targetTag: 
+  targetObjects:
+  - {fileID: 1847411927928087210}
   globalScale: {x: 2, y: 0.2, z: 2}
   requiredObjectsAmount: 1
   resultValue: 1
@@ -26402,8 +26675,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bbb0054f4e138146a6b78d56bf767c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useObjects: 0
   targetTag: Accessory
-  targetObject: {fileID: 0}
+  targetObjects: []
 --- !u!65 &1812234073
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26521,8 +26795,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bbb0054f4e138146a6b78d56bf767c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useObjects: 0
   targetTag: Accessory
-  targetObject: {fileID: 0}
+  targetObjects: []
 --- !u!65 &1820478113
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -26867,8 +27142,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49672243a4404c349afad1b2ac4a2da4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetTag: Table
-  targetObject: {fileID: 0}
+  useObjects: 1
+  targetTag: 
+  targetObjects:
+  - {fileID: 7876400831219051581}
   globalScale: {x: 2, y: 0.2, z: 2}
   requiredObjectsAmount: 1
   resultValue: 2
@@ -26971,6 +27248,11 @@ PrefabInstance:
         type: 3}
       propertyPath: targetTag
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5964397945629334195, guid: d3c32eb23ad92b24eb032059065f0ca9,
+        type: 3}
+      propertyPath: useObjects
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5964397945629334195, guid: d3c32eb23ad92b24eb032059065f0ca9,
         type: 3}
@@ -27539,6 +27821,7 @@ MonoBehaviour:
   timeLimit: 0
   isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  seed: 12
   grabTransform: {fileID: 845794440}
   grab: {fileID: 4381265060945316290}
   crateTransform: {fileID: 886802228472308051}
@@ -27799,6 +28082,7 @@ MonoBehaviour:
   timeLimit: 0
   isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  seed: 22
   reachablePoint: {fileID: 1587606300}
   lineRenderer: {fileID: 36680576}
   circularPath: {fileID: 1055799848}
@@ -27928,8 +28212,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bbb0054f4e138146a6b78d56bf767c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useObjects: 0
   targetTag: Accessory
-  targetObject: {fileID: 0}
+  targetObjects: []
 --- !u!65 &1885795906
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -28416,8 +28701,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bbb0054f4e138146a6b78d56bf767c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useObjects: 0
   targetTag: Accessory
-  targetObject: {fileID: 0}
+  targetObjects: []
 --- !u!65 &1913142604
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -28683,8 +28969,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bbb0054f4e138146a6b78d56bf767c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useObjects: 0
   targetTag: Accessory
-  targetObject: {fileID: 0}
+  targetObjects: []
 --- !u!65 &1930511653
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -28863,6 +29150,7 @@ MonoBehaviour:
   timeLimit: 0
   isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  seed: 26
   reachablePoint: {fileID: 1587606300}
   lineRenderer: {fileID: 36680576}
   circularPath: {fileID: 1055799848}
@@ -28966,10 +29254,8 @@ GameObject:
   - component: {fileID: 1947762043}
   - component: {fileID: 1947762044}
   m_Layer: 0
-  m_Name: "\u0421\u043E\u0437\u0434\u0430\u043D\u0438\u0435 \u043E\u0442\u0432\u0435\u0440\u0441\u0442\u0438\u044F
-    \u0432 \u0441\u0442\u0435\u043D\u0435 \u0438 \u0443\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0430
-    \u0442\u0440\u0443\u0431\u044B \u0432 \u043F\u043E\u043B\u0443\u0447\u0435\u043D\u043D\u043E\u0435
-    \u043E\u0442\u0432\u0435\u0440\u0441\u0442\u0438\u0435"
+  m_Name: "\u0423\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0430 \u0442\u0440\u0443\u0431\u044B
+    \u0432 \u043E\u0442\u0432\u0435\u0440\u0441\u0442\u0438\u0435 \u0432 \u0441\u0442\u0435\u043D\u0435"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -29002,10 +29288,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   taskNamePrefix: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 2</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
-  taskNameBody: "\u0421\u043E\u0437\u0434\u0430\u043D\u0438\u0435 \u043E\u0442\u0432\u0435\u0440\u0441\u0442\u0438\u044F
-    \u0432 \u0441\u0442\u0435\u043D\u0435 \u0438 \u0443\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0430
-    \u0442\u0440\u0443\u0431\u044B \u0432 \u043F\u043E\u043B\u0443\u0447\u0435\u043D\u043D\u043E\u0435
-    \u043E\u0442\u0432\u0435\u0440\u0441\u0442\u0438\u0435"
+  taskNameBody: "\u0423\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0430 \u0442\u0440\u0443\u0431\u044B
+    \u0432 \u043E\u0442\u0432\u0435\u0440\u0441\u0442\u0438\u0435 \u0432 \u0441\u0442\u0435\u043D\u0435"
   taskNameSuffix: 
   taskName: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 2.</color> \u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430.
     \u0423\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0430 \u0442\u0440\u0443\u0431\u044B
@@ -29271,9 +29555,9 @@ MonoBehaviour:
   pointOfInterest: {fileID: 1831884235}
   pointOfInterestDefaultPosition: {fileID: 659616549}
   targetObjects:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 434670087}
+  - {fileID: 913086385}
+  - {fileID: 1792192944}
   targetObjectsDefaultPositions:
   - {fileID: 1191110579}
   - {fileID: 1888136236}
@@ -29424,8 +29708,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bbb0054f4e138146a6b78d56bf767c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useObjects: 0
   targetTag: Accessory
-  targetObject: {fileID: 0}
+  targetObjects: []
 --- !u!65 &1972449770
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -29752,8 +30037,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49672243a4404c349afad1b2ac4a2da4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  targetTag: Box
-  targetObject: {fileID: 0}
+  useObjects: 1
+  targetTag: 
+  targetObjects:
+  - {fileID: 1702830208}
+  - {fileID: 50044531}
   globalScale: {x: 2, y: 0.2, z: 2}
   requiredObjectsAmount: 2
   resultValue: 1
@@ -30110,8 +30398,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bbb0054f4e138146a6b78d56bf767c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useObjects: 0
   targetTag: Accessory
-  targetObject: {fileID: 0}
+  targetObjects: []
 --- !u!65 &2016989564
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -30363,6 +30652,7 @@ MonoBehaviour:
   timeLimit: 200
   isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  seed: 32
   grabTransform: {fileID: 845794440}
   grab: {fileID: 4381265060945316290}
   crateTransform: {fileID: 886802228472308051}
@@ -30469,6 +30759,7 @@ MonoBehaviour:
   timeLimit: 0
   isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  seed: 2
   grabTransform: {fileID: 845794440}
   grab: {fileID: 4381265060945316290}
   crateTransform: {fileID: 886802228472308051}
@@ -30684,16 +30975,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1667463970}
     m_Modifications:
-    - target: {fileID: 731352589895502745, guid: 92689af070d6e634fb95de7b82455385,
-        type: 3}
-      propertyPath: m_TagString
-      value: Spawned Prop
-      objectReference: {fileID: 0}
-    - target: {fileID: 1665347193924754991, guid: 92689af070d6e634fb95de7b82455385,
-        type: 3}
-      propertyPath: m_TagString
-      value: Spawned Prop
-      objectReference: {fileID: 0}
     - target: {fileID: 1743202246149877000, guid: 92689af070d6e634fb95de7b82455385,
         type: 3}
       propertyPath: m_RootOrder
@@ -30758,56 +31039,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1801286997347468344, guid: 92689af070d6e634fb95de7b82455385,
-        type: 3}
-      propertyPath: m_TagString
-      value: Spawned Prop
-      objectReference: {fileID: 0}
-    - target: {fileID: 2011127506905700053, guid: 92689af070d6e634fb95de7b82455385,
-        type: 3}
-      propertyPath: m_TagString
-      value: Spawned Prop
-      objectReference: {fileID: 0}
-    - target: {fileID: 2186162246727325133, guid: 92689af070d6e634fb95de7b82455385,
-        type: 3}
-      propertyPath: m_Constraints
-      value: 14
-      objectReference: {fileID: 0}
-    - target: {fileID: 2732901777988305909, guid: 92689af070d6e634fb95de7b82455385,
-        type: 3}
-      propertyPath: m_TagString
-      value: Spawned Prop
-      objectReference: {fileID: 0}
-    - target: {fileID: 2737441368430170660, guid: 92689af070d6e634fb95de7b82455385,
-        type: 3}
-      propertyPath: m_TagString
-      value: Spawned Prop
-      objectReference: {fileID: 0}
-    - target: {fileID: 4311093619550807853, guid: 92689af070d6e634fb95de7b82455385,
-        type: 3}
-      propertyPath: m_TagString
-      value: Spawned Prop
-      objectReference: {fileID: 0}
-    - target: {fileID: 5249485053563330686, guid: 92689af070d6e634fb95de7b82455385,
-        type: 3}
-      propertyPath: m_TagString
-      value: Spawned Prop
-      objectReference: {fileID: 0}
-    - target: {fileID: 5948247973508173321, guid: 92689af070d6e634fb95de7b82455385,
-        type: 3}
-      propertyPath: m_TagString
-      value: Spawned Prop
-      objectReference: {fileID: 0}
-    - target: {fileID: 5979383135203269850, guid: 92689af070d6e634fb95de7b82455385,
-        type: 3}
-      propertyPath: m_TagString
-      value: Spawned Prop
-      objectReference: {fileID: 0}
-    - target: {fileID: 7947303239415578801, guid: 92689af070d6e634fb95de7b82455385,
-        type: 3}
-      propertyPath: m_TagString
-      value: Spawned Prop
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 92689af070d6e634fb95de7b82455385, type: 3}
@@ -30967,6 +31198,7 @@ MonoBehaviour:
   timeLimit: 0
   isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  seed: 25
   reachablePoint: {fileID: 1587606300}
   lineRenderer: {fileID: 36680576}
   circularPath: {fileID: 1055799848}
@@ -31125,6 +31357,7 @@ MonoBehaviour:
   timeLimit: 0
   isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  seed: 14
   grabTransform: {fileID: 845794440}
   grab: {fileID: 4381265060945316290}
   crateTransform: {fileID: 886802228472308051}
@@ -31556,6 +31789,7 @@ MonoBehaviour:
   timeLimit: 275
   isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  seed: 39
   grabTransform: {fileID: 845794440}
   grab: {fileID: 4381265060945316290}
   crateTransform: {fileID: 886802228472308051}
@@ -31648,6 +31882,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1715325146}
+  - {fileID: 554263046}
   m_Father: {fileID: 18072066}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -31847,8 +32082,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bbb0054f4e138146a6b78d56bf767c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useObjects: 0
   targetTag: Accessory
-  targetObject: {fileID: 0}
+  targetObjects: []
 --- !u!65 &2132873090
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -32019,6 +32255,7 @@ MonoBehaviour:
   timeLimit: 290
   isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  seed: 41
   grabTransform: {fileID: 845794440}
   grab: {fileID: 4381265060945316290}
   crateTransform: {fileID: 886802228472308051}
@@ -33988,8 +34225,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d07f3450b505a594abdce949bad11f74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  useObjects: 0
   targetTag: Player
-  targetObject: {fileID: 0}
+  targetObjects: []
   radius: 2.83
   physicalRadiusOffset: 0.5
   height: 1
@@ -34678,11 +34916,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1667463970}
     m_Modifications:
-    - target: {fileID: 6344856737411971757, guid: 7dd361f7aa6616f499b62421ee44aedd,
-        type: 3}
-      propertyPath: rigidbodyHandler
-      value: 
-      objectReference: {fileID: 6344856738462755074}
     - target: {fileID: 6344856738800949670, guid: 7dd361f7aa6616f499b62421ee44aedd,
         type: 3}
       propertyPath: m_Name
@@ -34751,12 +34984,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7dd361f7aa6616f499b62421ee44aedd, type: 3}
---- !u!54 &6344856738462755074 stripped
-Rigidbody:
-  m_CorrespondingSourceObject: {fileID: 6344856738800949673, guid: 7dd361f7aa6616f499b62421ee44aedd,
-    type: 3}
-  m_PrefabInstance: {fileID: 6344856738462755073}
-  m_PrefabAsset: {fileID: 0}
 --- !u!23 &6346059551203657723
 MeshRenderer:
   m_ObjectHideFlags: 0

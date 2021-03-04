@@ -55,6 +55,7 @@ public class ObjectMovement : Task
         {
             obj.SetActive(false);
         }
+        pointOfInterest.targetObjects.Clear();
         grabTransform.gameObject.SetActive(false);
         pointOfInterest.gameObject.SetActive(false);
         marker.gameObject.SetActive(false);
@@ -77,8 +78,8 @@ public class ObjectMovement : Task
         {
             marker.gameObject.SetActive(true);
             marker.UpdatePosition(targetObjects[currentObject].gameObject);
-
-            pointOfInterest.targetObject = targetObjects[currentObject].transform;
+            pointOfInterest.targetObjects.Clear();
+            pointOfInterest.targetObjects.Add(targetObjects[currentObject].transform);
             pointOfInterest.ResetReached();
             if (showUniqueDescriptions) SetStage(currentObject + 1, Task_1, showInstructions);
             else SetStage(1, Task_1, showInstructions);

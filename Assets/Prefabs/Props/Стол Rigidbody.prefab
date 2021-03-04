@@ -188,7 +188,7 @@ GameObject:
   - component: {fileID: 5129930106849776834}
   m_Layer: 0
   m_Name: "\u0421\u0442\u043E\u043B Rigidbody"
-  m_TagString: Table
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -627,7 +627,7 @@ PrefabInstance:
     - target: {fileID: -927199367670048503, guid: 9731ae733ad6eeb4bbb62f803e53e4f1,
         type: 3}
       propertyPath: m_TagString
-      value: Table
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9731ae733ad6eeb4bbb62f803e53e4f1, type: 3}

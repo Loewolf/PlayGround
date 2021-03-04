@@ -5,9 +5,6 @@ TagManager:
   serializedVersion: 2
   tags:
   - Accessory
-  - Box
-  - Table
-  - Pipe
   - Spawned Prop
   - Wall Fragment
   - Attachable Object Collider

@@ -5,6 +5,8 @@ using UnityEngine.UI;
 public class EducationHandler : MonoBehaviour
 {
     public static EducationHandler instance;
+    private IEnumerator check;
+    private const float updateRate = 0.0625f;
 
     [Space(10)]
     public Text taskDescription;
@@ -18,7 +20,8 @@ public class EducationHandler : MonoBehaviour
     [Header("Таймер")]
     public TimerContent timerContent;
     public string timeoutText;
-
+    private float valueMultiplier;
+    private float penaltyTime;
     private Task task = null;
     private bool taskValuesAreSet = false;
     private Task previousTask = null;
@@ -36,6 +39,7 @@ public class EducationHandler : MonoBehaviour
         else
         {
             instance = this;
+            check = Check();
         }
     }
 
@@ -92,6 +96,7 @@ public class EducationHandler : MonoBehaviour
         maskFlicker = MaskFlicker(null, false, null);
         SetMaskAlpha(1f);
         step = 2f / effectDuration;
+        StartCoroutine(check);
     }
 
     public void SetTextValues(string newTaskDescription, bool instructionsEnabled, string newInstruction)
@@ -119,7 +124,7 @@ public class EducationHandler : MonoBehaviour
             timerIsUsed = true;
             timeLeft = value;
             timerContent.UpdateTime(timeLeft);
-            timerContent.SetDefaultColor();
+            timerContent.SetDefaultValues();
         }
         timerContent.gameObject.SetActive(timerIsUsed);
     }
@@ -145,6 +150,8 @@ public class EducationHandler : MonoBehaviour
             ChangeWindowsActivity(true);
             SetTextValues(task.GetCurrentDescription(), task.instructionsEnabled, task.GetCurrentInstruction());
             SetTimer(task.GetTimeWithDelay());
+            penaltyTime = -task.timeLimit;
+            valueMultiplier = 1f;
             ResetEffect();
             taskValuesAreSet = true;
         }
@@ -155,7 +162,7 @@ public class EducationHandler : MonoBehaviour
         if (taskValuesAreSet)
         {
             previousTask = task;
-            task.TurnIn(result);
+            task.TurnIn(result, valueMultiplier);
             task = null;
             taskValuesAreSet = false;
         }
@@ -168,52 +175,60 @@ public class EducationHandler : MonoBehaviour
         instructionObject.gameObject.SetActive(value);
     }
 
-    private void Update()
+    private IEnumerator Check()
     {
-        if (taskValuesAreSet)
+        while (true)
         {
-            UpdateTime();
-            int result = task.CheckStageTask();
-            switch (result)
+            if (taskValuesAreSet)
             {
-                case 1: // если 1, то промежуточный этап задачи успешно выполнен
-                    {
-                        StopCoroutine(maskFlicker);
-                        maskFlicker = MaskFlicker(task.GetCurrentDescription(), task.instructionsEnabled, task.GetCurrentInstruction());
-                        StartCoroutine(maskFlicker);
-                        break;
-                    }
-                case 2: // если 2, то задача успешно выполнена
-                    {
-                        // установить число очков за задание, равное value в task
+                UpdateTime();
+                int result = task.CheckStageTask();
+                switch (result)
+                {
+                    case 1: // если 1, то промежуточный этап задачи успешно выполнен
+                        {
+                            StopCoroutine(maskFlicker);
+                            maskFlicker = MaskFlicker(task.GetCurrentDescription(), task.instructionsEnabled, task.GetCurrentInstruction());
+                            StartCoroutine(maskFlicker);
+                            break;
+                        }
+                    case 2: // если 2, то задача успешно выполнена
+                        {
+                            // установить число очков за задание, равное value в task
 
-                        EndTask(true);
-                        break;
-                    }
-                case -1: // если -1, то достигнут этап, при котором завершить задачу невозможно, требуется перезапуск задания
-                    {
-                        // предложить пользователю перезапустить задание или вернуться в меню
-                        EndTask(false);
-                        break;
-                    }
-                default: break; // если 0, то выполняется промежуточный этап задачи
+                            EndTask(true);
+                            break;
+                        }
+                    case -1: // если -1, то достигнут этап, при котором завершить задачу невозможно, требуется перезапуск задания
+                        {
+                            // предложить пользователю перезапустить задание или вернуться в меню
+                            EndTask(false);
+                            break;
+                        }
+                    default: break; // если 0, то выполняется промежуточный этап задачи
+                }
             }
+            yield return new WaitForSeconds(updateRate);
         }
     }
 
     private void UpdateTime()
     {
-        if (timerIsUsed)
+        if (timerIsUsed && !task.isWaitingForCompletion)
         {
-            timeLeft -= Time.deltaTime;
+            timeLeft -= updateRate;
             timerContent.UpdateTime(timeLeft);
-            if (timeLeft <= 0 && !task.isWaitingForCompletion)
+            if (timeLeft <= 0)
             {
-                task.TerminateTask();
-                StopCoroutine(maskFlicker);
-                maskFlicker = MaskFlicker(timeoutText, false, null);
-                StartCoroutine(maskFlicker);
-                timerIsUsed = false;
+                valueMultiplier = (penaltyTime - timeLeft) / penaltyTime;
+                if (timeLeft <= penaltyTime)
+                {
+                    task.TerminateTask();
+                    StopCoroutine(maskFlicker);
+                    maskFlicker = MaskFlicker(timeoutText, false, null);
+                    StartCoroutine(maskFlicker);
+                    timerIsUsed = false;
+                }
             }
         }
     }

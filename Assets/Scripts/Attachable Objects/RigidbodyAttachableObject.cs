@@ -15,10 +15,12 @@ public class RigidbodyAttachableObject : CenterOfMass
         rigidbody.useGravity = false;
         rigidbody.constraints = RigidbodyConstraints.FreezeAll;
         transform.parent = parent;
+        rigidbody.gameObject.SetActive(false);
     }
 
     public void ReturnToHandler()
     {
+        rigidbody.gameObject.SetActive(true);
         rigidbody.transform.position = transform.position;
         rigidbody.transform.rotation = transform.rotation;
         transform.parent = rigidbody.gameObject.transform;

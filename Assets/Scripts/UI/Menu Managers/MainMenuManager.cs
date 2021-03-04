@@ -10,7 +10,6 @@ public class MainMenuManager : MonoBehaviour
     public PauseMenuManager PauseMenuManager;
     public GameObject MainMenu;
     public AllTasks AllTasks;
-    public EducationHandler educationHandler;
     private CreateListLevel _createList;
     private bool _isActive;
 
@@ -55,7 +54,7 @@ public class MainMenuManager : MonoBehaviour
     public void NewEducation()
     {
         AllTasks.ResetTask();
-        educationHandler.DropTask();
+        EducationHandler.instance.DropTask();
         _createList.SetTasks(AllTasks.Tasks, TaskMode.Education);
         //PauseMenuManager.Pause();
         Close();

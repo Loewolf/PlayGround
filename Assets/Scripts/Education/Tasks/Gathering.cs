@@ -11,6 +11,7 @@ public class TransformQuantity
 public class Gathering : Task
 {
     [Header("Объекты, связанные с задачей")]
+    public int seed = 0;
     public Transform grabTransform;
     public RigidbodyGrab grab;
     [Space(15)]
@@ -41,6 +42,7 @@ public class Gathering : Task
 
     protected override void EnableTaskGameObjects()
     {
+        Random.InitState(seed);
         grabTransform.gameObject.SetActive(true);
         robot.accessoryJoinPoint.SetAccessory(grab);       
 

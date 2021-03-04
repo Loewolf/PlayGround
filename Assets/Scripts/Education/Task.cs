@@ -130,20 +130,21 @@ public class Task : MonoBehaviour, TaskCurrentValue
         SetStage(0, Task_0, instructionsEnabled);
     }
 
-    public int TurnIn(bool isCompleted)
+    public int TurnIn(bool isCompleted, float valueMultiplier)
     {
         DisableTaskGameObjects();
         DropSpecialState();
         isWaitingForCompletion = false;
         if (isCompleted)
         {
+            int newValue = Mathf.FloorToInt(valueMultiplier * value);
             if (taskMode == TaskMode.Education)
             {
-                currentValue = currentValue < value ? value : currentValue;
+                currentValue = currentValue < newValue ? newValue : currentValue;
             }
             else
             {
-                currentExtraValue = currentExtraValue < value ? value : currentExtraValue;
+                currentExtraValue = currentExtraValue < newValue ? newValue : currentExtraValue;
             }
             return value;
         }

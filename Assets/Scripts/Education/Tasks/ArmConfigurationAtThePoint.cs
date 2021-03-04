@@ -92,7 +92,7 @@ public class ArmConfigurationAtThePoint : Task
     {
         for (int i = 0; i < robot.articulationBodyRotations.Count; ++i)
         {
-            if (Vector3.SqrMagnitude(robot.articulationBodyRotations[i].transform.position - armController.rotations[i].transform.position) > 0.0025f)
+            if (Vector3.SqrMagnitude(robot.articulationBodyRotations[i].transform.position - armController.rotations[i].transform.position) > 0.005f)
             {
                 return false;
             }
