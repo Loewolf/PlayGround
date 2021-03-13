@@ -2861,7 +2861,6 @@ MonoBehaviour:
   PauseMenuManager: {fileID: 1062155591}
   MainMenu: {fileID: 1266101704}
   AllTasks: {fileID: 1693494934}
-  educationHandler: {fileID: 0}
 --- !u!1 &151343001
 GameObject:
   m_ObjectHideFlags: 0
@@ -23501,7 +23500,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a51a409d7c82ff942841d6a95db0e757, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  useObjects: 0
+  useObjects: 1
   targetTag: 
   targetObjects: []
 --- !u!135 &1587606301
