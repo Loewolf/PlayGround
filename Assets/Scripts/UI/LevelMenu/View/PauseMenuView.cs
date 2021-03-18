@@ -8,19 +8,16 @@ using UnityEngine.UI;
 
 namespace View
 {
-
+    
     public class PauseMenuView : BaseView<IPauseMenuView>, IPauseMenuView
     {
         public PauseMenuManager PauseMenuManager { get; set; }
-
         protected override IPauseMenuView View => this;
-        
         public event Action ResumeEvent;
         public event Action<IMenuView> ResetEvent;
         public event Action MainMenuEvent;
         public event Action<IMenuView> SelectLevelEvent;
-
-
+        
 
         protected override IController<T> CreateController<T>()
         {

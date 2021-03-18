@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Controllers;
 using Core;
 using UnityEngine;
+using UnityEngine.UI;
 using View;
 
 public class PauseMenuManager : MonoBehaviour
@@ -15,12 +16,11 @@ public class PauseMenuManager : MonoBehaviour
     public MainMenuManager MainMenuManager;
     public EducationHandler educationHandler;
     private Stack<IMenuView> _thisStackView = new Stack<IMenuView>();
-    
     [Header("Buttons")]
     public KeyCode PauseButton;
     public KeyCode BackButton;
 
-    
+
     private void Awake()
     {
         PauseMenuView.PauseMenuManager = this;
@@ -37,6 +37,7 @@ public class PauseMenuManager : MonoBehaviour
             //если открыто главное меню, паузу не открываем
             return;
         }
+
         Time.timeScale = 0;
         AddStackView(PauseMenuView);
         PauseMenuView.Open();

@@ -2912,6 +2912,7 @@ MonoBehaviour:
   MainMenu: {fileID: 1266101704}
   AllTasks: {fileID: 1693494934}
   educationHandler: {fileID: 869738938}
+  _firstSelectButton: {fileID: 129384412}
 --- !u!1 &151343001
 GameObject:
   m_ObjectHideFlags: 0
@@ -3727,6 +3728,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c5e9380a54dbc74cbf101765f809657, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _firstSelectButton: {fileID: 0}
 --- !u!114 &176910845
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9765,6 +9767,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae103ba933a32924f97727e084f2a866, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _firstSelectButton: {fileID: 645645815}
 --- !u!114 &654058459
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -21213,7 +21216,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -0.00036621094}
   m_SizeDelta: {x: -0.00010274583, y: -650}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1553880925
@@ -25606,6 +25609,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a66c941da0d1cd40a4ebd4605e172da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _firstSelectButton: {fileID: 7924412}
 --- !u!114 &1866975300
 MonoBehaviour:
   m_ObjectHideFlags: 0
