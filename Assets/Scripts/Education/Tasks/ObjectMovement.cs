@@ -39,7 +39,7 @@ public class ObjectMovement : Task
         grabTransform.gameObject.SetActive(true);
         grabTransform.transform.position = grabDefaultPoint.position;
         grabTransform.transform.rotation = grabDefaultPoint.rotation;
-        if (!showInstructions) instructionsEnabled = false;
+        if (!showInstructions) InstructionsEnabled = false;
         pointOfInterest.transform.position = pointOfInterestDefaultPosition.position;
         pointOfInterest.transform.rotation = pointOfInterestDefaultPosition.rotation;
     }
@@ -86,8 +86,8 @@ public class ObjectMovement : Task
         }
         else
         {
-            if (showUniqueDescriptions) SetStage(length + 1, EndTask, false);
-            else SetStage(2, EndTask, false);
+            if (showUniqueDescriptions) SetStage(length + 1, CompleteTask, false);
+            else SetStage(2, CompleteTask, false);
         }
         return 1;
     }

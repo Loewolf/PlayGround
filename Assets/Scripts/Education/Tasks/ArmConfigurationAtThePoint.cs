@@ -70,7 +70,7 @@ public class ArmConfigurationAtThePoint : Task
         if (ComparePositions())
         {
             armController.gameObject.SetActive(false);
-            SetStage(3, EndTask, false);
+            SetStage(3, CompleteTask, false);
             return 1;
         }
         else

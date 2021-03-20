@@ -1,6 +1,5 @@
 ﻿using UnityEngine;
 using System;
-using System.Collections;
 
 public enum TaskMode
 {
@@ -19,7 +18,7 @@ public class Task : MonoBehaviour, TaskCurrentValue
     protected RobotController robot;
     public int currentValue { get; set; }
     public int currentExtraValue { get; set; }
-    public TaskMode taskMode { get; set; } // Определяет тип задачи: в режиме обучения или доп. тренировок
+    public TaskMode taskMode = TaskMode.Education; // Определяет тип задачи: в режиме обучения или доп. тренировок
     [Header("Наименование задачи")]
     public string taskNamePrefix;
     public string taskNameBody;
@@ -30,9 +29,9 @@ public class Task : MonoBehaviour, TaskCurrentValue
     public int value; // Количество очков, которое получит пользователь за выполнение задания
     public string[] taskDescriptions; // Набор описаний задачи
     public string[] instructions; // Набор инструкций для решения задачи
-    public bool instructionsEnabled; // При false отключает отображение текущей инструкции
+    public bool instructionsEnabledOnStart;
+    public bool InstructionsEnabled { get; protected set; }
     public Vector2Int[] pairs; // Набор из индексов описания и инструкций, который будет выведен на заданном этапе
-    private const float completionDelay = 5; // Задержка при завершении задания
     [Header("Таймер")]
     public float timeLimit = 0f; // Количество секунд, выделяемое на задание. Если меньше или равно 0, то таймер не запускается
     protected int stage = 0; // Этап выполнения задания. Стартовый этап имеет индекс 0
@@ -43,15 +42,12 @@ public class Task : MonoBehaviour, TaskCurrentValue
     protected Func<int> stageTask;
     protected string currentDescription;
     protected string currentInstruction;
-    protected IEnumerator waitForSeconds;
-    private int timerReturn = 0;
-    [HideInInspector] public bool isWaitingForCompletion = false; // Этот флаг поднимается при вызове EndTask или TerminateTask, чтобы по истечении времени таймера не происходил сброс задания
     [HideInInspector] public bool isSuccesfullyEnded = false;
+    [HideInInspector] public bool isWaitingForCompletion = false;
 
     protected void Awake()
     {
         ConnectNameParts();
-        waitForSeconds = WaitForSeconds(0, 0);
     }
 
     private void ConnectNameParts()
@@ -83,11 +79,11 @@ public class Task : MonoBehaviour, TaskCurrentValue
     {
         stage = nextStage;
         stageTask = newTask;
-        instructionsEnabled = instructionsStatus && pairs[stage].y < instructions.Length && instructions[pairs[stage].y] != "";
+        InstructionsEnabled = instructionsStatus && pairs[stage].y < instructions.Length && instructions[pairs[stage].y] != "";
         if (stage < pairs.Length)
         {
             currentDescription = taskDescriptions[pairs[stage].x];
-            if (instructionsEnabled)
+            if (InstructionsEnabled)
                 currentInstruction = instructions[pairs[stage].y];
             else
                 currentInstruction = null;
@@ -127,14 +123,17 @@ public class Task : MonoBehaviour, TaskCurrentValue
         RobotSetStartPosition();
         EnableTaskGameObjects();
         isWaitingForCompletion = false;
-        SetStage(0, Task_0, instructionsEnabled);
+        SetStage(0, Task_0, instructionsEnabledOnStart);
     }
 
-    public int TurnIn(bool isCompleted, float valueMultiplier)
+    public void Drop()
     {
         DisableTaskGameObjects();
         DropSpecialState();
-        isWaitingForCompletion = false;
+    }
+
+    public int Evaluate(bool isCompleted, float valueMultiplier)
+    {
         if (isCompleted)
         {
             int newValue = Mathf.FloorToInt(valueMultiplier * value);
@@ -158,38 +157,18 @@ public class Task : MonoBehaviour, TaskCurrentValue
         return 0;
     }
 
-    private void StartEndLoop(int resultValue, bool successValue)
+    protected int CompleteTask() // При успешном завершении задания требуется установить делегат stageTask, равный CompleteTask
     {
-        timerReturn = 0;
-        StopCoroutine(waitForSeconds);
-        waitForSeconds = WaitForSeconds(completionDelay, resultValue);
-        StartCoroutine(waitForSeconds);
+        isSuccesfullyEnded = true;
         isWaitingForCompletion = true;
-        isSuccesfullyEnded = successValue;
-        stageTask = EndLoop;
-    }
-
-    protected int EndTask() // При успешном завершении задания требуется установить делегат stageTask, равный EndTask
-    {
-        StartEndLoop(2, true);
-        return timerReturn;
+        return 2;
     }
 
     public int TerminateTask() // При неудачном завершении задания требуется установить делегат stageTask, равный TerminateTask
     {
-        StartEndLoop(-1, false);
-        return timerReturn;
-    }
-
-    protected int EndLoop()
-    {
-        return timerReturn;
-    }
-
-    protected IEnumerator WaitForSeconds(float seconds = 0, int returnValue = 2)
-    {
-        if (seconds>0) yield return new WaitForSeconds(seconds);
-        timerReturn = returnValue;
+        isSuccesfullyEnded = false;
+        isWaitingForCompletion = true;
+        return -1;
     }
 
     public void RemoveValue()

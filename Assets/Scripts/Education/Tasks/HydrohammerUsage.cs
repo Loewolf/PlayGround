@@ -66,7 +66,7 @@ public class HydrohammerUsage : Task
         {
             if (!hammer.hitPoints.activeSelf)
             {
-                SetStage(3, EndTask, false);
+                SetStage(3, CompleteTask, false);
                 return 1;
             }
             else return 0;

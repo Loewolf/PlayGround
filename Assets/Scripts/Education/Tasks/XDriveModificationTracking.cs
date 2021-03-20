@@ -43,7 +43,7 @@ public class XDriveModificationTracking : Task
         }
         else
         {
-            SetStage(valueDirectionPairs.Count, EndTask, false);
+            SetStage(valueDirectionPairs.Count, CompleteTask, false);
         }
         return 1;
     }

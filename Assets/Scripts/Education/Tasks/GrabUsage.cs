@@ -58,7 +58,7 @@ public class GrabUsage : Task
     {
         if (grab.CurrentRotationAngle <= lowestAngle)
         {
-            SetStage(3, EndTask, false);
+            SetStage(3, CompleteTask, false);
             return 1;
         }
         else return 0;

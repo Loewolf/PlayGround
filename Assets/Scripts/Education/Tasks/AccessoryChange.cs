@@ -112,7 +112,7 @@ public class AccessoryChange : Task
     {
         if (separationPoint.IsReached() && !robot.accessoryJoinPoint.Equipped)
         {
-            SetStage(5, EndTask, false);
+            SetStage(5, CompleteTask, false);
             return 1;
         }
         else

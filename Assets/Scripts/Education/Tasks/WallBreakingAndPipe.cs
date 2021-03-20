@@ -49,7 +49,7 @@ public class WallBreakingAndPipe : WallBreakingPattern
     {
         if (pipeTracker.IsReached() && !grab.AttachedObject)
         {
-            SetStage(2, EndTask, false);
+            SetStage(2, CompleteTask, false);
             return 1;
         }
         else return 0;

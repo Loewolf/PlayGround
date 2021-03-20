@@ -5,8 +5,6 @@ using UnityEngine.UI;
 public class EducationHandler : MonoBehaviour
 {
     public static EducationHandler instance;
-    private IEnumerator check;
-    private const float updateRate = 0.0625f;
 
     [Space(10)]
     public Text taskDescription;
@@ -24,10 +22,12 @@ public class EducationHandler : MonoBehaviour
     private float penaltyTime;
     private Task task = null;
     private bool taskValuesAreSet = false;
+    private bool taskNotEvaluated = false;
     private Task previousTask = null;
     private IEnumerator maskFlicker;
     private float alpha = 1f;
     private float step;
+    private IEnumerator dropTaskDelay;
 
     private void Awake()
     {
@@ -39,7 +39,7 @@ public class EducationHandler : MonoBehaviour
         else
         {
             instance = this;
-            check = Check();
+            dropTaskDelay = DropTaskDelay();
         }
     }
 
@@ -96,7 +96,6 @@ public class EducationHandler : MonoBehaviour
         maskFlicker = MaskFlicker(null, false, null);
         SetMaskAlpha(1f);
         step = 2f / effectDuration;
-        StartCoroutine(check);
     }
 
     public void SetTextValues(string newTaskDescription, bool instructionsEnabled, string newInstruction)
@@ -134,7 +133,7 @@ public class EducationHandler : MonoBehaviour
         task = newTask;
         if (DarkScreen.instance)
         {
-            DarkScreen.instance.ExecuteInDarkScreen(SetValuesFromTask);
+            DarkScreen.instance.ExecuteInDarkScreen(1f, SetValuesFromTask);
         }
         else
         {
@@ -148,25 +147,23 @@ public class EducationHandler : MonoBehaviour
         {
             task.Take(RobotSelector.instance.SelectedRobotController);
             ChangeWindowsActivity(true);
-            SetTextValues(task.GetCurrentDescription(), task.instructionsEnabled, task.GetCurrentInstruction());
+            SetTextValues(task.GetCurrentDescription(), task.InstructionsEnabled, task.GetCurrentInstruction());
             SetTimer(task.GetTimeWithDelay());
             penaltyTime = -task.timeLimit;
             valueMultiplier = 1f;
             ResetEffect();
             taskValuesAreSet = true;
+            taskNotEvaluated = true;
         }
     }
 
     public void EndTask(bool result)
     {
-        if (taskValuesAreSet)
-        {
-            previousTask = task;
-            task.TurnIn(result, valueMultiplier);
-            task = null;
-            taskValuesAreSet = false;
-        }
-        ChangeWindowsActivity(false);
+        task.Evaluate(result, valueMultiplier);
+        taskNotEvaluated = false;
+        StopCoroutine(dropTaskDelay);
+        dropTaskDelay = DropTaskDelay();
+        StartCoroutine(dropTaskDelay);
     }
 
     private void ChangeWindowsActivity(bool value)
@@ -175,40 +172,36 @@ public class EducationHandler : MonoBehaviour
         instructionObject.gameObject.SetActive(value);
     }
 
-    private IEnumerator Check()
+    private void Update()
     {
-        while (true)
+        if (taskValuesAreSet && taskNotEvaluated)
         {
-            if (taskValuesAreSet)
+            UpdateTime();
+            int result = task.CheckStageTask();
+            switch (result)
             {
-                UpdateTime();
-                int result = task.CheckStageTask();
-                switch (result)
-                {
-                    case 1: // если 1, то промежуточный этап задачи успешно выполнен
-                        {
-                            StopCoroutine(maskFlicker);
-                            maskFlicker = MaskFlicker(task.GetCurrentDescription(), task.instructionsEnabled, task.GetCurrentInstruction());
-                            StartCoroutine(maskFlicker);
-                            break;
-                        }
-                    case 2: // если 2, то задача успешно выполнена
-                        {
-                            // установить число очков за задание, равное value в task
+                case 1: // если 1, то промежуточный этап задачи успешно выполнен
+                    {
+                        StopCoroutine(maskFlicker);
+                        maskFlicker = MaskFlicker(task.GetCurrentDescription(), task.InstructionsEnabled, task.GetCurrentInstruction());
+                        StartCoroutine(maskFlicker);
+                        break;
+                    }
+                case 2: // если 2, то задача успешно выполнена
+                    {
+                        // установить число очков за задание, равное value в task
 
-                            EndTask(true);
-                            break;
-                        }
-                    case -1: // если -1, то достигнут этап, при котором завершить задачу невозможно, требуется перезапуск задания
-                        {
-                            // предложить пользователю перезапустить задание или вернуться в меню
-                            EndTask(false);
-                            break;
-                        }
-                    default: break; // если 0, то выполняется промежуточный этап задачи
-                }
+                        EndTask(true);
+                        break;
+                    }
+                case -1: // если -1, то достигнут этап, при котором завершить задачу невозможно, требуется перезапуск задания
+                    {
+                        // предложить пользователю перезапустить задание или вернуться в меню
+                        EndTask(false);
+                        break;
+                    }
+                default: break; // если 0, то выполняется промежуточный этап задачи
             }
-            yield return new WaitForSeconds(updateRate);
         }
     }
 
@@ -216,7 +209,7 @@ public class EducationHandler : MonoBehaviour
     {
         if (timerIsUsed && !task.isWaitingForCompletion)
         {
-            timeLeft -= updateRate;
+            timeLeft -= Time.deltaTime;
             timerContent.UpdateTime(timeLeft);
             if (timeLeft <= 0)
             {
@@ -237,7 +230,8 @@ public class EducationHandler : MonoBehaviour
     {
         if (task)
         {
-            EndTask(false);
+            StopCoroutine(dropTaskDelay);
+            DropTask();
             SetTask(previousTask);
         }
         else if (previousTask)
@@ -248,12 +242,26 @@ public class EducationHandler : MonoBehaviour
 
     public void DropAndSetTask(Task task)
     {
+        StopCoroutine(dropTaskDelay);
         DropTask();
         if (task) SetTask(task);
     }
 
     public void DropTask()
     {
-        EndTask(false);
+        if (taskValuesAreSet)
+        {
+            task.Drop();
+            previousTask = task;
+            task = null;
+            taskValuesAreSet = false;
+        }
+        ChangeWindowsActivity(false);
+    }
+
+    private IEnumerator DropTaskDelay()
+    {
+        yield return new WaitForSeconds(5f);
+        DropTask();
     }
 }

@@ -80,7 +80,7 @@ public class MovementAlongFigure : Task
             {
                 if (UpdatePosition())
                 {
-                    SetStage(1, EndTask, false); // Задание пройдено
+                    SetStage(1, CompleteTask, false); // Задание пройдено
                     return 1;
                 }
                 else return 0;

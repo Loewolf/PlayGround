@@ -76,7 +76,7 @@ public class WallBreaking : WallBreakingPattern
     {
         if (CountVisitedPoints() == reachablePointsAmount)
         {
-            SetStage(3, EndTask, false);
+            SetStage(3, CompleteTask, false);
             return 1;
         }
         else

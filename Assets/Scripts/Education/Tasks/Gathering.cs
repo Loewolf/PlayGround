@@ -83,7 +83,7 @@ public class Gathering : Task
     {
         if (destroyingArea.IsEnoughObjects())
         {
-            SetStage(1, EndTask, false); // Задание пройдено
+            SetStage(1, CompleteTask, false); // Задание пройдено
             return 1;
         }
         else if (!robot.accessoryJoinPoint.Equipped)

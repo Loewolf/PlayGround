@@ -47,7 +47,7 @@ public class KeyClickingAndHolding : Task
         remainingTime -= Time.deltaTime;
         if (remainingTime <= 0)
         {
-            SetStage(1, EndTask, false);
+            SetStage(1, CompleteTask, false);
             return 1;
         }
         else return 0;
@@ -58,7 +58,7 @@ public class KeyClickingAndHolding : Task
         remainingNumberOfClicks--;
         if (remainingNumberOfClicks <= 0)
         {
-            SetStage(1, EndTask, false);
+            SetStage(1, CompleteTask, false);
             return 1;
         }
         else return 0;

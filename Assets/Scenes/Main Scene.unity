@@ -607,6 +607,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a9eb5cf27ebd348b3c82953b93b8bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#a62c19ff>\u041A\u043B\u0430\u0441\u0441 3</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u0421\u0431\u043E\u0440 \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u043E\u0432."
   taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 19"
@@ -631,15 +632,15 @@ MonoBehaviour:
     \u0420\u043E\u0431\u043E\u0442 \u0434\u043E\u043B\u0436\u0435\u043D \u043E\u0441\u0442\u0430\u0432\u0430\u0442\u044C\u0441\u044F
     \u043D\u0435\u043F\u043E\u0434\u0432\u0438\u0436\u043D\u044B\u043C."
   instructions: []
-  instructionsEnabled: 0
+  instructionsEnabledOnStart: 0
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
   - {x: 3, y: 0}
   timeLimit: 0
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   seed: 18
   grabTransform: {fileID: 845794440}
   grab: {fileID: 4381265060945316290}
@@ -1098,6 +1099,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a427ac57c4041347b726a2e1bbc4b4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 2</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u0421\u043E\u0437\u0434\u0430\u043D\u0438\u0435 \u043F\u0438\u0440\u0430\u043C\u0438\u0434\u044B
     \u0438\u0437 \u0434\u0435\u0440\u0435\u0432\u044F\u043D\u043D\u044B\u0445 \u044F\u0449\u0438\u043A\u043E\u0432."
@@ -1123,14 +1125,14 @@ MonoBehaviour:
   - "\u041E\u0431\u0435\u0441\u043F\u0435\u0447\u044C\u0442\u0435 \u0443\u0441\u0442\u043E\u0439\u0447\u0438\u0432\u043E\u0441\u0442\u044C
     \u043A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0446\u0438\u0438 \u0432 \u0442\u0435\u0447\u0435\u043D\u0438\u0435
     5 \u0441\u0435\u043A\u0443\u043D\u0434"
-  instructionsEnabled: 1
+  instructionsEnabledOnStart: 1
   pairs:
   - {x: 0, y: 0}
   - {x: 0, y: 1}
   - {x: 1, y: 0}
   timeLimit: 0
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   stabilityTime: 5
   speedThreshold: 0.02
   accessory: {fileID: 845794440}
@@ -1202,6 +1204,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a9eb5cf27ebd348b3c82953b93b8bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#a62c19ff>\u041A\u043B\u0430\u0441\u0441 3</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u0421\u0431\u043E\u0440 \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u043E\u0432."
   taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 1"
@@ -1227,15 +1230,15 @@ MonoBehaviour:
     \u043D\u0435\u043F\u043E\u0434\u0432\u0438\u0436\u043D\u044B\u043C."
   instructions:
   - 
-  instructionsEnabled: 0
+  instructionsEnabledOnStart: 0
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
   - {x: 3, y: 0}
   timeLimit: 0
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   seed: 0
   grabTransform: {fileID: 845794440}
   grab: {fileID: 4381265060945316290}
@@ -1434,6 +1437,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a9eb5cf27ebd348b3c82953b93b8bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#a62c19ff>\u041A\u043B\u0430\u0441\u0441 3</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u0421\u0431\u043E\u0440 \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u043E\u0432."
   taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 9"
@@ -1458,15 +1462,15 @@ MonoBehaviour:
     \u0420\u043E\u0431\u043E\u0442 \u0434\u043E\u043B\u0436\u0435\u043D \u043E\u0441\u0442\u0430\u0432\u0430\u0442\u044C\u0441\u044F
     \u043D\u0435\u043F\u043E\u0434\u0432\u0438\u0436\u043D\u044B\u043C."
   instructions: []
-  instructionsEnabled: 0
+  instructionsEnabledOnStart: 0
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
   - {x: 3, y: 0}
   timeLimit: 0
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   seed: 8
   grabTransform: {fileID: 845794440}
   grab: {fileID: 4381265060945316290}
@@ -1892,6 +1896,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a9eb5cf27ebd348b3c82953b93b8bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#a62c19ff>\u041A\u043B\u0430\u0441\u0441 3</color>. <color=#c95624ff>\u0414\u043E\u043F.
     \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
   taskNameBody: "\u0421\u0431\u043E\u0440 \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u043E\u0432."
@@ -1917,15 +1922,15 @@ MonoBehaviour:
     \u0420\u043E\u0431\u043E\u0442 \u0434\u043E\u043B\u0436\u0435\u043D \u043E\u0441\u0442\u0430\u0432\u0430\u0442\u044C\u0441\u044F
     \u043D\u0435\u043F\u043E\u0434\u0432\u0438\u0436\u043D\u044B\u043C."
   instructions: []
-  instructionsEnabled: 0
+  instructionsEnabledOnStart: 0
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
   - {x: 3, y: 0}
   timeLimit: 260
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   seed: 42
   grabTransform: {fileID: 845794440}
   grab: {fileID: 4381265060945316290}
@@ -2196,6 +2201,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a9eb5cf27ebd348b3c82953b93b8bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#a62c19ff>\u041A\u043B\u0430\u0441\u0441 3</color>. <color=#c95624ff>\u0414\u043E\u043F.
     \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
   taskNameBody: "\u0421\u0431\u043E\u0440 \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u043E\u0432."
@@ -2221,15 +2227,15 @@ MonoBehaviour:
     \u0420\u043E\u0431\u043E\u0442 \u0434\u043E\u043B\u0436\u0435\u043D \u043E\u0441\u0442\u0430\u0432\u0430\u0442\u044C\u0441\u044F
     \u043D\u0435\u043F\u043E\u0434\u0432\u0438\u0436\u043D\u044B\u043C."
   instructions: []
-  instructionsEnabled: 0
+  instructionsEnabledOnStart: 0
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
   - {x: 3, y: 0}
   timeLimit: 260
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   seed: 38
   grabTransform: {fileID: 845794440}
   grab: {fileID: 4381265060945316290}
@@ -2304,6 +2310,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a9eb5cf27ebd348b3c82953b93b8bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#a62c19ff>\u041A\u043B\u0430\u0441\u0441 3</color>. <color=#c95624ff>\u0414\u043E\u043F.
     \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
   taskNameBody: "\u0421\u0431\u043E\u0440 \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u043E\u0432."
@@ -2329,15 +2336,15 @@ MonoBehaviour:
     \u0420\u043E\u0431\u043E\u0442 \u0434\u043E\u043B\u0436\u0435\u043D \u043E\u0441\u0442\u0430\u0432\u0430\u0442\u044C\u0441\u044F
     \u043D\u0435\u043F\u043E\u0434\u0432\u0438\u0436\u043D\u044B\u043C."
   instructions: []
-  instructionsEnabled: 0
+  instructionsEnabledOnStart: 0
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
   - {x: 3, y: 0}
   timeLimit: 245
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   seed: 40
   grabTransform: {fileID: 845794440}
   grab: {fileID: 4381265060945316290}
@@ -2861,6 +2868,7 @@ MonoBehaviour:
   PauseMenuManager: {fileID: 1062155591}
   MainMenu: {fileID: 1266101704}
   AllTasks: {fileID: 1693494934}
+  firstSelectedButton: {fileID: 129384412}
 --- !u!1 &151343001
 GameObject:
   m_ObjectHideFlags: 0
@@ -2935,6 +2943,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a9eb5cf27ebd348b3c82953b93b8bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#a62c19ff>\u041A\u043B\u0430\u0441\u0441 3</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u0421\u0431\u043E\u0440 \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u043E\u0432."
   taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 17"
@@ -2959,15 +2968,15 @@ MonoBehaviour:
     \u0420\u043E\u0431\u043E\u0442 \u0434\u043E\u043B\u0436\u0435\u043D \u043E\u0441\u0442\u0430\u0432\u0430\u0442\u044C\u0441\u044F
     \u043D\u0435\u043F\u043E\u0434\u0432\u0438\u0436\u043D\u044B\u043C."
   instructions: []
-  instructionsEnabled: 0
+  instructionsEnabledOnStart: 0
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
   - {x: 3, y: 0}
   timeLimit: 0
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   seed: 16
   grabTransform: {fileID: 845794440}
   grab: {fileID: 4381265060945316290}
@@ -3042,6 +3051,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a9eb5cf27ebd348b3c82953b93b8bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#a62c19ff>\u041A\u043B\u0430\u0441\u0441 3</color>. <color=#c95624ff>\u0414\u043E\u043F.
     \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
   taskNameBody: "\u0421\u0431\u043E\u0440 \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u043E\u0432."
@@ -3067,15 +3077,15 @@ MonoBehaviour:
     \u0420\u043E\u0431\u043E\u0442 \u0434\u043E\u043B\u0436\u0435\u043D \u043E\u0441\u0442\u0430\u0432\u0430\u0442\u044C\u0441\u044F
     \u043D\u0435\u043F\u043E\u0434\u0432\u0438\u0436\u043D\u044B\u043C."
   instructions: []
-  instructionsEnabled: 0
+  instructionsEnabledOnStart: 0
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
   - {x: 3, y: 0}
   timeLimit: 305
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   seed: 44
   grabTransform: {fileID: 845794440}
   grab: {fileID: 4381265060945316290}
@@ -3677,6 +3687,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c5e9380a54dbc74cbf101765f809657, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  firstSelectedButton: {fileID: 0}
 --- !u!114 &176910845
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4085,6 +4096,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b794838c737b50a41a02f30455fe7358, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 2</color>. <color=#c95624ff>\u0414\u043E\u043F.
     \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
   taskNameBody: "\u041F\u0435\u0440\u0435\u043C\u0435\u0449\u0435\u043D\u0438\u0435
@@ -4104,14 +4116,14 @@ MonoBehaviour:
   - "\u0417\u0430\u0434\u0430\u043D\u0438\u0435 \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u043E.
     \u041F\u043E\u0437\u0434\u0440\u0430\u0432\u043B\u044F\u0435\u043C!"
   instructions: []
-  instructionsEnabled: 0
+  instructionsEnabledOnStart: 0
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
   timeLimit: 200
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   showUniqueDescriptions: 0
   showInstructions: 0
   grabTransform: {fileID: 845794440}
@@ -4180,6 +4192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a427ac57c4041347b726a2e1bbc4b4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 2</color>. <color=#c95624ff>\u0414\u043E\u043F.
     \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
   taskNameBody: "\u0420\u0430\u0437\u043C\u0435\u0449\u0435\u043D\u0438\u0435 \u0442\u0440\u0443\u0431\u044B
@@ -4201,14 +4214,14 @@ MonoBehaviour:
   - "\u0417\u0430\u0434\u0430\u043D\u0438\u0435 \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u043E.
     \u041F\u043E\u0437\u0434\u0440\u0430\u0432\u043B\u044F\u0435\u043C!"
   instructions: []
-  instructionsEnabled: 0
+  instructionsEnabledOnStart: 0
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
   timeLimit: 120
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   stabilityTime: 5
   speedThreshold: 0.02
   accessory: {fileID: 845794440}
@@ -6674,6 +6687,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 347a434f215288d44968ef6c107309e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#a62c19ff>\u041A\u043B\u0430\u0441\u0441 3</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u041E\u043F\u0438\u0441\u0430\u043D\u0438\u0435 \u0444\u0438\u0433\u0443\u0440\u044B
     \u043E\u043A\u043E\u043D\u0447\u0430\u043D\u0438\u0435\u043C \u0441\u0442\u0440\u0435\u043B\u044B."
@@ -6692,14 +6706,14 @@ MonoBehaviour:
     \u0420\u043E\u0431\u043E\u0442 \u0434\u043E\u043B\u0436\u0435\u043D \u043E\u0441\u0442\u0430\u0432\u0430\u0442\u044C\u0441\u044F
     \u043D\u0435\u043F\u043E\u0434\u0432\u0438\u0436\u043D\u044B\u043C."
   instructions: []
-  instructionsEnabled: 0
+  instructionsEnabledOnStart: 0
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
   timeLimit: 0
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   seed: 21
   reachablePoint: {fileID: 1587606300}
   lineRenderer: {fileID: 36680576}
@@ -7041,6 +7055,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a427ac57c4041347b726a2e1bbc4b4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 2</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u0423\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0430 \u044F\u0449\u0438\u043A\u043E\u0432
     \u0434\u0440\u0443\u0433 \u043D\u0430 \u0434\u0440\u0443\u0433\u0430."
@@ -7066,14 +7081,14 @@ MonoBehaviour:
   - "\u041E\u0431\u0435\u0441\u043F\u0435\u0447\u044C\u0442\u0435 \u0443\u0441\u0442\u043E\u0439\u0447\u0438\u0432\u043E\u0441\u0442\u044C
     \u043A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0446\u0438\u0438 \u0432 \u0442\u0435\u0447\u0435\u043D\u0438\u0435
     5 \u0441\u0435\u043A\u0443\u043D\u0434"
-  instructionsEnabled: 1
+  instructionsEnabledOnStart: 1
   pairs:
   - {x: 0, y: 0}
   - {x: 0, y: 1}
   - {x: 1, y: 0}
   timeLimit: 0
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   stabilityTime: 5
   speedThreshold: 0.02
   accessory: {fileID: 845794440}
@@ -7302,6 +7317,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a9eb5cf27ebd348b3c82953b93b8bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#a62c19ff>\u041A\u043B\u0430\u0441\u0441 3</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u0421\u0431\u043E\u0440 \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u043E\u0432."
   taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 8"
@@ -7326,15 +7342,15 @@ MonoBehaviour:
     \u0420\u043E\u0431\u043E\u0442 \u0434\u043E\u043B\u0436\u0435\u043D \u043E\u0441\u0442\u0430\u0432\u0430\u0442\u044C\u0441\u044F
     \u043D\u0435\u043F\u043E\u0434\u0432\u0438\u0436\u043D\u044B\u043C."
   instructions: []
-  instructionsEnabled: 0
+  instructionsEnabledOnStart: 0
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
   - {x: 3, y: 0}
   timeLimit: 0
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   seed: 7
   grabTransform: {fileID: 845794440}
   grab: {fileID: 4381265060945316290}
@@ -7935,6 +7951,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a9eb5cf27ebd348b3c82953b93b8bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#a62c19ff>\u041A\u043B\u0430\u0441\u0441 3</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u0421\u0431\u043E\u0440 \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u043E\u0432."
   taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 12"
@@ -7959,15 +7976,15 @@ MonoBehaviour:
     \u0420\u043E\u0431\u043E\u0442 \u0434\u043E\u043B\u0436\u0435\u043D \u043E\u0441\u0442\u0430\u0432\u0430\u0442\u044C\u0441\u044F
     \u043D\u0435\u043F\u043E\u0434\u0432\u0438\u0436\u043D\u044B\u043C."
   instructions: []
-  instructionsEnabled: 0
+  instructionsEnabledOnStart: 0
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
   - {x: 3, y: 0}
   timeLimit: 0
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   seed: 11
   grabTransform: {fileID: 845794440}
   grab: {fileID: 4381265060945316290}
@@ -8429,6 +8446,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a427ac57c4041347b726a2e1bbc4b4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 2</color>. <color=#c95624ff>\u0414\u043E\u043F.
     \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
   taskNameBody: "\u0420\u0430\u0437\u043C\u0435\u0449\u0435\u043D\u0438\u0435 \u0442\u0440\u0443\u0431\u044B
@@ -8450,14 +8468,14 @@ MonoBehaviour:
   - "\u0417\u0430\u0434\u0430\u043D\u0438\u0435 \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u043E.
     \u041F\u043E\u0437\u0434\u0440\u0430\u0432\u043B\u044F\u0435\u043C!"
   instructions: []
-  instructionsEnabled: 0
+  instructionsEnabledOnStart: 0
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
   timeLimit: 140
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   stabilityTime: 5
   speedThreshold: 0.02
   accessory: {fileID: 845794440}
@@ -8523,6 +8541,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 347a434f215288d44968ef6c107309e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#a62c19ff>\u041A\u043B\u0430\u0441\u0441 3</color>. <color=#c95624ff>\u0414\u043E\u043F.
     \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
   taskNameBody: "\u041E\u043F\u0438\u0441\u0430\u043D\u0438\u0435 \u0444\u0438\u0433\u0443\u0440\u044B
@@ -8542,14 +8561,14 @@ MonoBehaviour:
     \u0420\u043E\u0431\u043E\u0442 \u0434\u043E\u043B\u0436\u0435\u043D \u043E\u0441\u0442\u0430\u0432\u0430\u0442\u044C\u0441\u044F
     \u043D\u0435\u043F\u043E\u0434\u0432\u0438\u0436\u043D\u044B\u043C."
   instructions: []
-  instructionsEnabled: 0
+  instructionsEnabledOnStart: 0
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
   timeLimit: 140
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   seed: 47
   reachablePoint: {fileID: 1587606300}
   lineRenderer: {fileID: 36680576}
@@ -8601,6 +8620,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a9eb5cf27ebd348b3c82953b93b8bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#a62c19ff>\u041A\u043B\u0430\u0441\u0441 3</color>. <color=#c95624ff>\u0414\u043E\u043F.
     \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
   taskNameBody: "\u0421\u0431\u043E\u0440 \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u043E\u0432."
@@ -8626,15 +8646,15 @@ MonoBehaviour:
     \u0420\u043E\u0431\u043E\u0442 \u0434\u043E\u043B\u0436\u0435\u043D \u043E\u0441\u0442\u0430\u0432\u0430\u0442\u044C\u0441\u044F
     \u043D\u0435\u043F\u043E\u0434\u0432\u0438\u0436\u043D\u044B\u043C."
   instructions: []
-  instructionsEnabled: 0
+  instructionsEnabledOnStart: 0
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
   - {x: 3, y: 0}
   timeLimit: 230
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   seed: 35
   grabTransform: {fileID: 845794440}
   grab: {fileID: 4381265060945316290}
@@ -8711,6 +8731,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6da7e014f1562f49a5db3d443d77120, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 2</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u0423\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0430 \u043D\u0430\u0432\u0435\u0441\u043D\u043E\u0433\u043E
     \u043E\u0431\u043E\u0440\u0443\u0434\u043E\u0432\u0430\u043D\u0438\u044F \u043D\u0430
@@ -8735,14 +8756,14 @@ MonoBehaviour:
   - "\u0427\u0442\u043E\u0431\u044B \u043F\u0440\u0438\u0441\u043E\u0435\u0434\u0438\u043D\u0438\u0442\u044C
     \u0438\u043B\u0438 \u0441\u043D\u044F\u0442\u044C \u043E\u0431\u043E\u0440\u0443\u0434\u043E\u0432\u0430\u043D\u0438\u0435,
     \u043D\u0430\u0436\u043C\u0438\u0442\u0435 '/'"
-  instructionsEnabled: 1
+  instructionsEnabledOnStart: 1
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
   timeLimit: 0
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   accessory: {fileID: 845794440}
   accessoryDefaultPoint: {fileID: 438357468}
   separationPoint: {fileID: 705163428}
@@ -8827,6 +8848,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a427ac57c4041347b726a2e1bbc4b4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 2</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u0421\u043E\u0437\u0434\u0430\u043D\u0438\u0435 \u043F\u0438\u0440\u0430\u043C\u0438\u0434\u044B
     \u0438\u0437 \u0434\u0435\u0440\u0435\u0432\u044F\u043D\u043D\u044B\u0445 \u044F\u0449\u0438\u043A\u043E\u0432."
@@ -8852,14 +8874,14 @@ MonoBehaviour:
   - "\u041E\u0431\u0435\u0441\u043F\u0435\u0447\u044C\u0442\u0435 \u0443\u0441\u0442\u043E\u0439\u0447\u0438\u0432\u043E\u0441\u0442\u044C
     \u043A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0446\u0438\u0438 \u0432 \u0442\u0435\u0447\u0435\u043D\u0438\u0435
     5 \u0441\u0435\u043A\u0443\u043D\u0434"
-  instructionsEnabled: 1
+  instructionsEnabledOnStart: 1
   pairs:
   - {x: 0, y: 0}
   - {x: 0, y: 1}
   - {x: 1, y: 0}
   timeLimit: 0
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   stabilityTime: 5
   speedThreshold: 0.02
   accessory: {fileID: 845794440}
@@ -8961,6 +8983,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de582d1ac89543b40b3e55ebb07bf0e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#004a17ff>\u041A\u043B\u0430\u0441\u0441 1</color>.  <color=#c95624ff>\u0414\u043E\u043F.
     \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
   taskNameBody: "\u0423\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0430 \u043F\u043E\u043B\u043E\u0436\u0435\u043D\u0438\u044F
@@ -8980,15 +9003,15 @@ MonoBehaviour:
   - "\u0417\u0430\u0434\u0430\u043D\u0438\u0435 \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u043E.
     \u041F\u043E\u0437\u0434\u0440\u0430\u0432\u043B\u044F\u0435\u043C!"
   instructions: []
-  instructionsEnabled: 0
+  instructionsEnabledOnStart: 0
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
   - {x: 3, y: 0}
   timeLimit: 120
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   armControllerVariations:
   - robot: {fileID: 1008201078752938241}
     armController: {fileID: 197536482}
@@ -9039,6 +9062,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 347a434f215288d44968ef6c107309e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#a62c19ff>\u041A\u043B\u0430\u0441\u0441 3</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u041E\u043F\u0438\u0441\u0430\u043D\u0438\u0435 \u0444\u0438\u0433\u0443\u0440\u044B
     \u043E\u043A\u043E\u043D\u0447\u0430\u043D\u0438\u0435\u043C \u0441\u0442\u0440\u0435\u043B\u044B."
@@ -9057,14 +9081,14 @@ MonoBehaviour:
     \u0420\u043E\u0431\u043E\u0442 \u0434\u043E\u043B\u0436\u0435\u043D \u043E\u0441\u0442\u0430\u0432\u0430\u0442\u044C\u0441\u044F
     \u043D\u0435\u043F\u043E\u0434\u0432\u0438\u0436\u043D\u044B\u043C."
   instructions: []
-  instructionsEnabled: 0
+  instructionsEnabledOnStart: 0
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
   timeLimit: 0
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   seed: 29
   reachablePoint: {fileID: 1587606300}
   lineRenderer: {fileID: 36680576}
@@ -9146,6 +9170,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a9eb5cf27ebd348b3c82953b93b8bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#a62c19ff>\u041A\u043B\u0430\u0441\u0441 3</color>. <color=#c95624ff>\u0414\u043E\u043F.
     \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
   taskNameBody: "\u0421\u0431\u043E\u0440 \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u043E\u0432."
@@ -9171,15 +9196,15 @@ MonoBehaviour:
     \u0420\u043E\u0431\u043E\u0442 \u0434\u043E\u043B\u0436\u0435\u043D \u043E\u0441\u0442\u0430\u0432\u0430\u0442\u044C\u0441\u044F
     \u043D\u0435\u043F\u043E\u0434\u0432\u0438\u0436\u043D\u044B\u043C."
   instructions: []
-  instructionsEnabled: 0
+  instructionsEnabledOnStart: 0
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
   - {x: 3, y: 0}
   timeLimit: 260
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   seed: 36
   grabTransform: {fileID: 845794440}
   grab: {fileID: 4381265060945316290}
@@ -9256,6 +9281,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6da7e014f1562f49a5db3d443d77120, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 2</color>. <color=#c95624ff>\u0414\u043E\u043F.
     \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
   taskNameBody: "\u0423\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0430 \u043D\u0430\u0432\u0435\u0441\u043D\u043E\u0433\u043E
@@ -9278,14 +9304,14 @@ MonoBehaviour:
   - "\u0417\u0430\u0434\u0430\u043D\u0438\u0435 \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u043E.
     \u041F\u043E\u0437\u0434\u0440\u0430\u0432\u043B\u044F\u0435\u043C!"
   instructions: []
-  instructionsEnabled: 0
+  instructionsEnabledOnStart: 0
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
   timeLimit: 65
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   accessory: {fileID: 1158231513691474937}
   accessoryDefaultPoint: {fileID: 1100518229}
   separationPoint: {fileID: 705163428}
@@ -9705,6 +9731,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea2f33926631ef446a00e7ef0531a740, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 2</color>. <color=#c95624ff>\u0414\u043E\u043F.
     \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
   taskNameBody: "\u0421\u043E\u0437\u0434\u0430\u043D\u0438\u0435 \u043E\u0442\u0432\u0435\u0440\u0441\u0442\u0438\u044F
@@ -9726,14 +9753,14 @@ MonoBehaviour:
   - "\u0417\u0430\u0434\u0430\u043D\u0438\u0435 \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u043E.
     \u041F\u043E\u0437\u0434\u0440\u0430\u0432\u043B\u044F\u0435\u043C!"
   instructions: []
-  instructionsEnabled: 0
+  instructionsEnabledOnStart: 0
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
   timeLimit: 180
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   hammerTransform: {fileID: 1158231513691474937}
   hammerDefaultPoint: {fileID: 1100518229}
   wallPrefab: {fileID: 3593526089474025579, guid: 747bfc91d5220c040a5fa1a7181686b1,
@@ -9848,6 +9875,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a9eb5cf27ebd348b3c82953b93b8bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#a62c19ff>\u041A\u043B\u0430\u0441\u0441 3</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u0421\u0431\u043E\u0440 \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u043E\u0432."
   taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 6"
@@ -9872,15 +9900,15 @@ MonoBehaviour:
     \u0420\u043E\u0431\u043E\u0442 \u0434\u043E\u043B\u0436\u0435\u043D \u043E\u0441\u0442\u0430\u0432\u0430\u0442\u044C\u0441\u044F
     \u043D\u0435\u043F\u043E\u0434\u0432\u0438\u0436\u043D\u044B\u043C."
   instructions: []
-  instructionsEnabled: 0
+  instructionsEnabledOnStart: 0
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
   - {x: 3, y: 0}
   timeLimit: 0
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   seed: 5
   grabTransform: {fileID: 845794440}
   grab: {fileID: 4381265060945316290}
@@ -10410,6 +10438,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae103ba933a32924f97727e084f2a866, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  firstSelectedButton: {fileID: 645645815}
 --- !u!114 &654058459
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10506,6 +10535,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 347a434f215288d44968ef6c107309e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#a62c19ff>\u041A\u043B\u0430\u0441\u0441 3</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u041E\u043F\u0438\u0441\u0430\u043D\u0438\u0435 \u0444\u0438\u0433\u0443\u0440\u044B
     \u043E\u043A\u043E\u043D\u0447\u0430\u043D\u0438\u0435\u043C \u0441\u0442\u0440\u0435\u043B\u044B."
@@ -10524,14 +10554,14 @@ MonoBehaviour:
     \u0420\u043E\u0431\u043E\u0442 \u0434\u043E\u043B\u0436\u0435\u043D \u043E\u0441\u0442\u0430\u0432\u0430\u0442\u044C\u0441\u044F
     \u043D\u0435\u043F\u043E\u0434\u0432\u0438\u0436\u043D\u044B\u043C."
   instructions: []
-  instructionsEnabled: 0
+  instructionsEnabledOnStart: 0
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
   timeLimit: 0
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   seed: 23
   reachablePoint: {fileID: 1587606300}
   lineRenderer: {fileID: 36680576}
@@ -11378,6 +11408,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de582d1ac89543b40b3e55ebb07bf0e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#004a17ff>\u041A\u043B\u0430\u0441\u0441 1</color>.  <color=#c95624ff>\u0414\u043E\u043F.
     \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
   taskNameBody: "\u0423\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0430 \u043F\u043E\u043B\u043E\u0436\u0435\u043D\u0438\u044F
@@ -11397,15 +11428,15 @@ MonoBehaviour:
   - "\u0417\u0430\u0434\u0430\u043D\u0438\u0435 \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u043E.
     \u041F\u043E\u0437\u0434\u0440\u0430\u0432\u043B\u044F\u0435\u043C!"
   instructions: []
-  instructionsEnabled: 0
+  instructionsEnabledOnStart: 0
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
   - {x: 3, y: 0}
   timeLimit: 120
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   armControllerVariations:
   - robot: {fileID: 1008201078752938241}
     armController: {fileID: 197536482}
@@ -11862,6 +11893,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c40c150d61a66ba469b94b4930dd6757, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 2</color>."
   taskNameBody: "\u041F\u0440\u0438\u0441\u043E\u0435\u0434\u0438\u043D\u0435\u043D\u0438\u0435/\u043E\u0442\u0441\u043E\u0435\u0434\u0438\u043D\u0435\u043D\u0438\u0435
     \u0433\u0438\u0434\u0440\u043E\u043C\u043E\u043B\u043E\u0442\u0430"
@@ -11899,7 +11931,7 @@ MonoBehaviour:
     '/'"
   - "\u0427\u0442\u043E\u0431\u044B \u0441\u043D\u044F\u0442\u044C \u043E\u0431\u043E\u0440\u0443\u0434\u043E\u0432\u0430\u043D\u0438\u0435,
     \u043D\u0430\u0436\u043C\u0438\u0442\u0435 '/'"
-  instructionsEnabled: 0
+  instructionsEnabledOnStart: 0
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
@@ -11908,8 +11940,8 @@ MonoBehaviour:
   - {x: 4, y: 1}
   - {x: 5, y: 0}
   timeLimit: 0
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   accessory: {fileID: 1158231513691474937}
   accessoryDefaultPoint: {fileID: 1100518229}
   joinPoint: {fileID: 440030326}
@@ -12238,6 +12270,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 347a434f215288d44968ef6c107309e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#a62c19ff>\u041A\u043B\u0430\u0441\u0441 3</color>. <color=#c95624ff>\u0414\u043E\u043F.
     \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
   taskNameBody: "\u041E\u043F\u0438\u0441\u0430\u043D\u0438\u0435 \u0444\u0438\u0433\u0443\u0440\u044B
@@ -12257,14 +12290,14 @@ MonoBehaviour:
     \u0420\u043E\u0431\u043E\u0442 \u0434\u043E\u043B\u0436\u0435\u043D \u043E\u0441\u0442\u0430\u0432\u0430\u0442\u044C\u0441\u044F
     \u043D\u0435\u043F\u043E\u0434\u0432\u0438\u0436\u043D\u044B\u043C."
   instructions: []
-  instructionsEnabled: 0
+  instructionsEnabledOnStart: 0
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
   timeLimit: 120
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   seed: 45
   reachablePoint: {fileID: 1587606300}
   lineRenderer: {fileID: 36680576}
@@ -13174,6 +13207,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6da7e014f1562f49a5db3d443d77120, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 2</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u0423\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0430 \u043D\u0430\u0432\u0435\u0441\u043D\u043E\u0433\u043E
     \u043E\u0431\u043E\u0440\u0443\u0434\u043E\u0432\u0430\u043D\u0438\u044F \u043D\u0430
@@ -13198,14 +13232,14 @@ MonoBehaviour:
   - "\u0427\u0442\u043E\u0431\u044B \u043F\u0440\u0438\u0441\u043E\u0435\u0434\u0438\u043D\u0438\u0442\u044C
     \u0438\u043B\u0438 \u0441\u043D\u044F\u0442\u044C \u043E\u0431\u043E\u0440\u0443\u0434\u043E\u0432\u0430\u043D\u0438\u0435,
     \u043D\u0430\u0436\u043C\u0438\u0442\u0435 '/'"
-  instructionsEnabled: 1
+  instructionsEnabledOnStart: 1
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
   timeLimit: 0
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   accessory: {fileID: 845794440}
   accessoryDefaultPoint: {fileID: 438357468}
   separationPoint: {fileID: 705163428}
@@ -13260,6 +13294,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6da7e014f1562f49a5db3d443d77120, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 2</color>. <color=#c95624ff>\u0414\u043E\u043F.
     \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
   taskNameBody: "\u0423\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0430 \u043D\u0430\u0432\u0435\u0441\u043D\u043E\u0433\u043E
@@ -13282,14 +13317,14 @@ MonoBehaviour:
   - "\u0417\u0430\u0434\u0430\u043D\u0438\u0435 \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u043E.
     \u041F\u043E\u0437\u0434\u0440\u0430\u0432\u043B\u044F\u0435\u043C!"
   instructions: []
-  instructionsEnabled: 0
+  instructionsEnabledOnStart: 0
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
   timeLimit: 90
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   accessory: {fileID: 845794440}
   accessoryDefaultPoint: {fileID: 438357468}
   separationPoint: {fileID: 705163428}
@@ -13692,6 +13727,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a9eb5cf27ebd348b3c82953b93b8bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#a62c19ff>\u041A\u043B\u0430\u0441\u0441 3</color>. <color=#c95624ff>\u0414\u043E\u043F.
     \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
   taskNameBody: "\u0421\u0431\u043E\u0440 \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u043E\u0432."
@@ -13717,15 +13753,15 @@ MonoBehaviour:
     \u0420\u043E\u0431\u043E\u0442 \u0434\u043E\u043B\u0436\u0435\u043D \u043E\u0441\u0442\u0430\u0432\u0430\u0442\u044C\u0441\u044F
     \u043D\u0435\u043F\u043E\u0434\u0432\u0438\u0436\u043D\u044B\u043C."
   instructions: []
-  instructionsEnabled: 0
+  instructionsEnabledOnStart: 0
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
   - {x: 3, y: 0}
   timeLimit: 170
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   seed: 30
   grabTransform: {fileID: 845794440}
   grab: {fileID: 4381265060945316290}
@@ -13801,6 +13837,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 347a434f215288d44968ef6c107309e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#a62c19ff>\u041A\u043B\u0430\u0441\u0441 3</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u041E\u043F\u0438\u0441\u0430\u043D\u0438\u0435 \u0444\u0438\u0433\u0443\u0440\u044B
     \u043E\u043A\u043E\u043D\u0447\u0430\u043D\u0438\u0435\u043C \u0441\u0442\u0440\u0435\u043B\u044B."
@@ -13819,14 +13856,14 @@ MonoBehaviour:
     \u0420\u043E\u0431\u043E\u0442 \u0434\u043E\u043B\u0436\u0435\u043D \u043E\u0441\u0442\u0430\u0432\u0430\u0442\u044C\u0441\u044F
     \u043D\u0435\u043F\u043E\u0434\u0432\u0438\u0436\u043D\u044B\u043C."
   instructions: []
-  instructionsEnabled: 0
+  instructionsEnabledOnStart: 0
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
   timeLimit: 0
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   seed: 24
   reachablePoint: {fileID: 1587606300}
   lineRenderer: {fileID: 36680576}
@@ -13969,6 +14006,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a427ac57c4041347b726a2e1bbc4b4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 2</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u0420\u0430\u0437\u043C\u0435\u0449\u0435\u043D\u0438\u0435 \u0442\u0440\u0443\u0431\u044B
     \u043D\u0430 \u044F\u0449\u0438\u043A\u0430\u0445."
@@ -13994,14 +14032,14 @@ MonoBehaviour:
   - "\u041E\u0431\u0435\u0441\u043F\u0435\u0447\u044C\u0442\u0435 \u0443\u0441\u0442\u043E\u0439\u0447\u0438\u0432\u043E\u0441\u0442\u044C
     \u043A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0446\u0438\u0438 \u0432 \u0442\u0435\u0447\u0435\u043D\u0438\u0435
     5 \u0441\u0435\u043A\u0443\u043D\u0434"
-  instructionsEnabled: 1
+  instructionsEnabledOnStart: 1
   pairs:
   - {x: 0, y: 0}
   - {x: 0, y: 1}
   - {x: 1, y: 0}
   timeLimit: 0
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   stabilityTime: 5
   speedThreshold: 0.02
   accessory: {fileID: 845794440}
@@ -14111,6 +14149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a9eb5cf27ebd348b3c82953b93b8bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#a62c19ff>\u041A\u043B\u0430\u0441\u0441 3</color>. <color=#c95624ff>\u0414\u043E\u043F.
     \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
   taskNameBody: "\u0421\u0431\u043E\u0440 \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u043E\u0432."
@@ -14136,15 +14175,15 @@ MonoBehaviour:
     \u0420\u043E\u0431\u043E\u0442 \u0434\u043E\u043B\u0436\u0435\u043D \u043E\u0441\u0442\u0430\u0432\u0430\u0442\u044C\u0441\u044F
     \u043D\u0435\u043F\u043E\u0434\u0432\u0438\u0436\u043D\u044B\u043C."
   instructions: []
-  instructionsEnabled: 0
+  instructionsEnabledOnStart: 0
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
   - {x: 3, y: 0}
   timeLimit: 200
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   seed: 31
   grabTransform: {fileID: 845794440}
   grab: {fileID: 4381265060945316290}
@@ -14219,6 +14258,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a9eb5cf27ebd348b3c82953b93b8bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#a62c19ff>\u041A\u043B\u0430\u0441\u0441 3</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u0421\u0431\u043E\u0440 \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u043E\u0432."
   taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 16"
@@ -14243,15 +14283,15 @@ MonoBehaviour:
     \u0420\u043E\u0431\u043E\u0442 \u0434\u043E\u043B\u0436\u0435\u043D \u043E\u0441\u0442\u0430\u0432\u0430\u0442\u044C\u0441\u044F
     \u043D\u0435\u043F\u043E\u0434\u0432\u0438\u0436\u043D\u044B\u043C."
   instructions: []
-  instructionsEnabled: 0
+  instructionsEnabledOnStart: 0
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
   - {x: 3, y: 0}
   timeLimit: 0
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   seed: 15
   grabTransform: {fileID: 845794440}
   grab: {fileID: 4381265060945316290}
@@ -14575,6 +14615,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de582d1ac89543b40b3e55ebb07bf0e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#004a17ff>\u041A\u043B\u0430\u0441\u0441 1</color>.  <color=#c95624ff>\u0414\u043E\u043F.
     \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
   taskNameBody: "\u0423\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0430 \u043F\u043E\u043B\u043E\u0436\u0435\u043D\u0438\u044F
@@ -14594,15 +14635,15 @@ MonoBehaviour:
   - "\u0417\u0430\u0434\u0430\u043D\u0438\u0435 \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u043E.
     \u041F\u043E\u0437\u0434\u0440\u0430\u0432\u043B\u044F\u0435\u043C!"
   instructions: []
-  instructionsEnabled: 0
+  instructionsEnabledOnStart: 0
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
   - {x: 3, y: 0}
   timeLimit: 100
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   armControllerVariations:
   - robot: {fileID: 1008201078752938241}
     armController: {fileID: 197536482}
@@ -15497,6 +15538,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e40d59f9fec3d14d9787dacfffc4695, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#004a17ff>\u041A\u043B\u0430\u0441\u0441 1</color>."
   taskNameBody: "\u041F\u043E\u0434\u043D\u0438\u043C\u0430\u043D\u0438\u0435 \u0430\u0443\u0442\u0440\u0438\u0433\u0435\u0440\u043E\u0432"
   taskNameSuffix: 
@@ -15515,13 +15557,13 @@ MonoBehaviour:
     \u043D\u0435 \u043D\u0430\u0436\u0438\u043C\u0430\u044F \u043A\u043D\u043E\u043F\u043E\u043A
     (\u0423\u0434\u0435\u0440\u0436\u0438\u0432\u0430\u0439\u0442\u0435 \u043A\u043B\u0430\u0432\u0438\u0448\u0443
     E \u043D\u0430 \u043A\u043B\u0430\u0432\u0438\u0430\u0442\u0443\u0440\u0435)"
-  instructionsEnabled: 1
+  instructionsEnabledOnStart: 1
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   timeLimit: 0
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   xDriveIndexVariations:
   - robot: {fileID: 1008201078752938241}
     index: 0
@@ -15657,6 +15699,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c81496004f5ebad4e9090d40db08e083, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 2</color>."
   taskNameBody: "\u0421\u043C\u0435\u0449\u0435\u043D\u0438\u0435 \u043A\u043B\u0435\u0448\u043D\u0435\u0439
     \u0433\u0440\u0435\u0439\u0444\u0435\u0440\u043D\u043E\u0433\u043E \u0437\u0430\u0445\u0432\u0430\u0442\u0430"
@@ -15697,15 +15740,15 @@ MonoBehaviour:
     \u043A\u043B\u0435\u0448\u043D\u0438, \u043D\u0430\u0436\u043C\u0438\u0442\u0435
     \u0438 \u0443\u0434\u0435\u0440\u0436\u0438\u0432\u0430\u0439\u0442\u0435 'Right
     Mouse Button'"
-  instructionsEnabled: 1
+  instructionsEnabledOnStart: 1
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 1}
   - {x: 2, y: 2}
   - {x: 3, y: 0}
   timeLimit: 0
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   grabTransform: {fileID: 845794440}
   grab: {fileID: 4381265060945316290}
   grabDefaultPoint: {fileID: 438357468}
@@ -15836,6 +15879,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a9eb5cf27ebd348b3c82953b93b8bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#a62c19ff>\u041A\u043B\u0430\u0441\u0441 3</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u0421\u0431\u043E\u0440 \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u043E\u0432."
   taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 18"
@@ -15860,15 +15904,15 @@ MonoBehaviour:
     \u0420\u043E\u0431\u043E\u0442 \u0434\u043E\u043B\u0436\u0435\u043D \u043E\u0441\u0442\u0430\u0432\u0430\u0442\u044C\u0441\u044F
     \u043D\u0435\u043F\u043E\u0434\u0432\u0438\u0436\u043D\u044B\u043C."
   instructions: []
-  instructionsEnabled: 0
+  instructionsEnabledOnStart: 0
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
   - {x: 3, y: 0}
   timeLimit: 0
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   seed: 17
   grabTransform: {fileID: 845794440}
   grab: {fileID: 4381265060945316290}
@@ -16041,6 +16085,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a9eb5cf27ebd348b3c82953b93b8bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#a62c19ff>\u041A\u043B\u0430\u0441\u0441 3</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u0421\u0431\u043E\u0440 \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u043E\u0432."
   taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 10"
@@ -16065,15 +16110,15 @@ MonoBehaviour:
     \u0420\u043E\u0431\u043E\u0442 \u0434\u043E\u043B\u0436\u0435\u043D \u043E\u0441\u0442\u0430\u0432\u0430\u0442\u044C\u0441\u044F
     \u043D\u0435\u043F\u043E\u0434\u0432\u0438\u0436\u043D\u044B\u043C."
   instructions: []
-  instructionsEnabled: 0
+  instructionsEnabledOnStart: 0
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
   - {x: 3, y: 0}
   timeLimit: 0
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   seed: 9
   grabTransform: {fileID: 845794440}
   grab: {fileID: 4381265060945316290}
@@ -16791,6 +16836,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a9eb5cf27ebd348b3c82953b93b8bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#a62c19ff>\u041A\u043B\u0430\u0441\u0441 3</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u0421\u0431\u043E\u0440 \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u043E\u0432."
   taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 11"
@@ -16815,15 +16861,15 @@ MonoBehaviour:
     \u0420\u043E\u0431\u043E\u0442 \u0434\u043E\u043B\u0436\u0435\u043D \u043E\u0441\u0442\u0430\u0432\u0430\u0442\u044C\u0441\u044F
     \u043D\u0435\u043F\u043E\u0434\u0432\u0438\u0436\u043D\u044B\u043C."
   instructions: []
-  instructionsEnabled: 0
+  instructionsEnabledOnStart: 0
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
   - {x: 3, y: 0}
   timeLimit: 0
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   seed: 10
   grabTransform: {fileID: 845794440}
   grab: {fileID: 4381265060945316290}
@@ -17037,6 +17083,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 347a434f215288d44968ef6c107309e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#a62c19ff>\u041A\u043B\u0430\u0441\u0441 3</color>. <color=#c95624ff>\u0414\u043E\u043F.
     \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
   taskNameBody: "\u041E\u043F\u0438\u0441\u0430\u043D\u0438\u0435 \u0444\u0438\u0433\u0443\u0440\u044B
@@ -17056,14 +17103,14 @@ MonoBehaviour:
     \u0420\u043E\u0431\u043E\u0442 \u0434\u043E\u043B\u0436\u0435\u043D \u043E\u0441\u0442\u0430\u0432\u0430\u0442\u044C\u0441\u044F
     \u043D\u0435\u043F\u043E\u0434\u0432\u0438\u0436\u043D\u044B\u043C."
   instructions: []
-  instructionsEnabled: 0
+  instructionsEnabledOnStart: 0
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
   timeLimit: 160
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   seed: 49
   reachablePoint: {fileID: 1587606300}
   lineRenderer: {fileID: 36680576}
@@ -17115,6 +17162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a9eb5cf27ebd348b3c82953b93b8bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#a62c19ff>\u041A\u043B\u0430\u0441\u0441 3</color>. <color=#c95624ff>\u0414\u043E\u043F.
     \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
   taskNameBody: "\u0421\u0431\u043E\u0440 \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u043E\u0432."
@@ -17140,15 +17188,15 @@ MonoBehaviour:
     \u0420\u043E\u0431\u043E\u0442 \u0434\u043E\u043B\u0436\u0435\u043D \u043E\u0441\u0442\u0430\u0432\u0430\u0442\u044C\u0441\u044F
     \u043D\u0435\u043F\u043E\u0434\u0432\u0438\u0436\u043D\u044B\u043C."
   instructions: []
-  instructionsEnabled: 0
+  instructionsEnabledOnStart: 0
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
   - {x: 3, y: 0}
   timeLimit: 290
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   seed: 43
   grabTransform: {fileID: 845794440}
   grab: {fileID: 4381265060945316290}
@@ -17362,6 +17410,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de582d1ac89543b40b3e55ebb07bf0e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#004a17ff>\u041A\u043B\u0430\u0441\u0441 1</color>.  <color=#c95624ff>\u0414\u043E\u043F.
     \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
   taskNameBody: "\u0423\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0430 \u043F\u043E\u043B\u043E\u0436\u0435\u043D\u0438\u044F
@@ -17381,15 +17430,15 @@ MonoBehaviour:
   - "\u0417\u0430\u0434\u0430\u043D\u0438\u0435 \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u043E.
     \u041F\u043E\u0437\u0434\u0440\u0430\u0432\u043B\u044F\u0435\u043C!"
   instructions: []
-  instructionsEnabled: 0
+  instructionsEnabledOnStart: 0
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
   - {x: 3, y: 0}
   timeLimit: 90
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   armControllerVariations:
   - robot: {fileID: 1008201078752938241}
     armController: {fileID: 197536482}
@@ -17440,6 +17489,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 347a434f215288d44968ef6c107309e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#a62c19ff>\u041A\u043B\u0430\u0441\u0441 3</color>. <color=#c95624ff>\u0414\u043E\u043F.
     \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
   taskNameBody: "\u041E\u043F\u0438\u0441\u0430\u043D\u0438\u0435 \u0444\u0438\u0433\u0443\u0440\u044B
@@ -17459,14 +17509,14 @@ MonoBehaviour:
     \u0420\u043E\u0431\u043E\u0442 \u0434\u043E\u043B\u0436\u0435\u043D \u043E\u0441\u0442\u0430\u0432\u0430\u0442\u044C\u0441\u044F
     \u043D\u0435\u043F\u043E\u0434\u0432\u0438\u0436\u043D\u044B\u043C."
   instructions: []
-  instructionsEnabled: 0
+  instructionsEnabledOnStart: 0
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
   timeLimit: 150
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   seed: 48
   reachablePoint: {fileID: 1587606300}
   lineRenderer: {fileID: 36680576}
@@ -17699,6 +17749,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a427ac57c4041347b726a2e1bbc4b4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 2</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u0420\u0430\u0437\u043C\u0435\u0449\u0435\u043D\u0438\u0435 \u0442\u0440\u0443\u0431\u044B
     \u043D\u0430 \u044F\u0449\u0438\u043A\u0430\u0445."
@@ -17724,14 +17775,14 @@ MonoBehaviour:
   - "\u041E\u0431\u0435\u0441\u043F\u0435\u0447\u044C\u0442\u0435 \u0443\u0441\u0442\u043E\u0439\u0447\u0438\u0432\u043E\u0441\u0442\u044C
     \u043A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0446\u0438\u0438 \u0432 \u0442\u0435\u0447\u0435\u043D\u0438\u0435
     5 \u0441\u0435\u043A\u0443\u043D\u0434"
-  instructionsEnabled: 1
+  instructionsEnabledOnStart: 1
   pairs:
   - {x: 0, y: 0}
   - {x: 0, y: 1}
   - {x: 1, y: 0}
   timeLimit: 0
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   stabilityTime: 5
   speedThreshold: 0.02
   accessory: {fileID: 845794440}
@@ -17914,6 +17965,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6da7e014f1562f49a5db3d443d77120, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 2</color>. <color=#c95624ff>\u0414\u043E\u043F.
     \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
   taskNameBody: "\u0423\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0430 \u043D\u0430\u0432\u0435\u0441\u043D\u043E\u0433\u043E
@@ -17936,14 +17988,14 @@ MonoBehaviour:
   - "\u0417\u0430\u0434\u0430\u043D\u0438\u0435 \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u043E.
     \u041F\u043E\u0437\u0434\u0440\u0430\u0432\u043B\u044F\u0435\u043C!"
   instructions: []
-  instructionsEnabled: 0
+  instructionsEnabledOnStart: 0
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
   timeLimit: 60
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   accessory: {fileID: 845794440}
   accessoryDefaultPoint: {fileID: 438357468}
   separationPoint: {fileID: 705163428}
@@ -18035,6 +18087,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de582d1ac89543b40b3e55ebb07bf0e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#004a17ff>\u041A\u043B\u0430\u0441\u0441 1</color>.  <color=#c95624ff>\u0414\u043E\u043F.
     \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
   taskNameBody: "\u0423\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0430 \u043F\u043E\u043B\u043E\u0436\u0435\u043D\u0438\u044F
@@ -18054,15 +18107,15 @@ MonoBehaviour:
   - "\u0417\u0430\u0434\u0430\u043D\u0438\u0435 \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u043E.
     \u041F\u043E\u0437\u0434\u0440\u0430\u0432\u043B\u044F\u0435\u043C!"
   instructions: []
-  instructionsEnabled: 0
+  instructionsEnabledOnStart: 0
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
   - {x: 3, y: 0}
   timeLimit: 120
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   armControllerVariations:
   - robot: {fileID: 1008201078752938241}
     armController: {fileID: 197536482}
@@ -18498,6 +18551,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a9eb5cf27ebd348b3c82953b93b8bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#a62c19ff>\u041A\u043B\u0430\u0441\u0441 3</color>. <color=#c95624ff>\u0414\u043E\u043F.
     \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
   taskNameBody: "\u0421\u0431\u043E\u0440 \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u043E\u0432."
@@ -18523,15 +18577,15 @@ MonoBehaviour:
     \u0420\u043E\u0431\u043E\u0442 \u0434\u043E\u043B\u0436\u0435\u043D \u043E\u0441\u0442\u0430\u0432\u0430\u0442\u044C\u0441\u044F
     \u043D\u0435\u043F\u043E\u0434\u0432\u0438\u0436\u043D\u044B\u043C."
   instructions: []
-  instructionsEnabled: 0
+  instructionsEnabledOnStart: 0
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
   - {x: 3, y: 0}
   timeLimit: 215
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   seed: 33
   grabTransform: {fileID: 845794440}
   grab: {fileID: 4381265060945316290}
@@ -19218,6 +19272,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a9eb5cf27ebd348b3c82953b93b8bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#a62c19ff>\u041A\u043B\u0430\u0441\u0441 3</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u0421\u0431\u043E\u0440 \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u043E\u0432."
   taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 20"
@@ -19242,15 +19297,15 @@ MonoBehaviour:
     \u0420\u043E\u0431\u043E\u0442 \u0434\u043E\u043B\u0436\u0435\u043D \u043E\u0441\u0442\u0430\u0432\u0430\u0442\u044C\u0441\u044F
     \u043D\u0435\u043F\u043E\u0434\u0432\u0438\u0436\u043D\u044B\u043C."
   instructions: []
-  instructionsEnabled: 0
+  instructionsEnabledOnStart: 0
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
   - {x: 3, y: 0}
   timeLimit: 0
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   seed: 19
   grabTransform: {fileID: 845794440}
   grab: {fileID: 4381265060945316290}
@@ -19411,6 +19466,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a427ac57c4041347b726a2e1bbc4b4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 2</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u0420\u0430\u0437\u043C\u0435\u0449\u0435\u043D\u0438\u0435 \u043C\u0435\u0442\u0430\u043B\u043B\u0438\u0447\u0435\u0441\u043A\u043E\u0439
     \u043F\u043B\u0438\u0442\u044B \u043D\u0430 \u0434\u0435\u0440\u0435\u0432\u044F\u043D\u043D\u043E\u043C
@@ -19436,14 +19492,14 @@ MonoBehaviour:
   - "\u041E\u0431\u0435\u0441\u043F\u0435\u0447\u044C\u0442\u0435 \u0443\u0441\u0442\u043E\u0439\u0447\u0438\u0432\u043E\u0441\u0442\u044C
     \u043A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0446\u0438\u0438 \u0432 \u0442\u0435\u0447\u0435\u043D\u0438\u0435
     3 \u0441\u0435\u043A\u0443\u043D\u0434"
-  instructionsEnabled: 1
+  instructionsEnabledOnStart: 1
   pairs:
   - {x: 0, y: 0}
   - {x: 0, y: 1}
   - {x: 1, y: 0}
   timeLimit: 0
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   stabilityTime: 3
   speedThreshold: 0.02
   accessory: {fileID: 845794440}
@@ -19509,6 +19565,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6da7e014f1562f49a5db3d443d77120, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 2</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u0423\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0430 \u043D\u0430\u0432\u0435\u0441\u043D\u043E\u0433\u043E
     \u043E\u0431\u043E\u0440\u0443\u0434\u043E\u0432\u0430\u043D\u0438\u044F \u043D\u0430
@@ -19533,14 +19590,14 @@ MonoBehaviour:
   - "\u0427\u0442\u043E\u0431\u044B \u043F\u0440\u0438\u0441\u043E\u0435\u0434\u0438\u043D\u0438\u0442\u044C
     \u0438\u043B\u0438 \u0441\u043D\u044F\u0442\u044C \u043E\u0431\u043E\u0440\u0443\u0434\u043E\u0432\u0430\u043D\u0438\u0435,
     \u043D\u0430\u0436\u043C\u0438\u0442\u0435 '/'"
-  instructionsEnabled: 1
+  instructionsEnabledOnStart: 1
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
   timeLimit: 0
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   accessory: {fileID: 1158231513691474937}
   accessoryDefaultPoint: {fileID: 1100518229}
   separationPoint: {fileID: 705163428}
@@ -19671,6 +19728,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 347a434f215288d44968ef6c107309e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#a62c19ff>\u041A\u043B\u0430\u0441\u0441 3</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u041E\u043F\u0438\u0441\u0430\u043D\u0438\u0435 \u0444\u0438\u0433\u0443\u0440\u044B
     \u043E\u043A\u043E\u043D\u0447\u0430\u043D\u0438\u0435\u043C \u0441\u0442\u0440\u0435\u043B\u044B."
@@ -19689,14 +19747,14 @@ MonoBehaviour:
     \u0420\u043E\u0431\u043E\u0442 \u0434\u043E\u043B\u0436\u0435\u043D \u043E\u0441\u0442\u0430\u0432\u0430\u0442\u044C\u0441\u044F
     \u043D\u0435\u043F\u043E\u0434\u0432\u0438\u0436\u043D\u044B\u043C."
   instructions: []
-  instructionsEnabled: 0
+  instructionsEnabledOnStart: 0
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
   timeLimit: 0
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   seed: 27
   reachablePoint: {fileID: 1587606300}
   lineRenderer: {fileID: 36680576}
@@ -19957,6 +20015,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de582d1ac89543b40b3e55ebb07bf0e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#004a17ff>\u041A\u043B\u0430\u0441\u0441 1</color>.  <color=#c95624ff>\u0414\u043E\u043F.
     \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
   taskNameBody: "\u0423\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0430 \u043F\u043E\u043B\u043E\u0436\u0435\u043D\u0438\u044F
@@ -19976,15 +20035,15 @@ MonoBehaviour:
   - "\u0417\u0430\u0434\u0430\u043D\u0438\u0435 \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u043E.
     \u041F\u043E\u0437\u0434\u0440\u0430\u0432\u043B\u044F\u0435\u043C!"
   instructions: []
-  instructionsEnabled: 0
+  instructionsEnabledOnStart: 0
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
   - {x: 3, y: 0}
   timeLimit: 25
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   armControllerVariations:
   - robot: {fileID: 1008201078752938241}
     armController: {fileID: 197536482}
@@ -20829,6 +20888,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6da7e014f1562f49a5db3d443d77120, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 2</color>. <color=#c95624ff>\u0414\u043E\u043F.
     \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
   taskNameBody: "\u0423\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0430 \u043D\u0430\u0432\u0435\u0441\u043D\u043E\u0433\u043E
@@ -20851,14 +20911,14 @@ MonoBehaviour:
   - "\u0417\u0430\u0434\u0430\u043D\u0438\u0435 \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u043E.
     \u041F\u043E\u0437\u0434\u0440\u0430\u0432\u043B\u044F\u0435\u043C!"
   instructions: []
-  instructionsEnabled: 0
+  instructionsEnabledOnStart: 0
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
   timeLimit: 45
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   accessory: {fileID: 845794440}
   accessoryDefaultPoint: {fileID: 438357468}
   separationPoint: {fileID: 705163428}
@@ -21132,6 +21192,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a9eb5cf27ebd348b3c82953b93b8bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#a62c19ff>\u041A\u043B\u0430\u0441\u0441 3</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u0421\u0431\u043E\u0440 \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u043E\u0432."
   taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 14"
@@ -21156,15 +21217,15 @@ MonoBehaviour:
     \u0420\u043E\u0431\u043E\u0442 \u0434\u043E\u043B\u0436\u0435\u043D \u043E\u0441\u0442\u0430\u0432\u0430\u0442\u044C\u0441\u044F
     \u043D\u0435\u043F\u043E\u0434\u0432\u0438\u0436\u043D\u044B\u043C."
   instructions: []
-  instructionsEnabled: 0
+  instructionsEnabledOnStart: 0
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
   - {x: 3, y: 0}
   timeLimit: 0
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   seed: 13
   grabTransform: {fileID: 845794440}
   grab: {fileID: 4381265060945316290}
@@ -21240,6 +21301,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 347a434f215288d44968ef6c107309e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#a62c19ff>\u041A\u043B\u0430\u0441\u0441 3</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u041E\u043F\u0438\u0441\u0430\u043D\u0438\u0435 \u0444\u0438\u0433\u0443\u0440\u044B
     \u043E\u043A\u043E\u043D\u0447\u0430\u043D\u0438\u0435\u043C \u0441\u0442\u0440\u0435\u043B\u044B."
@@ -21258,14 +21320,14 @@ MonoBehaviour:
     \u0420\u043E\u0431\u043E\u0442 \u0434\u043E\u043B\u0436\u0435\u043D \u043E\u0441\u0442\u0430\u0432\u0430\u0442\u044C\u0441\u044F
     \u043D\u0435\u043F\u043E\u0434\u0432\u0438\u0436\u043D\u044B\u043C."
   instructions: []
-  instructionsEnabled: 0
+  instructionsEnabledOnStart: 0
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
   timeLimit: 0
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   seed: 20
   reachablePoint: {fileID: 1587606300}
   lineRenderer: {fileID: 36680576}
@@ -21599,6 +21661,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a427ac57c4041347b726a2e1bbc4b4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 2</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u0423\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0430 \u044F\u0449\u0438\u043A\u043E\u0432
     \u0434\u0440\u0443\u0433 \u043D\u0430 \u0434\u0440\u0443\u0433\u0430."
@@ -21624,14 +21687,14 @@ MonoBehaviour:
   - "\u041E\u0431\u0435\u0441\u043F\u0435\u0447\u044C\u0442\u0435 \u0443\u0441\u0442\u043E\u0439\u0447\u0438\u0432\u043E\u0441\u0442\u044C
     \u043A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0446\u0438\u0438 \u0432 \u0442\u0435\u0447\u0435\u043D\u0438\u0435
     5 \u0441\u0435\u043A\u0443\u043D\u0434"
-  instructionsEnabled: 1
+  instructionsEnabledOnStart: 1
   pairs:
   - {x: 0, y: 0}
   - {x: 0, y: 1}
   - {x: 1, y: 0}
   timeLimit: 0
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   stabilityTime: 5
   speedThreshold: 0.02
   accessory: {fileID: 845794440}
@@ -21700,6 +21763,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a9eb5cf27ebd348b3c82953b93b8bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#a62c19ff>\u041A\u043B\u0430\u0441\u0441 3</color>. <color=#c95624ff>\u0414\u043E\u043F.
     \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
   taskNameBody: "\u0421\u0431\u043E\u0440 \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u043E\u0432."
@@ -21725,15 +21789,15 @@ MonoBehaviour:
     \u0420\u043E\u0431\u043E\u0442 \u0434\u043E\u043B\u0436\u0435\u043D \u043E\u0441\u0442\u0430\u0432\u0430\u0442\u044C\u0441\u044F
     \u043D\u0435\u043F\u043E\u0434\u0432\u0438\u0436\u043D\u044B\u043C."
   instructions: []
-  instructionsEnabled: 0
+  instructionsEnabledOnStart: 0
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
   - {x: 3, y: 0}
   timeLimit: 260
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   seed: 37
   grabTransform: {fileID: 845794440}
   grab: {fileID: 4381265060945316290}
@@ -21810,6 +21874,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6da7e014f1562f49a5db3d443d77120, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 2</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u0423\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0430 \u043D\u0430\u0432\u0435\u0441\u043D\u043E\u0433\u043E
     \u043E\u0431\u043E\u0440\u0443\u0434\u043E\u0432\u0430\u043D\u0438\u044F \u043D\u0430
@@ -21834,14 +21899,14 @@ MonoBehaviour:
   - "\u0427\u0442\u043E\u0431\u044B \u043F\u0440\u0438\u0441\u043E\u0435\u0434\u0438\u043D\u0438\u0442\u044C
     \u0438\u043B\u0438 \u0441\u043D\u044F\u0442\u044C \u043E\u0431\u043E\u0440\u0443\u0434\u043E\u0432\u0430\u043D\u0438\u0435,
     \u043D\u0430\u0436\u043C\u0438\u0442\u0435 '/'"
-  instructionsEnabled: 1
+  instructionsEnabledOnStart: 1
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
   timeLimit: 0
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   accessory: {fileID: 1158231513691474937}
   accessoryDefaultPoint: {fileID: 1100518229}
   separationPoint: {fileID: 705163428}
@@ -22019,6 +22084,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de582d1ac89543b40b3e55ebb07bf0e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#004a17ff>\u041A\u043B\u0430\u0441\u0441 1</color>.  <color=#c95624ff>\u0414\u043E\u043F.
     \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
   taskNameBody: "\u0423\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0430 \u043F\u043E\u043B\u043E\u0436\u0435\u043D\u0438\u044F
@@ -22038,15 +22104,15 @@ MonoBehaviour:
   - "\u0417\u0430\u0434\u0430\u043D\u0438\u0435 \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u043E.
     \u041F\u043E\u0437\u0434\u0440\u0430\u0432\u043B\u044F\u0435\u043C!"
   instructions: []
-  instructionsEnabled: 0
+  instructionsEnabledOnStart: 0
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
   - {x: 3, y: 0}
   timeLimit: 120
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   armControllerVariations:
   - robot: {fileID: 1008201078752938241}
     armController: {fileID: 197536482}
@@ -22211,6 +22277,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a9eb5cf27ebd348b3c82953b93b8bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#a62c19ff>\u041A\u043B\u0430\u0441\u0441 3</color>. <color=#c95624ff>\u0414\u043E\u043F.
     \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
   taskNameBody: "\u0421\u0431\u043E\u0440 \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u043E\u0432."
@@ -22236,15 +22303,15 @@ MonoBehaviour:
     \u0420\u043E\u0431\u043E\u0442 \u0434\u043E\u043B\u0436\u0435\u043D \u043E\u0441\u0442\u0430\u0432\u0430\u0442\u044C\u0441\u044F
     \u043D\u0435\u043F\u043E\u0434\u0432\u0438\u0436\u043D\u044B\u043C."
   instructions: []
-  instructionsEnabled: 0
+  instructionsEnabledOnStart: 0
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
   - {x: 3, y: 0}
   timeLimit: 215
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   seed: 34
   grabTransform: {fileID: 845794440}
   grab: {fileID: 4381265060945316290}
@@ -22443,7 +22510,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1532630736}
   m_OnClick:
     m_PersistentCalls:
@@ -22611,6 +22678,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6da7e014f1562f49a5db3d443d77120, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 2</color>. <color=#c95624ff>\u0414\u043E\u043F.
     \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
   taskNameBody: "\u0423\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0430 \u043D\u0430\u0432\u0435\u0441\u043D\u043E\u0433\u043E
@@ -22633,14 +22701,14 @@ MonoBehaviour:
   - "\u0417\u0430\u0434\u0430\u043D\u0438\u0435 \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u043E.
     \u041F\u043E\u0437\u0434\u0440\u0430\u0432\u043B\u044F\u0435\u043C!"
   instructions: []
-  instructionsEnabled: 0
+  instructionsEnabledOnStart: 0
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
   timeLimit: 100
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   accessory: {fileID: 1158231513691474937}
   accessoryDefaultPoint: {fileID: 1100518229}
   separationPoint: {fileID: 705163428}
@@ -22851,6 +22919,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c40c150d61a66ba469b94b4930dd6757, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 2</color>."
   taskNameBody: "\u041F\u0440\u0438\u0441\u043E\u0435\u0434\u0438\u043D\u0435\u043D\u0438\u0435/\u043E\u0442\u0441\u043E\u0435\u0434\u0438\u043D\u0435\u043D\u0438\u0435
     \u0433\u0440\u0435\u0439\u0444\u0435\u0440\u043D\u043E\u0433\u043E \u0437\u0430\u0445\u0432\u0430\u0442\u0430"
@@ -22888,7 +22957,7 @@ MonoBehaviour:
     '/'"
   - "\u0427\u0442\u043E\u0431\u044B \u0441\u043D\u044F\u0442\u044C \u043E\u0431\u043E\u0440\u0443\u0434\u043E\u0432\u0430\u043D\u0438\u0435,
     \u043D\u0430\u0436\u043C\u0438\u0442\u0435 '/'"
-  instructionsEnabled: 0
+  instructionsEnabledOnStart: 0
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
@@ -22897,8 +22966,8 @@ MonoBehaviour:
   - {x: 4, y: 1}
   - {x: 5, y: 0}
   timeLimit: 0
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   accessory: {fileID: 845794440}
   accessoryDefaultPoint: {fileID: 438357468}
   joinPoint: {fileID: 648521797302845174}
@@ -23169,6 +23238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 347a434f215288d44968ef6c107309e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#a62c19ff>\u041A\u043B\u0430\u0441\u0441 3</color>. <color=#c95624ff>\u0414\u043E\u043F.
     \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
   taskNameBody: "\u041E\u043F\u0438\u0441\u0430\u043D\u0438\u0435 \u0444\u0438\u0433\u0443\u0440\u044B
@@ -23188,14 +23258,14 @@ MonoBehaviour:
     \u0420\u043E\u0431\u043E\u0442 \u0434\u043E\u043B\u0436\u0435\u043D \u043E\u0441\u0442\u0430\u0432\u0430\u0442\u044C\u0441\u044F
     \u043D\u0435\u043F\u043E\u0434\u0432\u0438\u0436\u043D\u044B\u043C."
   instructions: []
-  instructionsEnabled: 0
+  instructionsEnabledOnStart: 0
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
   timeLimit: 130
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   seed: 46
   reachablePoint: {fileID: 1587606300}
   lineRenderer: {fileID: 36680576}
@@ -23401,7 +23471,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 1586626001}
   m_OnClick:
     m_PersistentCalls:
@@ -24212,6 +24282,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a9eb5cf27ebd348b3c82953b93b8bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#a62c19ff>\u041A\u043B\u0430\u0441\u0441 3</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u0421\u0431\u043E\u0440 \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u043E\u0432."
   taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 4"
@@ -24236,15 +24307,15 @@ MonoBehaviour:
     \u0420\u043E\u0431\u043E\u0442 \u0434\u043E\u043B\u0436\u0435\u043D \u043E\u0441\u0442\u0430\u0432\u0430\u0442\u044C\u0441\u044F
     \u043D\u0435\u043F\u043E\u0434\u0432\u0438\u0436\u043D\u044B\u043C."
   instructions: []
-  instructionsEnabled: 0
+  instructionsEnabledOnStart: 0
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
   - {x: 3, y: 0}
   timeLimit: 0
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   seed: 3
   grabTransform: {fileID: 845794440}
   grab: {fileID: 4381265060945316290}
@@ -24319,6 +24390,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a9eb5cf27ebd348b3c82953b93b8bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#a62c19ff>\u041A\u043B\u0430\u0441\u0441 3</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u0421\u0431\u043E\u0440 \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u043E\u0432."
   taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 5"
@@ -24343,15 +24415,15 @@ MonoBehaviour:
     \u0420\u043E\u0431\u043E\u0442 \u0434\u043E\u043B\u0436\u0435\u043D \u043E\u0441\u0442\u0430\u0432\u0430\u0442\u044C\u0441\u044F
     \u043D\u0435\u043F\u043E\u0434\u0432\u0438\u0436\u043D\u044B\u043C."
   instructions: []
-  instructionsEnabled: 0
+  instructionsEnabledOnStart: 0
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
   - {x: 3, y: 0}
   timeLimit: 0
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   seed: 4
   grabTransform: {fileID: 845794440}
   grab: {fileID: 4381265060945316290}
@@ -24426,6 +24498,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a9eb5cf27ebd348b3c82953b93b8bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#a62c19ff>\u041A\u043B\u0430\u0441\u0441 3</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u0421\u0431\u043E\u0440 \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u043E\u0432."
   taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 7"
@@ -24450,15 +24523,15 @@ MonoBehaviour:
     \u0420\u043E\u0431\u043E\u0442 \u0434\u043E\u043B\u0436\u0435\u043D \u043E\u0441\u0442\u0430\u0432\u0430\u0442\u044C\u0441\u044F
     \u043D\u0435\u043F\u043E\u0434\u0432\u0438\u0436\u043D\u044B\u043C."
   instructions: []
-  instructionsEnabled: 0
+  instructionsEnabledOnStart: 0
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
   - {x: 3, y: 0}
   timeLimit: 0
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   seed: 6
   grabTransform: {fileID: 845794440}
   grab: {fileID: 4381265060945316290}
@@ -24533,6 +24606,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 850ad915074e232409eacf94f0917f46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 2</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u0420\u0430\u0437\u0440\u0443\u0448\u0435\u043D\u0438\u0435 \u0441\u0442\u0435\u043D\u044B
     \u0433\u0438\u0434\u0440\u043E\u043C\u043E\u043B\u043E\u0442\u043E\u043C"
@@ -24558,15 +24632,15 @@ MonoBehaviour:
   - "\u0427\u0442\u043E\u0431\u044B \u0432\u043A\u043B\u044E\u0447\u0438\u0442\u044C/\u0432\u044B\u043A\u043B\u044E\u0447\u0438\u0442\u044C
     \u0433\u0438\u0434\u0440\u043E\u043C\u043E\u043B\u043E\u0442, \u043D\u0430\u0436\u043C\u0438\u0442\u0435
     'LMB'"
-  instructionsEnabled: 1
+  instructionsEnabledOnStart: 1
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 1}
   - {x: 3, y: 0}
   timeLimit: 0
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   hammerTransform: {fileID: 1158231513691474937}
   hammerDefaultPoint: {fileID: 1100518229}
   wallPrefab: {fileID: 3593526089474025579, guid: 747bfc91d5220c040a5fa1a7181686b1,
@@ -24874,6 +24948,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a427ac57c4041347b726a2e1bbc4b4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 2</color>. <color=#c95624ff>\u0414\u043E\u043F.
     \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
   taskNameBody: "\u0423\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0430 \u044F\u0449\u0438\u043A\u043E\u0432
@@ -24895,14 +24970,14 @@ MonoBehaviour:
   - "\u0417\u0430\u0434\u0430\u043D\u0438\u0435 \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u043E.
     \u041F\u043E\u0437\u0434\u0440\u0430\u0432\u043B\u044F\u0435\u043C!"
   instructions: []
-  instructionsEnabled: 0
+  instructionsEnabledOnStart: 0
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
   timeLimit: 250
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   stabilityTime: 5
   speedThreshold: 0.02
   accessory: {fileID: 845794440}
@@ -25665,6 +25740,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 347a434f215288d44968ef6c107309e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#a62c19ff>\u041A\u043B\u0430\u0441\u0441 3</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u041E\u043F\u0438\u0441\u0430\u043D\u0438\u0435 \u0444\u0438\u0433\u0443\u0440\u044B
     \u043E\u043A\u043E\u043D\u0447\u0430\u043D\u0438\u0435\u043C \u0441\u0442\u0440\u0435\u043B\u044B."
@@ -25683,14 +25759,14 @@ MonoBehaviour:
     \u0420\u043E\u0431\u043E\u0442 \u0434\u043E\u043B\u0436\u0435\u043D \u043E\u0441\u0442\u0430\u0432\u0430\u0442\u044C\u0441\u044F
     \u043D\u0435\u043F\u043E\u0434\u0432\u0438\u0436\u043D\u044B\u043C."
   instructions: []
-  instructionsEnabled: 0
+  instructionsEnabledOnStart: 0
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
   timeLimit: 0
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   seed: 28
   reachablePoint: {fileID: 1587606300}
   lineRenderer: {fileID: 36680576}
@@ -25993,6 +26069,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de582d1ac89543b40b3e55ebb07bf0e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#004a17ff>\u041A\u043B\u0430\u0441\u0441 1</color>.  <color=#c95624ff>\u0414\u043E\u043F.
     \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
   taskNameBody: "\u0423\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0430 \u043F\u043E\u043B\u043E\u0436\u0435\u043D\u0438\u044F
@@ -26012,15 +26089,15 @@ MonoBehaviour:
   - "\u0417\u0430\u0434\u0430\u043D\u0438\u0435 \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u043E.
     \u041F\u043E\u0437\u0434\u0440\u0430\u0432\u043B\u044F\u0435\u043C!"
   instructions: []
-  instructionsEnabled: 0
+  instructionsEnabledOnStart: 0
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
   - {x: 3, y: 0}
   timeLimit: 120
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   armControllerVariations:
   - robot: {fileID: 1008201078752938241}
     armController: {fileID: 197536482}
@@ -26417,6 +26494,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a9eb5cf27ebd348b3c82953b93b8bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#a62c19ff>\u041A\u043B\u0430\u0441\u0441 3</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u0421\u0431\u043E\u0440 \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u043E\u0432."
   taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 2"
@@ -26441,15 +26519,15 @@ MonoBehaviour:
     \u0420\u043E\u0431\u043E\u0442 \u0434\u043E\u043B\u0436\u0435\u043D \u043E\u0441\u0442\u0430\u0432\u0430\u0442\u044C\u0441\u044F
     \u043D\u0435\u043F\u043E\u0434\u0432\u0438\u0436\u043D\u044B\u043C."
   instructions: []
-  instructionsEnabled: 0
+  instructionsEnabledOnStart: 0
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
   - {x: 3, y: 0}
   timeLimit: 0
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   seed: 1
   grabTransform: {fileID: 845794440}
   grab: {fileID: 4381265060945316290}
@@ -26590,6 +26668,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6da7e014f1562f49a5db3d443d77120, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 2</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u0423\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0430 \u043D\u0430\u0432\u0435\u0441\u043D\u043E\u0433\u043E
     \u043E\u0431\u043E\u0440\u0443\u0434\u043E\u0432\u0430\u043D\u0438\u044F \u043D\u0430
@@ -26614,14 +26693,14 @@ MonoBehaviour:
   - "\u0427\u0442\u043E\u0431\u044B \u043F\u0440\u0438\u0441\u043E\u0435\u0434\u0438\u043D\u0438\u0442\u044C
     \u0438\u043B\u0438 \u0441\u043D\u044F\u0442\u044C \u043E\u0431\u043E\u0440\u0443\u0434\u043E\u0432\u0430\u043D\u0438\u0435,
     \u043D\u0430\u0436\u043C\u0438\u0442\u0435 '/'"
-  instructionsEnabled: 1
+  instructionsEnabledOnStart: 1
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
   timeLimit: 0
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   accessory: {fileID: 845794440}
   accessoryDefaultPoint: {fileID: 438357468}
   separationPoint: {fileID: 705163428}
@@ -26855,6 +26934,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cecdfc8879263c45920f3bdcf61fd92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 2</color>. <color=#c95624ff>\u0414\u043E\u043F.
     \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
   taskNameBody: "\u0420\u0430\u0437\u0440\u0443\u0448\u0435\u043D\u0438\u0435 \u0441\u0442\u0435\u043D\u044B
@@ -26871,14 +26951,14 @@ MonoBehaviour:
   - "\u0417\u0430\u0434\u0430\u043D\u0438\u0435 \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u043E.
     \u041F\u043E\u0437\u0434\u0440\u0430\u0432\u043B\u044F\u0435\u043C!"
   instructions: []
-  instructionsEnabled: 0
+  instructionsEnabledOnStart: 0
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
   timeLimit: 70
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   hammerTransform: {fileID: 1158231513691474937}
   hammerDefaultPoint: {fileID: 1100518229}
   wallPrefab: {fileID: 3593526089474025579, guid: 747bfc91d5220c040a5fa1a7181686b1,
@@ -27034,6 +27114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b5d5cf39a81b014791ecb1ce233ad98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 2</color>. <color=#c95624ff>\u0414\u043E\u043F.
     \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
   taskNameBody: "\u0412\u043A\u043B\u044E\u0447\u0435\u043D\u0438\u0435/\u0432\u044B\u043A\u043B\u044E\u0447\u0435\u043D\u0438\u0435
@@ -27053,15 +27134,15 @@ MonoBehaviour:
   - "\u0417\u0430\u0434\u0430\u043D\u0438\u0435 \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u043E.
     \u041F\u043E\u0437\u0434\u0440\u0430\u0432\u043B\u044F\u0435\u043C!"
   instructions: []
-  instructionsEnabled: 0
+  instructionsEnabledOnStart: 0
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
   - {x: 3, y: 0}
   timeLimit: 30
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   hammerTransform: {fileID: 1158231513691474937}
   hammer: {fileID: 1158231513691474938}
   hammerDefaultPoint: {fileID: 1100518229}
@@ -27675,6 +27756,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a66c941da0d1cd40a4ebd4605e172da, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  firstSelectedButton: {fileID: 7924412}
 --- !u!114 &1866975300
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27787,6 +27869,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a9eb5cf27ebd348b3c82953b93b8bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#a62c19ff>\u041A\u043B\u0430\u0441\u0441 3</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u0421\u0431\u043E\u0440 \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u043E\u0432."
   taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 13"
@@ -27811,15 +27894,15 @@ MonoBehaviour:
     \u0420\u043E\u0431\u043E\u0442 \u0434\u043E\u043B\u0436\u0435\u043D \u043E\u0441\u0442\u0430\u0432\u0430\u0442\u044C\u0441\u044F
     \u043D\u0435\u043F\u043E\u0434\u0432\u0438\u0436\u043D\u044B\u043C."
   instructions: []
-  instructionsEnabled: 0
+  instructionsEnabledOnStart: 0
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
   - {x: 3, y: 0}
   timeLimit: 0
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   seed: 12
   grabTransform: {fileID: 845794440}
   grab: {fileID: 4381265060945316290}
@@ -27958,6 +28041,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a427ac57c4041347b726a2e1bbc4b4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 2</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u0420\u0430\u0437\u043C\u0435\u0449\u0435\u043D\u0438\u0435 \u043C\u0435\u0442\u0430\u043B\u043B\u0438\u0447\u0435\u0441\u043A\u043E\u0439
     \u043F\u043B\u0438\u0442\u044B \u043D\u0430 \u0434\u0435\u0440\u0435\u0432\u044F\u043D\u043D\u043E\u043C
@@ -27983,14 +28067,14 @@ MonoBehaviour:
   - "\u041E\u0431\u0435\u0441\u043F\u0435\u0447\u044C\u0442\u0435 \u0443\u0441\u0442\u043E\u0439\u0447\u0438\u0432\u043E\u0441\u0442\u044C
     \u043A\u043E\u043D\u0441\u0442\u0440\u0443\u043A\u0446\u0438\u0438 \u0432 \u0442\u0435\u0447\u0435\u043D\u0438\u0435
     3 \u0441\u0435\u043A\u0443\u043D\u0434"
-  instructionsEnabled: 1
+  instructionsEnabledOnStart: 1
   pairs:
   - {x: 0, y: 0}
   - {x: 0, y: 1}
   - {x: 1, y: 0}
   timeLimit: 0
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   stabilityTime: 3
   speedThreshold: 0.02
   accessory: {fileID: 845794440}
@@ -28055,6 +28139,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 347a434f215288d44968ef6c107309e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#a62c19ff>\u041A\u043B\u0430\u0441\u0441 3</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u041E\u043F\u0438\u0441\u0430\u043D\u0438\u0435 \u0444\u0438\u0433\u0443\u0440\u044B
     \u043E\u043A\u043E\u043D\u0447\u0430\u043D\u0438\u0435\u043C \u0441\u0442\u0440\u0435\u043B\u044B."
@@ -28073,14 +28158,14 @@ MonoBehaviour:
     \u0420\u043E\u0431\u043E\u0442 \u0434\u043E\u043B\u0436\u0435\u043D \u043E\u0441\u0442\u0430\u0432\u0430\u0442\u044C\u0441\u044F
     \u043D\u0435\u043F\u043E\u0434\u0432\u0438\u0436\u043D\u044B\u043C."
   instructions: []
-  instructionsEnabled: 0
+  instructionsEnabledOnStart: 0
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
   timeLimit: 0
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   seed: 22
   reachablePoint: {fileID: 1587606300}
   lineRenderer: {fileID: 36680576}
@@ -28528,6 +28613,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea2f33926631ef446a00e7ef0531a740, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 2</color>. <color=#c95624ff>\u0414\u043E\u043F.
     \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
   taskNameBody: "\u0421\u043E\u0437\u0434\u0430\u043D\u0438\u0435 \u043E\u0442\u0432\u0435\u0440\u0441\u0442\u0438\u044F
@@ -28549,14 +28635,14 @@ MonoBehaviour:
   - "\u0417\u0430\u0434\u0430\u043D\u0438\u0435 \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u043E.
     \u041F\u043E\u0437\u0434\u0440\u0430\u0432\u043B\u044F\u0435\u043C!"
   instructions: []
-  instructionsEnabled: 0
+  instructionsEnabledOnStart: 0
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
   timeLimit: 160
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   hammerTransform: {fileID: 1158231513691474937}
   hammerDefaultPoint: {fileID: 1100518229}
   wallPrefab: {fileID: 3593526089474025579, guid: 747bfc91d5220c040a5fa1a7181686b1,
@@ -29028,6 +29114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b5d5cf39a81b014791ecb1ce233ad98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 2</color>."
   taskNameBody: "\u0412\u043A\u043B\u044E\u0447\u0435\u043D\u0438\u0435/\u043E\u0442\u043A\u043B\u044E\u0447\u0435\u043D\u0438\u0435
     \u0433\u0438\u0434\u0440\u043E\u043C\u043E\u043B\u043E\u0442\u0430"
@@ -29064,15 +29151,15 @@ MonoBehaviour:
     \u0433\u0438\u0434\u0440\u0430\u0432\u043B\u0438\u0447\u0435\u0441\u043A\u0438\u0439
     \u043C\u043E\u043B\u043E\u0442, \u043D\u0430\u0436\u043C\u0438\u0442\u0435 'Right
     Mouse Button'"
-  instructionsEnabled: 1
+  instructionsEnabledOnStart: 1
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 1}
   - {x: 2, y: 2}
   - {x: 3, y: 0}
   timeLimit: 0
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   hammerTransform: {fileID: 1158231513691474937}
   hammer: {fileID: 1158231513691474938}
   hammerDefaultPoint: {fileID: 1100518229}
@@ -29123,6 +29210,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 347a434f215288d44968ef6c107309e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#a62c19ff>\u041A\u043B\u0430\u0441\u0441 3</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u041E\u043F\u0438\u0441\u0430\u043D\u0438\u0435 \u0444\u0438\u0433\u0443\u0440\u044B
     \u043E\u043A\u043E\u043D\u0447\u0430\u043D\u0438\u0435\u043C \u0441\u0442\u0440\u0435\u043B\u044B."
@@ -29141,14 +29229,14 @@ MonoBehaviour:
     \u0420\u043E\u0431\u043E\u0442 \u0434\u043E\u043B\u0436\u0435\u043D \u043E\u0441\u0442\u0430\u0432\u0430\u0442\u044C\u0441\u044F
     \u043D\u0435\u043F\u043E\u0434\u0432\u0438\u0436\u043D\u044B\u043C."
   instructions: []
-  instructionsEnabled: 0
+  instructionsEnabledOnStart: 0
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
   timeLimit: 0
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   seed: 26
   reachablePoint: {fileID: 1587606300}
   lineRenderer: {fileID: 36680576}
@@ -29286,6 +29374,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea2f33926631ef446a00e7ef0531a740, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 2</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u0423\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0430 \u0442\u0440\u0443\u0431\u044B
     \u0432 \u043E\u0442\u0432\u0435\u0440\u0441\u0442\u0438\u0435 \u0432 \u0441\u0442\u0435\u043D\u0435"
@@ -29304,14 +29393,14 @@ MonoBehaviour:
   - "\u0417\u0430\u0434\u0430\u043D\u0438\u0435 \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u043E.
     \u041F\u043E\u0437\u0434\u0440\u0430\u0432\u043B\u044F\u0435\u043C!"
   instructions: []
-  instructionsEnabled: 0
+  instructionsEnabledOnStart: 0
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
   timeLimit: 0
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   hammerTransform: {fileID: 1158231513691474937}
   hammerDefaultPoint: {fileID: 1100518229}
   wallPrefab: {fileID: 3593526089474025579, guid: 747bfc91d5220c040a5fa1a7181686b1,
@@ -29492,6 +29581,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b794838c737b50a41a02f30455fe7358, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 2</color>."
   taskNameBody: "\u041F\u0435\u0440\u0435\u043C\u0435\u0449\u0435\u043D\u0438\u0435
     \u0433\u0440\u0443\u0437\u043E\u0432 \u043F\u0440\u0438 \u043F\u043E\u043C\u043E\u0449\u0438
@@ -29536,7 +29626,7 @@ MonoBehaviour:
     'Left Mouse Button'. \u0427\u0442\u043E\u0431\u044B \u0440\u0430\u0437\u043E\u043C\u043A\u043D\u0443\u0442\u044C
     \u043A\u043B\u0435\u0448\u043D\u0438, \u043D\u0430\u0436\u043C\u0438\u0442\u0435
     'Right Mouse Button'"
-  instructionsEnabled: 1
+  instructionsEnabledOnStart: 1
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 1}
@@ -29544,8 +29634,8 @@ MonoBehaviour:
   - {x: 3, y: 1}
   - {x: 4, y: 0}
   timeLimit: 0
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   showUniqueDescriptions: 1
   showInstructions: 1
   grabTransform: {fileID: 845794440}
@@ -29610,6 +29700,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a427ac57c4041347b726a2e1bbc4b4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 2</color>. <color=#c95624ff>\u0414\u043E\u043F.
     \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
   taskNameBody: "\u0423\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0430 \u044F\u0449\u0438\u043A\u043E\u0432
@@ -29631,14 +29722,14 @@ MonoBehaviour:
   - "\u0417\u0430\u0434\u0430\u043D\u0438\u0435 \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u043E.
     \u041F\u043E\u0437\u0434\u0440\u0430\u0432\u043B\u044F\u0435\u043C!"
   instructions: []
-  instructionsEnabled: 0
+  instructionsEnabledOnStart: 0
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
   timeLimit: 250
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   stabilityTime: 5
   speedThreshold: 0.02
   accessory: {fileID: 845794440}
@@ -30194,6 +30285,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de582d1ac89543b40b3e55ebb07bf0e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#004a17ff>\u041A\u043B\u0430\u0441\u0441 1</color>.  <color=#c95624ff>\u0414\u043E\u043F.
     \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
   taskNameBody: "\u0423\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0430 \u043F\u043E\u043B\u043E\u0436\u0435\u043D\u0438\u044F
@@ -30213,15 +30305,15 @@ MonoBehaviour:
   - "\u0417\u0430\u0434\u0430\u043D\u0438\u0435 \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u043E.
     \u041F\u043E\u0437\u0434\u0440\u0430\u0432\u043B\u044F\u0435\u043C!"
   instructions: []
-  instructionsEnabled: 0
+  instructionsEnabledOnStart: 0
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
   - {x: 3, y: 0}
   timeLimit: 50
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   armControllerVariations:
   - robot: {fileID: 1008201078752938241}
     armController: {fileID: 197536482}
@@ -30617,6 +30709,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a9eb5cf27ebd348b3c82953b93b8bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#a62c19ff>\u041A\u043B\u0430\u0441\u0441 3</color>. <color=#c95624ff>\u0414\u043E\u043F.
     \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
   taskNameBody: "\u0421\u0431\u043E\u0440 \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u043E\u0432."
@@ -30642,15 +30735,15 @@ MonoBehaviour:
     \u0420\u043E\u0431\u043E\u0442 \u0434\u043E\u043B\u0436\u0435\u043D \u043E\u0441\u0442\u0430\u0432\u0430\u0442\u044C\u0441\u044F
     \u043D\u0435\u043F\u043E\u0434\u0432\u0438\u0436\u043D\u044B\u043C."
   instructions: []
-  instructionsEnabled: 0
+  instructionsEnabledOnStart: 0
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
   - {x: 3, y: 0}
   timeLimit: 200
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   seed: 32
   grabTransform: {fileID: 845794440}
   grab: {fileID: 4381265060945316290}
@@ -30725,6 +30818,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a9eb5cf27ebd348b3c82953b93b8bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#a62c19ff>\u041A\u043B\u0430\u0441\u0441 3</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u0421\u0431\u043E\u0440 \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u043E\u0432."
   taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 3"
@@ -30749,15 +30843,15 @@ MonoBehaviour:
     \u0420\u043E\u0431\u043E\u0442 \u0434\u043E\u043B\u0436\u0435\u043D \u043E\u0441\u0442\u0430\u0432\u0430\u0442\u044C\u0441\u044F
     \u043D\u0435\u043F\u043E\u0434\u0432\u0438\u0436\u043D\u044B\u043C."
   instructions: []
-  instructionsEnabled: 0
+  instructionsEnabledOnStart: 0
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
   - {x: 3, y: 0}
   timeLimit: 0
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   seed: 2
   grabTransform: {fileID: 845794440}
   grab: {fileID: 4381265060945316290}
@@ -31092,6 +31186,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cecdfc8879263c45920f3bdcf61fd92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 2</color>. <color=#c95624ff>\u0414\u043E\u043F.
     \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
   taskNameBody: "\u0420\u0430\u0437\u0440\u0443\u0448\u0435\u043D\u0438\u0435 \u0441\u0442\u0435\u043D\u044B
@@ -31108,14 +31203,14 @@ MonoBehaviour:
   - "\u0417\u0430\u0434\u0430\u043D\u0438\u0435 \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u043E.
     \u041F\u043E\u0437\u0434\u0440\u0430\u0432\u043B\u044F\u0435\u043C!"
   instructions: []
-  instructionsEnabled: 0
+  instructionsEnabledOnStart: 0
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
   timeLimit: 80
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   hammerTransform: {fileID: 1158231513691474937}
   hammerDefaultPoint: {fileID: 1100518229}
   wallPrefab: {fileID: 3593526089474025579, guid: 747bfc91d5220c040a5fa1a7181686b1,
@@ -31171,6 +31266,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 347a434f215288d44968ef6c107309e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#a62c19ff>\u041A\u043B\u0430\u0441\u0441 3</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u041E\u043F\u0438\u0441\u0430\u043D\u0438\u0435 \u0444\u0438\u0433\u0443\u0440\u044B
     \u043E\u043A\u043E\u043D\u0447\u0430\u043D\u0438\u0435\u043C \u0441\u0442\u0440\u0435\u043B\u044B."
@@ -31189,14 +31285,14 @@ MonoBehaviour:
     \u0420\u043E\u0431\u043E\u0442 \u0434\u043E\u043B\u0436\u0435\u043D \u043E\u0441\u0442\u0430\u0432\u0430\u0442\u044C\u0441\u044F
     \u043D\u0435\u043F\u043E\u0434\u0432\u0438\u0436\u043D\u044B\u043C."
   instructions: []
-  instructionsEnabled: 0
+  instructionsEnabledOnStart: 0
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
   timeLimit: 0
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   seed: 25
   reachablePoint: {fileID: 1587606300}
   lineRenderer: {fileID: 36680576}
@@ -31323,6 +31419,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a9eb5cf27ebd348b3c82953b93b8bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#a62c19ff>\u041A\u043B\u0430\u0441\u0441 3</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u0421\u0431\u043E\u0440 \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u043E\u0432."
   taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 15"
@@ -31347,15 +31444,15 @@ MonoBehaviour:
     \u0420\u043E\u0431\u043E\u0442 \u0434\u043E\u043B\u0436\u0435\u043D \u043E\u0441\u0442\u0430\u0432\u0430\u0442\u044C\u0441\u044F
     \u043D\u0435\u043F\u043E\u0434\u0432\u0438\u0436\u043D\u044B\u043C."
   instructions: []
-  instructionsEnabled: 0
+  instructionsEnabledOnStart: 0
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
   - {x: 3, y: 0}
   timeLimit: 0
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   seed: 14
   grabTransform: {fileID: 845794440}
   grab: {fileID: 4381265060945316290}
@@ -31430,6 +31527,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de582d1ac89543b40b3e55ebb07bf0e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#004a17ff>\u041A\u043B\u0430\u0441\u0441 1</color>.  <color=#c95624ff>\u0414\u043E\u043F.
     \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
   taskNameBody: "\u0423\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0430 \u043F\u043E\u043B\u043E\u0436\u0435\u043D\u0438\u044F
@@ -31449,15 +31547,15 @@ MonoBehaviour:
   - "\u0417\u0430\u0434\u0430\u043D\u0438\u0435 \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u043E.
     \u041F\u043E\u0437\u0434\u0440\u0430\u0432\u043B\u044F\u0435\u043C!"
   instructions: []
-  instructionsEnabled: 0
+  instructionsEnabledOnStart: 0
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
   - {x: 3, y: 0}
   timeLimit: 25
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   armControllerVariations:
   - robot: {fileID: 1008201078752938241}
     armController: {fileID: 197536482}
@@ -31754,6 +31852,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a9eb5cf27ebd348b3c82953b93b8bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#a62c19ff>\u041A\u043B\u0430\u0441\u0441 3</color>. <color=#c95624ff>\u0414\u043E\u043F.
     \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
   taskNameBody: "\u0421\u0431\u043E\u0440 \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u043E\u0432."
@@ -31779,15 +31878,15 @@ MonoBehaviour:
     \u0420\u043E\u0431\u043E\u0442 \u0434\u043E\u043B\u0436\u0435\u043D \u043E\u0441\u0442\u0430\u0432\u0430\u0442\u044C\u0441\u044F
     \u043D\u0435\u043F\u043E\u0434\u0432\u0438\u0436\u043D\u044B\u043C."
   instructions: []
-  instructionsEnabled: 0
+  instructionsEnabledOnStart: 0
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
   - {x: 3, y: 0}
   timeLimit: 275
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   seed: 39
   grabTransform: {fileID: 845794440}
   grab: {fileID: 4381265060945316290}
@@ -32220,6 +32319,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a9eb5cf27ebd348b3c82953b93b8bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#a62c19ff>\u041A\u043B\u0430\u0441\u0441 3</color>. <color=#c95624ff>\u0414\u043E\u043F.
     \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
   taskNameBody: "\u0421\u0431\u043E\u0440 \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u043E\u0432."
@@ -32245,15 +32345,15 @@ MonoBehaviour:
     \u0420\u043E\u0431\u043E\u0442 \u0434\u043E\u043B\u0436\u0435\u043D \u043E\u0441\u0442\u0430\u0432\u0430\u0442\u044C\u0441\u044F
     \u043D\u0435\u043F\u043E\u0434\u0432\u0438\u0436\u043D\u044B\u043C."
   instructions: []
-  instructionsEnabled: 0
+  instructionsEnabledOnStart: 0
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
   - {x: 3, y: 0}
   timeLimit: 290
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   seed: 41
   grabTransform: {fileID: 845794440}
   grab: {fileID: 4381265060945316290}
@@ -35173,6 +35273,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 557c38e26d5cc67468f9f91a3b4225ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#004a17ff>\u041A\u043B\u0430\u0441\u0441 1</color>."
   taskNameBody: "\u0414\u0432\u0438\u0436\u0435\u043D\u0438\u0435 \u0432\u043B\u0435\u0432\u043E"
   taskNameSuffix: 
@@ -35191,13 +35292,13 @@ MonoBehaviour:
     \u043D\u0430\u0436\u0438\u043C\u0430\u044F \u043A\u043D\u043E\u043F\u043E\u043A
     (\u0423\u0434\u0435\u0440\u0436\u0438\u0432\u0430\u0439\u0442\u0435 \u043A\u043B\u0430\u0432\u0438\u0448\u0443
     A \u043D\u0430 \u043A\u043B\u0430\u0432\u0438\u0430\u0442\u0443\u0440\u0435)"
-  instructionsEnabled: 1
+  instructionsEnabledOnStart: 1
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   timeLimit: 0
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   keyCodes: 61000000
   trackNumberOfClicks: 0
   timeForCompletion: 2
@@ -35245,6 +35346,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 557c38e26d5cc67468f9f91a3b4225ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#004a17ff>\u041A\u043B\u0430\u0441\u0441 1</color>."
   taskNameBody: "\u0414\u0432\u0438\u0436\u0435\u043D\u0438\u0435 \u0432\u043F\u0440\u0430\u0432\u043E"
   taskNameSuffix: 
@@ -35263,13 +35365,13 @@ MonoBehaviour:
     \u043D\u0435 \u043D\u0430\u0436\u0438\u043C\u0430\u044F \u043A\u043D\u043E\u043F\u043E\u043A
     (\u0423\u0434\u0435\u0440\u0436\u0438\u0432\u0430\u0439\u0442\u0435 \u043A\u043B\u0430\u0432\u0438\u0448\u0443
     D \u043D\u0430 \u043A\u043B\u0430\u0432\u0438\u0430\u0442\u0443\u0440\u0435)"
-  instructionsEnabled: 1
+  instructionsEnabledOnStart: 1
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   timeLimit: 0
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   keyCodes: 64000000
   trackNumberOfClicks: 0
   timeForCompletion: 2
@@ -35318,6 +35420,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e40d59f9fec3d14d9787dacfffc4695, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#004a17ff>\u041A\u043B\u0430\u0441\u0441 1</color>."
   taskNameBody: "\u041D\u0430\u043A\u043B\u043E\u043D \u0440\u0430\u0431\u043E\u0447\u0435\u0433\u043E
     \u0438\u043D\u0441\u0442\u0440\u0443\u043C\u0435\u043D\u0442\u0430"
@@ -35347,14 +35450,14 @@ MonoBehaviour:
     \u043D\u0430\u0436\u0438\u043C\u0430\u044F \u043A\u043D\u043E\u043F\u043E\u043A
     (\u0423\u0434\u0435\u0440\u0436\u0438\u0432\u0430\u0439\u0442\u0435 \u043A\u043B\u0430\u0432\u0438\u0448\u0443
     Z \u043D\u0430 \u043A\u043B\u0430\u0432\u0438\u0430\u0442\u0443\u0440\u0435)"
-  instructionsEnabled: 1
+  instructionsEnabledOnStart: 1
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 1}
   - {x: 2, y: 0}
   timeLimit: 0
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   xDriveIndexVariations:
   - robot: {fileID: 1008201078752938241}
     index: 7
@@ -35410,6 +35513,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e40d59f9fec3d14d9787dacfffc4695, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#004a17ff>\u041A\u043B\u0430\u0441\u0441 1</color>."
   taskNameBody: "\u0423\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u0438\u0435 \u043F\u044F\u0442\u044B\u043C
     \u0441\u0435\u0433\u043C\u0435\u043D\u0442\u043E\u043C \u0440\u0430\u0431\u043E\u0447\u0435\u0439
@@ -35440,14 +35544,14 @@ MonoBehaviour:
     \u043D\u0435 \u043D\u0430\u0436\u0438\u043C\u0430\u044F \u043A\u043D\u043E\u043F\u043E\u043A
     (\u0423\u0434\u0435\u0440\u0436\u0438\u0432\u0430\u0439\u0442\u0435 \u043A\u043B\u0430\u0432\u0438\u0448\u0443
     K \u043D\u0430 \u043A\u043B\u0430\u0432\u0438\u0430\u0442\u0443\u0440\u0435)"
-  instructionsEnabled: 1
+  instructionsEnabledOnStart: 1
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 1}
   - {x: 2, y: 0}
   timeLimit: 0
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   xDriveIndexVariations:
   - robot: {fileID: 1008201078752938241}
     index: 6
@@ -35502,6 +35606,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e40d59f9fec3d14d9787dacfffc4695, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#004a17ff>\u041A\u043B\u0430\u0441\u0441 1</color>."
   taskNameBody: "\u0412\u0440\u0430\u0449\u0435\u043D\u0438\u0435 \u0440\u0430\u0431\u043E\u0447\u0435\u0433\u043E
     \u0438\u043D\u0441\u0442\u0440\u0443\u043C\u0435\u043D\u0442\u0430"
@@ -35531,14 +35636,14 @@ MonoBehaviour:
     \u043D\u0435 \u043D\u0430\u0436\u0438\u043C\u0430\u044F \u043A\u043D\u043E\u043F\u043E\u043A
     (\u0423\u0434\u0435\u0440\u0436\u0438\u0432\u0430\u0439\u0442\u0435 \u043A\u043B\u0430\u0432\u0438\u0448\u0443
     C \u043D\u0430 \u043A\u043B\u0430\u0432\u0438\u0430\u0442\u0443\u0440\u0435)"
-  instructionsEnabled: 1
+  instructionsEnabledOnStart: 1
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 1}
   - {x: 2, y: 0}
   timeLimit: 0
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   xDriveIndexVariations:
   - robot: {fileID: 1008201078752938241}
     index: 8
@@ -35592,6 +35697,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e40d59f9fec3d14d9787dacfffc4695, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#004a17ff>\u041A\u043B\u0430\u0441\u0441 1</color>."
   taskNameBody: "\u041E\u043F\u0443\u0441\u043A\u0430\u043D\u0438\u0435 \u0430\u0443\u0442\u0440\u0438\u0433\u0435\u0440\u043E\u0432"
   taskNameSuffix: 
@@ -35610,13 +35716,13 @@ MonoBehaviour:
     \u043D\u0430\u0436\u0438\u043C\u0430\u044F \u043A\u043D\u043E\u043F\u043E\u043A
     (\u0423\u0434\u0435\u0440\u0436\u0438\u0432\u0430\u0439\u0442\u0435 \u043A\u043B\u0430\u0432\u0438\u0448\u0443
     Q \u043D\u0430 \u043A\u043B\u0430\u0432\u0438\u0430\u0442\u0443\u0440\u0435)"
-  instructionsEnabled: 1
+  instructionsEnabledOnStart: 1
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   timeLimit: 0
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   xDriveIndexVariations:
   - robot: {fileID: 1008201078752938241}
     index: 0
@@ -35670,6 +35776,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e40d59f9fec3d14d9787dacfffc4695, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#004a17ff>\u041A\u043B\u0430\u0441\u0441 1</color>."
   taskNameBody: "\u0423\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u0438\u0435 \u043F\u0435\u0440\u0432\u044B\u043C
     \u0441\u0435\u0433\u043C\u0435\u043D\u0442\u043E\u043C \u0440\u0430\u0431\u043E\u0447\u0435\u0439
@@ -35702,14 +35809,14 @@ MonoBehaviour:
     \u043F\u0440\u0438 \u043D\u0430\u0436\u0430\u0442\u043E\u0439 \u043B\u0435\u0432\u043E\u0439
     \u043A\u043D\u043E\u043F\u043A\u0435 (\u0423\u0434\u0435\u0440\u0436\u0438\u0432\u0430\u0439\u0442\u0435
     \u043A\u043B\u0430\u0432\u0438\u0448\u0443 Y \u043D\u0430 \u043A\u043B\u0430\u0432\u0438\u0430\u0442\u0443\u0440\u0435)"
-  instructionsEnabled: 1
+  instructionsEnabledOnStart: 1
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 1}
   - {x: 2, y: 0}
   timeLimit: 0
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   xDriveIndexVariations:
   - robot: {fileID: 1008201078752938241}
     index: 1
@@ -35765,6 +35872,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e40d59f9fec3d14d9787dacfffc4695, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#004a17ff>\u041A\u043B\u0430\u0441\u0441 1</color>."
   taskNameBody: "\u0423\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u0438\u0435 \u0432\u0442\u043E\u0440\u044B\u043C
     \u0441\u0435\u0433\u043C\u0435\u043D\u0442\u043E\u043C \u0440\u0430\u0431\u043E\u0447\u0435\u0439
@@ -35797,14 +35905,14 @@ MonoBehaviour:
     \u043D\u0435 \u043D\u0430\u0436\u0438\u043C\u0430\u044F \u043A\u043D\u043E\u043F\u043E\u043A
     (\u0423\u0434\u0435\u0440\u0436\u0438\u0432\u0430\u0439\u0442\u0435 \u043A\u043B\u0430\u0432\u0438\u0448\u0443
     I \u043D\u0430 \u043A\u043B\u0430\u0432\u0438\u0430\u0442\u0443\u0440\u0435)"
-  instructionsEnabled: 1
+  instructionsEnabledOnStart: 1
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 1}
   - {x: 2, y: 0}
   timeLimit: 0
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   xDriveIndexVariations:
   - robot: {fileID: 1008201078752938241}
     index: 2
@@ -35858,6 +35966,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 557c38e26d5cc67468f9f91a3b4225ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#004a17ff>\u041A\u043B\u0430\u0441\u0441 1</color>."
   taskNameBody: "\u0414\u0432\u0438\u0436\u0435\u043D\u0438\u0435 \u043D\u0430\u0437\u0430\u0434"
   taskNameSuffix: 
@@ -35876,13 +35985,13 @@ MonoBehaviour:
     \u0432\u043D\u0438\u0437, \u043D\u0435 \u043D\u0430\u0436\u0438\u043C\u0430\u044F
     \u043A\u043D\u043E\u043F\u043E\u043A (\u0423\u0434\u0435\u0440\u0436\u0438\u0432\u0430\u0439\u0442\u0435
     \u043A\u043B\u0430\u0432\u0438\u0448\u0443 S \u043D\u0430 \u043A\u043B\u0430\u0432\u0438\u0430\u0442\u0443\u0440\u0435)"
-  instructionsEnabled: 1
+  instructionsEnabledOnStart: 1
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   timeLimit: 0
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   keyCodes: 73000000
   trackNumberOfClicks: 0
   timeForCompletion: 2
@@ -35931,6 +36040,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e40d59f9fec3d14d9787dacfffc4695, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#004a17ff>\u041A\u043B\u0430\u0441\u0441 1</color>."
   taskNameBody: "\u0423\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u0438\u0435 \u0438\u0437\u043B\u043E\u043C\u043E\u043C
     \u0440\u0430\u0431\u043E\u0447\u0435\u0439 \u0441\u0442\u0440\u0435\u043B\u044B"
@@ -35960,14 +36070,14 @@ MonoBehaviour:
     \u043D\u0435 \u043D\u0430\u0436\u0438\u043C\u0430\u044F \u043A\u043D\u043E\u043F\u043E\u043A
     (\u0423\u0434\u0435\u0440\u0436\u0438\u0432\u0430\u0439\u0442\u0435 \u043A\u043B\u0430\u0432\u0438\u0448\u0443
     F \u043D\u0430 \u043A\u043B\u0430\u0432\u0438\u0430\u0442\u0443\u0440\u0435)"
-  instructionsEnabled: 1
+  instructionsEnabledOnStart: 1
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 1}
   - {x: 2, y: 0}
   timeLimit: 0
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   xDriveIndexVariations:
   - robot: {fileID: 1008201078752938241}
     index: 3
@@ -36023,6 +36133,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e40d59f9fec3d14d9787dacfffc4695, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#004a17ff>\u041A\u043B\u0430\u0441\u0441 1</color>."
   taskNameBody: "\u0423\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u0438\u0435 \u0447\u0435\u0442\u0432\u0435\u0440\u0442\u044B\u043C
     \u0441\u0435\u0433\u043C\u0435\u043D\u0442\u043E\u043C \u0440\u0430\u0431\u043E\u0447\u0435\u0439
@@ -36053,14 +36164,14 @@ MonoBehaviour:
     \u043D\u0435 \u043D\u0430\u0436\u0438\u043C\u0430\u044F \u043A\u043D\u043E\u043F\u043E\u043A
     (\u0423\u0434\u0435\u0440\u0436\u0438\u0432\u0430\u0439\u0442\u0435 \u043A\u043B\u0430\u0432\u0438\u0448\u0443
     H \u043D\u0430 \u043A\u043B\u0430\u0432\u0438\u0430\u0442\u0443\u0440\u0435)"
-  instructionsEnabled: 1
+  instructionsEnabledOnStart: 1
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 1}
   - {x: 2, y: 0}
   timeLimit: 0
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   xDriveIndexVariations:
   - robot: {fileID: 1008201078752938241}
     index: 5
@@ -36160,6 +36271,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e40d59f9fec3d14d9787dacfffc4695, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#004a17ff>\u041A\u043B\u0430\u0441\u0441 1</color>."
   taskNameBody: "\u041F\u043E\u0432\u043E\u0440\u043E\u0442 \u0431\u0430\u0437\u044B
     \u0440\u0430\u0431\u043E\u0447\u0435\u0439 \u0441\u0442\u0440\u0435\u043B\u044B"
@@ -36187,14 +36299,14 @@ MonoBehaviour:
     \u0434\u0436\u043E\u0439\u0441\u0442\u0438\u043A \u0432\u043B\u0435\u0432\u043E
     (\u0423\u0434\u0435\u0440\u0436\u0438\u0432\u0430\u0439\u0442\u0435 \u043A\u043B\u0430\u0432\u0438\u0448\u0443
     R \u043D\u0430 \u043A\u043B\u0430\u0432\u0438\u0430\u0442\u0443\u0440\u0435)"
-  instructionsEnabled: 1
+  instructionsEnabledOnStart: 1
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 1}
   - {x: 2, y: 0}
   timeLimit: 0
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   xDriveIndexVariations:
   - robot: {fileID: 1008201078752938241}
     index: 0
@@ -36248,6 +36360,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 557c38e26d5cc67468f9f91a3b4225ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#004a17ff>\u041A\u043B\u0430\u0441\u0441 1</color>."
   taskNameBody: "\u0414\u0432\u0438\u0436\u0435\u043D\u0438\u0435 \u0432\u043F\u0435\u0440\u0435\u0434"
   taskNameSuffix: 
@@ -36266,13 +36379,13 @@ MonoBehaviour:
     \u0432\u0432\u0435\u0440\u0445, \u043D\u0435 \u043D\u0430\u0436\u0438\u043C\u0430\u044F
     \u043A\u043D\u043E\u043F\u043E\u043A (\u0423\u0434\u0435\u0440\u0436\u0438\u0432\u0430\u0439\u0442\u0435
     \u043A\u043B\u0430\u0432\u0438\u0448\u0443 W \u043D\u0430 \u043A\u043B\u0430\u0432\u0438\u0430\u0442\u0443\u0440\u0435)"
-  instructionsEnabled: 1
+  instructionsEnabledOnStart: 1
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   timeLimit: 0
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   keyCodes: 77000000
   trackNumberOfClicks: 0
   timeForCompletion: 2
@@ -36321,6 +36434,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 557c38e26d5cc67468f9f91a3b4225ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#004a17ff>\u041A\u043B\u0430\u0441\u0441 1</color>."
   taskNameBody: "\u041F\u0435\u0440\u0435\u043A\u043B\u044E\u0447\u0435\u043D\u0438\u0435
     \u0430\u043A\u0442\u0438\u0432\u043D\u043E\u0439 \u043A\u0430\u043C\u0435\u0440\u044B"
@@ -36338,13 +36452,13 @@ MonoBehaviour:
     \u0432\u043A\u043B\u044E\u0447\u0435\u043D\u0438\u044F \u043F\u0440\u0430\u0432\u043E\u0439
     \u0444\u0430\u0440\u044B \u0434\u043B\u044F \u043F\u0435\u0440\u0435\u043A\u043B\u044E\u0447\u0435\u043D\u0438\u044F
     \u043C\u0435\u0436\u0434\u0443 \u043A\u0430\u043C\u0435\u0440\u0430\u043C\u0438"
-  instructionsEnabled: 1
+  instructionsEnabledOnStart: 1
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   timeLimit: 0
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   keyCodes: 5b0000005d000000
   trackNumberOfClicks: 1
   timeForCompletion: 0
@@ -37201,6 +37315,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de582d1ac89543b40b3e55ebb07bf0e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#004a17ff>\u041A\u043B\u0430\u0441\u0441 1</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u0423\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0430 \u043F\u043E\u043B\u043E\u0436\u0435\u043D\u0438\u044F
     \u0441\u0442\u0440\u0435\u043B\u044B."
@@ -37219,15 +37334,15 @@ MonoBehaviour:
   - "\u0417\u0430\u0434\u0430\u043D\u0438\u0435 \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u043E.
     \u041F\u043E\u0437\u0434\u0440\u0430\u0432\u043B\u044F\u0435\u043C!"
   instructions: []
-  instructionsEnabled: 0
+  instructionsEnabledOnStart: 0
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
   - {x: 3, y: 0}
   timeLimit: 0
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   armControllerVariations:
   - robot: {fileID: 1008201078752938241}
     armController: {fileID: 197536482}
@@ -37263,6 +37378,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de582d1ac89543b40b3e55ebb07bf0e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#004a17ff>\u041A\u043B\u0430\u0441\u0441 1</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u0423\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0430 \u043F\u043E\u043B\u043E\u0436\u0435\u043D\u0438\u044F
     \u0441\u0442\u0440\u0435\u043B\u044B."
@@ -37281,15 +37397,15 @@ MonoBehaviour:
   - "\u0417\u0430\u0434\u0430\u043D\u0438\u0435 \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u043E.
     \u041F\u043E\u0437\u0434\u0440\u0430\u0432\u043B\u044F\u0435\u043C!"
   instructions: []
-  instructionsEnabled: 0
+  instructionsEnabledOnStart: 0
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
   - {x: 3, y: 0}
   timeLimit: 0
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   armControllerVariations:
   - robot: {fileID: 1008201078752938241}
     armController: {fileID: 197536482}
@@ -37353,6 +37469,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de582d1ac89543b40b3e55ebb07bf0e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#004a17ff>\u041A\u043B\u0430\u0441\u0441 1</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u0423\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0430 \u043F\u043E\u043B\u043E\u0436\u0435\u043D\u0438\u044F
     \u0441\u0442\u0440\u0435\u043B\u044B."
@@ -37371,15 +37488,15 @@ MonoBehaviour:
   - "\u0417\u0430\u0434\u0430\u043D\u0438\u0435 \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u043E.
     \u041F\u043E\u0437\u0434\u0440\u0430\u0432\u043B\u044F\u0435\u043C!"
   instructions: []
-  instructionsEnabled: 0
+  instructionsEnabledOnStart: 0
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
   - {x: 3, y: 0}
   timeLimit: 0
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   armControllerVariations:
   - robot: {fileID: 1008201078752938241}
     armController: {fileID: 197536482}
@@ -37415,6 +37532,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de582d1ac89543b40b3e55ebb07bf0e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#004a17ff>\u041A\u043B\u0430\u0441\u0441 1</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u0423\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0430 \u043F\u043E\u043B\u043E\u0436\u0435\u043D\u0438\u044F
     \u0441\u0442\u0440\u0435\u043B\u044B."
@@ -37433,15 +37551,15 @@ MonoBehaviour:
   - "\u0417\u0430\u0434\u0430\u043D\u0438\u0435 \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u043E.
     \u041F\u043E\u0437\u0434\u0440\u0430\u0432\u043B\u044F\u0435\u043C!"
   instructions: []
-  instructionsEnabled: 0
+  instructionsEnabledOnStart: 0
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
   - {x: 3, y: 0}
   timeLimit: 0
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   armControllerVariations:
   - robot: {fileID: 1008201078752938241}
     armController: {fileID: 197536482}
@@ -37505,6 +37623,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de582d1ac89543b40b3e55ebb07bf0e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#004a17ff>\u041A\u043B\u0430\u0441\u0441 1</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u0423\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0430 \u043F\u043E\u043B\u043E\u0436\u0435\u043D\u0438\u044F
     \u0441\u0442\u0440\u0435\u043B\u044B."
@@ -37523,15 +37642,15 @@ MonoBehaviour:
   - "\u0417\u0430\u0434\u0430\u043D\u0438\u0435 \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u043E.
     \u041F\u043E\u0437\u0434\u0440\u0430\u0432\u043B\u044F\u0435\u043C!"
   instructions: []
-  instructionsEnabled: 0
+  instructionsEnabledOnStart: 0
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
   - {x: 3, y: 0}
   timeLimit: 0
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   armControllerVariations:
   - robot: {fileID: 1008201078752938241}
     armController: {fileID: 197536482}
@@ -37581,6 +37700,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de582d1ac89543b40b3e55ebb07bf0e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#004a17ff>\u041A\u043B\u0430\u0441\u0441 1</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u0423\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0430 \u043F\u043E\u043B\u043E\u0436\u0435\u043D\u0438\u044F
     \u0441\u0442\u0440\u0435\u043B\u044B."
@@ -37599,15 +37719,15 @@ MonoBehaviour:
   - "\u0417\u0430\u0434\u0430\u043D\u0438\u0435 \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u043E.
     \u041F\u043E\u0437\u0434\u0440\u0430\u0432\u043B\u044F\u0435\u043C!"
   instructions: []
-  instructionsEnabled: 0
+  instructionsEnabledOnStart: 0
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
   - {x: 3, y: 0}
   timeLimit: 0
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   armControllerVariations:
   - robot: {fileID: 1008201078752938241}
     armController: {fileID: 197536482}
@@ -37643,6 +37763,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de582d1ac89543b40b3e55ebb07bf0e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#004a17ff>\u041A\u043B\u0430\u0441\u0441 1</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u0423\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0430 \u043F\u043E\u043B\u043E\u0436\u0435\u043D\u0438\u044F
     \u0441\u0442\u0440\u0435\u043B\u044B."
@@ -37661,15 +37782,15 @@ MonoBehaviour:
   - "\u0417\u0430\u0434\u0430\u043D\u0438\u0435 \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u043E.
     \u041F\u043E\u0437\u0434\u0440\u0430\u0432\u043B\u044F\u0435\u043C!"
   instructions: []
-  instructionsEnabled: 0
+  instructionsEnabledOnStart: 0
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
   - {x: 3, y: 0}
   timeLimit: 0
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   armControllerVariations:
   - robot: {fileID: 1008201078752938241}
     armController: {fileID: 197536482}
@@ -37733,6 +37854,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de582d1ac89543b40b3e55ebb07bf0e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#004a17ff>\u041A\u043B\u0430\u0441\u0441 1</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u0423\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0430 \u043F\u043E\u043B\u043E\u0436\u0435\u043D\u0438\u044F
     \u0441\u0442\u0440\u0435\u043B\u044B."
@@ -37751,15 +37873,15 @@ MonoBehaviour:
   - "\u0417\u0430\u0434\u0430\u043D\u0438\u0435 \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u043E.
     \u041F\u043E\u0437\u0434\u0440\u0430\u0432\u043B\u044F\u0435\u043C!"
   instructions: []
-  instructionsEnabled: 0
+  instructionsEnabledOnStart: 0
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
   - {x: 3, y: 0}
   timeLimit: 0
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   armControllerVariations:
   - robot: {fileID: 1008201078752938241}
     armController: {fileID: 197536482}
@@ -37795,6 +37917,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de582d1ac89543b40b3e55ebb07bf0e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#004a17ff>\u041A\u043B\u0430\u0441\u0441 1</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u0423\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0430 \u043F\u043E\u043B\u043E\u0436\u0435\u043D\u0438\u044F
     \u0441\u0442\u0440\u0435\u043B\u044B."
@@ -37813,15 +37936,15 @@ MonoBehaviour:
   - "\u0417\u0430\u0434\u0430\u043D\u0438\u0435 \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u043E.
     \u041F\u043E\u0437\u0434\u0440\u0430\u0432\u043B\u044F\u0435\u043C!"
   instructions: []
-  instructionsEnabled: 0
+  instructionsEnabledOnStart: 0
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
   - {x: 3, y: 0}
   timeLimit: 0
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   armControllerVariations:
   - robot: {fileID: 1008201078752938241}
     armController: {fileID: 197536482}
@@ -37871,6 +37994,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de582d1ac89543b40b3e55ebb07bf0e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  taskMode: 0
   taskNamePrefix: "<color=#004a17ff>\u041A\u043B\u0430\u0441\u0441 1</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u0423\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0430 \u043F\u043E\u043B\u043E\u0436\u0435\u043D\u0438\u044F
     \u0441\u0442\u0440\u0435\u043B\u044B."
@@ -37889,15 +38013,15 @@ MonoBehaviour:
   - "\u0417\u0430\u0434\u0430\u043D\u0438\u0435 \u0432\u044B\u043F\u043E\u043B\u043D\u0435\u043D\u043E.
     \u041F\u043E\u0437\u0434\u0440\u0430\u0432\u043B\u044F\u0435\u043C!"
   instructions: []
-  instructionsEnabled: 0
+  instructionsEnabledOnStart: 0
   pairs:
   - {x: 0, y: 0}
   - {x: 1, y: 0}
   - {x: 2, y: 0}
   - {x: 3, y: 0}
   timeLimit: 0
-  isWaitingForCompletion: 0
   isSuccesfullyEnded: 0
+  isWaitingForCompletion: 0
   armControllerVariations:
   - robot: {fileID: 1008201078752938241}
     armController: {fileID: 197536482}

@@ -52,7 +52,7 @@ public class AccessoryDelivery : Task
     {
         if (separationPoint.IsReached() && !robot.accessoryJoinPoint.Equipped)
         {
-            SetStage(2, EndTask, false);
+            SetStage(2, CompleteTask, false);
             return 1;
         }
         else return 0;

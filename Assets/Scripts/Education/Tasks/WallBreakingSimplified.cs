@@ -24,7 +24,7 @@
     {
         if (CountVisitedPoints() == reachablePointsAmount)
         {
-            SetStage(2, EndTask, false);
+            SetStage(2, CompleteTask, false);
             return 1;
         }
         else

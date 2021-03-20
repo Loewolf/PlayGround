@@ -8,7 +8,6 @@ public class DarkScreen : MonoBehaviour
     public static DarkScreen instance;
 
     public float totalAppearingTime = 2f;
-    public float waitingTime = 1f;
     public float totalFadingTime = 2f;
     public GameObject screen;
     public List<SmoothFade> darkScreenElements;
@@ -25,7 +24,7 @@ public class DarkScreen : MonoBehaviour
         if (!instance)
         {
             instance = this;
-            darkScreenCoroutine = DarkScreenCoroutineRealtime(null);
+            darkScreenCoroutine = DarkScreenCoroutine(1f, null, true);
             _totalAppearingTime = totalAppearingTime;
             _totalFadingTime = totalFadingTime;
             appearingTimeStep = 1f / _totalAppearingTime;
@@ -47,38 +46,15 @@ public class DarkScreen : MonoBehaviour
         StartCoroutine(darkScreenCoroutine);
     }
 
-    public void ExecuteInDarkScreen(Action action, bool realtime = false)
+    public void ExecuteInDarkScreen(float waitingTime = 1f, Action action = null, bool realtime = false)
     {
         screen.gameObject.SetActive(true);
         StopCoroutine(darkScreenCoroutine);
-        darkScreenCoroutine = realtime? DarkScreenCoroutineRealtime(action) : DarkScreenCoroutine(action);
+        darkScreenCoroutine = DarkScreenCoroutine(1f, action, realtime);
         StartCoroutine(darkScreenCoroutine);
     }
 
-    private IEnumerator DarkScreenCoroutine(Action action)
-    {
-        while (f < 1f)
-        {
-            SetAlphaOnAppearingForElements(f);
-            yield return null;
-            f += Time.deltaTime * appearingTimeStep;
-        }
-        f = 1f;
-        SetAlphaForElements(f);
-        action?.Invoke();
-        yield return new WaitForSeconds(waitingTime);
-        while (f > 0f)
-        {
-            SetAlphaOnFadingForElements(f);
-            yield return null;
-            f -= Time.deltaTime * fadingTimeStep;
-        }
-        f = 0f;
-        SetAlphaForElements(f);
-        screen.gameObject.SetActive(false);
-    }
-
-    private IEnumerator DarkScreenCoroutineRealtime(Action action)
+    private IEnumerator DarkScreenCoroutine(float waitingTime = 1f, Action action = null, bool isRealtime = false)
     {
         while (f < 1f)
         {
@@ -89,7 +65,8 @@ public class DarkScreen : MonoBehaviour
         f = 1f;
         SetAlphaForElements(f);
         action?.Invoke();
-        yield return new WaitForSecondsRealtime(waitingTime);
+        if (isRealtime) yield return new WaitForSecondsRealtime(waitingTime);
+        else yield return new WaitForSeconds(waitingTime);
         while (f > 0f)
         {
             SetAlphaOnFadingForElements(f);

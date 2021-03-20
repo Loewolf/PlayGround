@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using UnityEditor;
 using UnityEngine;
-using UnityEngine.Serialization;
-using UnityEngine.UI;
-
 
 public class CreateListLevel : MonoBehaviour
 {
@@ -20,10 +14,10 @@ public class CreateListLevel : MonoBehaviour
     //isEducationMode
     //true - обычный режим обучения
     //false - режим доп. тренировок
-    public void SetTasks(Task[] task, TaskMode mode)
+    public void SetTasks(PauseMenuManager menuManager, Task[] task, TaskMode mode)
     {
         Tasks = task;
-        GenerateLevels(mode);
+        GenerateLevels(menuManager, mode);
     }
 
     private void OnEnable()
@@ -32,7 +26,7 @@ public class CreateListLevel : MonoBehaviour
         UpdateLevels();
     }
 
-    public void GenerateLevels(TaskMode mode)
+    public void GenerateLevels(PauseMenuManager menuManager, TaskMode mode)
     {
         RemoveList();
         int levelCount = Tasks.Length;
@@ -45,8 +39,10 @@ public class CreateListLevel : MonoBehaviour
                 Task task = Tasks[i];
                 button.SetTask(task, mode, i + 1);
                 button.SetEvent(() => EducationHandler.instance?.DropAndSetTask(task));
+                button.SetEvent(() => menuManager.AllBack());
             }
         }
+        _buttons[0].Button.Select();
     }
 
     public void RemoveList()
@@ -67,5 +63,6 @@ public class CreateListLevel : MonoBehaviour
                 button.UpdateInfo();
             }
         }
+        _buttons[0].Button.Select();
     }
 }

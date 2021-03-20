@@ -1,15 +1,12 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using UnityEngine;
-using Random = UnityEngine.Random;
+﻿using UnityEngine;
+using UnityEngine.UI;
 
 public class MainMenuManager : MonoBehaviour
 {
     public PauseMenuManager PauseMenuManager;
     public GameObject MainMenu;
     public AllTasks AllTasks;
+    public Button firstSelectedButton;
     private CreateListLevel _createList;
     private bool _isActive;
 
@@ -27,6 +24,7 @@ public class MainMenuManager : MonoBehaviour
 
     public void Open()
     {
+        firstSelectedButton.Select();
         Time.timeScale = 0;
         _isActive = true;
         MainMenu.SetActive(true);
@@ -46,7 +44,7 @@ public class MainMenuManager : MonoBehaviour
 
     public void ResumeEducation()
     {
-        _createList.SetTasks(AllTasks.Tasks, TaskMode.Education);
+        _createList.SetTasks(PauseMenuManager, AllTasks.Tasks, TaskMode.Education);
         //PauseMenuManager.Pause();
         Close();
     }
@@ -55,7 +53,7 @@ public class MainMenuManager : MonoBehaviour
     {
         AllTasks.ResetTask();
         EducationHandler.instance.DropTask();
-        _createList.SetTasks(AllTasks.Tasks, TaskMode.Education);
+        _createList.SetTasks(PauseMenuManager, AllTasks.Tasks, TaskMode.Education);
         //PauseMenuManager.Pause();
         Close();
     }
@@ -63,13 +61,13 @@ public class MainMenuManager : MonoBehaviour
     public void ResearchesMode()
     {
         Task[] task = { AllTasks.ResearchTask };
-        _createList.SetTasks(task, TaskMode.Education);
+        _createList.SetTasks(PauseMenuManager, task, TaskMode.Education);
         Close();
     }
 
     public void TrainingMode()
     {
-        _createList.SetTasks(AllTasks.RandomTasks, TaskMode.Training);
+        _createList.SetTasks(PauseMenuManager, AllTasks.RandomTasks, TaskMode.Training);
         PauseMenuManager.Pause();
         Close();
     }
