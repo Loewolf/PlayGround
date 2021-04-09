@@ -14,7 +14,7 @@ public class ArticulationBodyXDriveModification : MonoBehaviour
     private bool rotationAllowed = true;
     private bool inRadians;
 
-    private void Awake()
+    protected virtual void Awake()
     {
         articulationBody = GetComponent<ArticulationBody>();
         fixedSpeed = speed * Time.fixedDeltaTime;
@@ -38,12 +38,22 @@ public class ArticulationBodyXDriveModification : MonoBehaviour
         }
     }
 
-    private void OnDecreaseAction()
+    protected virtual void OnDecreaseAction()
+    {
+        DecreaseTarget();
+    }
+
+    protected virtual void OnIncreaseAction()
+    {
+        IncreaseTarget();
+    }
+
+    private void DecreaseTarget()
     {
         MoveTo(articulationBody.jointPosition[0] * angleModifier - fixedSpeed);
     }
 
-    private void OnIncreaseAction()
+    private void IncreaseTarget()
     {
         MoveTo(articulationBody.jointPosition[0] * angleModifier + fixedSpeed);
     }

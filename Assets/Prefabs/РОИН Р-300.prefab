@@ -4052,9 +4052,9 @@ GameObject:
   - component: {fileID: 2592469677762676330}
   - component: {fileID: 2592469677762676325}
   - component: {fileID: 2592469677762676320}
-  - component: {fileID: 2592469677762676321}
   - component: {fileID: 2592469677762676324}
   - component: {fileID: 2592469677762676327}
+  - component: {fileID: 2057149058}
   m_Layer: 0
   m_Name: "\u041A\u043E\u0440\u043F\u0443\u0441 \u043B\u0430\u043F\u044B \u0437\u0430\u0434\u043D\u0435\u0439
     \u043F\u0440\u0430\u0432\u043E\u0439"
@@ -4194,21 +4194,6 @@ ArticulationBody:
   m_JointFriction: 0.05
   m_Immovable: 0
   m_UseGravity: 0
---- !u!114 &2592469677762676321
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2592469677762676322}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2652be3fb72b0be47b95f6f78e310746, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 30
-  decreaseValueButton: 113
-  increaseValueButton: 101
 --- !u!65 &2592469677762676324
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4235,6 +4220,26 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.27852947, y: 0.261114, z: 0.41899568}
   m_Center: {x: 0.0008287153, y: 1.0685234, z: -0.017481767}
+--- !u!114 &2057149058
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2592469677762676322}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc8d166244f4ce7468bcaadb293d698c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 30
+  decreaseValueButton: 113
+  increaseValueButton: 101
+  independentModifications:
+  - {fileID: 1456846211}
+  - {fileID: 721458675}
+  - {fileID: 1590875886}
+  targetDeviation: 1
 --- !u!1 &2592469677780147156
 GameObject:
   m_ObjectHideFlags: 0
@@ -5524,10 +5529,10 @@ MonoBehaviour:
   - {fileID: 2592469678176129222}
   - {fileID: 2592469677968429914}
   articulationBodyLegs:
-  - {fileID: 2592469678438615762}
-  - {fileID: 2592469678330059091}
-  - {fileID: 2592469677762676321}
-  - {fileID: 2592469678474774493}
+  - {fileID: 1456846211}
+  - {fileID: 721458675}
+  - {fileID: 2057149058}
+  - {fileID: 1590875886}
   accessoryJoinPoint: {fileID: 2592469677976262305}
   regularCamerasContainer: {fileID: 7131161341553861472}
   specialCamerasContainer: {fileID: 3555899818782549618}
@@ -6153,9 +6158,9 @@ GameObject:
   - component: {fileID: 2592469678330059092}
   - component: {fileID: 2592469678330059095}
   - component: {fileID: 2592469678330059090}
-  - component: {fileID: 2592469678330059091}
   - component: {fileID: 2592469678330059094}
   - component: {fileID: 2592469678330059089}
+  - component: {fileID: 721458675}
   m_Layer: 0
   m_Name: "\u041A\u043E\u0440\u043F\u0443\u0441 \u043B\u0430\u043F\u044B \u043F\u0435\u0440\u0435\u0434\u043D\u0435\u0439
     \u043B\u0435\u0432\u043E\u0439"
@@ -6295,21 +6300,6 @@ ArticulationBody:
   m_JointFriction: 0.05
   m_Immovable: 0
   m_UseGravity: 0
---- !u!114 &2592469678330059091
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2592469678330059085}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2652be3fb72b0be47b95f6f78e310746, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 30
-  decreaseValueButton: 113
-  increaseValueButton: 101
 --- !u!65 &2592469678330059094
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6336,6 +6326,26 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.27852947, y: 0.261114, z: 0.41899568}
   m_Center: {x: 0.0008287153, y: 1.0685234, z: -0.017481767}
+--- !u!114 &721458675
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2592469678330059085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc8d166244f4ce7468bcaadb293d698c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 30
+  decreaseValueButton: 113
+  increaseValueButton: 101
+  independentModifications:
+  - {fileID: 1456846211}
+  - {fileID: 2057149058}
+  - {fileID: 1590875886}
+  targetDeviation: 1
 --- !u!1 &2592469678346784081
 GameObject:
   m_ObjectHideFlags: 0
@@ -6930,9 +6940,9 @@ GameObject:
   - component: {fileID: 2592469678438615766}
   - component: {fileID: 2592469678438615761}
   - component: {fileID: 2592469678438615757}
-  - component: {fileID: 2592469678438615762}
   - component: {fileID: 2592469678438615760}
   - component: {fileID: 2592469678438615763}
+  - component: {fileID: 1456846211}
   m_Layer: 0
   m_Name: "\u041A\u043E\u0440\u043F\u0443\u0441 \u043B\u0430\u043F\u044B \u043F\u0435\u0440\u0435\u0434\u043D\u0435\u0439
     \u043F\u0440\u0430\u0432\u043E\u0439"
@@ -7072,21 +7082,6 @@ ArticulationBody:
   m_JointFriction: 0.05
   m_Immovable: 0
   m_UseGravity: 0
---- !u!114 &2592469678438615762
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2592469678438615758}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2652be3fb72b0be47b95f6f78e310746, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 30
-  decreaseValueButton: 113
-  increaseValueButton: 101
 --- !u!65 &2592469678438615760
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7113,6 +7108,26 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.27852947, y: 0.261114, z: 0.41899568}
   m_Center: {x: 0.0008287153, y: 1.0685234, z: -0.017481767}
+--- !u!114 &1456846211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2592469678438615758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc8d166244f4ce7468bcaadb293d698c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 30
+  decreaseValueButton: 113
+  increaseValueButton: 101
+  independentModifications:
+  - {fileID: 721458675}
+  - {fileID: 2057149058}
+  - {fileID: 1590875886}
+  targetDeviation: 1
 --- !u!1 &2592469678459337844
 GameObject:
   m_ObjectHideFlags: 0
@@ -7307,9 +7322,9 @@ GameObject:
   - component: {fileID: 2592469678474774310}
   - component: {fileID: 2592469678474774305}
   - component: {fileID: 2592469678474774492}
-  - component: {fileID: 2592469678474774493}
   - component: {fileID: 2592469678474774304}
   - component: {fileID: 2592469678474774307}
+  - component: {fileID: 1590875886}
   m_Layer: 0
   m_Name: "\u041A\u043E\u0440\u043F\u0443\u0441 \u043B\u0430\u043F\u044B \u0437\u0430\u0434\u043D\u0435\u0439
     \u043B\u0435\u0432\u043E\u0439"
@@ -7449,21 +7464,6 @@ ArticulationBody:
   m_JointFriction: 0.05
   m_Immovable: 0
   m_UseGravity: 0
---- !u!114 &2592469678474774493
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2592469678474774495}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2652be3fb72b0be47b95f6f78e310746, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 30
-  decreaseValueButton: 113
-  increaseValueButton: 101
 --- !u!65 &2592469678474774304
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7490,6 +7490,26 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.27852947, y: 0.261114, z: 0.41899568}
   m_Center: {x: 0.0008287153, y: 1.0685234, z: -0.017481767}
+--- !u!114 &1590875886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2592469678474774495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc8d166244f4ce7468bcaadb293d698c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 30
+  decreaseValueButton: 113
+  increaseValueButton: 101
+  independentModifications:
+  - {fileID: 1456846211}
+  - {fileID: 721458675}
+  - {fileID: 2057149058}
+  targetDeviation: 1
 --- !u!1 &2592469678542823638
 GameObject:
   m_ObjectHideFlags: 0

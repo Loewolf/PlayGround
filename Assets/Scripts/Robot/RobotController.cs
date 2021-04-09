@@ -68,11 +68,12 @@ public class RobotController : ArticulationBodyCenterOfMass
 
     private bool LegsTouchSurface()
     {
+        int legsCollisionsCount = 0;
         foreach (NonPlayerCollisionCounter leg in legsCollisionCounters)
         {
-            if (leg.HasCollisions) return true;
+            if (leg.HasCollisions) legsCollisionsCount++;
         }
-        return false;
+        return legsCollisionsCount == legsCollisionCounters.Count;
     }
 
     private void ApplyState(RobotState newState)
