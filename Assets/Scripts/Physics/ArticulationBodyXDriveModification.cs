@@ -2,6 +2,7 @@ using UnityEngine;
 [RequireComponent(typeof(ArticulationBody))]
 public class ArticulationBodyXDriveModification : MonoBehaviour
 {
+    public bool independent = true;
     public float speed = 90f;
     [Space(10)]
     public KeyCode decreaseValueButton;
@@ -13,6 +14,7 @@ public class ArticulationBodyXDriveModification : MonoBehaviour
     private float angleModifier;
     private bool rotationAllowed = true;
     private bool inRadians;
+    protected float expectedTarget = 0f;
 
     protected virtual void Awake()
     {
@@ -24,7 +26,7 @@ public class ArticulationBodyXDriveModification : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (rotationAllowed)
+        if (independent && rotationAllowed)
         {
             if (Input.GetKey(decreaseValueButton))
             {
@@ -66,6 +68,7 @@ public class ArticulationBodyXDriveModification : MonoBehaviour
 
     public void MoveTo(float value)
     {
+        expectedTarget = value;
         xDrive = articulationBody.xDrive;
         xDrive.target = value;
         articulationBody.xDrive = xDrive;

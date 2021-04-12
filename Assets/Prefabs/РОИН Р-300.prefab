@@ -880,6 +880,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2652be3fb72b0be47b95f6f78e310746, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  independent: 1
   speed: 30
   decreaseValueButton: 104
   increaseValueButton: 106
@@ -1061,6 +1062,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2652be3fb72b0be47b95f6f78e310746, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  independent: 1
   speed: 0.4
   decreaseValueButton: 108
   increaseValueButton: 107
@@ -1589,11 +1591,11 @@ GameObject:
   - component: {fileID: 2592469677318260377}
   - component: {fileID: 7131161342434234209}
   - component: {fileID: 2592469677318260449}
-  - component: {fileID: 7131161342434234214}
   - component: {fileID: 2592469677318260451}
   - component: {fileID: 2592469677318260448}
   - component: {fileID: 2592469677318260450}
   - component: {fileID: 2592469677318260454}
+  - component: {fileID: 1355207270}
   m_Layer: 0
   m_Name: "\u0413\u0443\u0441\u0435\u043D\u0438\u0446\u0430 \u043B\u0435\u0432\u0430\u044F"
   m_TagString: Player
@@ -1716,20 +1718,6 @@ ArticulationBody:
   m_JointFriction: 0.05
   m_Immovable: 0
   m_UseGravity: 0
---- !u!64 &7131161342434234214
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2592469677318260380}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 6748410468607868070, guid: 5adf511f3b3a9a54596a4ff980c4c5c2, type: 3}
 --- !u!135 &2592469677318260451
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1781,6 +1769,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ec66a0519438a3458bc549705b338e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!136 &1355207270
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2592469677318260380}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.19767766
+  m_Height: 2.1511235
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2592469677342004595
 GameObject:
   m_ObjectHideFlags: 0
@@ -1793,11 +1795,11 @@ GameObject:
   - component: {fileID: 2592469677342004591}
   - component: {fileID: 2592469677342004590}
   - component: {fileID: 2592469677342004599}
-  - component: {fileID: 2592469677342004589}
   - component: {fileID: 2592469677342004598}
   - component: {fileID: 2592469677342004593}
   - component: {fileID: 2592469677342004592}
   - component: {fileID: 2592469677342004596}
+  - component: {fileID: 1789545800}
   m_Layer: 0
   m_Name: "\u0413\u0443\u0441\u0435\u043D\u0438\u0446\u0430 \u043F\u0440\u0430\u0432\u0430\u044F"
   m_TagString: Player
@@ -1920,20 +1922,6 @@ ArticulationBody:
   m_JointFriction: 0.05
   m_Immovable: 0
   m_UseGravity: 0
---- !u!64 &2592469677342004589
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2592469677342004595}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 6748410468607868070, guid: 5adf511f3b3a9a54596a4ff980c4c5c2, type: 3}
 --- !u!135 &2592469677342004598
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1985,6 +1973,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4ec66a0519438a3458bc549705b338e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!136 &1789545800
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2592469677342004595}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.19767766
+  m_Height: 2.1511235
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2592469677383546211
 GameObject:
   m_ObjectHideFlags: 0
@@ -2535,6 +2537,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2652be3fb72b0be47b95f6f78e310746, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  independent: 1
   speed: 30
   decreaseValueButton: 121
   increaseValueButton: 117
@@ -2945,6 +2948,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2652be3fb72b0be47b95f6f78e310746, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  independent: 1
   speed: -30
   decreaseValueButton: 114
   increaseValueButton: 116
@@ -3218,6 +3222,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2652be3fb72b0be47b95f6f78e310746, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  independent: 0
   speed: 30
   decreaseValueButton: 102
   increaseValueButton: 103
@@ -4232,10 +4237,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc8d166244f4ce7468bcaadb293d698c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  independent: 1
   speed: 30
   decreaseValueButton: 113
   increaseValueButton: 101
-  independentModifications:
+  restrictingModifications:
   - {fileID: 1456846211}
   - {fileID: 721458675}
   - {fileID: 1590875886}
@@ -4898,6 +4904,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2652be3fb72b0be47b95f6f78e310746, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  independent: 1
   speed: 30
   decreaseValueButton: 98
   increaseValueButton: 110
@@ -5521,7 +5528,7 @@ MonoBehaviour:
   - {fileID: 2592469677640188116}
   - {fileID: 2592469677489714304}
   - {fileID: 2592469678459337851}
-  - {fileID: 2592469678346784087}
+  - {fileID: 233187751}
   - {fileID: 2592469677650980508}
   - {fileID: 2592469677084106829}
   - {fileID: 2592469677144600046}
@@ -5752,6 +5759,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2652be3fb72b0be47b95f6f78e310746, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  independent: 1
   speed: 30
   decreaseValueButton: 99
   increaseValueButton: 118
@@ -6338,10 +6346,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc8d166244f4ce7468bcaadb293d698c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  independent: 1
   speed: 30
   decreaseValueButton: 113
   increaseValueButton: 101
-  independentModifications:
+  restrictingModifications:
   - {fileID: 1456846211}
   - {fileID: 2057149058}
   - {fileID: 1590875886}
@@ -6359,9 +6368,9 @@ GameObject:
   - component: {fileID: 2592469678346784091}
   - component: {fileID: 2592469678346784090}
   - component: {fileID: 2592469678346784086}
-  - component: {fileID: 2592469678346784087}
   - component: {fileID: 2592469678346784088}
   - component: {fileID: 2592469678346784085}
+  - component: {fileID: 233187751}
   m_Layer: 0
   m_Name: "\u0421\u043E\u0435\u0434\u0438\u043D\u0435\u043D\u0438\u0435 3"
   m_TagString: Player
@@ -6499,21 +6508,6 @@ ArticulationBody:
   m_JointFriction: 0.05
   m_Immovable: 0
   m_UseGravity: 0
---- !u!114 &2592469678346784087
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2592469678346784081}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2652be3fb72b0be47b95f6f78e310746, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: -30
-  decreaseValueButton: 102
-  increaseValueButton: 103
 --- !u!114 &2592469678346784088
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6540,6 +6534,25 @@ CapsuleCollider:
   m_Height: 0.7404085
   m_Direction: 1
   m_Center: {x: -0.011904976, y: 0.43058228, z: 0.04546411}
+--- !u!114 &233187751
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2592469678346784081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e40820e88505806458d3dbc6b7a2bf9f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  independent: 1
+  speed: -30
+  decreaseValueButton: 102
+  increaseValueButton: 103
+  chainedModifications:
+  - modification: {fileID: 2592469677650980508}
+    multiplier: -1
 --- !u!1 &2592469678373747000
 GameObject:
   m_ObjectHideFlags: 0
@@ -6790,6 +6803,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2652be3fb72b0be47b95f6f78e310746, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  independent: 1
   speed: 30
   decreaseValueButton: 122
   increaseValueButton: 120
@@ -7120,10 +7134,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc8d166244f4ce7468bcaadb293d698c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  independent: 1
   speed: 30
   decreaseValueButton: 113
   increaseValueButton: 101
-  independentModifications:
+  restrictingModifications:
   - {fileID: 721458675}
   - {fileID: 2057149058}
   - {fileID: 1590875886}
@@ -7280,6 +7295,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2652be3fb72b0be47b95f6f78e310746, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  independent: 1
   speed: 30
   decreaseValueButton: 105
   increaseValueButton: 111
@@ -7502,10 +7518,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc8d166244f4ce7468bcaadb293d698c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  independent: 1
   speed: 30
   decreaseValueButton: 113
   increaseValueButton: 101
-  independentModifications:
+  restrictingModifications:
   - {fileID: 1456846211}
   - {fileID: 721458675}
   - {fileID: 2057149058}

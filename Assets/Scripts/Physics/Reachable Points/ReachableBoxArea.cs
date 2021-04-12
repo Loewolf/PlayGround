@@ -16,8 +16,15 @@ public class ReachableBoxArea : ReachablePoint
 
     private void OnValidate()
     {
-        transform.localScale = new Vector3(globalScale.x / transform.parent.transform.localScale.x,
-                                            globalScale.y / transform.parent.transform.localScale.y,
-                                            globalScale.z / transform.parent.transform.localScale.z);
+        if (transform.parent)
+        {
+            transform.localScale = new Vector3(globalScale.x / transform.parent.transform.localScale.x,
+                                    globalScale.y / transform.parent.transform.localScale.y,
+                                    globalScale.z / transform.parent.transform.localScale.z);
+        }
+        else
+        {
+            transform.localScale = globalScale;
+        }
     }
 }
