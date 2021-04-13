@@ -18,6 +18,7 @@ public class RobotController : ArticulationBodyCenterOfMass
     [Space(10)]
     public List<ArticulationBodyXDriveModification> articulationBodyRotations;
     public List<ArticulationBodyXDriveModification> articulationBodyLegs;
+    public float criticalAngle = -95f;
     private bool legsTouchSurface;
     public bool MovementAllowed { get; private set; } = false;
     public bool RotationsAllowed { get; private set; } = false;
@@ -69,11 +70,17 @@ public class RobotController : ArticulationBodyCenterOfMass
     private bool LegsTouchSurface()
     {
         int legsCollisionsCount = 0;
-        foreach (NonPlayerCollisionCounter leg in legsCollisionCounters)
+        bool criticalAngleReached = false;
+        for (int i = 0; i < legsCollisionCounters.Count; ++i)
         {
-            if (leg.HasCollisions) legsCollisionsCount++;
+            if (legsCollisionCounters[i].HasCollisions) legsCollisionsCount++;
+            if (articulationBodyLegs[i].GetXDriveTarget() < criticalAngle)
+            {
+                criticalAngleReached = true;
+                break;
+            }
         }
-        return legsCollisionsCount == legsCollisionCounters.Count;
+        return criticalAngleReached || legsCollisionsCount == legsCollisionCounters.Count;
     }
 
     private void ApplyState(RobotState newState)
