@@ -6,7 +6,7 @@ public class ArticulationTargetShower : EditorWindow
     public Transform parentTransform;
     private ArticulationBody[] articulationBodies;
     private Vector2 scrollPosition;
-    [MenuItem("Tools/Articulation Body Target Shower")]
+    [MenuItem("Tools/Debugging/Articulation Body Target Shower")]
 
     public static void ShowWindow()
     {

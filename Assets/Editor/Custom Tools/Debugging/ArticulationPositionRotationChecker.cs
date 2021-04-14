@@ -8,7 +8,7 @@ public class ArticulationPositionRotationChecker : EditorWindow
     Vector3 anchorPosition;
     Quaternion anchorRotation;
     float value;
-    [MenuItem("Tools/Articulation Position and Rotation Checker")]
+    [MenuItem("Tools/Debugging/Articulation Position and Rotation Checker")]
     public static void ShowWindow()
     {
         GetWindow(typeof(ArticulationPositionRotationChecker));

@@ -6,7 +6,7 @@ public class QuaternionVectorMultiplicationChecker : EditorWindow
     Vector3 vector3;
     Vector3 rotationEulerVector;
 
-    [MenuItem("Tools/Vector Rotation Checker")]
+    [MenuItem("Tools/Debugging/Vector Rotation Checker")]
     public static void ShowWindow()
     {
         GetWindow(typeof(QuaternionVectorMultiplicationChecker));

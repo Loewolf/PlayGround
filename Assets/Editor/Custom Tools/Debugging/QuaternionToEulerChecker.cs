@@ -5,7 +5,7 @@ public class QuaternionToEulerChecker : EditorWindow
 {
     Quaternion quaternion;
     Vector3 eulerRotation;
-    [MenuItem("Tools/Quaternion To Euler Angles Checker")]
+    [MenuItem("Tools/Debugging/Quaternion To Euler Angles Checker")]
     public static void ShowWindow()
     {
         GetWindow(typeof(QuaternionToEulerChecker));

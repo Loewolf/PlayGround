@@ -5,7 +5,7 @@ public class ConstToSingleTool : EditorWindow
 {
     Transform parentTransform;
 
-    [MenuItem("Tools/Const To Local Look At Tool")]
+    [MenuItem("Tools/Physics/Const To Local Look At Tool")]
     public static void ShowWindow()
     {
         GetWindow(typeof(ConstToSingleTool));

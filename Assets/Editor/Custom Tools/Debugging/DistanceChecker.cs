@@ -6,7 +6,7 @@ public class DistanceChecker : EditorWindow
     Transform firstObject;
     Transform secondObject;
 
-    [MenuItem("Tools/Distance Checker")]
+    [MenuItem("Tools/Debugging/Distance Checker")]
     public static void ShowWindow()
     {
         GetWindow(typeof(DistanceChecker));

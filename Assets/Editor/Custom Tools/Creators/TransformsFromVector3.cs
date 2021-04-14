@@ -9,7 +9,7 @@ public class TransformsFromVector3 : EditorWindow
     public string pointName;
     private Vector2 scrollPosition;
 
-    [MenuItem("Tools/Transforms From Vectors")]
+    [MenuItem("Tools/Creators/Transforms From Vectors")]
     public static void ShowWindow()
     {
         GetWindow(typeof(TransformsFromVector3));
