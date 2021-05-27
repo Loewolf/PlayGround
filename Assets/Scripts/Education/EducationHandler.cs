@@ -145,7 +145,7 @@ public class EducationHandler : MonoBehaviour
     {
         if (RobotSelector.instance)
         {
-            task.Take(RobotSelector.instance.SelectedRobotController);
+            RobotSelector.instance.SelectRobot(task.Take());
             ChangeWindowsActivity(true);
             SetTextValues(task.GetCurrentDescription(), task.InstructionsEnabled, task.GetCurrentInstruction());
             SetTimer(task.GetTimeWithDelay());

@@ -246,7 +246,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5117398}
-  - component: {fileID: 5117397}
   m_Layer: 0
   m_Name: "\u041A\u043B\u0430\u0441\u0441 3"
   m_TagString: Untagged
@@ -254,21 +253,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &5117397
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5117396}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06e43c07cd14b6845bf68f01ef384ca8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  robotStatePairs:
-  - robot: {fileID: 1008201078752938241}
-    state: {fileID: 270971315}
 --- !u!4 &5117398
 Transform:
   m_ObjectHideFlags: 0
@@ -607,13 +591,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a9eb5cf27ebd348b3c82953b93b8bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#a62c19ff>\u041A\u043B\u0430\u0441\u0441 3</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u0421\u0431\u043E\u0440 \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u043E\u0432."
   taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 19"
   taskName: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 3.</color> \u0421\u0431\u043E\u0440
     \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u043E\u0432"
-  specialStateManager: {fileID: 5117397}
+  robotState: {fileID: 270971315}
   value: 15
   taskDescriptions:
   - "\u041F\u043E\u043C\u0435\u0441\u0442\u0438\u0442\u0435 \u0432\u0441\u0435 \u043F\u0430\u0440\u044F\u0449\u0438\u0435
@@ -1194,6 +1179,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a427ac57c4041347b726a2e1bbc4b4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 2</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u0421\u043E\u0437\u0434\u0430\u043D\u0438\u0435 \u043F\u0438\u0440\u0430\u043C\u0438\u0434\u044B
@@ -1203,7 +1189,7 @@ MonoBehaviour:
     \u0421\u043E\u0437\u0434\u0430\u043D\u0438\u0435 \u043F\u0438\u0440\u0430\u043C\u0438\u0434\u044B
     \u0438\u0437 \u044F\u0449\u0438\u043A\u043E\u0432. \u0427\u0430\u0441\u0442\u044C
     2"
-  specialStateManager: {fileID: 0}
+  robotState: {fileID: 0}
   value: 7
   taskDescriptions:
   - "\u0421\u043E\u0437\u0434\u0430\u0439\u0442\u0435 \u043F\u0438\u0440\u0430\u043C\u0438\u0434\u0443
@@ -1299,13 +1285,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a9eb5cf27ebd348b3c82953b93b8bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#a62c19ff>\u041A\u043B\u0430\u0441\u0441 3</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u0421\u0431\u043E\u0440 \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u043E\u0432."
   taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 1"
   taskName: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 3.</color> \u0421\u0431\u043E\u0440
     \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u043E\u0432"
-  specialStateManager: {fileID: 5117397}
+  robotState: {fileID: 270971315}
   value: 15
   taskDescriptions:
   - "\u041F\u043E\u043C\u0435\u0441\u0442\u0438\u0442\u0435 \u0432\u0441\u0435 \u043F\u0430\u0440\u044F\u0449\u0438\u0435
@@ -1532,13 +1519,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a9eb5cf27ebd348b3c82953b93b8bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#a62c19ff>\u041A\u043B\u0430\u0441\u0441 3</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u0421\u0431\u043E\u0440 \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u043E\u0432."
   taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 9"
   taskName: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 3.</color> \u0421\u0431\u043E\u0440
     \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u043E\u0432"
-  specialStateManager: {fileID: 5117397}
+  robotState: {fileID: 270971315}
   value: 15
   taskDescriptions:
   - "\u041F\u043E\u043C\u0435\u0441\u0442\u0438\u0442\u0435 \u0432\u0441\u0435 \u043F\u0430\u0440\u044F\u0449\u0438\u0435
@@ -1947,12 +1935,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7022ceb7ccb7bb46a621aab0856c15f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 2592469677024408704}
   taskMode: 0
   taskNamePrefix: "<color=#4B596FFF>\u041A\u043B\u0430\u0441\u0441 4</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u041E\u0447\u0438\u0441\u0442\u043A\u0430 \u0442\u043E\u043D\u043D\u0435\u043B\u044F."
   taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 1"
   taskName: 
-  specialStateManager: {fileID: 1090027235}
+  robotState: {fileID: 0}
   value: 0
   taskDescriptions:
   - "\u041E\u0447\u0438\u0441\u0442\u0438\u0442\u0435 \u0442\u043E\u043D\u043D\u0435\u043B\u044C
@@ -2085,6 +2074,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a9eb5cf27ebd348b3c82953b93b8bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#a62c19ff>\u041A\u043B\u0430\u0441\u0441 3</color>. <color=#c95624ff>\u0414\u043E\u043F.
     \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
@@ -2092,7 +2082,7 @@ MonoBehaviour:
   taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 13 (\u043D\u0430 \u0432\u0440\u0435\u043C\u044F)"
   taskName: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 3.</color> \u0421\u0431\u043E\u0440
     \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u043E\u0432"
-  specialStateManager: {fileID: 5117397}
+  robotState: {fileID: 270971315}
   value: 20
   taskDescriptions:
   - "\u041F\u043E\u043C\u0435\u0441\u0442\u0438\u0442\u0435 \u0432\u0441\u0435 \u043F\u0430\u0440\u044F\u0449\u0438\u0435
@@ -2513,6 +2503,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a9eb5cf27ebd348b3c82953b93b8bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#a62c19ff>\u041A\u043B\u0430\u0441\u0441 3</color>. <color=#c95624ff>\u0414\u043E\u043F.
     \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
@@ -2520,7 +2511,7 @@ MonoBehaviour:
   taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 9 (\u043D\u0430 \u0432\u0440\u0435\u043C\u044F)"
   taskName: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 3.</color> \u0421\u0431\u043E\u0440
     \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u043E\u0432"
-  specialStateManager: {fileID: 5117397}
+  robotState: {fileID: 270971315}
   value: 20
   taskDescriptions:
   - "\u041F\u043E\u043C\u0435\u0441\u0442\u0438\u0442\u0435 \u0432\u0441\u0435 \u043F\u0430\u0440\u044F\u0449\u0438\u0435
@@ -2622,6 +2613,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a9eb5cf27ebd348b3c82953b93b8bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#a62c19ff>\u041A\u043B\u0430\u0441\u0441 3</color>. <color=#c95624ff>\u0414\u043E\u043F.
     \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
@@ -2629,7 +2621,7 @@ MonoBehaviour:
   taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 11 (\u043D\u0430 \u0432\u0440\u0435\u043C\u044F)"
   taskName: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 3.</color> \u0421\u0431\u043E\u0440
     \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u043E\u0432"
-  specialStateManager: {fileID: 5117397}
+  robotState: {fileID: 270971315}
   value: 20
   taskDescriptions:
   - "\u041F\u043E\u043C\u0435\u0441\u0442\u0438\u0442\u0435 \u0432\u0441\u0435 \u043F\u0430\u0440\u044F\u0449\u0438\u0435
@@ -2795,7 +2787,7 @@ Transform:
   - {fileID: 1662188222}
   - {fileID: 483899713}
   m_Father: {fileID: 370336470}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &129363966
 GameObject:
@@ -3335,13 +3327,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a9eb5cf27ebd348b3c82953b93b8bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#a62c19ff>\u041A\u043B\u0430\u0441\u0441 3</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u0421\u0431\u043E\u0440 \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u043E\u0432."
   taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 17"
   taskName: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 3.</color> \u0421\u0431\u043E\u0440
     \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u043E\u0432"
-  specialStateManager: {fileID: 5117397}
+  robotState: {fileID: 270971315}
   value: 15
   taskDescriptions:
   - "\u041F\u043E\u043C\u0435\u0441\u0442\u0438\u0442\u0435 \u0432\u0441\u0435 \u043F\u0430\u0440\u044F\u0449\u0438\u0435
@@ -3443,6 +3436,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a9eb5cf27ebd348b3c82953b93b8bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#a62c19ff>\u041A\u043B\u0430\u0441\u0441 3</color>. <color=#c95624ff>\u0414\u043E\u043F.
     \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
@@ -3450,7 +3444,7 @@ MonoBehaviour:
   taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 15 (\u043D\u0430 \u0432\u0440\u0435\u043C\u044F)"
   taskName: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 3.</color> \u0421\u0431\u043E\u0440
     \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u043E\u0432"
-  specialStateManager: {fileID: 5117397}
+  robotState: {fileID: 270971315}
   value: 20
   taskDescriptions:
   - "\u041F\u043E\u043C\u0435\u0441\u0442\u0438\u0442\u0435 \u0432\u0441\u0435 \u043F\u0430\u0440\u044F\u0449\u0438\u0435
@@ -4641,6 +4635,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b794838c737b50a41a02f30455fe7358, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 2</color>. <color=#c95624ff>\u0414\u043E\u043F.
     \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
@@ -4651,7 +4646,7 @@ MonoBehaviour:
   taskName: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 2.</color> \u041F\u0435\u0440\u0435\u043C\u0435\u0449\u0435\u043D\u0438\u0435
     \u0433\u0440\u0443\u0437\u043E\u0432 \u043F\u0440\u0438 \u043F\u043E\u043C\u043E\u0449\u0438
     \u0417\u0430\u0445\u0432\u0430\u0442\u0430"
-  specialStateManager: {fileID: 0}
+  robotState: {fileID: 0}
   value: 10
   taskDescriptions:
   - "\u041F\u0440\u0438\u0441\u043E\u0435\u0434\u0438\u043D\u0438\u0442\u0435 \u0433\u0440\u0435\u0439\u0444\u0435\u0440\u043D\u044B\u0439
@@ -4737,6 +4732,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a427ac57c4041347b726a2e1bbc4b4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 2</color>. <color=#c95624ff>\u0414\u043E\u043F.
     \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
@@ -4747,7 +4743,7 @@ MonoBehaviour:
     \u0420\u0430\u0437\u043C\u0435\u0449\u0435\u043D\u0438\u0435 \u0442\u0440\u0443\u0431\u044B
     \u043D\u0430 \u044F\u0449\u0438\u043A\u0430\u0445. \u0427\u0430\u0441\u0442\u044C
     1"
-  specialStateManager: {fileID: 0}
+  robotState: {fileID: 0}
   value: 10
   taskDescriptions:
   - "\u041F\u043E\u043B\u043E\u0436\u0438\u0442\u0435 \u0442\u0440\u0443\u0431\u0443
@@ -5811,7 +5807,8 @@ GameObject:
   - component: {fileID: 270971314}
   - component: {fileID: 270971315}
   m_Layer: 0
-  m_Name: "\u0420\u041E\u0418\u041D \u0420-300 \u0421\u043E\u0441\u0442\u043E\u044F\u043D\u0438\u0435"
+  m_Name: "\u0420\u041E\u0418\u041D \u0420-300 \u0421\u043E\u0441\u0442\u043E\u044F\u043D\u0438\u0435
+    \u041A\u043B\u0430\u0441\u0441 3"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7366,11 +7363,11 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1087707421}
-  - {fileID: 1851042112}
-  - {fileID: 1012795385}
-  - {fileID: 956390095}
-  - {fileID: 4364656030974112934}
+  - {fileID: 450272051}
+  - {fileID: 829588976}
+  - {fileID: 803811283}
   - {fileID: 128194097}
+  - {fileID: 4364656030974112934}
   m_Father: {fileID: 750579804}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -7449,6 +7446,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 347a434f215288d44968ef6c107309e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#a62c19ff>\u041A\u043B\u0430\u0441\u0441 3</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u041E\u043F\u0438\u0441\u0430\u043D\u0438\u0435 \u0444\u0438\u0433\u0443\u0440\u044B
@@ -7456,7 +7454,7 @@ MonoBehaviour:
   taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 2"
   taskName: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 3.</color> \u041E\u043F\u0438\u0441\u0430\u043D\u0438\u0435
     \u0444\u0438\u0433\u0443\u0440\u044B \u0441\u0442\u0440\u0435\u043B\u043E\u0439"
-  specialStateManager: {fileID: 5117397}
+  robotState: {fileID: 270971315}
   value: 15
   taskDescriptions:
   - "\u041E\u043F\u0438\u0448\u0438\u0442\u0435 \u0444\u0438\u0433\u0443\u0440\u0443
@@ -7823,6 +7821,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a427ac57c4041347b726a2e1bbc4b4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 2</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u0423\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0430 \u044F\u0449\u0438\u043A\u043E\u0432
@@ -7832,7 +7831,7 @@ MonoBehaviour:
     \u0423\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0430 \u044F\u0449\u0438\u043A\u043E\u0432
     \u0434\u0440\u0443\u0433 \u043D\u0430 \u0434\u0440\u0443\u0433\u0430. \u0427\u0430\u0441\u0442\u044C
     2"
-  specialStateManager: {fileID: 0}
+  robotState: {fileID: 0}
   value: 7
   taskDescriptions:
   - "\u0423\u0441\u0442\u0430\u043D\u043E\u0432\u0438\u0442\u0435 \u044F\u0449\u0438\u043A\u0438
@@ -8085,13 +8084,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a9eb5cf27ebd348b3c82953b93b8bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#a62c19ff>\u041A\u043B\u0430\u0441\u0441 3</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u0421\u0431\u043E\u0440 \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u043E\u0432."
   taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 8"
   taskName: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 3.</color> \u0421\u0431\u043E\u0440
     \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u043E\u0432"
-  specialStateManager: {fileID: 5117397}
+  robotState: {fileID: 270971315}
   value: 15
   taskDescriptions:
   - "\u041F\u043E\u043C\u0435\u0441\u0442\u0438\u0442\u0435 \u0432\u0441\u0435 \u043F\u0430\u0440\u044F\u0449\u0438\u0435
@@ -8733,12 +8733,13 @@ GameObject:
   - component: {fileID: 450272051}
   - component: {fileID: 450272052}
   m_Layer: 0
-  m_Name: "\u0420\u041E\u0418\u041D \u0420-300 \u0421\u043E\u0441\u0442\u043E\u044F\u043D\u0438\u0435"
+  m_Name: "\u0420\u041E\u0418\u041D \u0420-300 \u0421\u043E\u0441\u0442\u043E\u044F\u043D\u0438\u0435
+    \u041E\u043F\u0443\u0449\u0435\u043D\u043D\u044B\u0435 \u0430\u0443\u0442\u0440\u0438\u0433\u0433\u0435\u0440\u044B"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &450272051
 Transform:
   m_ObjectHideFlags: 0
@@ -8746,12 +8747,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 450272050}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1851042112}
-  m_RootOrder: 0
+  m_Father: {fileID: 370336470}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &450272052
 MonoBehaviour:
@@ -8844,13 +8845,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a9eb5cf27ebd348b3c82953b93b8bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#a62c19ff>\u041A\u043B\u0430\u0441\u0441 3</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u0421\u0431\u043E\u0440 \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u043E\u0432."
   taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 12"
   taskName: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 3.</color> \u0421\u0431\u043E\u0440
     \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u043E\u0432"
-  specialStateManager: {fileID: 5117397}
+  robotState: {fileID: 270971315}
   value: 15
   taskDescriptions:
   - "\u041F\u043E\u043C\u0435\u0441\u0442\u0438\u0442\u0435 \u0432\u0441\u0435 \u043F\u0430\u0440\u044F\u0449\u0438\u0435
@@ -9406,6 +9408,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a427ac57c4041347b726a2e1bbc4b4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 2</color>. <color=#c95624ff>\u0414\u043E\u043F.
     \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
@@ -9416,7 +9419,7 @@ MonoBehaviour:
     \u0420\u0430\u0437\u043C\u0435\u0449\u0435\u043D\u0438\u0435 \u0442\u0440\u0443\u0431\u044B
     \u043D\u0430 \u044F\u0449\u0438\u043A\u0430\u0445. \u0427\u0430\u0441\u0442\u044C
     1"
-  specialStateManager: {fileID: 0}
+  robotState: {fileID: 0}
   value: 10
   taskDescriptions:
   - "\u041F\u043E\u043B\u043E\u0436\u0438\u0442\u0435 \u0442\u0440\u0443\u0431\u0443
@@ -9501,6 +9504,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 347a434f215288d44968ef6c107309e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#a62c19ff>\u041A\u043B\u0430\u0441\u0441 3</color>. <color=#c95624ff>\u0414\u043E\u043F.
     \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
@@ -9509,7 +9513,7 @@ MonoBehaviour:
   taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 3 (\u043D\u0430 \u0432\u0440\u0435\u043C\u044F)"
   taskName: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 3.</color> \u041E\u043F\u0438\u0441\u0430\u043D\u0438\u0435
     \u0444\u0438\u0433\u0443\u0440\u044B \u0441\u0442\u0440\u0435\u043B\u043E\u0439"
-  specialStateManager: {fileID: 5117397}
+  robotState: {fileID: 270971315}
   value: 15
   taskDescriptions:
   - "\u041E\u043F\u0438\u0448\u0438\u0442\u0435 \u0444\u0438\u0433\u0443\u0440\u0443
@@ -9580,6 +9584,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a9eb5cf27ebd348b3c82953b93b8bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#a62c19ff>\u041A\u043B\u0430\u0441\u0441 3</color>. <color=#c95624ff>\u0414\u043E\u043F.
     \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
@@ -9587,7 +9592,7 @@ MonoBehaviour:
   taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 6 (\u043D\u0430 \u0432\u0440\u0435\u043C\u044F)"
   taskName: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 3.</color> \u0421\u0431\u043E\u0440
     \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u043E\u0432"
-  specialStateManager: {fileID: 5117397}
+  robotState: {fileID: 270971315}
   value: 20
   taskDescriptions:
   - "\u041F\u043E\u043C\u0435\u0441\u0442\u0438\u0442\u0435 \u0432\u0441\u0435 \u043F\u0430\u0440\u044F\u0449\u0438\u0435
@@ -9691,6 +9696,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6da7e014f1562f49a5db3d443d77120, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 2</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u0423\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0430 \u043D\u0430\u0432\u0435\u0441\u043D\u043E\u0433\u043E
@@ -9702,7 +9708,7 @@ MonoBehaviour:
     \u043E\u0431\u043E\u0440\u0443\u0434\u043E\u0432\u0430\u043D\u0438\u044F \u043D\u0430
     \u043F\u043E\u0441\u0442\u0430\u043C\u0435\u043D\u0442. \u0427\u0430\u0441\u0442\u044C
     3"
-  specialStateManager: {fileID: 0}
+  robotState: {fileID: 0}
   value: 7
   taskDescriptions:
   - "1. \u041F\u0440\u0438\u0441\u043E\u0435\u0434\u0438\u043D\u0438\u0442\u0435
@@ -9808,6 +9814,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a427ac57c4041347b726a2e1bbc4b4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 2</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u0421\u043E\u0437\u0434\u0430\u043D\u0438\u0435 \u043F\u0438\u0440\u0430\u043C\u0438\u0434\u044B
@@ -9817,7 +9824,7 @@ MonoBehaviour:
     \u0421\u043E\u0437\u0434\u0430\u043D\u0438\u0435 \u043F\u0438\u0440\u0430\u043C\u0438\u0434\u044B
     \u0438\u0437 \u044F\u0449\u0438\u043A\u043E\u0432. \u0427\u0430\u0441\u0442\u044C
     1"
-  specialStateManager: {fileID: 0}
+  robotState: {fileID: 0}
   value: 7
   taskDescriptions:
   - "\u0421\u043E\u0437\u0434\u0430\u0439\u0442\u0435 \u043F\u0438\u0440\u0430\u043C\u0438\u0434\u0443
@@ -9943,6 +9950,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de582d1ac89543b40b3e55ebb07bf0e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#004a17ff>\u041A\u043B\u0430\u0441\u0441 1</color>.  <color=#c95624ff>\u0414\u043E\u043F.
     \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
@@ -9950,7 +9958,7 @@ MonoBehaviour:
     \u0441\u0442\u0440\u0435\u043B\u044B."
   taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 6"
   taskName: 
-  specialStateManager: {fileID: 0}
+  robotState: {fileID: 0}
   value: 3
   taskDescriptions:
   - "1. \u0414\u043E\u0441\u0442\u0438\u0433\u043D\u0438\u0442\u0435 \u043E\u0431\u043B\u0430\u0441\u0442\u0438,
@@ -9972,10 +9980,8 @@ MonoBehaviour:
   timeLimit: 120
   isSuccesfullyEnded: 0
   isWaitingForCompletion: 0
-  armControllerVariations:
-  - robot: {fileID: 1008201078752938241}
-    armController: {fileID: 197536482}
-    armState: {fileID: 89125610}
+  armController: {fileID: 197536482}
+  armState: {fileID: 89125610}
   pointOfInterest: {fileID: 1087707422}
 --- !u!1 &535309711
 GameObject:
@@ -10022,6 +10028,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 347a434f215288d44968ef6c107309e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#a62c19ff>\u041A\u043B\u0430\u0441\u0441 3</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u041E\u043F\u0438\u0441\u0430\u043D\u0438\u0435 \u0444\u0438\u0433\u0443\u0440\u044B
@@ -10029,7 +10036,7 @@ MonoBehaviour:
   taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 10"
   taskName: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 3.</color> \u041E\u043F\u0438\u0441\u0430\u043D\u0438\u0435
     \u0444\u0438\u0433\u0443\u0440\u044B \u0441\u0442\u0440\u0435\u043B\u043E\u0439"
-  specialStateManager: {fileID: 5117397}
+  robotState: {fileID: 270971315}
   value: 15
   taskDescriptions:
   - "\u041E\u043F\u0438\u0448\u0438\u0442\u0435 \u0444\u0438\u0433\u0443\u0440\u0443
@@ -10240,6 +10247,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a9eb5cf27ebd348b3c82953b93b8bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#a62c19ff>\u041A\u043B\u0430\u0441\u0441 3</color>. <color=#c95624ff>\u0414\u043E\u043F.
     \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
@@ -10247,7 +10255,7 @@ MonoBehaviour:
   taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 7 (\u043D\u0430 \u0432\u0440\u0435\u043C\u044F)"
   taskName: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 3.</color> \u0421\u0431\u043E\u0440
     \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u043E\u0432"
-  specialStateManager: {fileID: 5117397}
+  robotState: {fileID: 270971315}
   value: 20
   taskDescriptions:
   - "\u041F\u043E\u043C\u0435\u0441\u0442\u0438\u0442\u0435 \u0432\u0441\u0435 \u043F\u0430\u0440\u044F\u0449\u0438\u0435
@@ -10351,6 +10359,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6da7e014f1562f49a5db3d443d77120, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 2</color>. <color=#c95624ff>\u0414\u043E\u043F.
     \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
@@ -10363,7 +10372,7 @@ MonoBehaviour:
     \u043E\u0431\u043E\u0440\u0443\u0434\u043E\u0432\u0430\u043D\u0438\u044F \u043D\u0430
     \u043F\u043E\u0441\u0442\u0430\u043C\u0435\u043D\u0442. \u0427\u0430\u0441\u0442\u044C
     4"
-  specialStateManager: {fileID: 0}
+  robotState: {fileID: 0}
   value: 10
   taskDescriptions:
   - "1. \u041F\u0440\u0438\u0441\u043E\u0435\u0434\u0438\u043D\u0438\u0442\u0435
@@ -10920,6 +10929,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea2f33926631ef446a00e7ef0531a740, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 2</color>. <color=#c95624ff>\u0414\u043E\u043F.
     \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
@@ -10931,7 +10941,7 @@ MonoBehaviour:
   taskName: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 2.</color> \u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430.
     \u0423\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0430 \u0442\u0440\u0443\u0431\u044B
     \u0432 \u043E\u0442\u0432\u0435\u0440\u0441\u0442\u0438\u0435 \u0432 \u0441\u0442\u0435\u043D\u0435"
-  specialStateManager: {fileID: 0}
+  robotState: {fileID: 0}
   value: 10
   taskDescriptions:
   - "1. \u041F\u0440\u043E\u0431\u0435\u0439\u0442\u0435 \u043E\u0442\u0432\u0435\u0440\u0441\u0442\u0438\u0435
@@ -11064,13 +11074,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a9eb5cf27ebd348b3c82953b93b8bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#a62c19ff>\u041A\u043B\u0430\u0441\u0441 3</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u0421\u0431\u043E\u0440 \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u043E\u0432."
   taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 6"
   taskName: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 3.</color> \u0421\u0431\u043E\u0440
     \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u043E\u0432"
-  specialStateManager: {fileID: 5117397}
+  robotState: {fileID: 270971315}
   value: 15
   taskDescriptions:
   - "\u041F\u043E\u043C\u0435\u0441\u0442\u0438\u0442\u0435 \u0432\u0441\u0435 \u043F\u0430\u0440\u044F\u0449\u0438\u0435
@@ -11958,6 +11969,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 347a434f215288d44968ef6c107309e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#a62c19ff>\u041A\u043B\u0430\u0441\u0441 3</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u041E\u043F\u0438\u0441\u0430\u043D\u0438\u0435 \u0444\u0438\u0433\u0443\u0440\u044B
@@ -11965,7 +11977,7 @@ MonoBehaviour:
   taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 4"
   taskName: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 3.</color> \u041E\u043F\u0438\u0441\u0430\u043D\u0438\u0435
     \u0444\u0438\u0433\u0443\u0440\u044B \u0441\u0442\u0440\u0435\u043B\u043E\u0439"
-  specialStateManager: {fileID: 5117397}
+  robotState: {fileID: 270971315}
   value: 15
   taskDescriptions:
   - "\u041E\u043F\u0438\u0448\u0438\u0442\u0435 \u0444\u0438\u0433\u0443\u0440\u0443
@@ -13091,6 +13103,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de582d1ac89543b40b3e55ebb07bf0e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#004a17ff>\u041A\u043B\u0430\u0441\u0441 1</color>.  <color=#c95624ff>\u0414\u043E\u043F.
     \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
@@ -13098,7 +13111,7 @@ MonoBehaviour:
     \u0441\u0442\u0440\u0435\u043B\u044B."
   taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 7"
   taskName: 
-  specialStateManager: {fileID: 0}
+  robotState: {fileID: 0}
   value: 3
   taskDescriptions:
   - "1. \u0414\u043E\u0441\u0442\u0438\u0433\u043D\u0438\u0442\u0435 \u043E\u0431\u043B\u0430\u0441\u0442\u0438,
@@ -13120,10 +13133,8 @@ MonoBehaviour:
   timeLimit: 120
   isSuccesfullyEnded: 0
   isWaitingForCompletion: 0
-  armControllerVariations:
-  - robot: {fileID: 1008201078752938241}
-    armController: {fileID: 197536482}
-    armState: {fileID: 1101618307}
+  armController: {fileID: 197536482}
+  armState: {fileID: 1101618307}
   pointOfInterest: {fileID: 1087707422}
 --- !u!1 &750579803
 GameObject:
@@ -13378,6 +13389,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c40c150d61a66ba469b94b4930dd6757, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 2</color>."
   taskNameBody: "\u041F\u0440\u0438\u0441\u043E\u0435\u0434\u0438\u043D\u0435\u043D\u0438\u0435/\u043E\u0442\u0441\u043E\u0435\u0434\u0438\u043D\u0435\u043D\u0438\u0435
@@ -13385,7 +13397,7 @@ MonoBehaviour:
   taskNameSuffix: 
   taskName: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 2.</color> \u041F\u0440\u0438\u0441\u043E\u0435\u0434\u0438\u043D\u0435\u043D\u0438\u0435/\u043E\u0442\u0441\u043E\u0435\u0434\u0438\u043D\u0435\u043D\u0438\u0435
     \u0433\u0438\u0434\u0440\u043E\u043C\u043E\u043B\u043E\u0442\u0430"
-  specialStateManager: {fileID: 0}
+  robotState: {fileID: 0}
   value: 5
   taskDescriptions:
   - "1. \u0414\u043E\u0441\u0442\u0438\u0433\u043D\u0438\u0442\u0435 \u043E\u0431\u043B\u0430\u0441\u0442\u0438,
@@ -13755,6 +13767,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 347a434f215288d44968ef6c107309e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#a62c19ff>\u041A\u043B\u0430\u0441\u0441 3</color>. <color=#c95624ff>\u0414\u043E\u043F.
     \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
@@ -13763,7 +13776,7 @@ MonoBehaviour:
   taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 1 (\u043D\u0430 \u0432\u0440\u0435\u043C\u044F)"
   taskName: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 3.</color> \u041E\u043F\u0438\u0441\u0430\u043D\u0438\u0435
     \u0444\u0438\u0433\u0443\u0440\u044B \u0441\u0442\u0440\u0435\u043B\u043E\u0439"
-  specialStateManager: {fileID: 5117397}
+  robotState: {fileID: 270971315}
   value: 15
   taskDescriptions:
   - "\u041E\u043F\u0438\u0448\u0438\u0442\u0435 \u0444\u0438\u0433\u0443\u0440\u0443
@@ -13831,7 +13844,9 @@ GameObject:
   - component: {fileID: 803727972}
   - component: {fileID: 803727973}
   m_Layer: 0
-  m_Name: "\u0420\u041E\u0418\u041D \u0420-300 State Tunnel Entry"
+  m_Name: "\u0420\u041E\u0418\u041D \u0420-300 (\u0420\u0435\u043B\u044C\u0441\u044B)
+    \u0421\u043E\u0441\u0442\u043E\u044F\u043D\u0438\u0435 \u0422\u043E\u043D\u043D\u0435\u043B\u044C
+    1"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -13844,13 +13859,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 803727971}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 620, y: 50.52, z: 334.6}
+  m_LocalRotation: {x: 0.0002684534, y: 0.714961, z: 0.00027451877, w: -0.69916433}
+  m_LocalPosition: {x: 630.229, y: 51.25, z: 337.67065}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1090027234}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &803727973
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13909,12 +13924,13 @@ GameObject:
   - component: {fileID: 803811283}
   - component: {fileID: 803811284}
   m_Layer: 0
-  m_Name: "\u0420\u041E\u0418\u041D \u0420-300 \u0421\u043E\u0441\u0442\u043E\u044F\u043D\u0438\u0435"
+  m_Name: "\u0420\u041E\u0418\u041D \u0420-300 \u0421\u043E\u0441\u0442\u043E\u044F\u043D\u0438\u0435
+    \u041F\u043E\u0432\u0435\u0440\u043D\u0443\u0442\u0430\u044F \u0441\u0442\u0440\u0435\u043B\u0430"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &803811283
 Transform:
   m_ObjectHideFlags: 0
@@ -13922,12 +13938,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 803811282}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 956390095}
-  m_RootOrder: 0
+  m_Father: {fileID: 370336470}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &803811284
 MonoBehaviour:
@@ -14439,12 +14455,13 @@ GameObject:
   - component: {fileID: 829588976}
   - component: {fileID: 829588977}
   m_Layer: 0
-  m_Name: "\u0420\u041E\u0418\u041D \u0420-300 \u0421\u043E\u0441\u0442\u043E\u044F\u043D\u0438\u0435"
+  m_Name: "\u0420\u041E\u0418\u041D \u0420-300 \u0421\u043E\u0441\u0442\u043E\u044F\u043D\u0438\u0435
+    \u041F\u0440\u0438\u043F\u043E\u0434\u043D\u044F\u0442\u0430\u044F \u0441\u0442\u0440\u0435\u043B\u0430"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &829588976
 Transform:
   m_ObjectHideFlags: 0
@@ -14452,12 +14469,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 829588975}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 1012795385}
-  m_RootOrder: 0
+  m_Father: {fileID: 370336470}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &829588977
 MonoBehaviour:
@@ -14800,6 +14817,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6da7e014f1562f49a5db3d443d77120, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 2</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u0423\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0430 \u043D\u0430\u0432\u0435\u0441\u043D\u043E\u0433\u043E
@@ -14811,7 +14829,7 @@ MonoBehaviour:
     \u043E\u0431\u043E\u0440\u0443\u0434\u043E\u0432\u0430\u043D\u0438\u044F \u043D\u0430
     \u043F\u043E\u0441\u0442\u0430\u043C\u0435\u043D\u0442. \u0427\u0430\u0441\u0442\u044C
     5"
-  specialStateManager: {fileID: 0}
+  robotState: {fileID: 0}
   value: 7
   taskDescriptions:
   - "1. \u041F\u0440\u0438\u0441\u043E\u0435\u0434\u0438\u043D\u0438\u0442\u0435
@@ -14887,6 +14905,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6da7e014f1562f49a5db3d443d77120, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 2</color>. <color=#c95624ff>\u0414\u043E\u043F.
     \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
@@ -14899,7 +14918,7 @@ MonoBehaviour:
     \u043E\u0431\u043E\u0440\u0443\u0434\u043E\u0432\u0430\u043D\u0438\u044F \u043D\u0430
     \u043F\u043E\u0441\u0442\u0430\u043C\u0435\u043D\u0442. \u0427\u0430\u0441\u0442\u044C
     1"
-  specialStateManager: {fileID: 0}
+  robotState: {fileID: 0}
   value: 10
   taskDescriptions:
   - "1. \u041F\u0440\u0438\u0441\u043E\u0435\u0434\u0438\u043D\u0438\u0442\u0435
@@ -15498,6 +15517,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a9eb5cf27ebd348b3c82953b93b8bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#a62c19ff>\u041A\u043B\u0430\u0441\u0441 3</color>. <color=#c95624ff>\u0414\u043E\u043F.
     \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
@@ -15505,7 +15525,7 @@ MonoBehaviour:
   taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 1 (\u043D\u0430 \u0432\u0440\u0435\u043C\u044F)"
   taskName: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 3.</color> \u0421\u0431\u043E\u0440
     \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u043E\u0432"
-  specialStateManager: {fileID: 5117397}
+  robotState: {fileID: 270971315}
   value: 20
   taskDescriptions:
   - "\u041F\u043E\u043C\u0435\u0441\u0442\u0438\u0442\u0435 \u0432\u0441\u0435 \u043F\u0430\u0440\u044F\u0449\u0438\u0435
@@ -15608,6 +15628,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 347a434f215288d44968ef6c107309e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#a62c19ff>\u041A\u043B\u0430\u0441\u0441 3</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u041E\u043F\u0438\u0441\u0430\u043D\u0438\u0435 \u0444\u0438\u0433\u0443\u0440\u044B
@@ -15615,7 +15636,7 @@ MonoBehaviour:
   taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 5"
   taskName: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 3.</color> \u041E\u043F\u0438\u0441\u0430\u043D\u0438\u0435
     \u0444\u0438\u0433\u0443\u0440\u044B \u0441\u0442\u0440\u0435\u043B\u043E\u0439"
-  specialStateManager: {fileID: 5117397}
+  robotState: {fileID: 270971315}
   value: 15
   taskDescriptions:
   - "\u041E\u043F\u0438\u0448\u0438\u0442\u0435 \u0444\u0438\u0433\u0443\u0440\u0443
@@ -15777,6 +15798,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a427ac57c4041347b726a2e1bbc4b4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 2</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u0420\u0430\u0437\u043C\u0435\u0449\u0435\u043D\u0438\u0435 \u0442\u0440\u0443\u0431\u044B
@@ -15786,7 +15808,7 @@ MonoBehaviour:
     \u0420\u0430\u0437\u043C\u0435\u0449\u0435\u043D\u0438\u0435 \u0442\u0440\u0443\u0431\u044B
     \u043D\u0430 \u044F\u0449\u0438\u043A\u0430\u0445. \u0427\u0430\u0441\u0442\u044C
     1"
-  specialStateManager: {fileID: 0}
+  robotState: {fileID: 0}
   value: 7
   taskDescriptions:
   - "\u041F\u043E\u043B\u043E\u0436\u0438\u0442\u0435 \u0442\u0440\u0443\u0431\u0443
@@ -15950,6 +15972,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a9eb5cf27ebd348b3c82953b93b8bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#a62c19ff>\u041A\u043B\u0430\u0441\u0441 3</color>. <color=#c95624ff>\u0414\u043E\u043F.
     \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
@@ -15957,7 +15980,7 @@ MonoBehaviour:
   taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 2 (\u043D\u0430 \u0432\u0440\u0435\u043C\u044F)"
   taskName: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 3.</color> \u0421\u0431\u043E\u0440
     \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u043E\u0432"
-  specialStateManager: {fileID: 5117397}
+  robotState: {fileID: 270971315}
   value: 20
   taskDescriptions:
   - "\u041F\u043E\u043C\u0435\u0441\u0442\u0438\u0442\u0435 \u0432\u0441\u0435 \u043F\u0430\u0440\u044F\u0449\u0438\u0435
@@ -16059,13 +16082,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a9eb5cf27ebd348b3c82953b93b8bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#a62c19ff>\u041A\u043B\u0430\u0441\u0441 3</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u0421\u0431\u043E\u0440 \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u043E\u0432."
   taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 16"
   taskName: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 3.</color> \u0421\u0431\u043E\u0440
     \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u043E\u0432"
-  specialStateManager: {fileID: 5117397}
+  robotState: {fileID: 270971315}
   value: 15
   taskDescriptions:
   - "\u041F\u043E\u043C\u0435\u0441\u0442\u0438\u0442\u0435 \u0432\u0441\u0435 \u043F\u0430\u0440\u044F\u0449\u0438\u0435
@@ -16354,54 +16378,6 @@ Transform:
   m_Father: {fileID: 1693494932}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &956390094
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 956390095}
-  - component: {fileID: 956390096}
-  m_Layer: 0
-  m_Name: "\u0421\u043E\u0441\u0442\u043E\u044F\u043D\u0438\u0435 \u041F\u0440\u0438\u043F\u043E\u0434\u043D\u044F\u0442\u0430\u044F
-    \u043F\u043E\u0432\u0435\u0440\u043D\u0443\u0442\u0430\u044F \u0441\u0442\u0440\u0435\u043B\u0430"
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &956390095
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 956390094}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 803811283}
-  m_Father: {fileID: 370336470}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &956390096
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 956390094}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06e43c07cd14b6845bf68f01ef384ca8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  robotStatePairs:
-  - robot: {fileID: 1008201078752938241}
-    state: {fileID: 803811284}
 --- !u!4 &958631049 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1179593692210537565, guid: e50e6c10b671c8144bd6442bcb837c96,
@@ -16452,6 +16428,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de582d1ac89543b40b3e55ebb07bf0e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#004a17ff>\u041A\u043B\u0430\u0441\u0441 1</color>.  <color=#c95624ff>\u0414\u043E\u043F.
     \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
@@ -16459,7 +16436,7 @@ MonoBehaviour:
     \u0441\u0442\u0440\u0435\u043B\u044B."
   taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 5"
   taskName: 
-  specialStateManager: {fileID: 0}
+  robotState: {fileID: 0}
   value: 3
   taskDescriptions:
   - "1. \u0414\u043E\u0441\u0442\u0438\u0433\u043D\u0438\u0442\u0435 \u043E\u0431\u043B\u0430\u0441\u0442\u0438,
@@ -16481,10 +16458,8 @@ MonoBehaviour:
   timeLimit: 100
   isSuccesfullyEnded: 0
   isWaitingForCompletion: 0
-  armControllerVariations:
-  - robot: {fileID: 1008201078752938241}
-    armController: {fileID: 197536482}
-    armState: {fileID: 1863251705}
+  armController: {fileID: 197536482}
+  armState: {fileID: 1863251705}
   pointOfInterest: {fileID: 1087707422}
 --- !u!1 &965829730
 GameObject:
@@ -17314,54 +17289,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1011375241}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1012795384
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1012795385}
-  - component: {fileID: 1012795386}
-  m_Layer: 0
-  m_Name: "\u0421\u043E\u0441\u0442\u043E\u044F\u043D\u0438\u0435 \u041F\u0440\u0438\u043F\u043E\u0434\u043D\u044F\u0442\u0430\u044F
-    \u0441\u0442\u0440\u0435\u043B\u0430"
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &1012795385
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1012795384}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 829588976}
-  m_Father: {fileID: 370336470}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1012795386
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1012795384}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06e43c07cd14b6845bf68f01ef384ca8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  robotStatePairs:
-  - robot: {fileID: 1008201078752938241}
-    state: {fileID: 829588977}
 --- !u!114 &1013075075 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6207872722247387048, guid: cf13124282d526c4e8b413a670a8f6f3,
@@ -17653,12 +17580,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e40d59f9fec3d14d9787dacfffc4695, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#004a17ff>\u041A\u043B\u0430\u0441\u0441 1</color>."
   taskNameBody: "\u041F\u043E\u0434\u043D\u0438\u043C\u0430\u043D\u0438\u0435 \u0430\u0443\u0442\u0440\u0438\u0433\u0435\u0440\u043E\u0432"
   taskNameSuffix: 
   taskName: 
-  specialStateManager: {fileID: 1851042113}
+  robotState: {fileID: 450272052}
   value: 1
   taskDescriptions:
   - "\u041F\u043E\u0434\u043D\u0438\u043C\u0438\u0442\u0435 \u0430\u0443\u0442\u0440\u0438\u0433\u0435\u0440\u044B"
@@ -17820,6 +17748,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c81496004f5ebad4e9090d40db08e083, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 2</color>."
   taskNameBody: "\u0421\u043C\u0435\u0449\u0435\u043D\u0438\u0435 \u043A\u043B\u0435\u0448\u043D\u0435\u0439
@@ -17827,7 +17756,7 @@ MonoBehaviour:
   taskNameSuffix: 
   taskName: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 2.</color> \u0421\u043C\u0435\u0449\u0435\u043D\u0438\u0435
     \u043A\u043B\u0435\u0448\u043D\u0435\u0439 \u0437\u0430\u0445\u0432\u0430\u0442\u0430"
-  specialStateManager: {fileID: 0}
+  robotState: {fileID: 0}
   value: 5
   taskDescriptions:
   - "1. \u041F\u0440\u0438\u0441\u043E\u0435\u0434\u0438\u043D\u0438\u0442\u0435
@@ -18006,13 +17935,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a9eb5cf27ebd348b3c82953b93b8bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#a62c19ff>\u041A\u043B\u0430\u0441\u0441 3</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u0421\u0431\u043E\u0440 \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u043E\u0432."
   taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 18"
   taskName: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 3.</color> \u0421\u0431\u043E\u0440
     \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u043E\u0432"
-  specialStateManager: {fileID: 5117397}
+  robotState: {fileID: 270971315}
   value: 15
   taskDescriptions:
   - "\u041F\u043E\u043C\u0435\u0441\u0442\u0438\u0442\u0435 \u0432\u0441\u0435 \u043F\u0430\u0440\u044F\u0449\u0438\u0435
@@ -18212,13 +18142,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a9eb5cf27ebd348b3c82953b93b8bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#a62c19ff>\u041A\u043B\u0430\u0441\u0441 3</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u0421\u0431\u043E\u0440 \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u043E\u0432."
   taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 10"
   taskName: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 3.</color> \u0421\u0431\u043E\u0440
     \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u043E\u0432"
-  specialStateManager: {fileID: 5117397}
+  robotState: {fileID: 270971315}
   value: 15
   taskDescriptions:
   - "\u041F\u043E\u043C\u0435\u0441\u0442\u0438\u0442\u0435 \u0432\u0441\u0435 \u043F\u0430\u0440\u044F\u0449\u0438\u0435
@@ -18926,7 +18857,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1090027234}
-  - component: {fileID: 1090027235}
   m_Layer: 0
   m_Name: "\u041A\u043B\u0430\u0441\u0441 4 (\u0422\u043E\u043D\u043D\u0435\u043B\u044C)"
   m_TagString: Untagged
@@ -18954,21 +18884,6 @@ Transform:
   m_Father: {fileID: 750579804}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1090027235
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1090027233}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06e43c07cd14b6845bf68f01ef384ca8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  robotStatePairs:
-  - robot: {fileID: 1008201078752938241}
-    state: {fileID: 803727973}
 --- !u!4 &1095361008 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5695882237522017272, guid: 2029d3994623f9d479a1310725e76148,
@@ -19360,13 +19275,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a9eb5cf27ebd348b3c82953b93b8bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#a62c19ff>\u041A\u043B\u0430\u0441\u0441 3</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u0421\u0431\u043E\u0440 \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u043E\u0432."
   taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 11"
   taskName: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 3.</color> \u0421\u0431\u043E\u0440
     \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u043E\u0432"
-  specialStateManager: {fileID: 5117397}
+  robotState: {fileID: 270971315}
   value: 15
   taskDescriptions:
   - "\u041F\u043E\u043C\u0435\u0441\u0442\u0438\u0442\u0435 \u0432\u0441\u0435 \u043F\u0430\u0440\u044F\u0449\u0438\u0435
@@ -19731,6 +19647,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 347a434f215288d44968ef6c107309e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#a62c19ff>\u041A\u043B\u0430\u0441\u0441 3</color>. <color=#c95624ff>\u0414\u043E\u043F.
     \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
@@ -19739,7 +19656,7 @@ MonoBehaviour:
   taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 5 (\u043D\u0430 \u0432\u0440\u0435\u043C\u044F)"
   taskName: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 3.</color> \u041E\u043F\u0438\u0441\u0430\u043D\u0438\u0435
     \u0444\u0438\u0433\u0443\u0440\u044B \u0441\u0442\u0440\u0435\u043B\u043E\u0439"
-  specialStateManager: {fileID: 5117397}
+  robotState: {fileID: 270971315}
   value: 15
   taskDescriptions:
   - "\u041E\u043F\u0438\u0448\u0438\u0442\u0435 \u0444\u0438\u0433\u0443\u0440\u0443
@@ -19822,6 +19739,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a9eb5cf27ebd348b3c82953b93b8bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#a62c19ff>\u041A\u043B\u0430\u0441\u0441 3</color>. <color=#c95624ff>\u0414\u043E\u043F.
     \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
@@ -19829,7 +19747,7 @@ MonoBehaviour:
   taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 14 (\u043D\u0430 \u0432\u0440\u0435\u043C\u044F)"
   taskName: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 3.</color> \u0421\u0431\u043E\u0440
     \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u043E\u0432"
-  specialStateManager: {fileID: 5117397}
+  robotState: {fileID: 270971315}
   value: 20
   taskDescriptions:
   - "\u041F\u043E\u043C\u0435\u0441\u0442\u0438\u0442\u0435 \u0432\u0441\u0435 \u043F\u0430\u0440\u044F\u0449\u0438\u0435
@@ -20070,6 +19988,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de582d1ac89543b40b3e55ebb07bf0e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#004a17ff>\u041A\u043B\u0430\u0441\u0441 1</color>.  <color=#c95624ff>\u0414\u043E\u043F.
     \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
@@ -20077,7 +19996,7 @@ MonoBehaviour:
     \u0441\u0442\u0440\u0435\u043B\u044B."
   taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 4"
   taskName: 
-  specialStateManager: {fileID: 0}
+  robotState: {fileID: 0}
   value: 3
   taskDescriptions:
   - "1. \u0414\u043E\u0441\u0442\u0438\u0433\u043D\u0438\u0442\u0435 \u043E\u0431\u043B\u0430\u0441\u0442\u0438,
@@ -20099,10 +20018,8 @@ MonoBehaviour:
   timeLimit: 90
   isSuccesfullyEnded: 0
   isWaitingForCompletion: 0
-  armControllerVariations:
-  - robot: {fileID: 1008201078752938241}
-    armController: {fileID: 197536482}
-    armState: {fileID: 1274010264}
+  armController: {fileID: 197536482}
+  armState: {fileID: 1274010264}
   pointOfInterest: {fileID: 1087707422}
 --- !u!1 &1169772996
 GameObject:
@@ -20149,6 +20066,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 347a434f215288d44968ef6c107309e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#a62c19ff>\u041A\u043B\u0430\u0441\u0441 3</color>. <color=#c95624ff>\u0414\u043E\u043F.
     \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
@@ -20157,7 +20075,7 @@ MonoBehaviour:
   taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 4 (\u043D\u0430 \u0432\u0440\u0435\u043C\u044F)"
   taskName: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 3.</color> \u041E\u043F\u0438\u0441\u0430\u043D\u0438\u0435
     \u0444\u0438\u0433\u0443\u0440\u044B \u0441\u0442\u0440\u0435\u043B\u043E\u0439"
-  specialStateManager: {fileID: 5117397}
+  robotState: {fileID: 270971315}
   value: 15
   taskDescriptions:
   - "\u041E\u043F\u0438\u0448\u0438\u0442\u0435 \u0444\u0438\u0433\u0443\u0440\u0443
@@ -20451,6 +20369,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a427ac57c4041347b726a2e1bbc4b4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 2</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u0420\u0430\u0437\u043C\u0435\u0449\u0435\u043D\u0438\u0435 \u0442\u0440\u0443\u0431\u044B
@@ -20460,7 +20379,7 @@ MonoBehaviour:
     \u0420\u0430\u0437\u043C\u0435\u0449\u0435\u043D\u0438\u0435 \u0442\u0440\u0443\u0431\u044B
     \u043D\u0430 \u044F\u0449\u0438\u043A\u0430\u0445. \u0427\u0430\u0441\u0442\u044C
     2"
-  specialStateManager: {fileID: 0}
+  robotState: {fileID: 0}
   value: 7
   taskDescriptions:
   - "\u041F\u043E\u043B\u043E\u0436\u0438\u0442\u0435 \u0442\u0440\u0443\u0431\u0443
@@ -20666,6 +20585,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6da7e014f1562f49a5db3d443d77120, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 2</color>. <color=#c95624ff>\u0414\u043E\u043F.
     \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
@@ -20678,7 +20598,7 @@ MonoBehaviour:
     \u043E\u0431\u043E\u0440\u0443\u0434\u043E\u0432\u0430\u043D\u0438\u044F \u043D\u0430
     \u043F\u043E\u0441\u0442\u0430\u043C\u0435\u043D\u0442. \u0427\u0430\u0441\u0442\u044C
     1"
-  specialStateManager: {fileID: 0}
+  robotState: {fileID: 0}
   value: 10
   taskDescriptions:
   - "1. \u041F\u0440\u0438\u0441\u043E\u0435\u0434\u0438\u043D\u0438\u0442\u0435
@@ -20788,6 +20708,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de582d1ac89543b40b3e55ebb07bf0e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#004a17ff>\u041A\u043B\u0430\u0441\u0441 1</color>.  <color=#c95624ff>\u0414\u043E\u043F.
     \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
@@ -20795,7 +20716,7 @@ MonoBehaviour:
     \u0441\u0442\u0440\u0435\u043B\u044B."
   taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 8"
   taskName: 
-  specialStateManager: {fileID: 0}
+  robotState: {fileID: 0}
   value: 3
   taskDescriptions:
   - "1. \u0414\u043E\u0441\u0442\u0438\u0433\u043D\u0438\u0442\u0435 \u043E\u0431\u043B\u0430\u0441\u0442\u0438,
@@ -20817,10 +20738,8 @@ MonoBehaviour:
   timeLimit: 120
   isSuccesfullyEnded: 0
   isWaitingForCompletion: 0
-  armControllerVariations:
-  - robot: {fileID: 1008201078752938241}
-    armController: {fileID: 197536482}
-    armState: {fileID: 416563161}
+  armController: {fileID: 197536482}
+  armState: {fileID: 416563161}
   pointOfInterest: {fileID: 1087707422}
 --- !u!1 &1221324403
 GameObject:
@@ -21180,6 +21099,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a9eb5cf27ebd348b3c82953b93b8bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#a62c19ff>\u041A\u043B\u0430\u0441\u0441 3</color>. <color=#c95624ff>\u0414\u043E\u043F.
     \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
@@ -21187,7 +21107,7 @@ MonoBehaviour:
   taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 4 (\u043D\u0430 \u0432\u0440\u0435\u043C\u044F)"
   taskName: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 3.</color> \u0421\u0431\u043E\u0440
     \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u043E\u0432"
-  specialStateManager: {fileID: 5117397}
+  robotState: {fileID: 270971315}
   value: 20
   taskDescriptions:
   - "\u041F\u043E\u043C\u0435\u0441\u0442\u0438\u0442\u0435 \u0432\u0441\u0435 \u043F\u0430\u0440\u044F\u0449\u0438\u0435
@@ -21516,13 +21436,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7022ceb7ccb7bb46a621aab0856c15f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 2592469677024408704}
   taskMode: 0
   taskNamePrefix: "<color=#4B596FFF>\u041A\u043B\u0430\u0441\u0441 4</color>. <color=#c95624ff>\u0414\u043E\u043F.
     \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
   taskNameBody: "\u041E\u0447\u0438\u0441\u0442\u043A\u0430 \u0442\u043E\u043D\u043D\u0435\u043B\u044F"
   taskNameSuffix: "(\u043D\u0430 \u0432\u0440\u0435\u043C\u044F)"
   taskName: 
-  specialStateManager: {fileID: 1090027235}
+  robotState: {fileID: 0}
   value: 0
   taskDescriptions:
   - "\u041E\u0447\u0438\u0441\u0442\u0438\u0442\u0435 \u0442\u043E\u043D\u043D\u0435\u043B\u044C
@@ -22362,13 +22283,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a9eb5cf27ebd348b3c82953b93b8bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#a62c19ff>\u041A\u043B\u0430\u0441\u0441 3</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u0421\u0431\u043E\u0440 \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u043E\u0432."
   taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 20"
   taskName: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 3.</color> \u0421\u0431\u043E\u0440
     \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u043E\u0432"
-  specialStateManager: {fileID: 5117397}
+  robotState: {fileID: 270971315}
   value: 15
   taskDescriptions:
   - "\u041F\u043E\u043C\u0435\u0441\u0442\u0438\u0442\u0435 \u0432\u0441\u0435 \u043F\u0430\u0440\u044F\u0449\u0438\u0435
@@ -22475,12 +22397,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a1aca6a6502002040a34c1a3b4b38f28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 2592469677024408704}
   taskMode: 0
   taskNamePrefix: "<color=#4B596FFF>\u041A\u043B\u0430\u0441\u0441 4</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u0423\u043A\u043B\u0430\u0434\u043A\u0430 \u0440\u0435\u043B\u044C\u0441\u0430"
   taskNameSuffix: 
   taskName: 
-  specialStateManager: {fileID: 1090027235}
+  robotState: {fileID: 0}
   value: 0
   taskDescriptions:
   - "\u041F\u043E\u043B\u043E\u0436\u0438\u0442\u0435 \u0440\u0435\u043B\u044C\u0441
@@ -22636,6 +22559,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a427ac57c4041347b726a2e1bbc4b4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 2</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u0420\u0430\u0437\u043C\u0435\u0449\u0435\u043D\u0438\u0435 \u043C\u0435\u0442\u0430\u043B\u043B\u0438\u0447\u0435\u0441\u043A\u043E\u0439
@@ -22645,7 +22569,7 @@ MonoBehaviour:
   taskName: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 2.</color> \u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430.
     \u0420\u0430\u0437\u043C\u0435\u0449\u0435\u043D\u0438\u0435 \u043F\u043B\u0438\u0442\u044B
     \u043D\u0430 \u0441\u0442\u043E\u043B\u0435. \u0427\u0430\u0441\u0442\u044C 1"
-  specialStateManager: {fileID: 0}
+  robotState: {fileID: 0}
   value: 7
   taskDescriptions:
   - "\u0420\u0430\u0437\u043C\u0435\u0441\u0442\u0438\u0442\u0435 \u0433\u043E\u0440\u0438\u0437\u043E\u043D\u0442\u0430\u043B\u044C\u043D\u043E
@@ -22735,6 +22659,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6da7e014f1562f49a5db3d443d77120, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 2</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u0423\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0430 \u043D\u0430\u0432\u0435\u0441\u043D\u043E\u0433\u043E
@@ -22746,7 +22671,7 @@ MonoBehaviour:
     \u043E\u0431\u043E\u0440\u0443\u0434\u043E\u0432\u0430\u043D\u0438\u044F \u043D\u0430
     \u043F\u043E\u0441\u0442\u0430\u043C\u0435\u043D\u0442. \u0427\u0430\u0441\u0442\u044C
     4"
-  specialStateManager: {fileID: 0}
+  robotState: {fileID: 0}
   value: 7
   taskDescriptions:
   - "1. \u041F\u0440\u0438\u0441\u043E\u0435\u0434\u0438\u043D\u0438\u0442\u0435
@@ -22958,6 +22883,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 347a434f215288d44968ef6c107309e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#a62c19ff>\u041A\u043B\u0430\u0441\u0441 3</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u041E\u043F\u0438\u0441\u0430\u043D\u0438\u0435 \u0444\u0438\u0433\u0443\u0440\u044B
@@ -22965,7 +22891,7 @@ MonoBehaviour:
   taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 8"
   taskName: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 3.</color> \u041E\u043F\u0438\u0441\u0430\u043D\u0438\u0435
     \u0444\u0438\u0433\u0443\u0440\u044B \u0441\u0442\u0440\u0435\u043B\u043E\u0439"
-  specialStateManager: {fileID: 5117397}
+  robotState: {fileID: 270971315}
   value: 15
   taskDescriptions:
   - "\u041E\u043F\u0438\u0448\u0438\u0442\u0435 \u0444\u0438\u0433\u0443\u0440\u0443
@@ -23369,6 +23295,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de582d1ac89543b40b3e55ebb07bf0e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#004a17ff>\u041A\u043B\u0430\u0441\u0441 1</color>.  <color=#c95624ff>\u0414\u043E\u043F.
     \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
@@ -23376,7 +23303,7 @@ MonoBehaviour:
     \u0441\u0442\u0440\u0435\u043B\u044B."
   taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 1"
   taskName: 
-  specialStateManager: {fileID: 0}
+  robotState: {fileID: 0}
   value: 3
   taskDescriptions:
   - "1. \u0414\u043E\u0441\u0442\u0438\u0433\u043D\u0438\u0442\u0435 \u043E\u0431\u043B\u0430\u0441\u0442\u0438,
@@ -23398,10 +23325,8 @@ MonoBehaviour:
   timeLimit: 25
   isSuccesfullyEnded: 0
   isWaitingForCompletion: 0
-  armControllerVariations:
-  - robot: {fileID: 1008201078752938241}
-    armController: {fileID: 197536482}
-    armState: {fileID: 250819450}
+  armController: {fileID: 197536482}
+  armState: {fileID: 250819450}
   pointOfInterest: {fileID: 1087707422}
 --- !u!1001 &1379981777
 PrefabInstance:
@@ -24350,6 +24275,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6da7e014f1562f49a5db3d443d77120, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 2</color>. <color=#c95624ff>\u0414\u043E\u043F.
     \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
@@ -24362,7 +24288,7 @@ MonoBehaviour:
     \u043E\u0431\u043E\u0440\u0443\u0434\u043E\u0432\u0430\u043D\u0438\u044F \u043D\u0430
     \u043F\u043E\u0441\u0442\u0430\u043C\u0435\u043D\u0442. \u0427\u0430\u0441\u0442\u044C
     1"
-  specialStateManager: {fileID: 0}
+  robotState: {fileID: 0}
   value: 10
   taskDescriptions:
   - "1. \u041F\u0440\u0438\u0441\u043E\u0435\u0434\u0438\u043D\u0438\u0442\u0435
@@ -24660,13 +24586,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a9eb5cf27ebd348b3c82953b93b8bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#a62c19ff>\u041A\u043B\u0430\u0441\u0441 3</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u0421\u0431\u043E\u0440 \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u043E\u0432."
   taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 14"
   taskName: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 3.</color> \u0421\u0431\u043E\u0440
     \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u043E\u0432"
-  specialStateManager: {fileID: 5117397}
+  robotState: {fileID: 270971315}
   value: 15
   taskDescriptions:
   - "\u041F\u043E\u043C\u0435\u0441\u0442\u0438\u0442\u0435 \u0432\u0441\u0435 \u043F\u0430\u0440\u044F\u0449\u0438\u0435
@@ -24769,6 +24696,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 347a434f215288d44968ef6c107309e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#a62c19ff>\u041A\u043B\u0430\u0441\u0441 3</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u041E\u043F\u0438\u0441\u0430\u043D\u0438\u0435 \u0444\u0438\u0433\u0443\u0440\u044B
@@ -24776,7 +24704,7 @@ MonoBehaviour:
   taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 1"
   taskName: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 3.</color> \u041E\u043F\u0438\u0441\u0430\u043D\u0438\u0435
     \u0444\u0438\u0433\u0443\u0440\u044B \u0441\u0442\u0440\u0435\u043B\u043E\u0439"
-  specialStateManager: {fileID: 5117397}
+  robotState: {fileID: 270971315}
   value: 15
   taskDescriptions:
   - "\u041E\u043F\u0438\u0448\u0438\u0442\u0435 \u0444\u0438\u0433\u0443\u0440\u0443
@@ -25141,6 +25069,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a427ac57c4041347b726a2e1bbc4b4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 2</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u0423\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0430 \u044F\u0449\u0438\u043A\u043E\u0432
@@ -25150,7 +25079,7 @@ MonoBehaviour:
     \u0423\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0430 \u044F\u0449\u0438\u043A\u043E\u0432
     \u0434\u0440\u0443\u0433 \u043D\u0430 \u0434\u0440\u0443\u0433\u0430. \u0427\u0430\u0441\u0442\u044C
     1"
-  specialStateManager: {fileID: 0}
+  robotState: {fileID: 0}
   value: 7
   taskDescriptions:
   - "\u0423\u0441\u0442\u0430\u043D\u043E\u0432\u0438\u0442\u0435 \u044F\u0449\u0438\u043A\u0438
@@ -25243,6 +25172,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a9eb5cf27ebd348b3c82953b93b8bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#a62c19ff>\u041A\u043B\u0430\u0441\u0441 3</color>. <color=#c95624ff>\u0414\u043E\u043F.
     \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
@@ -25250,7 +25180,7 @@ MonoBehaviour:
   taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 8 (\u043D\u0430 \u0432\u0440\u0435\u043C\u044F)"
   taskName: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 3.</color> \u0421\u0431\u043E\u0440
     \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u043E\u0432"
-  specialStateManager: {fileID: 5117397}
+  robotState: {fileID: 270971315}
   value: 20
   taskDescriptions:
   - "\u041F\u043E\u043C\u0435\u0441\u0442\u0438\u0442\u0435 \u0432\u0441\u0435 \u043F\u0430\u0440\u044F\u0449\u0438\u0435
@@ -25354,6 +25284,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6da7e014f1562f49a5db3d443d77120, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 2</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u0423\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0430 \u043D\u0430\u0432\u0435\u0441\u043D\u043E\u0433\u043E
@@ -25365,7 +25296,7 @@ MonoBehaviour:
     \u043E\u0431\u043E\u0440\u0443\u0434\u043E\u0432\u0430\u043D\u0438\u044F \u043D\u0430
     \u043F\u043E\u0441\u0442\u0430\u043C\u0435\u043D\u0442. \u0427\u0430\u0441\u0442\u044C
     2"
-  specialStateManager: {fileID: 0}
+  robotState: {fileID: 0}
   value: 7
   taskDescriptions:
   - "1. \u041F\u0440\u0438\u0441\u043E\u0435\u0434\u0438\u043D\u0438\u0442\u0435
@@ -25564,6 +25495,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de582d1ac89543b40b3e55ebb07bf0e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#004a17ff>\u041A\u043B\u0430\u0441\u0441 1</color>.  <color=#c95624ff>\u0414\u043E\u043F.
     \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
@@ -25571,7 +25503,7 @@ MonoBehaviour:
     \u0441\u0442\u0440\u0435\u043B\u044B."
   taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 9"
   taskName: 
-  specialStateManager: {fileID: 0}
+  robotState: {fileID: 0}
   value: 3
   taskDescriptions:
   - "1. \u0414\u043E\u0441\u0442\u0438\u0433\u043D\u0438\u0442\u0435 \u043E\u0431\u043B\u0430\u0441\u0442\u0438,
@@ -25593,10 +25525,8 @@ MonoBehaviour:
   timeLimit: 120
   isSuccesfullyEnded: 0
   isWaitingForCompletion: 0
-  armControllerVariations:
-  - robot: {fileID: 1008201078752938241}
-    armController: {fileID: 197536482}
-    armState: {fileID: 1662188223}
+  armController: {fileID: 197536482}
+  armState: {fileID: 1662188223}
   pointOfInterest: {fileID: 1087707422}
 --- !u!4 &1511058613 stripped
 Transform:
@@ -25843,6 +25773,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a9eb5cf27ebd348b3c82953b93b8bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#a62c19ff>\u041A\u043B\u0430\u0441\u0441 3</color>. <color=#c95624ff>\u0414\u043E\u043F.
     \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
@@ -25850,7 +25781,7 @@ MonoBehaviour:
   taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 5 (\u043D\u0430 \u0432\u0440\u0435\u043C\u044F)"
   taskName: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 3.</color> \u0421\u0431\u043E\u0440
     \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u043E\u0432"
-  specialStateManager: {fileID: 5117397}
+  robotState: {fileID: 270971315}
   value: 20
   taskDescriptions:
   - "\u041F\u043E\u043C\u0435\u0441\u0442\u0438\u0442\u0435 \u0432\u0441\u0435 \u043F\u0430\u0440\u044F\u0449\u0438\u0435
@@ -26244,6 +26175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6da7e014f1562f49a5db3d443d77120, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 2</color>. <color=#c95624ff>\u0414\u043E\u043F.
     \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
@@ -26256,7 +26188,7 @@ MonoBehaviour:
     \u043E\u0431\u043E\u0440\u0443\u0434\u043E\u0432\u0430\u043D\u0438\u044F \u043D\u0430
     \u043F\u043E\u0441\u0442\u0430\u043C\u0435\u043D\u0442. \u0427\u0430\u0441\u0442\u044C
     4"
-  specialStateManager: {fileID: 0}
+  robotState: {fileID: 0}
   value: 10
   taskDescriptions:
   - "1. \u041F\u0440\u0438\u0441\u043E\u0435\u0434\u0438\u043D\u0438\u0442\u0435
@@ -26488,6 +26420,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c40c150d61a66ba469b94b4930dd6757, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 2</color>."
   taskNameBody: "\u041F\u0440\u0438\u0441\u043E\u0435\u0434\u0438\u043D\u0435\u043D\u0438\u0435/\u043E\u0442\u0441\u043E\u0435\u0434\u0438\u043D\u0435\u043D\u0438\u0435
@@ -26495,7 +26428,7 @@ MonoBehaviour:
   taskNameSuffix: 
   taskName: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 2.</color> \u041F\u0440\u0438\u0441\u043E\u0435\u0434\u0438\u043D\u0435\u043D\u0438\u0435/\u043E\u0442\u0441\u043E\u0435\u0434\u0438\u043D\u0435\u043D\u0438\u0435
     \u0437\u0430\u0445\u0432\u0430\u0442\u0430"
-  specialStateManager: {fileID: 0}
+  robotState: {fileID: 0}
   value: 5
   taskDescriptions:
   - "1. \u0414\u043E\u0441\u0442\u0438\u0433\u043D\u0438\u0442\u0435 \u043E\u0431\u043B\u0430\u0441\u0442\u0438,
@@ -26918,6 +26851,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 347a434f215288d44968ef6c107309e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#a62c19ff>\u041A\u043B\u0430\u0441\u0441 3</color>. <color=#c95624ff>\u0414\u043E\u043F.
     \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
@@ -26926,7 +26860,7 @@ MonoBehaviour:
   taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 2 (\u043D\u0430 \u0432\u0440\u0435\u043C\u044F)"
   taskName: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 3.</color> \u041E\u043F\u0438\u0441\u0430\u043D\u0438\u0435
     \u0444\u0438\u0433\u0443\u0440\u044B \u0441\u0442\u0440\u0435\u043B\u043E\u0439"
-  specialStateManager: {fileID: 5117397}
+  robotState: {fileID: 270971315}
   value: 15
   taskDescriptions:
   - "\u041E\u043F\u0438\u0448\u0438\u0442\u0435 \u0444\u0438\u0433\u0443\u0440\u0443
@@ -28010,12 +27944,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7022ceb7ccb7bb46a621aab0856c15f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 2592469677024408704}
   taskMode: 0
   taskNamePrefix: "<color=#4B596FFF>\u041A\u043B\u0430\u0441\u0441 4</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u041E\u0447\u0438\u0441\u0442\u043A\u0430 \u0442\u043E\u043D\u043D\u0435\u043B\u044F."
   taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 2"
   taskName: 
-  specialStateManager: {fileID: 1090027235}
+  robotState: {fileID: 0}
   value: 0
   taskDescriptions:
   - "\u041E\u0447\u0438\u0441\u0442\u0438\u0442\u0435 \u0442\u043E\u043D\u043D\u0435\u043B\u044C
@@ -28102,13 +28037,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a9eb5cf27ebd348b3c82953b93b8bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#a62c19ff>\u041A\u043B\u0430\u0441\u0441 3</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u0421\u0431\u043E\u0440 \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u043E\u0432."
   taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 4"
   taskName: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 3.</color> \u0421\u0431\u043E\u0440
     \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u043E\u0432"
-  specialStateManager: {fileID: 5117397}
+  robotState: {fileID: 270971315}
   value: 15
   taskDescriptions:
   - "\u041F\u043E\u043C\u0435\u0441\u0442\u0438\u0442\u0435 \u0432\u0441\u0435 \u043F\u0430\u0440\u044F\u0449\u0438\u0435
@@ -28210,13 +28146,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a9eb5cf27ebd348b3c82953b93b8bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#a62c19ff>\u041A\u043B\u0430\u0441\u0441 3</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u0421\u0431\u043E\u0440 \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u043E\u0432."
   taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 5"
   taskName: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 3.</color> \u0421\u0431\u043E\u0440
     \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u043E\u0432"
-  specialStateManager: {fileID: 5117397}
+  robotState: {fileID: 270971315}
   value: 15
   taskDescriptions:
   - "\u041F\u043E\u043C\u0435\u0441\u0442\u0438\u0442\u0435 \u0432\u0441\u0435 \u043F\u0430\u0440\u044F\u0449\u0438\u0435
@@ -28407,13 +28344,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a9eb5cf27ebd348b3c82953b93b8bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#a62c19ff>\u041A\u043B\u0430\u0441\u0441 3</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u0421\u0431\u043E\u0440 \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u043E\u0432."
   taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 7"
   taskName: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 3.</color> \u0421\u0431\u043E\u0440
     \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u043E\u0432"
-  specialStateManager: {fileID: 5117397}
+  robotState: {fileID: 270971315}
   value: 15
   taskDescriptions:
   - "\u041F\u043E\u043C\u0435\u0441\u0442\u0438\u0442\u0435 \u0432\u0441\u0435 \u043F\u0430\u0440\u044F\u0449\u0438\u0435
@@ -28515,6 +28453,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 850ad915074e232409eacf94f0917f46, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 2</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u0420\u0430\u0437\u0440\u0443\u0448\u0435\u043D\u0438\u0435 \u0441\u0442\u0435\u043D\u044B
@@ -28522,7 +28461,7 @@ MonoBehaviour:
   taskNameSuffix: 
   taskName: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 2.</color> \u0420\u0430\u0437\u0440\u0443\u0448\u0435\u043D\u0438\u0435
     \u0441\u0442\u0435\u043D\u044B \u0433\u0438\u0434\u0440\u043E\u043C\u043E\u043B\u043E\u0442\u043E\u043C"
-  specialStateManager: {fileID: 0}
+  robotState: {fileID: 0}
   value: 7
   taskDescriptions:
   - "1. \u041F\u0440\u0438\u0441\u043E\u0435\u0434\u0438\u043D\u0438\u0442\u0435
@@ -28857,6 +28796,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a427ac57c4041347b726a2e1bbc4b4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 2</color>. <color=#c95624ff>\u0414\u043E\u043F.
     \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
@@ -28867,7 +28807,7 @@ MonoBehaviour:
     \u0423\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0430 \u044F\u0449\u0438\u043A\u043E\u0432
     \u0434\u0440\u0443\u0433 \u043D\u0430 \u0434\u0440\u0443\u0433\u0430. \u0427\u0430\u0441\u0442\u044C
     1"
-  specialStateManager: {fileID: 0}
+  robotState: {fileID: 0}
   value: 10
   taskDescriptions:
   - "\u0423\u0441\u0442\u0430\u043D\u043E\u0432\u0438\u0442\u0435 \u044F\u0449\u0438\u043A\u0438
@@ -29159,7 +29099,7 @@ Transform:
   - {fileID: 269854711}
   - {fileID: 1555506977}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1693494933
 MonoBehaviour:
@@ -29326,8 +29266,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b9292188ceb2f54d8512f1db42780fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  availableRobotControllers:
+  RobotControllers:
   - {fileID: 1008201078752938241}
+  - {fileID: 2592469677024408704}
+  selectedRobotController: {fileID: 1008201078752938241}
 --- !u!114 &1693494936
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29661,6 +29603,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 347a434f215288d44968ef6c107309e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#a62c19ff>\u041A\u043B\u0430\u0441\u0441 3</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u041E\u043F\u0438\u0441\u0430\u043D\u0438\u0435 \u0444\u0438\u0433\u0443\u0440\u044B
@@ -29668,7 +29611,7 @@ MonoBehaviour:
   taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 9"
   taskName: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 3.</color> \u041E\u043F\u0438\u0441\u0430\u043D\u0438\u0435
     \u0444\u0438\u0433\u0443\u0440\u044B \u0441\u0442\u0440\u0435\u043B\u043E\u0439"
-  specialStateManager: {fileID: 5117397}
+  robotState: {fileID: 270971315}
   value: 15
   taskDescriptions:
   - "\u041E\u043F\u0438\u0448\u0438\u0442\u0435 \u0444\u0438\u0433\u0443\u0440\u0443
@@ -30020,6 +29963,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de582d1ac89543b40b3e55ebb07bf0e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#004a17ff>\u041A\u043B\u0430\u0441\u0441 1</color>.  <color=#c95624ff>\u0414\u043E\u043F.
     \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
@@ -30027,7 +29971,7 @@ MonoBehaviour:
     \u0441\u0442\u0440\u0435\u043B\u044B."
   taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 10"
   taskName: 
-  specialStateManager: {fileID: 0}
+  robotState: {fileID: 0}
   value: 3
   taskDescriptions:
   - "1. \u0414\u043E\u0441\u0442\u0438\u0433\u043D\u0438\u0442\u0435 \u043E\u0431\u043B\u0430\u0441\u0442\u0438,
@@ -30049,10 +29993,8 @@ MonoBehaviour:
   timeLimit: 120
   isSuccesfullyEnded: 0
   isWaitingForCompletion: 0
-  armControllerVariations:
-  - robot: {fileID: 1008201078752938241}
-    armController: {fileID: 197536482}
-    armState: {fileID: 483899714}
+  armController: {fileID: 197536482}
+  armState: {fileID: 483899714}
   pointOfInterest: {fileID: 1087707422}
 --- !u!1 &1776701052
 GameObject:
@@ -30612,13 +30554,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a9eb5cf27ebd348b3c82953b93b8bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#a62c19ff>\u041A\u043B\u0430\u0441\u0441 3</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u0421\u0431\u043E\u0440 \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u043E\u0432."
   taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 2"
   taskName: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 3.</color> \u0421\u0431\u043E\u0440
     \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u043E\u0432"
-  specialStateManager: {fileID: 5117397}
+  robotState: {fileID: 270971315}
   value: 15
   taskDescriptions:
   - "\u041F\u043E\u043C\u0435\u0441\u0442\u0438\u0442\u0435 \u0432\u0441\u0435 \u043F\u0430\u0440\u044F\u0449\u0438\u0435
@@ -30786,6 +30729,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6da7e014f1562f49a5db3d443d77120, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 2</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u0423\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0430 \u043D\u0430\u0432\u0435\u0441\u043D\u043E\u0433\u043E
@@ -30797,7 +30741,7 @@ MonoBehaviour:
     \u043E\u0431\u043E\u0440\u0443\u0434\u043E\u0432\u0430\u043D\u0438\u044F \u043D\u0430
     \u043F\u043E\u0441\u0442\u0430\u043C\u0435\u043D\u0442. \u0427\u0430\u0441\u0442\u044C
     1"
-  specialStateManager: {fileID: 0}
+  robotState: {fileID: 0}
   value: 7
   taskDescriptions:
   - "1. \u041F\u0440\u0438\u0441\u043E\u0435\u0434\u0438\u043D\u0438\u0442\u0435
@@ -31052,6 +30996,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cecdfc8879263c45920f3bdcf61fd92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 2</color>. <color=#c95624ff>\u0414\u043E\u043F.
     \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
@@ -31059,7 +31004,7 @@ MonoBehaviour:
     \u0433\u0438\u0434\u0440\u043E\u043C\u043E\u043B\u043E\u0442\u043E\u043C."
   taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 1 (\u043D\u0430 \u0432\u0440\u0435\u043C\u044F)"
   taskName: 
-  specialStateManager: {fileID: 0}
+  robotState: {fileID: 0}
   value: 10
   taskDescriptions:
   - "1. \u041F\u0440\u0438\u0441\u043E\u0435\u0434\u0438\u043D\u0438\u0442\u0435
@@ -31232,6 +31177,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b5d5cf39a81b014791ecb1ce233ad98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 2</color>. <color=#c95624ff>\u0414\u043E\u043F.
     \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
@@ -31241,7 +31187,7 @@ MonoBehaviour:
   taskName: "\u041A\u043B\u0430\u0441\u0441 2. \u0412\u043A\u043B\u044E\u0447\u0435\u043D\u0438\u0435/\u0432\u044B\u043A\u043B\u044E\u0447\u0435\u043D\u0438\u0435
     \u0433\u0438\u0434\u0440\u043E\u043C\u043E\u043B\u043E\u0442\u0430 (\u041D\u0430
     \u0432\u0440\u0435\u043C\u044F)"
-  specialStateManager: {fileID: 0}
+  robotState: {fileID: 0}
   value: 10
   taskDescriptions:
   - "1. \u041F\u0440\u0438\u0441\u043E\u0435\u0434\u0438\u043D\u0438\u0442\u0435
@@ -31572,54 +31518,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1836481533}
   m_CullTransparentMesh: 0
---- !u!1 &1851042111
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1851042112}
-  - component: {fileID: 1851042113}
-  m_Layer: 0
-  m_Name: "\u0421\u043E\u0441\u0442\u043E\u044F\u043D\u0438\u0435 \u041E\u043F\u0443\u0449\u0435\u043D\u043D\u044B\u0435
-    \u0430\u0443\u0442\u0440\u0438\u0433\u0435\u0440\u044B"
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!4 &1851042112
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1851042111}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 450272051}
-  m_Father: {fileID: 370336470}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1851042113
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1851042111}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 06e43c07cd14b6845bf68f01ef384ca8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  robotStatePairs:
-  - robot: {fileID: 1008201078752938241}
-    state: {fileID: 450272052}
 --- !u!1 &1853089083
 GameObject:
   m_ObjectHideFlags: 0
@@ -31987,13 +31885,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a9eb5cf27ebd348b3c82953b93b8bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#a62c19ff>\u041A\u043B\u0430\u0441\u0441 3</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u0421\u0431\u043E\u0440 \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u043E\u0432."
   taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 13"
   taskName: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 3.</color> \u0421\u0431\u043E\u0440
     \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u043E\u0432"
-  specialStateManager: {fileID: 5117397}
+  robotState: {fileID: 270971315}
   value: 15
   taskDescriptions:
   - "\u041F\u043E\u043C\u0435\u0441\u0442\u0438\u0442\u0435 \u0432\u0441\u0435 \u043F\u0430\u0440\u044F\u0449\u0438\u0435
@@ -32159,6 +32058,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a427ac57c4041347b726a2e1bbc4b4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 2</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u0420\u0430\u0437\u043C\u0435\u0449\u0435\u043D\u0438\u0435 \u043C\u0435\u0442\u0430\u043B\u043B\u0438\u0447\u0435\u0441\u043A\u043E\u0439
@@ -32168,7 +32068,7 @@ MonoBehaviour:
   taskName: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 2.</color> \u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430.
     \u0420\u0430\u0437\u043C\u0435\u0449\u0435\u043D\u0438\u0435 \u043F\u043B\u0438\u0442\u044B
     \u043D\u0430 \u0441\u0442\u043E\u043B\u0435. \u0427\u0430\u0441\u0442\u044C 2"
-  specialStateManager: {fileID: 0}
+  robotState: {fileID: 0}
   value: 7
   taskDescriptions:
   - "\u0420\u0430\u0437\u043C\u0435\u0441\u0442\u0438\u0442\u0435 \u0433\u043E\u0440\u0438\u0437\u043E\u043D\u0442\u0430\u043B\u044C\u043D\u043E
@@ -32257,6 +32157,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 347a434f215288d44968ef6c107309e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#a62c19ff>\u041A\u043B\u0430\u0441\u0441 3</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u041E\u043F\u0438\u0441\u0430\u043D\u0438\u0435 \u0444\u0438\u0433\u0443\u0440\u044B
@@ -32264,7 +32165,7 @@ MonoBehaviour:
   taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 3"
   taskName: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 3.</color> \u041E\u043F\u0438\u0441\u0430\u043D\u0438\u0435
     \u0444\u0438\u0433\u0443\u0440\u044B \u0441\u0442\u0440\u0435\u043B\u043E\u0439"
-  specialStateManager: {fileID: 5117397}
+  robotState: {fileID: 270971315}
   value: 15
   taskDescriptions:
   - "\u041E\u043F\u0438\u0448\u0438\u0442\u0435 \u0444\u0438\u0433\u0443\u0440\u0443
@@ -32984,6 +32885,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea2f33926631ef446a00e7ef0531a740, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 2</color>. <color=#c95624ff>\u0414\u043E\u043F.
     \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
@@ -32995,7 +32897,7 @@ MonoBehaviour:
   taskName: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 2.</color> \u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430.
     \u0423\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0430 \u0442\u0440\u0443\u0431\u044B
     \u0432 \u043E\u0442\u0432\u0435\u0440\u0441\u0442\u0438\u0435 \u0432 \u0441\u0442\u0435\u043D\u0435"
-  specialStateManager: {fileID: 0}
+  robotState: {fileID: 0}
   value: 10
   taskDescriptions:
   - "1. \u041F\u0440\u043E\u0431\u0435\u0439\u0442\u0435 \u043E\u0442\u0432\u0435\u0440\u0441\u0442\u0438\u0435
@@ -33590,6 +33492,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b5d5cf39a81b014791ecb1ce233ad98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 2</color>."
   taskNameBody: "\u0412\u043A\u043B\u044E\u0447\u0435\u043D\u0438\u0435/\u043E\u0442\u043A\u043B\u044E\u0447\u0435\u043D\u0438\u0435
@@ -33597,7 +33500,7 @@ MonoBehaviour:
   taskNameSuffix: 
   taskName: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 2.</color> \u0412\u043A\u043B\u044E\u0447\u0435\u043D\u0438\u0435/\u0432\u044B\u043A\u043B\u044E\u0447\u0435\u043D\u0438\u0435
     \u0433\u0438\u0434\u0440\u043E\u043C\u043E\u043B\u043E\u0442\u0430"
-  specialStateManager: {fileID: 0}
+  robotState: {fileID: 0}
   value: 5
   taskDescriptions:
   - "1. \u041F\u0440\u0438\u0441\u043E\u0435\u0434\u0438\u043D\u0438\u0442\u0435
@@ -33765,6 +33668,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 347a434f215288d44968ef6c107309e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#a62c19ff>\u041A\u043B\u0430\u0441\u0441 3</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u041E\u043F\u0438\u0441\u0430\u043D\u0438\u0435 \u0444\u0438\u0433\u0443\u0440\u044B
@@ -33772,7 +33676,7 @@ MonoBehaviour:
   taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 7"
   taskName: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 3.</color> \u041E\u043F\u0438\u0441\u0430\u043D\u0438\u0435
     \u0444\u0438\u0433\u0443\u0440\u044B \u0441\u0442\u0440\u0435\u043B\u043E\u0439"
-  specialStateManager: {fileID: 5117397}
+  robotState: {fileID: 270971315}
   value: 15
   taskDescriptions:
   - "\u041E\u043F\u0438\u0448\u0438\u0442\u0435 \u0444\u0438\u0433\u0443\u0440\u0443
@@ -33959,6 +33863,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea2f33926631ef446a00e7ef0531a740, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 2</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u0423\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0430 \u0442\u0440\u0443\u0431\u044B
@@ -33967,7 +33872,7 @@ MonoBehaviour:
   taskName: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 2.</color> \u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430.
     \u0423\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0430 \u0442\u0440\u0443\u0431\u044B
     \u0432 \u043E\u0442\u0432\u0435\u0440\u0441\u0442\u0438\u0435 \u0432 \u0441\u0442\u0435\u043D\u0435"
-  specialStateManager: {fileID: 0}
+  robotState: {fileID: 0}
   value: 7
   taskDescriptions:
   - "1. \u041F\u0440\u043E\u0431\u0435\u0439\u0442\u0435 \u043E\u0442\u0432\u0435\u0440\u0441\u0442\u0438\u0435
@@ -34166,6 +34071,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b794838c737b50a41a02f30455fe7358, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 2</color>."
   taskNameBody: "\u041F\u0435\u0440\u0435\u043C\u0435\u0449\u0435\u043D\u0438\u0435
@@ -34175,7 +34081,7 @@ MonoBehaviour:
   taskName: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 2.</color> \u041F\u0435\u0440\u0435\u043C\u0435\u0449\u0435\u043D\u0438\u0435
     \u0433\u0440\u0443\u0437\u043E\u0432 \u043F\u0440\u0438 \u043F\u043E\u043C\u043E\u0449\u0438
     \u0417\u0430\u0445\u0432\u0430\u0442\u0430"
-  specialStateManager: {fileID: 0}
+  robotState: {fileID: 0}
   value: 5
   taskDescriptions:
   - "1. \u041F\u0440\u0438\u0441\u043E\u0435\u0434\u0438\u043D\u0438\u0442\u0435
@@ -34285,6 +34191,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9a427ac57c4041347b726a2e1bbc4b4b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 2</color>. <color=#c95624ff>\u0414\u043E\u043F.
     \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
@@ -34295,7 +34202,7 @@ MonoBehaviour:
     \u0423\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0430 \u044F\u0449\u0438\u043A\u043E\u0432
     \u0434\u0440\u0443\u0433 \u043D\u0430 \u0434\u0440\u0443\u0433\u0430. \u0427\u0430\u0441\u0442\u044C
     1"
-  specialStateManager: {fileID: 0}
+  robotState: {fileID: 0}
   value: 10
   taskDescriptions:
   - "\u0423\u0441\u0442\u0430\u043D\u043E\u0432\u0438\u0442\u0435 \u044F\u0449\u0438\u043A\u0438
@@ -34953,6 +34860,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de582d1ac89543b40b3e55ebb07bf0e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#004a17ff>\u041A\u043B\u0430\u0441\u0441 1</color>.  <color=#c95624ff>\u0414\u043E\u043F.
     \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
@@ -34960,7 +34868,7 @@ MonoBehaviour:
     \u0441\u0442\u0440\u0435\u043B\u044B."
   taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 3"
   taskName: 
-  specialStateManager: {fileID: 0}
+  robotState: {fileID: 0}
   value: 3
   taskDescriptions:
   - "1. \u0414\u043E\u0441\u0442\u0438\u0433\u043D\u0438\u0442\u0435 \u043E\u0431\u043B\u0430\u0441\u0442\u0438,
@@ -34982,10 +34890,8 @@ MonoBehaviour:
   timeLimit: 50
   isSuccesfullyEnded: 0
   isWaitingForCompletion: 0
-  armControllerVariations:
-  - robot: {fileID: 1008201078752938241}
-    armController: {fileID: 197536482}
-    armState: {fileID: 1882769235}
+  armController: {fileID: 197536482}
+  armState: {fileID: 1882769235}
   pointOfInterest: {fileID: 1087707422}
 --- !u!1 &2014271786
 GameObject:
@@ -35377,6 +35283,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a9eb5cf27ebd348b3c82953b93b8bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#a62c19ff>\u041A\u043B\u0430\u0441\u0441 3</color>. <color=#c95624ff>\u0414\u043E\u043F.
     \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
@@ -35384,7 +35291,7 @@ MonoBehaviour:
   taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 3 (\u043D\u0430 \u0432\u0440\u0435\u043C\u044F)"
   taskName: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 3.</color> \u0421\u0431\u043E\u0440
     \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u043E\u0432"
-  specialStateManager: {fileID: 5117397}
+  robotState: {fileID: 270971315}
   value: 20
   taskDescriptions:
   - "\u041F\u043E\u043C\u0435\u0441\u0442\u0438\u0442\u0435 \u0432\u0441\u0435 \u043F\u0430\u0440\u044F\u0449\u0438\u0435
@@ -35609,13 +35516,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a9eb5cf27ebd348b3c82953b93b8bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#a62c19ff>\u041A\u043B\u0430\u0441\u0441 3</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u0421\u0431\u043E\u0440 \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u043E\u0432."
   taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 3"
   taskName: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 3.</color> \u0421\u0431\u043E\u0440
     \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u043E\u0432"
-  specialStateManager: {fileID: 5117397}
+  robotState: {fileID: 270971315}
   value: 15
   taskDescriptions:
   - "\u041F\u043E\u043C\u0435\u0441\u0442\u0438\u0442\u0435 \u0432\u0441\u0435 \u043F\u0430\u0440\u044F\u0449\u0438\u0435
@@ -35977,6 +35885,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cecdfc8879263c45920f3bdcf61fd92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 2</color>. <color=#c95624ff>\u0414\u043E\u043F.
     \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
@@ -35984,7 +35893,7 @@ MonoBehaviour:
     \u0433\u0438\u0434\u0440\u043E\u043C\u043E\u043B\u043E\u0442\u043E\u043C."
   taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 2 (\u043D\u0430 \u0432\u0440\u0435\u043C\u044F)"
   taskName: 
-  specialStateManager: {fileID: 0}
+  robotState: {fileID: 0}
   value: 10
   taskDescriptions:
   - "1. \u041F\u0440\u0438\u0441\u043E\u0435\u0434\u0438\u043D\u0438\u0442\u0435
@@ -36057,6 +35966,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 347a434f215288d44968ef6c107309e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#a62c19ff>\u041A\u043B\u0430\u0441\u0441 3</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u041E\u043F\u0438\u0441\u0430\u043D\u0438\u0435 \u0444\u0438\u0433\u0443\u0440\u044B
@@ -36064,7 +35974,7 @@ MonoBehaviour:
   taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 6"
   taskName: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 3.</color> \u041E\u043F\u0438\u0441\u0430\u043D\u0438\u0435
     \u0444\u0438\u0433\u0443\u0440\u044B \u0441\u0442\u0440\u0435\u043B\u043E\u0439"
-  specialStateManager: {fileID: 5117397}
+  robotState: {fileID: 270971315}
   value: 15
   taskDescriptions:
   - "\u041E\u043F\u0438\u0448\u0438\u0442\u0435 \u0444\u0438\u0433\u0443\u0440\u0443
@@ -36210,13 +36120,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a9eb5cf27ebd348b3c82953b93b8bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#a62c19ff>\u041A\u043B\u0430\u0441\u0441 3</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u0421\u0431\u043E\u0440 \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u043E\u0432."
   taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 15"
   taskName: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 3.</color> \u0421\u0431\u043E\u0440
     \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u043E\u0432"
-  specialStateManager: {fileID: 5117397}
+  robotState: {fileID: 270971315}
   value: 15
   taskDescriptions:
   - "\u041F\u043E\u043C\u0435\u0441\u0442\u0438\u0442\u0435 \u0432\u0441\u0435 \u043F\u0430\u0440\u044F\u0449\u0438\u0435
@@ -36318,6 +36229,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de582d1ac89543b40b3e55ebb07bf0e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#004a17ff>\u041A\u043B\u0430\u0441\u0441 1</color>.  <color=#c95624ff>\u0414\u043E\u043F.
     \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
@@ -36325,7 +36237,7 @@ MonoBehaviour:
     \u0441\u0442\u0440\u0435\u043B\u044B."
   taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 2"
   taskName: 
-  specialStateManager: {fileID: 0}
+  robotState: {fileID: 0}
   value: 3
   taskDescriptions:
   - "1. \u0414\u043E\u0441\u0442\u0438\u0433\u043D\u0438\u0442\u0435 \u043E\u0431\u043B\u0430\u0441\u0442\u0438,
@@ -36347,10 +36259,8 @@ MonoBehaviour:
   timeLimit: 25
   isSuccesfullyEnded: 0
   isWaitingForCompletion: 0
-  armControllerVariations:
-  - robot: {fileID: 1008201078752938241}
-    armController: {fileID: 197536482}
-    armState: {fileID: 420510036}
+  armController: {fileID: 197536482}
+  armState: {fileID: 420510036}
   pointOfInterest: {fileID: 1087707422}
 --- !u!54 &2101391806 stripped
 Rigidbody:
@@ -36643,6 +36553,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a9eb5cf27ebd348b3c82953b93b8bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#a62c19ff>\u041A\u043B\u0430\u0441\u0441 3</color>. <color=#c95624ff>\u0414\u043E\u043F.
     \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
@@ -36650,7 +36561,7 @@ MonoBehaviour:
   taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 10 (\u043D\u0430 \u0432\u0440\u0435\u043C\u044F)"
   taskName: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 3.</color> \u0421\u0431\u043E\u0440
     \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u043E\u0432"
-  specialStateManager: {fileID: 5117397}
+  robotState: {fileID: 270971315}
   value: 20
   taskDescriptions:
   - "\u041F\u043E\u043C\u0435\u0441\u0442\u0438\u0442\u0435 \u0432\u0441\u0435 \u043F\u0430\u0440\u044F\u0449\u0438\u0435
@@ -37110,6 +37021,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45a9eb5cf27ebd348b3c82953b93b8bc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#a62c19ff>\u041A\u043B\u0430\u0441\u0441 3</color>. <color=#c95624ff>\u0414\u043E\u043F.
     \u0442\u0440\u0435\u043D\u0438\u0440\u043E\u0432\u043A\u0430</color>."
@@ -37117,7 +37029,7 @@ MonoBehaviour:
   taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 12 (\u043D\u0430 \u0432\u0440\u0435\u043C\u044F)"
   taskName: "<color=#006098ff>\u041A\u043B\u0430\u0441\u0441 3.</color> \u0421\u0431\u043E\u0440
     \u043F\u0440\u0435\u0434\u043C\u0435\u0442\u043E\u0432"
-  specialStateManager: {fileID: 5117397}
+  robotState: {fileID: 270971315}
   value: 20
   taskDescriptions:
   - "\u041F\u043E\u043C\u0435\u0441\u0442\u0438\u0442\u0435 \u0432\u0441\u0435 \u043F\u0430\u0440\u044F\u0449\u0438\u0435
@@ -38110,7 +38022,7 @@ PrefabInstance:
     - target: {fileID: 2790265482780639177, guid: 63f785ae24ddb904bbe039e39cb709a6,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 2790265482780639177, guid: 63f785ae24ddb904bbe039e39cb709a6,
         type: 3}
@@ -38710,6 +38622,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 2.7, y: 0.2, z: 0.28}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2592469677024408704 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1544139307093449570, guid: efde9d9a11863b247a083cf8a6858242,
+    type: 3}
+  m_PrefabInstance: {fileID: 3933806224675909602}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8b09087f99abc7438e3d01a1d1b5fef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2640322303593344124
 GameObject:
   m_ObjectHideFlags: 0
@@ -39405,7 +39329,7 @@ PrefabInstance:
     - target: {fileID: 726616690948573665, guid: d9e2bbf1167db834d8a5725558711385,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 726616690948573665, guid: d9e2bbf1167db834d8a5725558711385,
         type: 3}
@@ -39469,6 +39393,80 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d9e2bbf1167db834d8a5725558711385, type: 3}
+--- !u!1001 &3933806224675909602
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1544139307093449371, guid: efde9d9a11863b247a083cf8a6858242,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1544139307093449371, guid: efde9d9a11863b247a083cf8a6858242,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 630.229
+      objectReference: {fileID: 0}
+    - target: {fileID: 1544139307093449371, guid: efde9d9a11863b247a083cf8a6858242,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 51.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1544139307093449371, guid: efde9d9a11863b247a083cf8a6858242,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 337.67065
+      objectReference: {fileID: 0}
+    - target: {fileID: 1544139307093449371, guid: efde9d9a11863b247a083cf8a6858242,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.69916433
+      objectReference: {fileID: 0}
+    - target: {fileID: 1544139307093449371, guid: efde9d9a11863b247a083cf8a6858242,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.0002684534
+      objectReference: {fileID: 0}
+    - target: {fileID: 1544139307093449371, guid: efde9d9a11863b247a083cf8a6858242,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.714961
+      objectReference: {fileID: 0}
+    - target: {fileID: 1544139307093449371, guid: efde9d9a11863b247a083cf8a6858242,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0.00027451877
+      objectReference: {fileID: 0}
+    - target: {fileID: 1544139307093449371, guid: efde9d9a11863b247a083cf8a6858242,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1544139307093449371, guid: efde9d9a11863b247a083cf8a6858242,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1544139307093449371, guid: efde9d9a11863b247a083cf8a6858242,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1544139307093449372, guid: efde9d9a11863b247a083cf8a6858242,
+        type: 3}
+      propertyPath: statePoint
+      value: 
+      objectReference: {fileID: 803727972}
+    - target: {fileID: 1544139307093449373, guid: efde9d9a11863b247a083cf8a6858242,
+        type: 3}
+      propertyPath: m_Name
+      value: "\u0420\u041E\u0418\u041D \u0420-300 (\u0420\u0435\u043B\u044C\u0441\u044B)"
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: efde9d9a11863b247a083cf8a6858242, type: 3}
 --- !u!65 &3959971833223564806
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -41053,12 +41051,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 557c38e26d5cc67468f9f91a3b4225ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#004a17ff>\u041A\u043B\u0430\u0441\u0441 1</color>."
   taskNameBody: "\u0414\u0432\u0438\u0436\u0435\u043D\u0438\u0435 \u0432\u043B\u0435\u0432\u043E"
   taskNameSuffix: 
   taskName: 
-  specialStateManager: {fileID: 0}
+  robotState: {fileID: 0}
   value: 1
   taskDescriptions:
   - "\u0414\u0432\u0438\u0433\u0430\u0439\u0442\u0435\u0441\u044C \u0432\u043B\u0435\u0432\u043E"
@@ -41126,12 +41125,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 557c38e26d5cc67468f9f91a3b4225ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#004a17ff>\u041A\u043B\u0430\u0441\u0441 1</color>."
   taskNameBody: "\u0414\u0432\u0438\u0436\u0435\u043D\u0438\u0435 \u0432\u043F\u0440\u0430\u0432\u043E"
   taskNameSuffix: 
   taskName: 
-  specialStateManager: {fileID: 0}
+  robotState: {fileID: 0}
   value: 1
   taskDescriptions:
   - "\u0414\u0432\u0438\u0433\u0430\u0439\u0442\u0435\u0441\u044C \u0432\u043F\u0440\u0430\u0432\u043E"
@@ -41200,13 +41200,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e40d59f9fec3d14d9787dacfffc4695, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#004a17ff>\u041A\u043B\u0430\u0441\u0441 1</color>."
   taskNameBody: "\u041D\u0430\u043A\u043B\u043E\u043D \u0440\u0430\u0431\u043E\u0447\u0435\u0433\u043E
     \u0438\u043D\u0441\u0442\u0440\u0443\u043C\u0435\u043D\u0442\u0430"
   taskNameSuffix: 
   taskName: 
-  specialStateManager: {fileID: 956390096}
+  robotState: {fileID: 803811284}
   value: 1
   taskDescriptions:
   - "\u041F\u043E\u0434\u043D\u0438\u043C\u0438\u0442\u0435 \u0432\u0432\u0435\u0440\u0445
@@ -41293,6 +41294,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e40d59f9fec3d14d9787dacfffc4695, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#004a17ff>\u041A\u043B\u0430\u0441\u0441 1</color>."
   taskNameBody: "\u0423\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u0438\u0435 \u043F\u044F\u0442\u044B\u043C
@@ -41300,7 +41302,7 @@ MonoBehaviour:
     \u0441\u0442\u0440\u0435\u043B\u044B"
   taskNameSuffix: 
   taskName: 
-  specialStateManager: {fileID: 956390096}
+  robotState: {fileID: 803811284}
   value: 1
   taskDescriptions:
   - "\u0423\u0441\u0442\u0430\u043D\u043E\u0432\u0438\u0442\u0435 \u043C\u0430\u043A\u0441\u0438\u043C\u0430\u043B\u044C\u043D\u0443\u044E
@@ -41386,13 +41388,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e40d59f9fec3d14d9787dacfffc4695, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#004a17ff>\u041A\u043B\u0430\u0441\u0441 1</color>."
   taskNameBody: "\u0412\u0440\u0430\u0449\u0435\u043D\u0438\u0435 \u0440\u0430\u0431\u043E\u0447\u0435\u0433\u043E
     \u0438\u043D\u0441\u0442\u0440\u0443\u043C\u0435\u043D\u0442\u0430"
   taskNameSuffix: 
   taskName: 
-  specialStateManager: {fileID: 956390096}
+  robotState: {fileID: 803811284}
   value: 1
   taskDescriptions:
   - "\u041F\u043E\u0432\u0435\u0440\u043D\u0438\u0442\u0435 \u0438\u043D\u0441\u0442\u0440\u0443\u043C\u0435\u043D\u0442
@@ -41477,12 +41480,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e40d59f9fec3d14d9787dacfffc4695, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#004a17ff>\u041A\u043B\u0430\u0441\u0441 1</color>."
   taskNameBody: "\u041E\u043F\u0443\u0441\u043A\u0430\u043D\u0438\u0435 \u0430\u0443\u0442\u0440\u0438\u0433\u0435\u0440\u043E\u0432"
   taskNameSuffix: 
   taskName: 
-  specialStateManager: {fileID: 0}
+  robotState: {fileID: 0}
   value: 1
   taskDescriptions:
   - "\u041E\u043F\u0443\u0441\u0442\u0438\u0442\u0435 \u0430\u0443\u0442\u0440\u0438\u0433\u0435\u0440"
@@ -41556,6 +41560,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e40d59f9fec3d14d9787dacfffc4695, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#004a17ff>\u041A\u043B\u0430\u0441\u0441 1</color>."
   taskNameBody: "\u0423\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u0438\u0435 \u043F\u0435\u0440\u0432\u044B\u043C
@@ -41563,7 +41568,7 @@ MonoBehaviour:
     \u0441\u0442\u0440\u0435\u043B\u044B"
   taskNameSuffix: 
   taskName: 
-  specialStateManager: {fileID: 1851042113}
+  robotState: {fileID: 450272052}
   value: 1
   taskDescriptions:
   - "\u041E\u043F\u0443\u0441\u0442\u0438\u0442\u0435 \u043F\u0435\u0440\u0432\u044B\u0439
@@ -41652,6 +41657,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e40d59f9fec3d14d9787dacfffc4695, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#004a17ff>\u041A\u043B\u0430\u0441\u0441 1</color>."
   taskNameBody: "\u0423\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u0438\u0435 \u0432\u0442\u043E\u0440\u044B\u043C
@@ -41659,7 +41665,7 @@ MonoBehaviour:
     \u0441\u0442\u0440\u0435\u043B\u044B"
   taskNameSuffix: 
   taskName: 
-  specialStateManager: {fileID: 1851042113}
+  robotState: {fileID: 450272052}
   value: 1
   taskDescriptions:
   - "\u041F\u043E\u0434\u043D\u0438\u043C\u0438\u0442\u0435 \u0432\u0442\u043E\u0440\u043E\u0439
@@ -41746,12 +41752,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 557c38e26d5cc67468f9f91a3b4225ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#004a17ff>\u041A\u043B\u0430\u0441\u0441 1</color>."
   taskNameBody: "\u0414\u0432\u0438\u0436\u0435\u043D\u0438\u0435 \u043D\u0430\u0437\u0430\u0434"
   taskNameSuffix: 
   taskName: 
-  specialStateManager: {fileID: 0}
+  robotState: {fileID: 0}
   value: 1
   taskDescriptions:
   - "\u0414\u0432\u0438\u0433\u0430\u0439\u0442\u0435\u0441\u044C \u043D\u0430\u0437\u0430\u0434"
@@ -41820,13 +41827,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e40d59f9fec3d14d9787dacfffc4695, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#004a17ff>\u041A\u043B\u0430\u0441\u0441 1</color>."
   taskNameBody: "\u0423\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u0438\u0435 \u0438\u0437\u043B\u043E\u043C\u043E\u043C
     \u0440\u0430\u0431\u043E\u0447\u0435\u0439 \u0441\u0442\u0440\u0435\u043B\u044B"
   taskNameSuffix: 
   taskName: 
-  specialStateManager: {fileID: 1012795386}
+  robotState: {fileID: 829588977}
   value: 1
   taskDescriptions:
   - "\u041F\u043E\u0432\u0435\u0440\u043D\u0438\u0442\u0435 \u0438\u0437\u043B\u043E\u043C
@@ -41913,6 +41921,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e40d59f9fec3d14d9787dacfffc4695, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#004a17ff>\u041A\u043B\u0430\u0441\u0441 1</color>."
   taskNameBody: "\u0423\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u0438\u0435 \u0447\u0435\u0442\u0432\u0435\u0440\u0442\u044B\u043C
@@ -41920,7 +41929,7 @@ MonoBehaviour:
     \u0441\u0442\u0440\u0435\u043B\u044B"
   taskNameSuffix: 
   taskName: 
-  specialStateManager: {fileID: 1012795386}
+  robotState: {fileID: 829588977}
   value: 1
   taskDescriptions:
   - "\u041F\u043E\u0434\u043D\u0438\u043C\u0438\u0442\u0435 \u0447\u0435\u0442\u0432\u0435\u0440\u0442\u044B\u0439
@@ -42051,13 +42060,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e40d59f9fec3d14d9787dacfffc4695, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#004a17ff>\u041A\u043B\u0430\u0441\u0441 1</color>."
   taskNameBody: "\u041F\u043E\u0432\u043E\u0440\u043E\u0442 \u0431\u0430\u0437\u044B
     \u0440\u0430\u0431\u043E\u0447\u0435\u0439 \u0441\u0442\u0440\u0435\u043B\u044B"
   taskNameSuffix: 
   taskName: 
-  specialStateManager: {fileID: 1851042113}
+  robotState: {fileID: 450272052}
   value: 1
   taskDescriptions:
   - "\u0412\u0440\u0430\u0449\u0430\u0439\u0442\u0435 \u0431\u0430\u0437\u0443 \u0440\u0430\u0431\u043E\u0447\u0435\u0439
@@ -42140,12 +42150,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 557c38e26d5cc67468f9f91a3b4225ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#004a17ff>\u041A\u043B\u0430\u0441\u0441 1</color>."
   taskNameBody: "\u0414\u0432\u0438\u0436\u0435\u043D\u0438\u0435 \u0432\u043F\u0435\u0440\u0435\u0434"
   taskNameSuffix: 
   taskName: 
-  specialStateManager: {fileID: 0}
+  robotState: {fileID: 0}
   value: 1
   taskDescriptions:
   - "\u0414\u0432\u0438\u0433\u0430\u0439\u0442\u0435\u0441\u044C \u0432\u043F\u0435\u0440\u0435\u0434"
@@ -42214,13 +42225,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 557c38e26d5cc67468f9f91a3b4225ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#004a17ff>\u041A\u043B\u0430\u0441\u0441 1</color>."
   taskNameBody: "\u041F\u0435\u0440\u0435\u043A\u043B\u044E\u0447\u0435\u043D\u0438\u0435
     \u0430\u043A\u0442\u0438\u0432\u043D\u043E\u0439 \u043A\u0430\u043C\u0435\u0440\u044B"
   taskNameSuffix: 
   taskName: 
-  specialStateManager: {fileID: 0}
+  robotState: {fileID: 0}
   value: 1
   taskDescriptions:
   - "\u041F\u0435\u0440\u0435\u043A\u043B\u044E\u0447\u0438\u0442\u0435 \u0430\u043A\u0442\u0438\u0432\u043D\u0443\u044E
@@ -42269,7 +42281,7 @@ PrefabInstance:
     - target: {fileID: 6749456979249660351, guid: 11a0e833ae362be429d539e2b6ff0a6d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6749456979249660351, guid: 11a0e833ae362be429d539e2b6ff0a6d,
         type: 3}
@@ -43399,13 +43411,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de582d1ac89543b40b3e55ebb07bf0e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#004a17ff>\u041A\u043B\u0430\u0441\u0441 1</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u0423\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0430 \u043F\u043E\u043B\u043E\u0436\u0435\u043D\u0438\u044F
     \u0441\u0442\u0440\u0435\u043B\u044B."
   taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 3"
   taskName: 
-  specialStateManager: {fileID: 0}
+  robotState: {fileID: 0}
   value: 2
   taskDescriptions:
   - "1. \u0414\u043E\u0441\u0442\u0438\u0433\u043D\u0438\u0442\u0435 \u043E\u0431\u043B\u0430\u0441\u0442\u0438,
@@ -43427,10 +43440,8 @@ MonoBehaviour:
   timeLimit: 0
   isSuccesfullyEnded: 0
   isWaitingForCompletion: 0
-  armControllerVariations:
-  - robot: {fileID: 1008201078752938241}
-    armController: {fileID: 197536482}
-    armState: {fileID: 1882769235}
+  armController: {fileID: 197536482}
+  armState: {fileID: 1882769235}
   pointOfInterest: {fileID: 1087707422}
 --- !u!1 &7925063080774121206
 GameObject:
@@ -43462,13 +43473,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de582d1ac89543b40b3e55ebb07bf0e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#004a17ff>\u041A\u043B\u0430\u0441\u0441 1</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u0423\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0430 \u043F\u043E\u043B\u043E\u0436\u0435\u043D\u0438\u044F
     \u0441\u0442\u0440\u0435\u043B\u044B."
   taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 6"
   taskName: 
-  specialStateManager: {fileID: 0}
+  robotState: {fileID: 0}
   value: 2
   taskDescriptions:
   - "1. \u0414\u043E\u0441\u0442\u0438\u0433\u043D\u0438\u0442\u0435 \u043E\u0431\u043B\u0430\u0441\u0442\u0438,
@@ -43490,10 +43502,8 @@ MonoBehaviour:
   timeLimit: 0
   isSuccesfullyEnded: 0
   isWaitingForCompletion: 0
-  armControllerVariations:
-  - robot: {fileID: 1008201078752938241}
-    armController: {fileID: 197536482}
-    armState: {fileID: 89125610}
+  armController: {fileID: 197536482}
+  armState: {fileID: 89125610}
   pointOfInterest: {fileID: 1087707422}
 --- !u!4 &7925063080774121209
 Transform:
@@ -43553,13 +43563,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de582d1ac89543b40b3e55ebb07bf0e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#004a17ff>\u041A\u043B\u0430\u0441\u0441 1</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u0423\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0430 \u043F\u043E\u043B\u043E\u0436\u0435\u043D\u0438\u044F
     \u0441\u0442\u0440\u0435\u043B\u044B."
   taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 5"
   taskName: 
-  specialStateManager: {fileID: 0}
+  robotState: {fileID: 0}
   value: 2
   taskDescriptions:
   - "1. \u0414\u043E\u0441\u0442\u0438\u0433\u043D\u0438\u0442\u0435 \u043E\u0431\u043B\u0430\u0441\u0442\u0438,
@@ -43581,10 +43592,8 @@ MonoBehaviour:
   timeLimit: 0
   isSuccesfullyEnded: 0
   isWaitingForCompletion: 0
-  armControllerVariations:
-  - robot: {fileID: 1008201078752938241}
-    armController: {fileID: 197536482}
-    armState: {fileID: 1863251705}
+  armController: {fileID: 197536482}
+  armState: {fileID: 1863251705}
   pointOfInterest: {fileID: 1087707422}
 --- !u!1 &7925063081153565664
 GameObject:
@@ -43616,13 +43625,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de582d1ac89543b40b3e55ebb07bf0e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#004a17ff>\u041A\u043B\u0430\u0441\u0441 1</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u0423\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0430 \u043F\u043E\u043B\u043E\u0436\u0435\u043D\u0438\u044F
     \u0441\u0442\u0440\u0435\u043B\u044B."
   taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 7"
   taskName: 
-  specialStateManager: {fileID: 0}
+  robotState: {fileID: 0}
   value: 2
   taskDescriptions:
   - "1. \u0414\u043E\u0441\u0442\u0438\u0433\u043D\u0438\u0442\u0435 \u043E\u0431\u043B\u0430\u0441\u0442\u0438,
@@ -43644,10 +43654,8 @@ MonoBehaviour:
   timeLimit: 0
   isSuccesfullyEnded: 0
   isWaitingForCompletion: 0
-  armControllerVariations:
-  - robot: {fileID: 1008201078752938241}
-    armController: {fileID: 197536482}
-    armState: {fileID: 1101618307}
+  armController: {fileID: 197536482}
+  armState: {fileID: 1101618307}
   pointOfInterest: {fileID: 1087707422}
 --- !u!4 &7925063081153565667
 Transform:
@@ -43707,13 +43715,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de582d1ac89543b40b3e55ebb07bf0e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#004a17ff>\u041A\u043B\u0430\u0441\u0441 1</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u0423\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0430 \u043F\u043E\u043B\u043E\u0436\u0435\u043D\u0438\u044F
     \u0441\u0442\u0440\u0435\u043B\u044B."
   taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 4"
   taskName: 
-  specialStateManager: {fileID: 0}
+  robotState: {fileID: 0}
   value: 2
   taskDescriptions:
   - "1. \u0414\u043E\u0441\u0442\u0438\u0433\u043D\u0438\u0442\u0435 \u043E\u0431\u043B\u0430\u0441\u0442\u0438,
@@ -43735,10 +43744,8 @@ MonoBehaviour:
   timeLimit: 0
   isSuccesfullyEnded: 0
   isWaitingForCompletion: 0
-  armControllerVariations:
-  - robot: {fileID: 1008201078752938241}
-    armController: {fileID: 197536482}
-    armState: {fileID: 1274010264}
+  armController: {fileID: 197536482}
+  armState: {fileID: 1274010264}
   pointOfInterest: {fileID: 1087707422}
 --- !u!4 &7925063081516600194
 Transform:
@@ -43784,13 +43791,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de582d1ac89543b40b3e55ebb07bf0e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#004a17ff>\u041A\u043B\u0430\u0441\u0441 1</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u0423\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0430 \u043F\u043E\u043B\u043E\u0436\u0435\u043D\u0438\u044F
     \u0441\u0442\u0440\u0435\u043B\u044B."
   taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 9"
   taskName: 
-  specialStateManager: {fileID: 0}
+  robotState: {fileID: 0}
   value: 2
   taskDescriptions:
   - "1. \u0414\u043E\u0441\u0442\u0438\u0433\u043D\u0438\u0442\u0435 \u043E\u0431\u043B\u0430\u0441\u0442\u0438,
@@ -43812,10 +43820,8 @@ MonoBehaviour:
   timeLimit: 0
   isSuccesfullyEnded: 0
   isWaitingForCompletion: 0
-  armControllerVariations:
-  - robot: {fileID: 1008201078752938241}
-    armController: {fileID: 197536482}
-    armState: {fileID: 1662188223}
+  armController: {fileID: 197536482}
+  armState: {fileID: 1662188223}
   pointOfInterest: {fileID: 1087707422}
 --- !u!1 &7925063081569179010
 GameObject:
@@ -43847,13 +43853,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de582d1ac89543b40b3e55ebb07bf0e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#004a17ff>\u041A\u043B\u0430\u0441\u0441 1</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u0423\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0430 \u043F\u043E\u043B\u043E\u0436\u0435\u043D\u0438\u044F
     \u0441\u0442\u0440\u0435\u043B\u044B."
   taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 10"
   taskName: 
-  specialStateManager: {fileID: 0}
+  robotState: {fileID: 0}
   value: 2
   taskDescriptions:
   - "1. \u0414\u043E\u0441\u0442\u0438\u0433\u043D\u0438\u0442\u0435 \u043E\u0431\u043B\u0430\u0441\u0442\u0438,
@@ -43875,10 +43882,8 @@ MonoBehaviour:
   timeLimit: 0
   isSuccesfullyEnded: 0
   isWaitingForCompletion: 0
-  armControllerVariations:
-  - robot: {fileID: 1008201078752938241}
-    armController: {fileID: 197536482}
-    armState: {fileID: 483899714}
+  armController: {fileID: 197536482}
+  armState: {fileID: 483899714}
   pointOfInterest: {fileID: 1087707422}
 --- !u!4 &7925063081569179013
 Transform:
@@ -43938,13 +43943,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de582d1ac89543b40b3e55ebb07bf0e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#004a17ff>\u041A\u043B\u0430\u0441\u0441 1</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u0423\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0430 \u043F\u043E\u043B\u043E\u0436\u0435\u043D\u0438\u044F
     \u0441\u0442\u0440\u0435\u043B\u044B."
   taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 8"
   taskName: 
-  specialStateManager: {fileID: 0}
+  robotState: {fileID: 0}
   value: 2
   taskDescriptions:
   - "1. \u0414\u043E\u0441\u0442\u0438\u0433\u043D\u0438\u0442\u0435 \u043E\u0431\u043B\u0430\u0441\u0442\u0438,
@@ -43966,10 +43972,8 @@ MonoBehaviour:
   timeLimit: 0
   isSuccesfullyEnded: 0
   isWaitingForCompletion: 0
-  armControllerVariations:
-  - robot: {fileID: 1008201078752938241}
-    armController: {fileID: 197536482}
-    armState: {fileID: 416563161}
+  armController: {fileID: 197536482}
+  armState: {fileID: 416563161}
   pointOfInterest: {fileID: 1087707422}
 --- !u!1 &7925063082210278926
 GameObject:
@@ -44001,13 +44005,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de582d1ac89543b40b3e55ebb07bf0e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#004a17ff>\u041A\u043B\u0430\u0441\u0441 1</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u0423\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0430 \u043F\u043E\u043B\u043E\u0436\u0435\u043D\u0438\u044F
     \u0441\u0442\u0440\u0435\u043B\u044B."
   taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 1"
   taskName: 
-  specialStateManager: {fileID: 0}
+  robotState: {fileID: 0}
   value: 2
   taskDescriptions:
   - "1. \u0414\u043E\u0441\u0442\u0438\u0433\u043D\u0438\u0442\u0435 \u043E\u0431\u043B\u0430\u0441\u0442\u0438,
@@ -44029,10 +44034,8 @@ MonoBehaviour:
   timeLimit: 0
   isSuccesfullyEnded: 0
   isWaitingForCompletion: 0
-  armControllerVariations:
-  - robot: {fileID: 1008201078752938241}
-    armController: {fileID: 197536482}
-    armState: {fileID: 250819450}
+  armController: {fileID: 197536482}
+  armState: {fileID: 250819450}
   pointOfInterest: {fileID: 1087707422}
 --- !u!4 &7925063082210279025
 Transform:
@@ -44078,13 +44081,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: de582d1ac89543b40b3e55ebb07bf0e3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  robot: {fileID: 1008201078752938241}
   taskMode: 0
   taskNamePrefix: "<color=#004a17ff>\u041A\u043B\u0430\u0441\u0441 1</color>. <color=#008000ff>\u041E\u0442\u0440\u0430\u0431\u043E\u0442\u043A\u0430</color>."
   taskNameBody: "\u0423\u0441\u0442\u0430\u043D\u043E\u0432\u043A\u0430 \u043F\u043E\u043B\u043E\u0436\u0435\u043D\u0438\u044F
     \u0441\u0442\u0440\u0435\u043B\u044B."
   taskNameSuffix: "\u0427\u0430\u0441\u0442\u044C 2"
   taskName: 
-  specialStateManager: {fileID: 0}
+  robotState: {fileID: 0}
   value: 2
   taskDescriptions:
   - "1. \u0414\u043E\u0441\u0442\u0438\u0433\u043D\u0438\u0442\u0435 \u043E\u0431\u043B\u0430\u0441\u0442\u0438,
@@ -44106,10 +44110,8 @@ MonoBehaviour:
   timeLimit: 0
   isSuccesfullyEnded: 0
   isWaitingForCompletion: 0
-  armControllerVariations:
-  - robot: {fileID: 1008201078752938241}
-    armController: {fileID: 197536482}
-    armState: {fileID: 420510036}
+  armController: {fileID: 197536482}
+  armState: {fileID: 420510036}
   pointOfInterest: {fileID: 1087707422}
 --- !u!4 &7925063082410514537
 Transform:

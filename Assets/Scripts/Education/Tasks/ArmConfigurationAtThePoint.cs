@@ -1,27 +1,15 @@
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ArmConfigurationAtThePoint : Task
 {
-    [System.Serializable]
-    public class RobotStaticArmControllerState
-    {
-        public RobotController robot;
-        public StaticArmController armController;
-        public RobotState armState;
-    }
-
-    public List<RobotStaticArmControllerState> armControllerVariations;
+    public StaticArmController armController;
+    public RobotState armState;
     public PointOfInterest pointOfInterest;
-
-    private StaticArmController armController;
 
     protected override void EnableTaskGameObjects()
     {
-        RobotStaticArmControllerState variation = armControllerVariations.Find(element => element.robot == robot);
-        armController = variation.armController;
-        armController.SetState(variation.armState);
-        pointOfInterest.transform.position = variation.armState.statePoint.position;
+        armController.SetState(armState);
+        pointOfInterest.transform.position = armState.statePoint.position;
         pointOfInterest.gameObject.SetActive(true);
     }
 

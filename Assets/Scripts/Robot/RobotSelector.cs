@@ -5,8 +5,8 @@ public class RobotSelector : MonoBehaviour
 {
     public static RobotSelector instance;
 
-    public List<RobotController> availableRobotControllers;
-    public RobotController SelectedRobotController { get; private set; }
+    public List<RobotController> RobotControllers;
+    public RobotController selectedRobotController;
 
     private void Awake()
     {
@@ -23,14 +23,24 @@ public class RobotSelector : MonoBehaviour
 
     private void Start()
     {
-        if (availableRobotControllers.Count == 1) SelectRobot(0);
+        RobotControllers.ForEach(r => r.SetEnabled(false));
+        SelectRobot();
     }
 
-    private void SelectRobot(int index)
+    public void SelectRobot(RobotController robotController)
     {
-        if (SelectedRobotController) SelectedRobotController.enabled = false;
-        SelectedRobotController = availableRobotControllers[index];
-        SelectedRobotController.enabled = true;
-        CameraController.instance?.SetCamerasContainers(SelectedRobotController);
+        if (selectedRobotController != robotController)
+        {
+            if (selectedRobotController) selectedRobotController.SetEnabled(false);
+            selectedRobotController = robotController;
+            SelectRobot();
+        }
+    }
+
+    private void SelectRobot()
+    {
+        selectedRobotController.SetEnabled(true);
+        if (JoinCamera.instance) JoinCamera.instance.joinCamera = selectedRobotController.accessoryJoinPoint.joinCamera;
+        CameraController.instance?.SetCamerasContainers(selectedRobotController);
     }
 }

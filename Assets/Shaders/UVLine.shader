@@ -83,15 +83,14 @@
 					OUT.vertex = UnityObjectToClipPos(OUT.worldPosition);
 
 					OUT.texcoord = v.texcoord;
-
 					OUT.color = v.color;
 					return OUT;
 				}
 
 				fixed4 frag(v2f IN) : SV_Target
 				{
-					half4 color = half4(1,1,1,1);
-					color.a *= step(IN.texcoord.x, IN.color.a);
+					half4 color = IN.color;
+					color.a = step(IN.texcoord.x, IN.color.a);
 					#ifdef UNITY_UI_CLIP_RECT
 					color.a *= UnityGet2DClipping(IN.worldPosition.xy, _ClipRect);
 					#endif

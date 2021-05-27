@@ -9,7 +9,8 @@ public class PropertyCollectionSetter : EditorWindow
 {
     Transform parentTransform;
     MonoBehaviour targetMonoBehaviour;
-    string propertyName;
+    int index = 0;
+
     [MenuItem("Tools/Property Collection Setter")]
     public static void ShowWindow()
     {
@@ -21,52 +22,60 @@ public class PropertyCollectionSetter : EditorWindow
         parentTransform = EditorGUILayout.ObjectField("Parent Transform", parentTransform, typeof(Transform), true) as Transform;
         targetMonoBehaviour = EditorGUILayout.ObjectField("Target Mono Behaviour", targetMonoBehaviour, typeof(MonoBehaviour), true) as MonoBehaviour;
 
-        EditorGUILayout.LabelField("Check these fields in target script before setting the collection");
-        propertyName = EditorGUILayout.TextField("Property Name (Object Collection)", propertyName);
-
-        if (parentTransform && targetMonoBehaviour && propertyName.Length > 0)
+        if (targetMonoBehaviour)
         {
-            EditorGUILayout.Space(10);
-            if (GUILayout.Button("Set Collection Using Transform"))
+            FieldInfo[] fields = targetMonoBehaviour.GetType().GetFields();
+            List<FieldInfo> fieldsList = new List<FieldInfo>();
+            List<string> namesList = new List<string>();
+            for (int i = 0; i < fields.Length; ++i)
             {
-                SetCollection();
+                if (fields[i].FieldType.IsArray || (!fields[i].FieldType.Equals(typeof(string)) && fields[i].FieldType.GetInterface(typeof(IEnumerable<>).FullName) != null))
+                {
+                    fieldsList.Add(fields[i]);
+                    namesList.Add(fields[i].Name);
+                }
+            }
+            FieldInfo[] popupFields = fieldsList.ToArray();
+            string[] popupNames = namesList.ToArray();
+
+            index = EditorGUILayout.Popup("Collections", index, popupNames);
+            FieldInfo fieldInfo = popupFields[index];
+
+            if (parentTransform)
+            {
+                EditorGUILayout.Space(10);
+                if (GUILayout.Button("Set Collection Using Transform"))
+                {
+                    SetCollection(fieldInfo);
+                }
             }
         }
     }
 
-    private void SetCollection()
+    private void SetCollection(FieldInfo fieldInfo)
     {
-        FieldInfo fieldInfo = targetMonoBehaviour.GetType().GetField(propertyName);
-        if (fieldInfo != null)
-        {
-            Type fieldType = fieldInfo.FieldType;
-            bool isArray = fieldType.IsArray;
-            Type argumentType = isArray? fieldType.GetElementType() : fieldType.GetGenericArguments()[0];
-            Debug.Log("Field type is " + fieldType.ToString() + "; argument type is " + argumentType.ToString());
+        Type fieldType = fieldInfo.FieldType;
+        bool isArray = fieldType.IsArray;
+        Type argumentType = isArray ? fieldType.GetElementType() : fieldType.GetGenericArguments()[0];
 
-            var listType = typeof(List<>).MakeGenericType(argumentType);
-            var list = (IList)Activator.CreateInstance(listType);
+        var listType = typeof(List<>).MakeGenericType(argumentType);
+        var list = (IList)Activator.CreateInstance(listType);
 
-            for (int i = 0; i < parentTransform.childCount; ++i)
-            {
-                Transform child = parentTransform.GetChild(i);
-                if (child.gameObject.activeSelf)
-                {
-                    object component = parentTransform.GetChild(i).GetComponentInChildren(argumentType);
-                    if (component != null) list.Add(component);
-                }
-            }
-            if (isArray)
-            {
-                object array = Array.CreateInstance(argumentType, list.Count);
-                list.CopyTo((Array)array, 0);
-                fieldInfo.SetValue(targetMonoBehaviour, array);
-            }
-            else fieldInfo.SetValue(targetMonoBehaviour, list);
-        }
-        else
+        for (int i = 0; i < parentTransform.childCount; ++i)
         {
-            Debug.Log("Variable with name " + propertyName + " isn't found.");
+            Transform child = parentTransform.GetChild(i);
+            if (child.gameObject.activeSelf)
+            {
+                object component = parentTransform.GetChild(i).GetComponentInChildren(argumentType);
+                if (component != null) list.Add(component);
+            }
         }
+        if (isArray)
+        {
+            object array = Array.CreateInstance(argumentType, list.Count);
+            list.CopyTo((Array)array, 0);
+            fieldInfo.SetValue(targetMonoBehaviour, array);
+        }
+        else fieldInfo.SetValue(targetMonoBehaviour, list);
     }
 }

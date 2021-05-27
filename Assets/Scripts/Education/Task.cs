@@ -15,7 +15,7 @@ public interface TaskCurrentValue
 
 public class Task : MonoBehaviour, TaskCurrentValue
 {
-    protected RobotController robot;
+    public RobotController robot;
     public int currentValue { get; set; }
     public int currentExtraValue { get; set; }
     public TaskMode taskMode = TaskMode.Education; // Определяет тип задачи: в режиме обучения или доп. тренировок
@@ -25,7 +25,7 @@ public class Task : MonoBehaviour, TaskCurrentValue
     public string taskNameSuffix;
     [HideInInspector] public string taskName; // Название задачи, будет отображаться в меню уровней. Собирается из префикса, основной части и суффикса
     [Header("Свойства задачи")]
-    public RobotStateManager specialStateManager;
+    public RobotState robotState;
     public int value; // Количество очков, которое получит пользователь за выполнение задания
     public string[] taskDescriptions; // Набор описаний задачи
     public string[] instructions; // Набор инструкций для решения задачи
@@ -103,7 +103,7 @@ public class Task : MonoBehaviour, TaskCurrentValue
     protected void RobotSetStartPosition()
     {
         robot.accessoryJoinPoint.UnequipAccessory();
-        robot.SetState(specialStateManager?.GetStateByRobotController(robot));
+        robot.SetState(robotState);
         OnSettingSpecialState();
     }
 
@@ -117,13 +117,13 @@ public class Task : MonoBehaviour, TaskCurrentValue
         CameraController.instance.SetRegularCamera();
     }
 
-    public void Take(RobotController robotController)
+    public RobotController Take()
     {
-        robot = robotController;
         RobotSetStartPosition();
         EnableTaskGameObjects();
         isWaitingForCompletion = false;
         SetStage(0, Task_0, instructionsEnabledOnStart);
+        return robot;
     }
 
     public void Drop()

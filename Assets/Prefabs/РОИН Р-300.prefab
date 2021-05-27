@@ -5022,6 +5022,7 @@ MonoBehaviour:
   articulationBody: {fileID: 2592469677976262304}
   maxOverload: 3000
   speedModifierSignificance: 0.2
+  joinCamera: {fileID: 2592469678933013310}
   cameraTurnOnDistance: 0.2
   equipDistance: 0.1
   equipKeyCode: 47
@@ -5540,6 +5541,7 @@ MonoBehaviour:
   - {fileID: 721458675}
   - {fileID: 2057149058}
   - {fileID: 1590875886}
+  criticalAngle: -95
   accessoryJoinPoint: {fileID: 2592469677976262305}
   regularCamerasContainer: {fileID: 7131161341553861472}
   specialCamerasContainer: {fileID: 3555899818782549618}

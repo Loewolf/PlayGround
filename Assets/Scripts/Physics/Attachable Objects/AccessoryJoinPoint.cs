@@ -4,6 +4,7 @@ using UnityEngine;
 public class AccessoryJoinPoint : OverloadDetection
 {
     [Space(10, order = 0), Header("Ќавесное оборудование", order = 1)]
+    public Camera joinCamera;
     public float cameraTurnOnDistance; // ƒистанци€, при которой включаетс€ камера дл€ отслеживани€ соединени€
     public float equipDistance; // ƒистанци€, при которой присоединение оборудовани€ возможно
     public bool Selected { get; private set; } = false;
@@ -152,5 +153,11 @@ public class AccessoryJoinPoint : OverloadDetection
         base.OnDrawGizmosSelected();
         Gizmos.color = Color.cyan;
         Gizmos.DrawWireSphere(transform.position, cameraTurnOnDistance);
+    }
+
+    public void SetEnabled(bool value)
+    {
+        enabled = value;
+        joinCamera.gameObject.SetActive(value);
     }
 }

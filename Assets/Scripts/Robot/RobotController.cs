@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class RobotController : ArticulationBodyCenterOfMass
 {
-    [Space(10, order = 0), Header("Отладка", order = 1)]
-    public bool alwaysAllowRotations;
     [Space(10, order = 0), Header("Движение", order = 1)]
+    public bool alwaysAllowRotations;
     public float startLinearSpeed;
     public float startAngularSpeed;
     private float currentLinearSpeed;
@@ -37,10 +36,15 @@ public class RobotController : ArticulationBodyCenterOfMass
     protected override void Awake()
     {
         base.Awake();
-        currentLinearSpeed = startLinearSpeed * Time.fixedDeltaTime;
-        currentAngularSpeed = startAngularSpeed * Time.fixedDeltaTime;
+        RecalculateSpeed(startLinearSpeed, startAngularSpeed);
         childrenColliders = new List<Collider>(transform.GetComponentsInChildren<Collider>());
         setStateWithDelayCoroutine = SetStateWithDelayCoroutine(defaultState);
+    }
+
+    protected void RecalculateSpeed(float linearSpeed, float angularSpeed)
+    {
+        currentLinearSpeed = linearSpeed * Time.fixedDeltaTime;
+        currentAngularSpeed = angularSpeed * Time.fixedDeltaTime;
     }
 
     private void FixedUpdate()
@@ -151,6 +155,20 @@ public class RobotController : ArticulationBodyCenterOfMass
             {
                 return (index < articulationBodyRotations.Count) ? articulationBodyRotations[index] : null;
             }
+        }
+    }
+
+    public void SetEnabled(bool value)
+    {
+        enabled = value;
+        accessoryJoinPoint.SetEnabled(value);
+        for (int i = 0; i < articulationBodyRotations.Count; ++i)
+        {
+            articulationBodyRotations[i].enabled = value;
+        }
+        for (int i = 0; i < articulationBodyLegs.Count; ++i)
+        {
+            articulationBodyLegs[i].enabled = value;
         }
     }
 }
