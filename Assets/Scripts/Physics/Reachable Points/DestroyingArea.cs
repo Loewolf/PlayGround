@@ -26,28 +26,13 @@ public class DestroyingArea : ReachablePoint
         Transform otherTransform = other.transform;
         if (CheckForMatches(ref otherTransform))
         {
-            RigidbodyAttachableObject ao = other.GetComponent<RigidbodyAttachableObject>();
+            RigidbodyAttachableObject ao = otherTransform.GetComponent<RigidbodyAttachableObject>();
             if (ao)
             {
                 if (grab.AttachedObject != ao)
                 {
                     objectsAtPoint++;
                     Destroy(ao.gameObject);
-                }
-            }
-            else
-            {
-                if (other.transform.parent)
-                {
-                    ao = other.transform.parent.GetComponent<RigidbodyAttachableObject>();
-                    if (ao)
-                    {
-                        if (grab.AttachedObject != ao)
-                        {
-                            objectsAtPoint++;
-                            Destroy(ao.gameObject);
-                        }
-                    }
                 }
             }
         }

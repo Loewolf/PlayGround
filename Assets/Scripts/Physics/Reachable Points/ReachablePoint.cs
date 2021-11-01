@@ -31,7 +31,11 @@ public class ReachablePoint : MonoBehaviour
 
     private bool CheckTag(ref Transform other)
     {
-        return other.tag == targetTag;
+        while (other && !other.CompareTag(targetTag))
+        {
+            other = other.parent;
+        }
+        return other;
     }
 
     private bool CheckGameObject(ref Transform other)

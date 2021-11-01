@@ -14,8 +14,14 @@ public class WallDestroyer : MonoBehaviour
         {
             hitColliders[i].GetComponent<BrickDestruction>()?.Dead();
             if (hitColliders[i].CompareTag(targetTag))
-            {                
-                hitColliders[i].gameObject.AddComponent<Rigidbody>().AddExplosionForce(force, transform.position, radius, 3.0F);
+            {
+                Rigidbody rb = hitColliders[i].gameObject.GetComponent<Rigidbody>();
+                if (!rb) 
+                {
+                    rb = hitColliders[i].gameObject.AddComponent<Rigidbody>();
+                    Destroy(hitColliders[i].gameObject, 5f);
+                }
+                rb.AddExplosionForce(force, transform.position, radius, 3.0F);
             }
         }
     }

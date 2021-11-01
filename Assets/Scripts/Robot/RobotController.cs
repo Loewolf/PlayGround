@@ -6,10 +6,6 @@ public class RobotController : ArticulationBodyCenterOfMass
 {
     [Space(10, order = 0), Header("Движение", order = 1)]
     public bool alwaysAllowRotations;
-    public float startLinearSpeed;
-    public float startAngularSpeed;
-    private float currentLinearSpeed;
-    private float currentAngularSpeed;
     [Space(10)]
     public NonPlayerCollisionCounter caterpillarLeftCollisionCounter;
     public NonPlayerCollisionCounter caterpillarRightCollisionCounter;
@@ -19,6 +15,7 @@ public class RobotController : ArticulationBodyCenterOfMass
     public List<ArticulationBodyXDriveModification> articulationBodyLegs;
     public float criticalAngle = -95f;
     private bool legsTouchSurface;
+    public ArticulationBodyMovement movement;
     public bool MovementAllowed { get; private set; } = false;
     public bool RotationsAllowed { get; private set; } = false;
     [Space(10, order = 0), Header("Навесное оборудование и перегруз", order = 1)]
@@ -36,15 +33,8 @@ public class RobotController : ArticulationBodyCenterOfMass
     protected override void Awake()
     {
         base.Awake();
-        RecalculateSpeed(startLinearSpeed, startAngularSpeed);
         childrenColliders = new List<Collider>(transform.GetComponentsInChildren<Collider>());
         setStateWithDelayCoroutine = SetStateWithDelayCoroutine(defaultState);
-    }
-
-    protected void RecalculateSpeed(float linearSpeed, float angularSpeed)
-    {
-        currentLinearSpeed = linearSpeed * Time.fixedDeltaTime;
-        currentAngularSpeed = angularSpeed * Time.fixedDeltaTime;
     }
 
     private void FixedUpdate()
@@ -57,17 +47,17 @@ public class RobotController : ArticulationBodyCenterOfMass
             MovementAllowed = accessoryJoinPoint.IsFree && (caterpillarLeftCollisionCounter.HasCollisions || caterpillarRightCollisionCounter.HasCollisions) && !legsTouchSurface;
             if (MovementAllowed)
             {
-                articulationBody.AddForce(transform.forward * Input.GetAxis("Vertical") * currentLinearSpeed * accessoryJoinPoint.SpeedModifier);
-                articulationBody.AddTorque(transform.up * Input.GetAxis("Horizontal") * currentAngularSpeed * accessoryJoinPoint.SpeedModifier);
+                movement.Move(transform.forward, Input.GetAxis("Vertical") * accessoryJoinPoint.SpeedModifier,
+                    transform.up, Input.GetAxis("Horizontal") * accessoryJoinPoint.SpeedModifier);
             }
         }
     }
 
     private void AllowRotations(List<ArticulationBodyXDriveModification> xDriveModifications, bool value)
     {
-        foreach (ArticulationBodyXDriveModification abr in xDriveModifications)
+        foreach (ArticulationBodyXDriveModification xDriveModification in xDriveModifications)
         {
-            abr.AllowRotation(value);
+            xDriveModification.AllowRotation(value);
         }
     }
 

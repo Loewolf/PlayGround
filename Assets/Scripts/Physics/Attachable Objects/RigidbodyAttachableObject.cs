@@ -12,24 +12,33 @@ public class RigidbodyAttachableObject : CenterOfMass
 
     public void LeaveHandler(Transform parent)
     {
-        rigidbody.useGravity = false;
-        rigidbody.constraints = RigidbodyConstraints.FreezeAll;
-        transform.parent = parent;
-        rigidbody.gameObject.SetActive(false);
+        if (rigidbody)
+        {
+            rigidbody.useGravity = false;
+            rigidbody.constraints = RigidbodyConstraints.FreezeAll;
+            transform.parent = parent;
+            rigidbody.gameObject.SetActive(false);
+        }
     }
 
     public void ReturnToHandler()
     {
-        rigidbody.gameObject.SetActive(true);
-        rigidbody.transform.position = transform.position;
-        rigidbody.transform.rotation = transform.rotation;
-        transform.parent = rigidbody.gameObject.transform;
-        rigidbody.useGravity = true;
-        rigidbody.constraints = RigidbodyConstraints.None;
+        if (rigidbody)
+        {
+            rigidbody.gameObject.SetActive(true);
+            rigidbody.transform.position = transform.position;
+            rigidbody.transform.rotation = transform.rotation;
+            transform.parent = rigidbody.gameObject.transform;
+            rigidbody.useGravity = true;
+            rigidbody.constraints = RigidbodyConstraints.None;
+        }
     }
 
     private void OnDestroy()
     {
-        if (rigidbody) Destroy(rigidbody.gameObject);
+        if (rigidbody)
+        {
+            Destroy(rigidbody.gameObject);
+        }
     }
 }

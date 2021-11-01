@@ -217,6 +217,7 @@ ArticulationBody:
   m_JointFriction: 0.05
   m_Immovable: 0
   m_UseGravity: 0
+  m_CollisionDetectionMode: 0
 --- !u!65 &2592469676912592876
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -597,6 +598,7 @@ ArticulationBody:
   m_JointFriction: 0.05
   m_Immovable: 0
   m_UseGravity: 0
+  m_CollisionDetectionMode: 0
 --- !u!65 &2592469677044693865
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -868,6 +870,7 @@ ArticulationBody:
   m_JointFriction: 0.05
   m_Immovable: 0
   m_UseGravity: 0
+  m_CollisionDetectionMode: 0
 --- !u!114 &2592469677084106829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1050,6 +1053,7 @@ ArticulationBody:
   m_JointFriction: 0.05
   m_Immovable: 0
   m_UseGravity: 0
+  m_CollisionDetectionMode: 0
 --- !u!114 &2592469677144600046
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1718,6 +1722,7 @@ ArticulationBody:
   m_JointFriction: 0.05
   m_Immovable: 0
   m_UseGravity: 0
+  m_CollisionDetectionMode: 0
 --- !u!135 &2592469677318260451
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1922,6 +1927,7 @@ ArticulationBody:
   m_JointFriction: 0.05
   m_Immovable: 0
   m_UseGravity: 0
+  m_CollisionDetectionMode: 0
 --- !u!135 &2592469677342004598
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2525,6 +2531,7 @@ ArticulationBody:
   m_JointFriction: 0.05
   m_Immovable: 0
   m_UseGravity: 0
+  m_CollisionDetectionMode: 0
 --- !u!114 &2592469677489714304
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2936,6 +2943,7 @@ ArticulationBody:
   m_JointFriction: 0.05
   m_Immovable: 0
   m_UseGravity: 0
+  m_CollisionDetectionMode: 0
 --- !u!114 &2592469677640188116
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3210,6 +3218,7 @@ ArticulationBody:
   m_JointFriction: 0.05
   m_Immovable: 0
   m_UseGravity: 0
+  m_CollisionDetectionMode: 0
 --- !u!114 &2592469677650980508
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3832,6 +3841,7 @@ ArticulationBody:
   m_JointFriction: 0.05
   m_Immovable: 0
   m_UseGravity: 0
+  m_CollisionDetectionMode: 0
 --- !u!65 &2592469677747887996
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4006,6 +4016,7 @@ ArticulationBody:
   m_JointFriction: 0.05
   m_Immovable: 0
   m_UseGravity: 0
+  m_CollisionDetectionMode: 0
 --- !u!65 &2592469677756517978
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4199,6 +4210,7 @@ ArticulationBody:
   m_JointFriction: 0.05
   m_Immovable: 0
   m_UseGravity: 0
+  m_CollisionDetectionMode: 0
 --- !u!65 &2592469677762676324
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4892,6 +4904,7 @@ ArticulationBody:
   m_JointFriction: 0.05
   m_Immovable: 0
   m_UseGravity: 0
+  m_CollisionDetectionMode: 0
 --- !u!114 &2592469677968429914
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5005,6 +5018,7 @@ ArticulationBody:
   m_JointFriction: 0.05
   m_Immovable: 0
   m_UseGravity: 0
+  m_CollisionDetectionMode: 0
 --- !u!114 &2592469677976262305
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5421,6 +5435,7 @@ GameObject:
   - component: {fileID: 2592469678155211682}
   - component: {fileID: 2592469678155211683}
   - component: {fileID: 2592469678155211357}
+  - component: {fileID: 6488077193866297250}
   m_Layer: 0
   m_Name: "\u0420\u041E\u0418\u041D \u0420-300"
   m_TagString: Player
@@ -5500,6 +5515,7 @@ ArticulationBody:
   m_JointFriction: 0.05
   m_Immovable: 0
   m_UseGravity: 1
+  m_CollisionDetectionMode: 0
 --- !u!114 &2592469678155211683
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5542,6 +5558,7 @@ MonoBehaviour:
   - {fileID: 2057149058}
   - {fileID: 1590875886}
   criticalAngle: -95
+  movement: {fileID: 6488077193866297250}
   accessoryJoinPoint: {fileID: 2592469677976262305}
   regularCamerasContainer: {fileID: 7131161341553861472}
   specialCamerasContainer: {fileID: 3555899818782549618}
@@ -5594,6 +5611,18 @@ MonoBehaviour:
   - name: "\u041A\u043E\u0440\u043F\u0443\u0441 \u043B\u0430\u043F\u044B \u0437\u0430\u0434\u043D\u0435\u0439
       \u043B\u0435\u0432\u043E\u0439"
     value: 0
+--- !u!114 &6488077193866297250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2592469678155211356}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67b28937d68007c41a7e0aa34e5b068f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2592469678176129217
 GameObject:
   m_ObjectHideFlags: 0
@@ -5749,6 +5778,7 @@ ArticulationBody:
   m_JointFriction: 0.05
   m_Immovable: 0
   m_UseGravity: 0
+  m_CollisionDetectionMode: 0
 --- !u!114 &2592469678176129222
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6310,6 +6340,7 @@ ArticulationBody:
   m_JointFriction: 0.05
   m_Immovable: 0
   m_UseGravity: 0
+  m_CollisionDetectionMode: 0
 --- !u!65 &2592469678330059094
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6510,6 +6541,7 @@ ArticulationBody:
   m_JointFriction: 0.05
   m_Immovable: 0
   m_UseGravity: 0
+  m_CollisionDetectionMode: 0
 --- !u!114 &2592469678346784088
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6793,6 +6825,7 @@ ArticulationBody:
   m_JointFriction: 0.05
   m_Immovable: 0
   m_UseGravity: 0
+  m_CollisionDetectionMode: 0
 --- !u!114 &2592469678415447188
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7098,6 +7131,7 @@ ArticulationBody:
   m_JointFriction: 0.05
   m_Immovable: 0
   m_UseGravity: 0
+  m_CollisionDetectionMode: 0
 --- !u!65 &2592469678438615760
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7285,6 +7319,7 @@ ArticulationBody:
   m_JointFriction: 0.05
   m_Immovable: 0
   m_UseGravity: 0
+  m_CollisionDetectionMode: 0
 --- !u!114 &2592469678459337851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7482,6 +7517,7 @@ ArticulationBody:
   m_JointFriction: 0.05
   m_Immovable: 0
   m_UseGravity: 0
+  m_CollisionDetectionMode: 0
 --- !u!65 &2592469678474774304
 BoxCollider:
   m_ObjectHideFlags: 0

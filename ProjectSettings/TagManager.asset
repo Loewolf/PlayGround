@@ -5,10 +5,11 @@ TagManager:
   serializedVersion: 2
   tags:
   - Accessory
-  - Spawned Prop
   - Wall Fragment
   - Attachable Object Collider
   - Transparent
+  - Box
+  - Spawned Prop
   layers:
   - Default
   - TransparentFX

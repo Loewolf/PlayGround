@@ -100,8 +100,16 @@ public class EducationHandler : MonoBehaviour
 
     public void SetTextValues(string newTaskDescription, bool instructionsEnabled, string newInstruction)
     {
-        taskDescription.text = newTaskDescription;
-        if (instructionsEnabled)
+        if (newTaskDescription != null)
+        {
+            descriptionObject.gameObject.SetActive(true);
+            taskDescription.text = newTaskDescription;
+        }
+        else
+        {
+            descriptionObject.gameObject.SetActive(false);
+        }
+        if (instructionsEnabled && newInstruction != null)
         {
             instructionObject.gameObject.SetActive(true);
             instruction.text = newInstruction;
