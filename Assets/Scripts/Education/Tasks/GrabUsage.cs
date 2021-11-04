@@ -38,7 +38,7 @@ public class GrabUsage : Task
     {
         if (robot.accessoryJoinPoint.Equipped)
         {
-            SetStage(1, Task_1, true);
+            SetStage(1, Task_1);
             return 1;
         }
         else return 0;
@@ -48,7 +48,7 @@ public class GrabUsage : Task
     {
         if (grab.CurrentRotationAngle >= highestAngle)
         {
-            SetStage(2, Task_2, true);
+            SetStage(2, Task_2);
             return 1;
         }
         else return 0;
@@ -58,7 +58,7 @@ public class GrabUsage : Task
     {
         if (grab.CurrentRotationAngle <= lowestAngle)
         {
-            SetStage(3, CompleteTask, false);
+            SetStage(3, CompleteTask);
             return 1;
         }
         else return 0;

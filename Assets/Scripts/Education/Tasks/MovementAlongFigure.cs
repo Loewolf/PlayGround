@@ -71,7 +71,7 @@ public class MovementAlongFigure : Task
     {
         if (robot.MovementAllowed)
         {
-            SetStage(2, TerminateTask, false); // Задание прервано. Робот должен оставаться неподвижным
+            SetStage(2, TerminateTask); // Задание прервано. Робот должен оставаться неподвижным
             return 1;
         }
         else
@@ -80,7 +80,7 @@ public class MovementAlongFigure : Task
             {
                 if (UpdatePosition())
                 {
-                    SetStage(1, CompleteTask, false); // Задание пройдено
+                    SetStage(1, CompleteTask); // Задание пройдено
                     return 1;
                 }
                 else return 0;

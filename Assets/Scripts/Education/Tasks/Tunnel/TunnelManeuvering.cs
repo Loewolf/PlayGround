@@ -35,7 +35,7 @@ public class TunnelManeuvering : Task
         {
             if (endPoint.IsReached())
             {
-                SetStage(1, CompleteTask, false); // Задание пройдено
+                SetStage(1, CompleteTask); // Задание пройдено
                 return 1;
             }
             else
@@ -45,7 +45,7 @@ public class TunnelManeuvering : Task
         }
         else
         {
-            SetStage(2, TerminateTask, false); // Задание прервано. Объекты должны быть неподвижны
+            SetStage(2, TerminateTask); // Задание прервано. Объекты должны быть неподвижны
             return 1;
         }
     }

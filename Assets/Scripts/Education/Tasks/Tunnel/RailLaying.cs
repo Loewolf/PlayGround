@@ -55,7 +55,7 @@ public class RailLaying : Task
     {
         if (isRailSet() && isAngleCorrect() && !grab.AttachedObject)
         {
-            SetStage(1, CompleteTask, false);
+            SetStage(1, CompleteTask);
             return 1;
         }
         else

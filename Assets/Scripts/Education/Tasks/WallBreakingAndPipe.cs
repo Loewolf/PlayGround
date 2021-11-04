@@ -39,7 +39,7 @@ public class WallBreakingAndPipe : WallBreakingPattern
     {
         if (CountVisitedPoints() == reachablePointsAmount)
         {
-            SetStage(1, Task_1, false);
+            SetStage(1, Task_1);
             return 1;
         }
         else return 0;
@@ -49,7 +49,7 @@ public class WallBreakingAndPipe : WallBreakingPattern
     {
         if (pipeTracker.IsReached() && !grab.AttachedObject)
         {
-            SetStage(2, CompleteTask, false);
+            SetStage(2, CompleteTask);
             return 1;
         }
         else return 0;

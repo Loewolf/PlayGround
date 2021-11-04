@@ -38,7 +38,7 @@ public class WallBreaking : WallBreakingPattern
     {
         if (robot.accessoryJoinPoint.Equipped)
         {
-            SetStage(1, Task_1, false);
+            SetStage(1, Task_1);
             return 1;
         }
         else return 0;
@@ -57,7 +57,7 @@ public class WallBreaking : WallBreakingPattern
             if (pointOfInterest.IsReached() && IsCorrectAngle())
             {
                 pointOfInterest.gameObject.SetActive(false);
-                SetStage(2, Task_2, true);
+                SetStage(2, Task_2);
                 return 1;
             }
             else
@@ -67,7 +67,7 @@ public class WallBreaking : WallBreakingPattern
         }
         else
         {
-            SetStage(0, Task_0, true);
+            SetStage(0, Task_0);
             return 1;
         }
     }
@@ -76,7 +76,7 @@ public class WallBreaking : WallBreakingPattern
     {
         if (CountVisitedPoints() == reachablePointsAmount)
         {
-            SetStage(3, CompleteTask, false);
+            SetStage(3, CompleteTask);
             return 1;
         }
         else

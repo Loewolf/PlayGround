@@ -15,47 +15,47 @@ PrefabInstance:
     - target: {fileID: 463862829695948709, guid: cb253ef8bbc61644b8164cc2ccb4f527,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 544.255
+      value: 637.896
       objectReference: {fileID: 0}
     - target: {fileID: 463862829695948709, guid: cb253ef8bbc61644b8164cc2ccb4f527,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 50.177
+      value: 50.74
       objectReference: {fileID: 0}
     - target: {fileID: 463862829695948709, guid: cb253ef8bbc61644b8164cc2ccb4f527,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 464.1052
+      value: 336.76
       objectReference: {fileID: 0}
     - target: {fileID: 463862829695948709, guid: cb253ef8bbc61644b8164cc2ccb4f527,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.5244493
       objectReference: {fileID: 0}
     - target: {fileID: 463862829695948709, guid: cb253ef8bbc61644b8164cc2ccb4f527,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: -0.5244493
       objectReference: {fileID: 0}
     - target: {fileID: 463862829695948709, guid: cb253ef8bbc61644b8164cc2ccb4f527,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: -0.47429207
       objectReference: {fileID: 0}
     - target: {fileID: 463862829695948709, guid: cb253ef8bbc61644b8164cc2ccb4f527,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: -0.47429207
       objectReference: {fileID: 0}
     - target: {fileID: 463862829695948709, guid: cb253ef8bbc61644b8164cc2ccb4f527,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: 463862829695948709, guid: cb253ef8bbc61644b8164cc2ccb4f527,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: -84.25
       objectReference: {fileID: 0}
     - target: {fileID: 463862829695948709, guid: cb253ef8bbc61644b8164cc2ccb4f527,
         type: 3}
@@ -65,17 +65,17 @@ PrefabInstance:
     - target: {fileID: 463862829695948710, guid: cb253ef8bbc61644b8164cc2ccb4f527,
         type: 3}
       propertyPath: m_Constraints
-      value: 14
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 463862829695948711, guid: cb253ef8bbc61644b8164cc2ccb4f527,
         type: 3}
       propertyPath: m_Name
-      value: Yellow Barrel Rigidbody
+      value: Yellow Barrel Rigidbody Variant
       objectReference: {fileID: 0}
     - target: {fileID: 463862829695948711, guid: cb253ef8bbc61644b8164cc2ccb4f527,
         type: 3}
       propertyPath: m_TagString
-      value: Spawned Prop
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 463862830789009481, guid: cb253ef8bbc61644b8164cc2ccb4f527,
         type: 3}
@@ -90,12 +90,12 @@ PrefabInstance:
     - target: {fileID: 2666262489620896407, guid: cb253ef8bbc61644b8164cc2ccb4f527,
         type: 3}
       propertyPath: m_TagString
-      value: Spawned Prop
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 3101298538469403060, guid: cb253ef8bbc61644b8164cc2ccb4f527,
         type: 3}
       propertyPath: m_TagString
-      value: Spawned Prop
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 5808075169194644592, guid: cb253ef8bbc61644b8164cc2ccb4f527,
         type: 3}

@@ -5,8 +5,6 @@ public class ObjectMovement : Task
     [Space(15)]
     [Tooltip("При false для задания потребуется всего 3 описания: подбор захвата, подбор объекта и его сброс, завершение задания")]
     public bool showUniqueDescriptions = true;
-    [Tooltip("При false отключает отображение всех инструкций для этого задания")]
-    public bool showInstructions = true;
     [Space(10, order = 0)]
     [Header("Объекты, связанные с задачей", order = 1)]
     public Transform grabTransform;
@@ -39,7 +37,6 @@ public class ObjectMovement : Task
         grabTransform.gameObject.SetActive(true);
         grabTransform.transform.position = grabDefaultPoint.position;
         grabTransform.transform.rotation = grabDefaultPoint.rotation;
-        if (!showInstructions) InstructionsEnabled = false;
         pointOfInterest.transform.position = pointOfInterestDefaultPosition.position;
         pointOfInterest.transform.rotation = pointOfInterestDefaultPosition.rotation;
     }
@@ -67,7 +64,7 @@ public class ObjectMovement : Task
         {
             pointOfInterest.gameObject.SetActive(true);
             currentObject = 0;
-            SetStage(currentObject + 1, Task_ObjectSelector, showInstructions);
+            SetStage(currentObject + 1, Task_ObjectSelector);
         }
         return 0;
     }
@@ -81,13 +78,13 @@ public class ObjectMovement : Task
             pointOfInterest.targetObjects.Clear();
             pointOfInterest.targetObjects.Add(targetObjects[currentObject].transform);
             pointOfInterest.ResetReached();
-            if (showUniqueDescriptions) SetStage(currentObject + 1, Task_1, showInstructions);
-            else SetStage(1, Task_1, showInstructions);
+            if (showUniqueDescriptions) SetStage(currentObject + 1, Task_1);
+            else SetStage(1, Task_1);
         }
         else
         {
-            if (showUniqueDescriptions) SetStage(length + 1, CompleteTask, false);
-            else SetStage(2, CompleteTask, false);
+            if (showUniqueDescriptions) SetStage(length + 1, CompleteTask);
+            else SetStage(2, CompleteTask);
         }
         return 1;
     }
@@ -97,8 +94,8 @@ public class ObjectMovement : Task
         if (grab.AttachedObject == targetObjects[currentObject])
         {
             marker.gameObject.SetActive(false);
-            if (showUniqueDescriptions) SetStage(currentObject + 1, Task_2, showInstructions);
-            else SetStage(1, Task_2, showInstructions);
+            if (showUniqueDescriptions) SetStage(currentObject + 1, Task_2);
+            else SetStage(1, Task_2);
         }
         return 0;
     }
@@ -108,8 +105,8 @@ public class ObjectMovement : Task
         if (pointOfInterest.IsReached() && !grab.AttachedObject)
         {
             currentObject++;
-            if (showUniqueDescriptions) SetStage(currentObject + 1, Task_ObjectSelector, showInstructions);
-            else SetStage(1, Task_ObjectSelector, showInstructions);
+            if (showUniqueDescriptions) SetStage(currentObject + 1, Task_ObjectSelector);
+            else SetStage(1, Task_ObjectSelector);
         }
         else
         {
@@ -118,8 +115,8 @@ public class ObjectMovement : Task
                 marker.gameObject.SetActive(true);
                 marker.UpdatePosition(targetObjects[currentObject].gameObject);
 
-                if (showUniqueDescriptions) SetStage(currentObject + 1, Task_1, showInstructions);
-                else SetStage(1, Task_1, showInstructions);
+                if (showUniqueDescriptions) SetStage(currentObject + 1, Task_1);
+                else SetStage(1, Task_1);
             }
         }
         return 0;

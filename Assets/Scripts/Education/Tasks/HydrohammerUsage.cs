@@ -33,7 +33,7 @@ public class HydrohammerUsage : Task
     {
         if (robot.accessoryJoinPoint.Equipped)
         {
-            SetStage(1, Task_1, true);
+            SetStage(1, Task_1);
             return 1;
         }
         else return 0;
@@ -43,7 +43,7 @@ public class HydrohammerUsage : Task
     {
         if (hammer.hitPoints.activeSelf)
         {
-            SetStage(2, Task_2, true);
+            SetStage(2, Task_2);
             return 1;
         }
         else
@@ -54,7 +54,7 @@ public class HydrohammerUsage : Task
             }
             else
             {
-                SetStage(0, Task_0, true);
+                SetStage(0, Task_0);
                 return 1;
             }
         }
@@ -66,14 +66,14 @@ public class HydrohammerUsage : Task
         {
             if (!hammer.hitPoints.activeSelf)
             {
-                SetStage(3, CompleteTask, false);
+                SetStage(3, CompleteTask);
                 return 1;
             }
             else return 0;
         }
         else
         {
-            SetStage(0, Task_0, true);
+            SetStage(0, Task_0);
             return 1;
         }
     }

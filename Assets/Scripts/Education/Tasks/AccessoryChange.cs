@@ -38,7 +38,7 @@ public class AccessoryChange : Task
         if (joinPoint.IsReached())
         {
             joinPoint.gameObject.SetActive(false);
-            SetStage(1, Task_1, false);
+            SetStage(1, Task_1);
             return 1;
         }
         else return 0;
@@ -48,7 +48,7 @@ public class AccessoryChange : Task
     {
         if (robot.accessoryJoinPoint.Selected)
         {
-            SetStage(2, Task_2, false);
+            SetStage(2, Task_2);
             return 1;
         }
         else
@@ -61,7 +61,7 @@ public class AccessoryChange : Task
     {
         if (robot.accessoryJoinPoint.Equippable)
         {
-            SetStage(3, Task_3, true);
+            SetStage(3, Task_3);
             return 1;
         }
         else
@@ -72,7 +72,7 @@ public class AccessoryChange : Task
             }
             else
             {
-                SetStage(1, Task_1, false);
+                SetStage(1, Task_1);
                 return 1;
             }
         }
@@ -83,7 +83,7 @@ public class AccessoryChange : Task
         if (robot.accessoryJoinPoint.Equipped)
         {
             separationPoint.gameObject.SetActive(true);
-            SetStage(4, Task_4, true);
+            SetStage(4, Task_4);
             return 1;
         }
         else
@@ -96,13 +96,13 @@ public class AccessoryChange : Task
                 }
                 else
                 {
-                    SetStage(2, Task_2, false);
+                    SetStage(2, Task_2);
                     return 1;
                 }
             }
             else
             {
-                SetStage(1, Task_1, false);
+                SetStage(1, Task_1);
                 return 1;
             }
         }
@@ -112,7 +112,7 @@ public class AccessoryChange : Task
     {
         if (separationPoint.IsReached() && !robot.accessoryJoinPoint.Equipped)
         {
-            SetStage(5, CompleteTask, false);
+            SetStage(5, CompleteTask);
             return 1;
         }
         else
@@ -127,19 +127,19 @@ public class AccessoryChange : Task
                     }
                     else
                     {
-                        SetStage(3, Task_3, true);
+                        SetStage(3, Task_3);
                         return 1;
                     }
                 }
                 else
                 {
-                    SetStage(2, Task_2, false);
+                    SetStage(2, Task_2);
                     return 1;
                 }
             }
             else
             {
-                SetStage(1, Task_1, false);
+                SetStage(1, Task_1);
                 return 1;
             }
         }

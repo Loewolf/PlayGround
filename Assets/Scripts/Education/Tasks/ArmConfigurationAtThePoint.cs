@@ -23,7 +23,7 @@ public class ArmConfigurationAtThePoint : Task
     {
         if (pointOfInterest.IsReached())
         {
-            SetStage(1, Task_1, false);
+            SetStage(1, Task_1);
             return 1;
         }
         else return 0;
@@ -36,7 +36,7 @@ public class ArmConfigurationAtThePoint : Task
             armController.transform.position = robot.transform.position;
             armController.transform.rotation = robot.transform.rotation;
             armController.gameObject.SetActive(true);
-            SetStage(2, Task_2, false);
+            SetStage(2, Task_2);
             return 1;
         }
         else
@@ -47,7 +47,7 @@ public class ArmConfigurationAtThePoint : Task
             }
             else
             {
-                SetStage(0, Task_0, false);
+                SetStage(0, Task_0);
                 return 1;
             }
         }
@@ -58,7 +58,7 @@ public class ArmConfigurationAtThePoint : Task
         if (ComparePositions())
         {
             armController.gameObject.SetActive(false);
-            SetStage(3, CompleteTask, false);
+            SetStage(3, CompleteTask);
             return 1;
         }
         else
@@ -70,7 +70,7 @@ public class ArmConfigurationAtThePoint : Task
             else
             {
                 armController.gameObject.SetActive(false);
-                SetStage(1, Task_1, false);
+                SetStage(1, Task_1);
                 return 1;
             }
         }

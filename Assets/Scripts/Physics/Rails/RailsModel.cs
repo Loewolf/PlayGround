@@ -17,8 +17,13 @@ public class RailsModel : CubicBezierCurve
         if (other.CompareTag("Player"))
         {
             Transform top = other.transform;
-            while (top.parent) top = top.parent;
-            ArticulationBodyMovement movement = top.GetComponent<RobotController>().movement;
+            RobotController controller = top.GetComponent<RobotController>();
+            while (!controller)
+            {
+                top = top.parent;
+                controller = top.GetComponent<RobotController>();
+            }
+            ArticulationBodyMovement movement = controller.movement;
             if (movement && movement.GetType() == typeof(RailsMovement))
             {
                 RailsMovement railsMovement = (RailsMovement)movement;

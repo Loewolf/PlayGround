@@ -46,7 +46,7 @@ public class EducationHandler : MonoBehaviour
     private float timeLeft = 0f;
     private bool timerIsUsed = false;
 
-    private IEnumerator MaskFlicker(string newTaskDescription = null, bool instructionsEnabled = false, string newInstruction = null)
+    private IEnumerator MaskFlicker(string newTaskDescription = null, string newInstruction = null)
     {
         while (alpha > 0f)
         {
@@ -56,7 +56,7 @@ public class EducationHandler : MonoBehaviour
         }
         alpha = 0;
 
-        SetTextValues(newTaskDescription, instructionsEnabled, newInstruction);
+        SetTextValues(newTaskDescription, newInstruction);
         if (task.isWaitingForCompletion)
         {
             if (task.isSuccesfullyEnded)
@@ -93,14 +93,14 @@ public class EducationHandler : MonoBehaviour
     private void Start()
     {
         ChangeWindowsActivity(false);
-        maskFlicker = MaskFlicker(null, false, null);
+        maskFlicker = MaskFlicker(null, null);
         SetMaskAlpha(1f);
         step = 2f / effectDuration;
     }
 
-    public void SetTextValues(string newTaskDescription, bool instructionsEnabled, string newInstruction)
+    public void SetTextValues(string newTaskDescription, string newInstruction)
     {
-        if (newTaskDescription != null)
+        if (newTaskDescription != null && newTaskDescription.Length > 0)
         {
             descriptionObject.gameObject.SetActive(true);
             taskDescription.text = newTaskDescription;
@@ -109,7 +109,7 @@ public class EducationHandler : MonoBehaviour
         {
             descriptionObject.gameObject.SetActive(false);
         }
-        if (instructionsEnabled && newInstruction != null)
+        if (newInstruction != null && newInstruction.Length > 0)
         {
             instructionObject.gameObject.SetActive(true);
             instruction.text = newInstruction;
@@ -153,9 +153,10 @@ public class EducationHandler : MonoBehaviour
     {
         if (RobotSelector.instance)
         {
+            RobotSelector.instance.selectedRobotController.SetState(null);
             RobotSelector.instance.SelectRobot(task.Take());
             ChangeWindowsActivity(true);
-            SetTextValues(task.GetCurrentDescription(), task.InstructionsEnabled, task.GetCurrentInstruction());
+            SetTextValues(task.GetCurrentDescription(), task.GetCurrentInstruction());
             SetTimer(task.GetTimeWithDelay());
             penaltyTime = -task.timeLimit;
             valueMultiplier = 1f;
@@ -191,7 +192,7 @@ public class EducationHandler : MonoBehaviour
                 case 1: // если 1, то промежуточный этап задачи успешно выполнен
                     {
                         StopCoroutine(maskFlicker);
-                        maskFlicker = MaskFlicker(task.GetCurrentDescription(), task.InstructionsEnabled, task.GetCurrentInstruction());
+                        maskFlicker = MaskFlicker(task.GetCurrentDescription(), task.GetCurrentInstruction());
                         StartCoroutine(maskFlicker);
                         break;
                     }
@@ -226,7 +227,7 @@ public class EducationHandler : MonoBehaviour
                 {
                     task.TerminateTask();
                     StopCoroutine(maskFlicker);
-                    maskFlicker = MaskFlicker(timeoutText, false, null);
+                    maskFlicker = MaskFlicker(timeoutText, null);
                     StartCoroutine(maskFlicker);
                     timerIsUsed = false;
                 }

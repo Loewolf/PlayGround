@@ -29,8 +29,6 @@ public class Task : MonoBehaviour, TaskCurrentValue
     public int value; // Количество очков, которое получит пользователь за выполнение задания
     public string[] taskDescriptions; // Набор описаний задачи
     public string[] instructions; // Набор инструкций для решения задачи
-    public bool instructionsEnabledOnStart;
-    public bool InstructionsEnabled { get; protected set; }
     public Vector2Int[] pairs; // Набор из индексов описания и инструкций, который будет выведен на заданном этапе
     [Header("Таймер")]
     public float timeLimit = 0f; // Количество секунд, выделяемое на задание. Если меньше или равно 0, то таймер не запускается
@@ -75,18 +73,33 @@ public class Task : MonoBehaviour, TaskCurrentValue
         return (timeLimit > 0 && robot) ? timeLimit + robot.timeForSettingState : 0f;
     }
 
-    protected void SetStage(int nextStage, Func<int> newTask, bool instructionsStatus)
+    protected void SetStage(int nextStage, Func<int> newTask)
     {
         stage = nextStage;
         stageTask = newTask;
-        InstructionsEnabled = instructionsStatus && pairs[stage].y < instructions.Length && instructions[pairs[stage].y] != "";
-        if (stage < pairs.Length)
+        if (stage > -1 && stage < pairs.Length)
         {
-            currentDescription = taskDescriptions[pairs[stage].x];
-            if (InstructionsEnabled)
-                currentInstruction = instructions[pairs[stage].y];
+            if (pairs[stage].x > -1 && pairs[stage].x < taskDescriptions.Length)
+            {
+                currentDescription = taskDescriptions[pairs[stage].x];
+            }
             else
+            {
+                currentDescription = null;
+            }
+            if (pairs[stage].y > -1 && pairs[stage].y < instructions.Length)
+            {
+                currentInstruction = instructions[pairs[stage].y];
+            }
+            else
+            {
                 currentInstruction = null;
+            }
+        }
+        else
+        {
+            currentDescription = null;
+            currentInstruction = null;
         }
     }
 
@@ -122,7 +135,7 @@ public class Task : MonoBehaviour, TaskCurrentValue
         RobotSetStartPosition();
         EnableTaskGameObjects();
         isWaitingForCompletion = false;
-        SetStage(0, Task_0, instructionsEnabledOnStart);
+        SetStage(0, Task_0);
         return robot;
     }
 

@@ -53,7 +53,7 @@ public class TunnelClearing : Task
     {
         if (boxArea.IsEnoughObjects() > 0)
         {
-            SetStage(1, CompleteTask, false);
+            SetStage(1, CompleteTask);
             return 1;
         }
         else

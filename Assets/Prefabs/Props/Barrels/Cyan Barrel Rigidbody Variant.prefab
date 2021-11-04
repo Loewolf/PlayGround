@@ -15,42 +15,42 @@ PrefabInstance:
     - target: {fileID: 463862829695948709, guid: cb253ef8bbc61644b8164cc2ccb4f527,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 543.255
+      value: 638.749
       objectReference: {fileID: 0}
     - target: {fileID: 463862829695948709, guid: cb253ef8bbc61644b8164cc2ccb4f527,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 50.177
+      value: 50.794
       objectReference: {fileID: 0}
     - target: {fileID: 463862829695948709, guid: cb253ef8bbc61644b8164cc2ccb4f527,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 464.1052
+      value: 331.571
       objectReference: {fileID: 0}
     - target: {fileID: 463862829695948709, guid: cb253ef8bbc61644b8164cc2ccb4f527,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.368701
       objectReference: {fileID: 0}
     - target: {fileID: 463862829695948709, guid: cb253ef8bbc61644b8164cc2ccb4f527,
         type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0
+      value: -0.36870098
       objectReference: {fileID: 0}
     - target: {fileID: 463862829695948709, guid: cb253ef8bbc61644b8164cc2ccb4f527,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0.6033735
       objectReference: {fileID: 0}
     - target: {fileID: 463862829695948709, guid: cb253ef8bbc61644b8164cc2ccb4f527,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0
+      value: 0.6033735
       objectReference: {fileID: 0}
     - target: {fileID: 463862829695948709, guid: cb253ef8bbc61644b8164cc2ccb4f527,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
+      value: -90
       objectReference: {fileID: 0}
     - target: {fileID: 463862829695948709, guid: cb253ef8bbc61644b8164cc2ccb4f527,
         type: 3}
@@ -60,22 +60,22 @@ PrefabInstance:
     - target: {fileID: 463862829695948709, guid: cb253ef8bbc61644b8164cc2ccb4f527,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
+      value: 117.145
       objectReference: {fileID: 0}
     - target: {fileID: 463862829695948710, guid: cb253ef8bbc61644b8164cc2ccb4f527,
         type: 3}
       propertyPath: m_Constraints
-      value: 14
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 463862829695948711, guid: cb253ef8bbc61644b8164cc2ccb4f527,
         type: 3}
       propertyPath: m_Name
-      value: Cyan Barrel Rigidbody
+      value: Cyan Barrel Rigidbody Variant
       objectReference: {fileID: 0}
     - target: {fileID: 463862829695948711, guid: cb253ef8bbc61644b8164cc2ccb4f527,
         type: 3}
       propertyPath: m_TagString
-      value: Spawned Prop
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 463862830789009481, guid: cb253ef8bbc61644b8164cc2ccb4f527,
         type: 3}
@@ -101,12 +101,12 @@ PrefabInstance:
     - target: {fileID: 2666262489620896407, guid: cb253ef8bbc61644b8164cc2ccb4f527,
         type: 3}
       propertyPath: m_TagString
-      value: Spawned Prop
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 3101298538469403060, guid: cb253ef8bbc61644b8164cc2ccb4f527,
         type: 3}
       propertyPath: m_TagString
-      value: Spawned Prop
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 5808075169194644592, guid: cb253ef8bbc61644b8164cc2ccb4f527,
         type: 3}

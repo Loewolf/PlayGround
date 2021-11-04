@@ -20,8 +20,6 @@ public class XDriveModificationTracking : Task
     public List<RobotXDriveModificationIndexPair> xDriveIndexVariations; // Содержит пары <Робот - Индекс>, где индекс - порядковый номер компонента XDriveModification в заданном роботе
     public bool getFromLegsList;
     public List<ValueDirectionPair> valueDirectionPairs;
-    [Tooltip("При false отключает отображение всех инструкций для этого задания")]
-    public bool showInstructions = true;
     private int currentPair;
     private float targetValue;
     private bool targetCondition;
@@ -39,11 +37,11 @@ public class XDriveModificationTracking : Task
         {
             targetValue = valueDirectionPairs[currentPair].value;
             targetCondition = valueDirectionPairs[currentPair].isGreater;
-            SetStage(currentPair, Task_1, showInstructions);
+            SetStage(currentPair, Task_1);
         }
         else
         {
-            SetStage(valueDirectionPairs.Count, CompleteTask, false);
+            SetStage(valueDirectionPairs.Count, CompleteTask);
         }
         return 1;
     }
@@ -53,7 +51,7 @@ public class XDriveModificationTracking : Task
         if ((xDriveModification.GetXDriveTarget() >= targetValue) == targetCondition)
         {
             currentPair++;
-            SetStage(currentPair, Task_0, showInstructions);
+            SetStage(currentPair, Task_0);
         }
         return 0;
     }

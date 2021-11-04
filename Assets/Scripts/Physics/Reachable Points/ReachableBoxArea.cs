@@ -2,7 +2,7 @@
 [RequireComponent(typeof(BoxCollider))]
 public class ReachableBoxArea : ReachablePoint
 {
-    public Vector3 globalScale;
+    [SerializeField] private Vector3 globalScale;
     public int requiredObjectsAmount;
     public int resultValue = 1;
 
@@ -14,17 +14,22 @@ public class ReachableBoxArea : ReachablePoint
             return 0;
     }
 
-    private void OnValidate()
+    public void SetGlobalScale(Vector3 newScale)
     {
         if (transform.parent)
         {
-            transform.localScale = new Vector3(globalScale.x / transform.parent.transform.localScale.x,
-                                    globalScale.y / transform.parent.transform.localScale.y,
-                                    globalScale.z / transform.parent.transform.localScale.z);
+            transform.localScale = new Vector3(newScale.x / transform.parent.transform.localScale.x,
+                                    newScale.y / transform.parent.transform.localScale.y,
+                                    newScale.z / transform.parent.transform.localScale.z);
         }
         else
         {
             transform.localScale = globalScale;
         }
+    }
+
+    private void OnValidate()
+    {
+        SetGlobalScale(globalScale);
     }
 }

@@ -83,17 +83,17 @@ public class Gathering : Task
     {
         if (destroyingArea.IsEnoughObjects())
         {
-            SetStage(1, CompleteTask, false); // Задание пройдено
+            SetStage(1, CompleteTask); // Задание пройдено
             return 1;
         }
         else if (!robot.accessoryJoinPoint.Equipped)
         {
-            SetStage(2, TerminateTask, false); // Задание прервано. Навесное оборудование было отсоединено
+            SetStage(2, TerminateTask); // Задание прервано. Навесное оборудование было отсоединено
             return 1;
         }
         else if (robot.MovementAllowed)
         {
-            SetStage(3, TerminateTask, false); // Задание прервано. Робот должен оставаться неподвижным
+            SetStage(3, TerminateTask); // Задание прервано. Робот должен оставаться неподвижным
             return 1;
         }
         else return 0;

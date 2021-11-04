@@ -79,7 +79,7 @@ public class BoxPyramid : Task
         {
             if (!reachedStage1)
             {
-                SetStage(1, Task_0, InstructionsEnabled);
+                SetStage(1, Task_0);
                 reachedStage1 = true;
                 ret = 1;
             }
@@ -89,7 +89,7 @@ public class BoxPyramid : Task
                 material.SetFloat("_Value", timeSpent / stabilityTime);
                 if (timeSpent >= stabilityTime)
                 {
-                    SetStage(2, CompleteTask, false);
+                    SetStage(2, CompleteTask);
                     return 1;
                 }
             }
